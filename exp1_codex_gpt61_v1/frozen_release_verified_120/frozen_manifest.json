@@ -1,0 +1,49 @@
+{
+  "bucket_reserve_cursors": {
+    "G1_Func_Calc_Trig__TypeA_UniqueValue": 34,
+    "G1_Func_Calc_Trig__TypeB_Extremum": 26,
+    "G2_Alg_Ineq__TypeA_UniqueValue": 22,
+    "G2_Alg_Ineq__TypeB_Extremum": 33,
+    "G3_Seq_Comb_NT__TypeA_UniqueValue": 32,
+    "G3_Seq_Comb_NT__TypeB_Extremum": 11,
+    "G4_Geom_Analytic__TypeA_UniqueValue": 62,
+    "G4_Geom_Analytic__TypeB_Extremum": 24
+  },
+  "dev_quotas": {
+    "G1_Func_Calc_Trig__TypeA_UniqueValue": 4,
+    "G1_Func_Calc_Trig__TypeB_Extremum": 2,
+    "G2_Alg_Ineq__TypeA_UniqueValue": 2,
+    "G2_Alg_Ineq__TypeB_Extremum": 2,
+    "G3_Seq_Comb_NT__TypeA_UniqueValue": 4,
+    "G3_Seq_Comb_NT__TypeB_Extremum": 1,
+    "G4_Geom_Analytic__TypeA_UniqueValue": 3,
+    "G4_Geom_Analytic__TypeB_Extremum": 2
+  },
+  "event_counts": {
+    "INITIAL_ACCEPTED_DEV": 7,
+    "INITIAL_ACCEPTED_TEST": 33,
+    "INITIAL_REJECTED_IN_STAGE2": 80,
+    "PROMOTED_TO_DEV": 13,
+    "PROMOTED_TO_TEST": 67,
+    "RESERVE_REJECTED_IN_STAGE2": 164
+  },
+  "frozen_dev_20_sha256": "5e8b860ace07402034f4d2d5c1496a14d889a4753e7c426e7c95a90180192425",
+  "frozen_dev_count": 20,
+  "frozen_test_100_sha256": "032ff5ed0c89903b24057d4daa05da72238ec14030657dcf2c6fb9d8f50322af",
+  "frozen_test_count": 100,
+  "quota_profile": "verified_120_v1",
+  "stage1_manifest_sha256": "51bcb9039d0c269fa073744ea76dcaaf73be7297c08366063f12ae332a66427f",
+  "stage1_rule_version": "ob-candidate-rules-2.4.0",
+  "stage2_events_sha256": "d76fa60e2e84f7183056bc7a60c794da77c3d422bef0d4aa45c9fe589b6e5a38",
+  "stage2b_rule_version": "stage2b-sympy-cert-v1.1.0",
+  "test_quotas": {
+    "G1_Func_Calc_Trig__TypeA_UniqueValue": 19,
+    "G1_Func_Calc_Trig__TypeB_Extremum": 10,
+    "G2_Alg_Ineq__TypeA_UniqueValue": 13,
+    "G2_Alg_Ineq__TypeB_Extremum": 10,
+    "G3_Seq_Comb_NT__TypeA_UniqueValue": 21,
+    "G3_Seq_Comb_NT__TypeB_Extremum": 3,
+    "G4_Geom_Analytic__TypeA_UniqueValue": 15,
+    "G4_Geom_Analytic__TypeB_Extremum": 9
+  }
+}

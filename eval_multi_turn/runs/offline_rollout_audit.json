@@ -1,0 +1,544 @@
+{
+  "dev20_audit": [
+    {
+      "name": "dev20_qwen3_14b_4096",
+      "model_id": "Qwen/Qwen3-14B",
+      "hf_model_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "hf_tokenizer_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "max_tokens": 4096,
+      "max_model_len": 24576,
+      "empty_history_mode": "empty",
+      "elapsed_sec": 535.98,
+      "trajectories": 100,
+      "total_turns": 202,
+      "empty_truncated_turns": 44,
+      "budget_clamped_turns": 0,
+      "nonfinal_dynamic_turns_total": 102,
+      "nonfinal_dynamic_turns_to_judge": 95,
+      "ambiguous_final_turns_to_judge": 38,
+      "sympy_status_counts": {
+        "AMBIGUOUS_NEED_LLM": 38,
+        "INCORRECT_ABSTAIN": 37,
+        "CORRECT": 24,
+        "INCORRECT_EXACT": 1
+      },
+      "sympy_status_by_protocol": {
+        "FULL": {
+          "AMBIGUOUS_NEED_LLM": 8,
+          "CORRECT": 5,
+          "INCORRECT_ABSTAIN": 7
+        },
+        "CONCAT": {
+          "AMBIGUOUS_NEED_LLM": 11,
+          "CORRECT": 1,
+          "INCORRECT_ABSTAIN": 8
+        },
+        "CONCAT_MATCHED": {
+          "INCORRECT_ABSTAIN": 9,
+          "CORRECT": 1,
+          "AMBIGUOUS_NEED_LLM": 10
+        },
+        "DYN_FREE": {
+          "AMBIGUOUS_NEED_LLM": 5,
+          "CORRECT": 8,
+          "INCORRECT_ABSTAIN": 6,
+          "INCORRECT_EXACT": 1
+        },
+        "DYN_REQUEST": {
+          "AMBIGUOUS_NEED_LLM": 4,
+          "CORRECT": 9,
+          "INCORRECT_ABSTAIN": 7
+        }
+      },
+      "pre_llm_y_bounds_by_protocol": {
+        "FULL": [
+          0.25,
+          0.65
+        ],
+        "CONCAT": [
+          0.05,
+          0.6
+        ],
+        "CONCAT_MATCHED": [
+          0.05,
+          0.55
+        ],
+        "DYN_FREE": [
+          0.4,
+          0.65
+        ],
+        "DYN_REQUEST": [
+          0.45,
+          0.65
+        ]
+      }
+    },
+    {
+      "name": "dev20_qwen3_14b_8192",
+      "model_id": "Qwen/Qwen3-14B",
+      "hf_model_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "hf_tokenizer_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "max_tokens": 8192,
+      "max_model_len": 24576,
+      "empty_history_mode": "empty",
+      "elapsed_sec": 853.17,
+      "trajectories": 100,
+      "total_turns": 202,
+      "empty_truncated_turns": 9,
+      "budget_clamped_turns": 0,
+      "nonfinal_dynamic_turns_total": 102,
+      "nonfinal_dynamic_turns_to_judge": 101,
+      "ambiguous_final_turns_to_judge": 39,
+      "sympy_status_counts": {
+        "CORRECT": 47,
+        "AMBIGUOUS_NEED_LLM": 39,
+        "INCORRECT_EXACT": 6,
+        "INCORRECT_ABSTAIN": 8
+      },
+      "sympy_status_by_protocol": {
+        "FULL": {
+          "CORRECT": 10,
+          "AMBIGUOUS_NEED_LLM": 8,
+          "INCORRECT_EXACT": 1,
+          "INCORRECT_ABSTAIN": 1
+        },
+        "CONCAT": {
+          "AMBIGUOUS_NEED_LLM": 9,
+          "CORRECT": 5,
+          "INCORRECT_EXACT": 2,
+          "INCORRECT_ABSTAIN": 4
+        },
+        "CONCAT_MATCHED": {
+          "AMBIGUOUS_NEED_LLM": 8,
+          "CORRECT": 10,
+          "INCORRECT_EXACT": 1,
+          "INCORRECT_ABSTAIN": 1
+        },
+        "DYN_FREE": {
+          "CORRECT": 11,
+          "AMBIGUOUS_NEED_LLM": 7,
+          "INCORRECT_EXACT": 1,
+          "INCORRECT_ABSTAIN": 1
+        },
+        "DYN_REQUEST": {
+          "CORRECT": 11,
+          "AMBIGUOUS_NEED_LLM": 7,
+          "INCORRECT_ABSTAIN": 1,
+          "INCORRECT_EXACT": 1
+        }
+      },
+      "pre_llm_y_bounds_by_protocol": {
+        "FULL": [
+          0.5,
+          0.9
+        ],
+        "CONCAT": [
+          0.25,
+          0.7
+        ],
+        "CONCAT_MATCHED": [
+          0.5,
+          0.9
+        ],
+        "DYN_FREE": [
+          0.55,
+          0.9
+        ],
+        "DYN_REQUEST": [
+          0.55,
+          0.9
+        ]
+      }
+    },
+    {
+      "name": "dev20_qwen3_8b_8192",
+      "model_id": "Qwen/Qwen3-8B",
+      "hf_model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "hf_tokenizer_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "max_tokens": 8192,
+      "max_model_len": 24576,
+      "empty_history_mode": "empty",
+      "elapsed_sec": 582.33,
+      "trajectories": 100,
+      "total_turns": 202,
+      "empty_truncated_turns": 14,
+      "budget_clamped_turns": 0,
+      "nonfinal_dynamic_turns_total": 102,
+      "nonfinal_dynamic_turns_to_judge": 101,
+      "ambiguous_final_turns_to_judge": 17,
+      "sympy_status_counts": {
+        "CORRECT": 62,
+        "AMBIGUOUS_NEED_LLM": 17,
+        "INCORRECT_EXACT": 8,
+        "INCORRECT_ABSTAIN": 13
+      },
+      "sympy_status_by_protocol": {
+        "FULL": {
+          "CORRECT": 13,
+          "AMBIGUOUS_NEED_LLM": 4,
+          "INCORRECT_ABSTAIN": 3
+        },
+        "CONCAT": {
+          "AMBIGUOUS_NEED_LLM": 4,
+          "CORRECT": 13,
+          "INCORRECT_ABSTAIN": 3
+        },
+        "CONCAT_MATCHED": {
+          "CORRECT": 14,
+          "INCORRECT_EXACT": 2,
+          "INCORRECT_ABSTAIN": 4
+        },
+        "DYN_FREE": {
+          "CORRECT": 11,
+          "AMBIGUOUS_NEED_LLM": 6,
+          "INCORRECT_EXACT": 3
+        },
+        "DYN_REQUEST": {
+          "CORRECT": 11,
+          "AMBIGUOUS_NEED_LLM": 3,
+          "INCORRECT_EXACT": 3,
+          "INCORRECT_ABSTAIN": 3
+        }
+      },
+      "pre_llm_y_bounds_by_protocol": {
+        "FULL": [
+          0.65,
+          0.85
+        ],
+        "CONCAT": [
+          0.65,
+          0.85
+        ],
+        "CONCAT_MATCHED": [
+          0.7,
+          0.7
+        ],
+        "DYN_FREE": [
+          0.55,
+          0.85
+        ],
+        "DYN_REQUEST": [
+          0.55,
+          0.7
+        ]
+      }
+    },
+    {
+      "name": "dev20_glm_z1_9b_8192",
+      "model_id": "zai-org/GLM-Z1-9B-0414",
+      "hf_model_revision": "b221b06fefb23ca320922cf6e68ab5f2fb82de81",
+      "hf_tokenizer_revision": "b221b06fefb23ca320922cf6e68ab5f2fb82de81",
+      "max_tokens": 8192,
+      "max_model_len": 24576,
+      "empty_history_mode": "empty",
+      "elapsed_sec": 455.18,
+      "trajectories": 100,
+      "total_turns": 202,
+      "empty_truncated_turns": 3,
+      "budget_clamped_turns": 0,
+      "nonfinal_dynamic_turns_total": 102,
+      "nonfinal_dynamic_turns_to_judge": 101,
+      "ambiguous_final_turns_to_judge": 21,
+      "sympy_status_counts": {
+        "CORRECT": 62,
+        "AMBIGUOUS_NEED_LLM": 21,
+        "INCORRECT_EXACT": 15,
+        "INCORRECT_ABSTAIN": 2
+      },
+      "sympy_status_by_protocol": {
+        "FULL": {
+          "CORRECT": 15,
+          "INCORRECT_EXACT": 3,
+          "AMBIGUOUS_NEED_LLM": 2
+        },
+        "CONCAT": {
+          "AMBIGUOUS_NEED_LLM": 3,
+          "INCORRECT_EXACT": 3,
+          "CORRECT": 12,
+          "INCORRECT_ABSTAIN": 2
+        },
+        "CONCAT_MATCHED": {
+          "CORRECT": 15,
+          "INCORRECT_EXACT": 3,
+          "AMBIGUOUS_NEED_LLM": 2
+        },
+        "DYN_FREE": {
+          "CORRECT": 9,
+          "AMBIGUOUS_NEED_LLM": 7,
+          "INCORRECT_EXACT": 4
+        },
+        "DYN_REQUEST": {
+          "CORRECT": 11,
+          "AMBIGUOUS_NEED_LLM": 7,
+          "INCORRECT_EXACT": 2
+        }
+      },
+      "pre_llm_y_bounds_by_protocol": {
+        "FULL": [
+          0.75,
+          0.85
+        ],
+        "CONCAT": [
+          0.6,
+          0.75
+        ],
+        "CONCAT_MATCHED": [
+          0.75,
+          0.85
+        ],
+        "DYN_FREE": [
+          0.45,
+          0.8
+        ],
+        "DYN_REQUEST": [
+          0.55,
+          0.9
+        ]
+      }
+    }
+  ],
+  "test100_audit": [
+    {
+      "name": "test100_qwen3_8b",
+      "model_id": "Qwen/Qwen3-8B",
+      "hf_model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "hf_tokenizer_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "max_tokens": 8192,
+      "max_model_len": 24576,
+      "empty_history_mode": "empty",
+      "elapsed_sec": 4220.03,
+      "trajectories": 1500,
+      "total_turns": 3204,
+      "empty_truncated_turns": 164,
+      "budget_clamped_turns": 0,
+      "nonfinal_dynamic_turns_total": 1704,
+      "nonfinal_dynamic_turns_to_judge": 1670,
+      "ambiguous_final_turns_to_judge": 213,
+      "sympy_status_counts": {
+        "CORRECT": 1117,
+        "AMBIGUOUS_NEED_LLM": 213,
+        "INCORRECT_EXACT": 35,
+        "INCORRECT_ABSTAIN": 135
+      },
+      "sympy_status_by_protocol": {
+        "FULL": {
+          "CORRECT": 224,
+          "AMBIGUOUS_NEED_LLM": 46,
+          "INCORRECT_ABSTAIN": 29,
+          "INCORRECT_EXACT": 1
+        },
+        "CONCAT": {
+          "CORRECT": 226,
+          "AMBIGUOUS_NEED_LLM": 41,
+          "INCORRECT_ABSTAIN": 29,
+          "INCORRECT_EXACT": 4
+        },
+        "CONCAT_MATCHED": {
+          "CORRECT": 229,
+          "AMBIGUOUS_NEED_LLM": 34,
+          "INCORRECT_ABSTAIN": 34,
+          "INCORRECT_EXACT": 3
+        },
+        "DYN_FREE": {
+          "AMBIGUOUS_NEED_LLM": 49,
+          "CORRECT": 215,
+          "INCORRECT_EXACT": 14,
+          "INCORRECT_ABSTAIN": 22
+        },
+        "DYN_REQUEST": {
+          "CORRECT": 223,
+          "AMBIGUOUS_NEED_LLM": 43,
+          "INCORRECT_EXACT": 13,
+          "INCORRECT_ABSTAIN": 21
+        }
+      },
+      "pre_llm_y_bounds_by_protocol": {
+        "FULL": [
+          0.7467,
+          0.9
+        ],
+        "CONCAT": [
+          0.7533,
+          0.89
+        ],
+        "CONCAT_MATCHED": [
+          0.7633,
+          0.8767
+        ],
+        "DYN_FREE": [
+          0.7167,
+          0.88
+        ],
+        "DYN_REQUEST": [
+          0.7433,
+          0.8867
+        ]
+      }
+    },
+    {
+      "name": "test100_glm_z1_9b_0414",
+      "model_id": "zai-org/GLM-Z1-9B-0414",
+      "hf_model_revision": "b221b06fefb23ca320922cf6e68ab5f2fb82de81",
+      "hf_tokenizer_revision": "b221b06fefb23ca320922cf6e68ab5f2fb82de81",
+      "max_tokens": 8192,
+      "max_model_len": 24576,
+      "empty_history_mode": "empty",
+      "elapsed_sec": 1910.47,
+      "trajectories": 1500,
+      "total_turns": 3204,
+      "empty_truncated_turns": 86,
+      "budget_clamped_turns": 0,
+      "nonfinal_dynamic_turns_total": 1704,
+      "nonfinal_dynamic_turns_to_judge": 1681,
+      "ambiguous_final_turns_to_judge": 389,
+      "sympy_status_counts": {
+        "CORRECT": 995,
+        "AMBIGUOUS_NEED_LLM": 389,
+        "INCORRECT_EXACT": 45,
+        "INCORRECT_ABSTAIN": 71
+      },
+      "sympy_status_by_protocol": {
+        "FULL": {
+          "CORRECT": 233,
+          "AMBIGUOUS_NEED_LLM": 48,
+          "INCORRECT_EXACT": 4,
+          "INCORRECT_ABSTAIN": 15
+        },
+        "CONCAT": {
+          "CORRECT": 225,
+          "AMBIGUOUS_NEED_LLM": 50,
+          "INCORRECT_EXACT": 6,
+          "INCORRECT_ABSTAIN": 19
+        },
+        "CONCAT_MATCHED": {
+          "CORRECT": 229,
+          "AMBIGUOUS_NEED_LLM": 52,
+          "INCORRECT_EXACT": 5,
+          "INCORRECT_ABSTAIN": 14
+        },
+        "DYN_FREE": {
+          "CORRECT": 158,
+          "AMBIGUOUS_NEED_LLM": 122,
+          "INCORRECT_EXACT": 10,
+          "INCORRECT_ABSTAIN": 10
+        },
+        "DYN_REQUEST": {
+          "AMBIGUOUS_NEED_LLM": 117,
+          "CORRECT": 150,
+          "INCORRECT_EXACT": 20,
+          "INCORRECT_ABSTAIN": 13
+        }
+      },
+      "pre_llm_y_bounds_by_protocol": {
+        "FULL": [
+          0.7767,
+          0.9367
+        ],
+        "CONCAT": [
+          0.75,
+          0.9167
+        ],
+        "CONCAT_MATCHED": [
+          0.7633,
+          0.9367
+        ],
+        "DYN_FREE": [
+          0.5267,
+          0.9333
+        ],
+        "DYN_REQUEST": [
+          0.5,
+          0.89
+        ]
+      }
+    },
+    {
+      "name": "test100_qwen3_14b",
+      "model_id": "Qwen/Qwen3-14B",
+      "hf_model_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "hf_tokenizer_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "max_tokens": 8192,
+      "max_model_len": 24576,
+      "empty_history_mode": "empty",
+      "elapsed_sec": 7161.61,
+      "trajectories": 1500,
+      "total_turns": 3204,
+      "empty_truncated_turns": 166,
+      "budget_clamped_turns": 0,
+      "nonfinal_dynamic_turns_total": 1704,
+      "nonfinal_dynamic_turns_to_judge": 1655,
+      "ambiguous_final_turns_to_judge": 611,
+      "sympy_status_counts": {
+        "CORRECT": 756,
+        "AMBIGUOUS_NEED_LLM": 611,
+        "INCORRECT_EXACT": 16,
+        "INCORRECT_ABSTAIN": 117
+      },
+      "sympy_status_by_protocol": {
+        "FULL": {
+          "CORRECT": 171,
+          "AMBIGUOUS_NEED_LLM": 103,
+          "INCORRECT_ABSTAIN": 26
+        },
+        "CONCAT": {
+          "CORRECT": 132,
+          "AMBIGUOUS_NEED_LLM": 139,
+          "INCORRECT_ABSTAIN": 29
+        },
+        "CONCAT_MATCHED": {
+          "CORRECT": 154,
+          "AMBIGUOUS_NEED_LLM": 119,
+          "INCORRECT_EXACT": 2,
+          "INCORRECT_ABSTAIN": 25
+        },
+        "DYN_FREE": {
+          "AMBIGUOUS_NEED_LLM": 136,
+          "CORRECT": 138,
+          "INCORRECT_ABSTAIN": 19,
+          "INCORRECT_EXACT": 7
+        },
+        "DYN_REQUEST": {
+          "CORRECT": 161,
+          "AMBIGUOUS_NEED_LLM": 114,
+          "INCORRECT_EXACT": 7,
+          "INCORRECT_ABSTAIN": 18
+        }
+      },
+      "pre_llm_y_bounds_by_protocol": {
+        "FULL": [
+          0.57,
+          0.9133
+        ],
+        "CONCAT": [
+          0.44,
+          0.9033
+        ],
+        "CONCAT_MATCHED": [
+          0.5133,
+          0.91
+        ],
+        "DYN_FREE": [
+          0.46,
+          0.9133
+        ],
+        "DYN_REQUEST": [
+          0.5367,
+          0.9167
+        ]
+      }
+    }
+  ],
+  "judge_call_budget_summary": {
+    "dev20_8192_3models": {
+      "final_ambiguous_primary": 77,
+      "nonfinal_scope_primary": 303,
+      "total_calls_if_all_dual": 760
+    },
+    "test100_3models": {
+      "final_ambiguous_primary": 1213,
+      "nonfinal_scope_primary": 5006,
+      "total_primary_nonrepair_calls": 6219,
+      "note": "Secondary final calls apply to all final_ambiguous; dual_nonfinal defaults to full nonfinal_scope when secondary_model is passed without --dual-nonfinal-limit (or audited subset with --dual-nonfinal-limit); plus 1 Repair call per dynamic trajectory with e_U == 1."
+    }
+  }
+}

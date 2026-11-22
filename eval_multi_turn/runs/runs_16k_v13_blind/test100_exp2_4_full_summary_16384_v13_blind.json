@@ -1,0 +1,3878 @@
+{
+  "grading_rule_version": "exp2-part2-dual-llm-v1.3-input-blind",
+  "models": {
+    "Qwen/Qwen3-8B": {
+      "grading_rule_version": "exp2-part2-dual-llm-v1.3-input-blind",
+      "exp2_protocol_summary": {
+        "CONCAT": {
+          "n_problems": 100,
+          "n_trajectories": 300,
+          "structural_zero_E": true,
+          "Y": [
+            0.9467,
+            0.9467
+          ],
+          "E": [
+            0.0,
+            0.0
+          ],
+          "J": [
+            0.9467,
+            0.9467
+          ],
+          "Y_minus_J_eq_YE": [
+            0.0,
+            0.0
+          ],
+          "P_E1_given_Y1": [
+            0.0,
+            0.0
+          ],
+          "final_empty_trunc_rate": 0.0267,
+          "final_vis_trunc_rate": 0.0033,
+          "final_non_trunc_empty_rate": 0.0,
+          "final_explicit_abstain_rate": [
+            0.0033,
+            0.0067
+          ],
+          "empty_truncated_turn_rate": 0.0267,
+          "vis_truncated_turn_rate": 0.0033,
+          "non_trunc_empty_turn_rate": 0.0,
+          "mean_tokens_per_trajectory": 4955.6
+        },
+        "CONCAT_MATCHED": {
+          "n_problems": 100,
+          "n_trajectories": 300,
+          "structural_zero_E": true,
+          "Y": [
+            0.9367,
+            0.9367
+          ],
+          "E": [
+            0.0,
+            0.0
+          ],
+          "J": [
+            0.9367,
+            0.9367
+          ],
+          "Y_minus_J_eq_YE": [
+            0.0,
+            0.0
+          ],
+          "P_E1_given_Y1": [
+            0.0,
+            0.0
+          ],
+          "final_empty_trunc_rate": 0.0233,
+          "final_vis_trunc_rate": 0.0067,
+          "final_non_trunc_empty_rate": 0.0,
+          "final_explicit_abstain_rate": [
+            0.0033,
+            0.0033
+          ],
+          "empty_truncated_turn_rate": 0.0233,
+          "vis_truncated_turn_rate": 0.0067,
+          "non_trunc_empty_turn_rate": 0.0,
+          "mean_tokens_per_trajectory": 4931.3
+        },
+        "DYN_FREE": {
+          "n_problems": 100,
+          "n_trajectories": 300,
+          "structural_zero_E": false,
+          "Y": [
+            0.8767,
+            0.8767
+          ],
+          "E": [
+            0.17,
+            0.2167
+          ],
+          "J": [
+            0.7267,
+            0.7667
+          ],
+          "Y_minus_J_eq_YE": [
+            0.11,
+            0.15
+          ],
+          "P_E1_given_Y1": [
+            0.1255,
+            0.1711
+          ],
+          "final_empty_trunc_rate": 0.0067,
+          "final_vis_trunc_rate": 0.0033,
+          "final_non_trunc_empty_rate": 0.0,
+          "final_explicit_abstain_rate": [
+            0.0067,
+            0.0067
+          ],
+          "empty_truncated_turn_rate": 0.0035,
+          "vis_truncated_turn_rate": 0.0009,
+          "non_trunc_empty_turn_rate": 0.0,
+          "mean_tokens_per_trajectory": 12875.4
+        },
+        "DYN_REQUEST": {
+          "n_problems": 100,
+          "n_trajectories": 300,
+          "structural_zero_E": false,
+          "Y": [
+            0.8533,
+            0.8633
+          ],
+          "E": [
+            0.1367,
+            0.17
+          ],
+          "J": [
+            0.74,
+            0.7767
+          ],
+          "Y_minus_J_eq_YE": [
+            0.0867,
+            0.1167
+          ],
+          "P_E1_given_Y1": [
+            0.1004,
+            0.1362
+          ],
+          "final_empty_trunc_rate": 0.0167,
+          "final_vis_trunc_rate": 0.0,
+          "final_non_trunc_empty_rate": 0.0,
+          "final_explicit_abstain_rate": [
+            0.02,
+            0.02
+          ],
+          "empty_truncated_turn_rate": 0.0052,
+          "vis_truncated_turn_rate": 0.0,
+          "non_trunc_empty_turn_rate": 0.0,
+          "mean_tokens_per_trajectory": 10713.2
+        },
+        "DYN_REQUEST_GUARD": {
+          "n_problems": 100,
+          "n_trajectories": 300,
+          "structural_zero_E": false,
+          "Y": [
+            0.8667,
+            0.87
+          ],
+          "E": [
+            0.1333,
+            0.1667
+          ],
+          "J": [
+            0.7533,
+            0.79
+          ],
+          "Y_minus_J_eq_YE": [
+            0.08,
+            0.1133
+          ],
+          "P_E1_given_Y1": [
+            0.092,
+            0.1308
+          ],
+          "final_empty_trunc_rate": 0.01,
+          "final_vis_trunc_rate": 0.0033,
+          "final_non_trunc_empty_rate": 0.0,
+          "final_explicit_abstain_rate": [
+            0.02,
+            0.0233
+          ],
+          "empty_truncated_turn_rate": 0.0026,
+          "vis_truncated_turn_rate": 0.0009,
+          "non_trunc_empty_turn_rate": 0.0,
+          "mean_tokens_per_trajectory": 10301.0
+        },
+        "FULL": {
+          "n_problems": 100,
+          "n_trajectories": 300,
+          "structural_zero_E": true,
+          "Y": [
+            0.94,
+            0.94
+          ],
+          "E": [
+            0.0,
+            0.0
+          ],
+          "J": [
+            0.94,
+            0.94
+          ],
+          "Y_minus_J_eq_YE": [
+            0.0,
+            0.0
+          ],
+          "P_E1_given_Y1": [
+            0.0,
+            0.0
+          ],
+          "final_empty_trunc_rate": 0.0233,
+          "final_vis_trunc_rate": 0.01,
+          "final_non_trunc_empty_rate": 0.0,
+          "final_explicit_abstain_rate": [
+            0.0033,
+            0.0033
+          ],
+          "empty_truncated_turn_rate": 0.0233,
+          "vis_truncated_turn_rate": 0.01,
+          "non_trunc_empty_turn_rate": 0.0,
+          "mean_tokens_per_trajectory": 4959.1
+        }
+      },
+      "exp2_no_trunc_sensitivity": {
+        "CONCAT": {
+          "n_problems": 99,
+          "n_trajectories": 291,
+          "structural_zero_E": true,
+          "Y": [
+            0.9731,
+            0.9731
+          ],
+          "E": [
+            0.0,
+            0.0
+          ],
+          "J": [
+            0.9731,
+            0.9731
+          ]
+        },
+        "CONCAT_MATCHED": {
+          "n_problems": 98,
+          "n_trajectories": 291,
+          "structural_zero_E": true,
+          "Y": [
+            0.966,
+            0.966
+          ],
+          "E": [
+            0.0,
+            0.0
+          ],
+          "J": [
+            0.966,
+            0.966
+          ]
+        },
+        "DYN_FREE": {
+          "n_problems": 100,
+          "n_trajectories": 295,
+          "structural_zero_E": false,
+          "Y": [
+            0.8817,
+            0.8817
+          ],
+          "E": [
+            0.1717,
+            0.215
+          ],
+          "J": [
+            0.73,
+            0.77
+          ]
+        },
+        "DYN_REQUEST": {
+          "n_problems": 100,
+          "n_trajectories": 294,
+          "structural_zero_E": false,
+          "Y": [
+            0.86,
+            0.87
+          ],
+          "E": [
+            0.135,
+            0.1717
+          ],
+          "J": [
+            0.745,
+            0.7833
+          ]
+        },
+        "DYN_REQUEST_GUARD": {
+          "n_problems": 100,
+          "n_trajectories": 296,
+          "structural_zero_E": false,
+          "Y": [
+            0.87,
+            0.8733
+          ],
+          "E": [
+            0.1383,
+            0.1717
+          ],
+          "J": [
+            0.7567,
+            0.7933
+          ]
+        },
+        "FULL": {
+          "n_problems": 99,
+          "n_trajectories": 290,
+          "structural_zero_E": true,
+          "Y": [
+            0.9697,
+            0.9697
+          ],
+          "E": [
+            0.0,
+            0.0
+          ],
+          "J": [
+            0.9697,
+            0.9697
+          ]
+        }
+      },
+      "exp2_contrasts": {
+        "FULL_minus_CONCAT_Y": {
+          "point_L": -0.0067,
+          "point_U": -0.0067,
+          "env_lo": -0.03,
+          "env_hi": 0.0133,
+          "n_problems": 100,
+          "is_primary": true
+        },
+        "CONCAT_minus_CONCAT_MATCHED_Y": {
+          "point_L": 0.01,
+          "point_U": 0.01,
+          "env_lo": -0.0067,
+          "env_hi": 0.03,
+          "n_problems": 100,
+          "is_primary": true
+        },
+        "CONCAT_MATCHED_minus_DYN_FREE_Y": {
+          "point_L": 0.06,
+          "point_U": 0.06,
+          "env_lo": 0.0233,
+          "env_hi": 0.1,
+          "n_problems": 100,
+          "is_primary": true
+        },
+        "CONCAT_minus_DYN_FREE_Y": {
+          "point_L": 0.07,
+          "point_U": 0.07,
+          "env_lo": 0.03,
+          "env_hi": 0.1133,
+          "n_problems": 100,
+          "is_primary": false
+        },
+        "DYN_REQUEST_minus_DYN_FREE_Y": {
+          "point_L": -0.0233,
+          "point_U": -0.0133,
+          "env_lo": -0.06,
+          "env_hi": 0.0233,
+          "n_problems": 100,
+          "is_primary": false
+        },
+        "DYN_REQUEST_minus_DYN_FREE_E": {
+          "point_L": -0.08,
+          "point_U": -0.0,
+          "env_lo": -0.1233,
+          "env_hi": 0.0367,
+          "n_problems": 100,
+          "is_primary": true
+        },
+        "DYN_REQUEST_GUARD_minus_DYN_REQUEST_E": {
+          "point_L": -0.0367,
+          "point_U": 0.03,
+          "env_lo": -0.0733,
+          "env_hi": 0.0667,
+          "n_problems": 100,
+          "is_primary": true
+        },
+        "DYN_REQUEST_GUARD_minus_DYN_REQUEST_J": {
+          "point_L": -0.0233,
+          "point_U": 0.05,
+          "env_lo": -0.0733,
+          "env_hi": 0.1,
+          "n_problems": 100,
+          "is_primary": true
+        },
+        "DYN_REQUEST_GUARD_minus_DYN_REQUEST_Y": {
+          "point_L": 0.0033,
+          "point_U": 0.0167,
+          "env_lo": -0.0367,
+          "env_hi": 0.0567,
+          "n_problems": 100,
+          "is_primary": false
+        },
+        "CONCAT_minus_CONCAT_MATCHED_Y_permuted_only": {
+          "point_L": 0.03,
+          "point_U": 0.03,
+          "env_lo": 0.005,
+          "env_hi": 0.06,
+          "n_problems": 100,
+          "is_primary": true
+        }
+      },
+      "exp2_order_breakdown": {
+        "canonical": {
+          "CONCAT": {
+            "n_trajectories": 100,
+            "Y": [
+              0.93,
+              0.93
+            ],
+            "E": [
+              0.0,
+              0.0
+            ],
+            "J": [
+              0.93,
+              0.93
+            ]
+          },
+          "CONCAT_MATCHED": {
+            "n_trajectories": 100,
+            "Y": [
+              0.96,
+              0.96
+            ],
+            "E": [
+              0.0,
+              0.0
+            ],
+            "J": [
+              0.96,
+              0.96
+            ]
+          },
+          "DYN_FREE": {
+            "n_trajectories": 100,
+            "Y": [
+              0.89,
+              0.89
+            ],
+            "E": [
+              0.16,
+              0.2
+            ],
+            "J": [
+              0.75,
+              0.79
+            ]
+          },
+          "DYN_REQUEST": {
+            "n_trajectories": 100,
+            "Y": [
+              0.88,
+              0.88
+            ],
+            "E": [
+              0.16,
+              0.19
+            ],
+            "J": [
+              0.75,
+              0.78
+            ]
+          },
+          "DYN_REQUEST_GUARD": {
+            "n_trajectories": 100,
+            "Y": [
+              0.89,
+              0.89
+            ],
+            "E": [
+              0.14,
+              0.18
+            ],
+            "J": [
+              0.77,
+              0.81
+            ]
+          },
+          "FULL": {
+            "n_trajectories": 100,
+            "Y": [
+              0.94,
+              0.94
+            ],
+            "E": [
+              0.0,
+              0.0
+            ],
+            "J": [
+              0.94,
+              0.94
+            ]
+          }
+        },
+        "paired_permuted": {
+          "CONCAT": {
+            "n_trajectories": 200,
+            "Y": [
+              0.955,
+              0.955
+            ],
+            "E": [
+              0.0,
+              0.0
+            ],
+            "J": [
+              0.955,
+              0.955
+            ]
+          },
+          "CONCAT_MATCHED": {
+            "n_trajectories": 200,
+            "Y": [
+              0.925,
+              0.925
+            ],
+            "E": [
+              0.0,
+              0.0
+            ],
+            "J": [
+              0.925,
+              0.925
+            ]
+          },
+          "DYN_FREE": {
+            "n_trajectories": 200,
+            "Y": [
+              0.87,
+              0.87
+            ],
+            "E": [
+              0.175,
+              0.225
+            ],
+            "J": [
+              0.715,
+              0.755
+            ]
+          },
+          "DYN_REQUEST": {
+            "n_trajectories": 200,
+            "Y": [
+              0.84,
+              0.855
+            ],
+            "E": [
+              0.125,
+              0.16
+            ],
+            "J": [
+              0.735,
+              0.775
+            ]
+          },
+          "DYN_REQUEST_GUARD": {
+            "n_trajectories": 200,
+            "Y": [
+              0.855,
+              0.86
+            ],
+            "E": [
+              0.13,
+              0.16
+            ],
+            "J": [
+              0.745,
+              0.78
+            ]
+          },
+          "FULL": {
+            "n_trajectories": 200,
+            "Y": [
+              0.94,
+              0.94
+            ],
+            "E": [
+              0.0,
+              0.0
+            ],
+            "J": [
+              0.94,
+              0.94
+            ]
+          }
+        }
+      },
+      "exp3_nonfinal_scope": {
+        "DYN_FREE": {
+          "nonfinal_turns": 852,
+          "rates": {
+            "Wait": 0.6362,
+            "Conditional": 0.1432,
+            "Partial/Other": 0.0082,
+            "Commit": 0.0845,
+            "Unresolved": 0.027,
+            "NonCommit_Disagreed": 0.0986,
+            "EMPTY_TRUNCATED": 0.0023,
+            "NON_TRUNC_EMPTY": 0.0
+          },
+          "counts": {
+            "Wait": 542,
+            "Conditional": 122,
+            "NonCommit_Disagreed": 84,
+            "Commit": 72,
+            "Unresolved": 23,
+            "Partial/Other": 7,
+            "EMPTY_TRUNCATED": 2
+          }
+        },
+        "DYN_REQUEST": {
+          "nonfinal_turns": 852,
+          "rates": {
+            "Wait": 0.7394,
+            "Conditional": 0.0892,
+            "Partial/Other": 0.0035,
+            "Commit": 0.0681,
+            "Unresolved": 0.0176,
+            "NonCommit_Disagreed": 0.081,
+            "EMPTY_TRUNCATED": 0.0012,
+            "NON_TRUNC_EMPTY": 0.0
+          },
+          "counts": {
+            "Wait": 630,
+            "Commit": 58,
+            "Conditional": 76,
+            "NonCommit_Disagreed": 69,
+            "Unresolved": 15,
+            "Partial/Other": 3,
+            "EMPTY_TRUNCATED": 1
+          }
+        },
+        "DYN_REQUEST_GUARD": {
+          "nonfinal_turns": 852,
+          "rates": {
+            "Wait": 0.7735,
+            "Conditional": 0.0634,
+            "Partial/Other": 0.0059,
+            "Commit": 0.0622,
+            "Unresolved": 0.0153,
+            "NonCommit_Disagreed": 0.0798,
+            "EMPTY_TRUNCATED": 0.0,
+            "NON_TRUNC_EMPTY": 0.0
+          },
+          "counts": {
+            "Wait": 659,
+            "Conditional": 54,
+            "NonCommit_Disagreed": 68,
+            "Commit": 53,
+            "Unresolved": 13,
+            "Partial/Other": 5
+          }
+        }
+      },
+      "exp3_explicit_repair": {
+        "DYN_FREE": {
+          "skipped": false,
+          "event_positive_L": 51,
+          "event_positive_U": 65,
+          "explicit_retracted_range": [
+            0,
+            2
+          ],
+          "confirmed_repair_rate": [
+            0.0,
+            0.0392
+          ],
+          "explicit_repair_rate": [
+            0.0,
+            0.0392
+          ],
+          "repair_given_Y1_rate": [
+            0.0,
+            0.0303
+          ],
+          "repair_types": {
+            "none": 63,
+            "Unresolved": 2
+          }
+        },
+        "DYN_REQUEST": {
+          "skipped": false,
+          "event_positive_L": 41,
+          "event_positive_U": 51,
+          "explicit_retracted_range": [
+            0,
+            2
+          ],
+          "confirmed_repair_rate": [
+            0.0,
+            0.0488
+          ],
+          "explicit_repair_rate": [
+            0.0,
+            0.0488
+          ],
+          "repair_given_Y1_rate": [
+            0.0,
+            0.0
+          ],
+          "repair_types": {
+            "none": 49,
+            "Unresolved": 2
+          }
+        },
+        "DYN_REQUEST_GUARD": {
+          "skipped": false,
+          "event_positive_L": 40,
+          "event_positive_U": 50,
+          "explicit_retracted_range": [
+            0,
+            2
+          ],
+          "confirmed_repair_rate": [
+            0.0,
+            0.05
+          ],
+          "explicit_repair_rate": [
+            0.0,
+            0.05
+          ],
+          "repair_given_Y1_rate": [
+            0.0,
+            0.0417
+          ],
+          "repair_types": {
+            "none": 48,
+            "Unresolved": 2
+          }
+        }
+      },
+      "exp3_commit_hazard": {
+        "DYN_FREE": {
+          "turn_1": {
+            "at_risk_range": [
+              300,
+              300
+            ],
+            "first_commit_range": [
+              9,
+              13
+            ],
+            "hazard_rate": [
+              0.03,
+              0.0433
+            ]
+          },
+          "turn_2": {
+            "at_risk_range": [
+              287,
+              291
+            ],
+            "first_commit_range": [
+              13,
+              20
+            ],
+            "hazard_rate": [
+              0.0448,
+              0.0694
+            ]
+          },
+          "turn_3": {
+            "at_risk_range": [
+              154,
+              158
+            ],
+            "first_commit_range": [
+              14,
+              19
+            ],
+            "hazard_rate": [
+              0.0897,
+              0.1218
+            ]
+          },
+          "turn_4": {
+            "at_risk_range": [
+              55,
+              56
+            ],
+            "first_commit_range": [
+              9,
+              12
+            ],
+            "hazard_rate": [
+              0.1636,
+              0.2143
+            ]
+          },
+          "turn_5": {
+            "at_risk_range": [
+              14,
+              14
+            ],
+            "first_commit_range": [
+              2,
+              5
+            ],
+            "hazard_rate": [
+              0.1429,
+              0.3571
+            ]
+          }
+        },
+        "DYN_REQUEST": {
+          "turn_1": {
+            "at_risk_range": [
+              300,
+              300
+            ],
+            "first_commit_range": [
+              7,
+              8
+            ],
+            "hazard_rate": [
+              0.0233,
+              0.0267
+            ]
+          },
+          "turn_2": {
+            "at_risk_range": [
+              292,
+              293
+            ],
+            "first_commit_range": [
+              14,
+              19
+            ],
+            "hazard_rate": [
+              0.0478,
+              0.0651
+            ]
+          },
+          "turn_3": {
+            "at_risk_range": [
+              156,
+              159
+            ],
+            "first_commit_range": [
+              9,
+              13
+            ],
+            "hazard_rate": [
+              0.0573,
+              0.0823
+            ]
+          },
+          "turn_4": {
+            "at_risk_range": [
+              57,
+              58
+            ],
+            "first_commit_range": [
+              7,
+              9
+            ],
+            "hazard_rate": [
+              0.1207,
+              0.1552
+            ]
+          },
+          "turn_5": {
+            "at_risk_range": [
+              18,
+              18
+            ],
+            "first_commit_range": [
+              2,
+              5
+            ],
+            "hazard_rate": [
+              0.1111,
+              0.2778
+            ]
+          }
+        },
+        "DYN_REQUEST_GUARD": {
+          "turn_1": {
+            "at_risk_range": [
+              300,
+              300
+            ],
+            "first_commit_range": [
+              4,
+              6
+            ],
+            "hazard_rate": [
+              0.0133,
+              0.02
+            ]
+          },
+          "turn_2": {
+            "at_risk_range": [
+              294,
+              296
+            ],
+            "first_commit_range": [
+              13,
+              16
+            ],
+            "hazard_rate": [
+              0.0439,
+              0.0544
+            ]
+          },
+          "turn_3": {
+            "at_risk_range": [
+              159,
+              160
+            ],
+            "first_commit_range": [
+              11,
+              16
+            ],
+            "hazard_rate": [
+              0.0688,
+              0.1
+            ]
+          },
+          "turn_4": {
+            "at_risk_range": [
+              58,
+              60
+            ],
+            "first_commit_range": [
+              7,
+              10
+            ],
+            "hazard_rate": [
+              0.1186,
+              0.1695
+            ]
+          },
+          "turn_5": {
+            "at_risk_range": [
+              17,
+              17
+            ],
+            "first_commit_range": [
+              4,
+              4
+            ],
+            "hazard_rate": [
+              0.2353,
+              0.2353
+            ]
+          }
+        }
+      },
+      "exp3_mechanism_and_depth": {
+        "DYN_FREE": {
+          "TypeA_UniqueValue": {
+            "n_trajectories": 204,
+            "E": [
+              0.1324,
+              0.1863
+            ],
+            "J": [
+              0.7598,
+              0.8039
+            ]
+          },
+          "TypeB_Extremum": {
+            "n_trajectories": 96,
+            "E": [
+              0.25,
+              0.2812
+            ],
+            "J": [
+              0.6562,
+              0.6875
+            ]
+          },
+          "k=3": {
+            "n_trajectories": 132,
+            "exploratory_only": false,
+            "E": [
+              0.0985,
+              0.1364
+            ],
+            "J": [
+              0.8182,
+              0.8485
+            ]
+          },
+          "k=4": {
+            "n_trajectories": 102,
+            "exploratory_only": false,
+            "E": [
+              0.1569,
+              0.1961
+            ],
+            "J": [
+              0.7745,
+              0.8039
+            ]
+          },
+          "k=5": {
+            "n_trajectories": 48,
+            "exploratory_only": false,
+            "E": [
+              0.3333,
+              0.375
+            ],
+            "J": [
+              0.4792,
+              0.5208
+            ]
+          },
+          "k=6": {
+            "n_trajectories": 18,
+            "exploratory_only": true,
+            "E": [
+              0.3333,
+              0.5
+            ],
+            "J": [
+              0.4444,
+              0.6111
+            ]
+          }
+        },
+        "DYN_REQUEST": {
+          "TypeA_UniqueValue": {
+            "n_trajectories": 204,
+            "E": [
+              0.1029,
+              0.1373
+            ],
+            "J": [
+              0.799,
+              0.8431
+            ]
+          },
+          "TypeB_Extremum": {
+            "n_trajectories": 96,
+            "E": [
+              0.2083,
+              0.2396
+            ],
+            "J": [
+              0.6146,
+              0.6354
+            ]
+          },
+          "k=3": {
+            "n_trajectories": 132,
+            "exploratory_only": false,
+            "E": [
+              0.0909,
+              0.1136
+            ],
+            "J": [
+              0.8106,
+              0.8409
+            ]
+          },
+          "k=4": {
+            "n_trajectories": 102,
+            "exploratory_only": false,
+            "E": [
+              0.1176,
+              0.1373
+            ],
+            "J": [
+              0.7843,
+              0.8039
+            ]
+          },
+          "k=5": {
+            "n_trajectories": 48,
+            "exploratory_only": false,
+            "E": [
+              0.3125,
+              0.3542
+            ],
+            "J": [
+              0.4792,
+              0.5
+            ]
+          },
+          "k=6": {
+            "n_trajectories": 18,
+            "exploratory_only": true,
+            "E": [
+              0.1111,
+              0.2778
+            ],
+            "J": [
+              0.6667,
+              0.8889
+            ]
+          }
+        },
+        "DYN_REQUEST_GUARD": {
+          "TypeA_UniqueValue": {
+            "n_trajectories": 204,
+            "E": [
+              0.0931,
+              0.1225
+            ],
+            "J": [
+              0.8284,
+              0.8627
+            ]
+          },
+          "TypeB_Extremum": {
+            "n_trajectories": 96,
+            "E": [
+              0.2188,
+              0.2604
+            ],
+            "J": [
+              0.5938,
+              0.6354
+            ]
+          },
+          "k=3": {
+            "n_trajectories": 132,
+            "exploratory_only": false,
+            "E": [
+              0.0682,
+              0.0985
+            ],
+            "J": [
+              0.8485,
+              0.8788
+            ]
+          },
+          "k=4": {
+            "n_trajectories": 102,
+            "exploratory_only": false,
+            "E": [
+              0.1275,
+              0.1569
+            ],
+            "J": [
+              0.7941,
+              0.8235
+            ]
+          },
+          "k=5": {
+            "n_trajectories": 48,
+            "exploratory_only": false,
+            "E": [
+              0.2708,
+              0.3333
+            ],
+            "J": [
+              0.4583,
+              0.5417
+            ]
+          },
+          "k=6": {
+            "n_trajectories": 18,
+            "exploratory_only": true,
+            "E": [
+              0.2778,
+              0.2778
+            ],
+            "J": [
+              0.6111,
+              0.6111
+            ]
+          }
+        }
+      },
+      "exp4a_judge_calibration": {
+        "grading_rule_version": "exp2-part2-dual-llm-v1.3-input-blind",
+        "final_source_counts": {
+          "llm_dual_agree:1": 1626,
+          "llm_dual_agree:0": 138,
+          "llm_dual_disagree:1vs0": 3,
+          "empty_truncated": 32,
+          "llm_dual_disagree:0vs1": 1
+        },
+        "judge_failures": {
+          "final_primary_fail": 0,
+          "final_secondary_fail": 0,
+          "scope_primary_fail": 0,
+          "scope_secondary_fail": 0,
+          "repair_primary_fail": 0,
+          "repair_secondary_fail": 0
+        },
+        "dual_scope_pairs": 2553,
+        "dual_scope_agreement": 0.8935,
+        "dual_scope_category_kappa": 0.7303,
+        "dual_scope_kappa": 0.7303,
+        "scope_confusion_matrix": {
+          "Wait": {
+            "Wait": 1831,
+            "Conditional": 5,
+            "Partial/Other": 3,
+            "Commit": 1,
+            "Unresolved": 0
+          },
+          "Conditional": {
+            "Wait": 211,
+            "Conditional": 252,
+            "Partial/Other": 2,
+            "Commit": 17,
+            "Unresolved": 0
+          },
+          "Partial/Other": {
+            "Wait": 0,
+            "Conditional": 0,
+            "Partial/Other": 15,
+            "Commit": 1,
+            "Unresolved": 0
+          },
+          "Commit": {
+            "Wait": 2,
+            "Conditional": 29,
+            "Partial/Other": 1,
+            "Commit": 183,
+            "Unresolved": 0
+          },
+          "Unresolved": {
+            "Wait": 0,
+            "Conditional": 0,
+            "Partial/Other": 0,
+            "Commit": 0,
+            "Unresolved": 0
+          }
+        },
+        "dual_commit_pairs": 2553,
+        "dual_commit_agreement": 0.98,
+        "dual_commit_kappa": 0.8668,
+        "commit_confusion_matrix": {
+          "Commit": {
+            "Commit": 183,
+            "NonCommit": 32
+          },
+          "NonCommit": {
+            "Commit": 19,
+            "NonCommit": 2319
+          }
+        },
+        "dual_final_pairs": 1768,
+        "dual_final_agreement": 0.9977,
+        "dual_final_kappa": 0.9845,
+        "final_confusion_matrix": {
+          "True": {
+            "True": 1626,
+            "False": 3
+          },
+          "False": {
+            "True": 1,
+            "False": 138
+          }
+        },
+        "dual_repair_pairs": 166,
+        "dual_repair_agreement": 0.9639,
+        "dual_repair_kappa": -0.0101,
+        "repair_confusion_matrix": {
+          "True": {
+            "True": 0,
+            "False": 5
+          },
+          "False": {
+            "True": 1,
+            "False": 160
+          }
+        },
+        "dual_repair_type_agreement": 0.9639,
+        "dual_repair_type_kappa": -0.0101,
+        "repair_type_confusion_matrix": {
+          "none": {
+            "none": 160,
+            "retracted_wrong_commit": 1,
+            "qualified_earlier_certainty": 0
+          },
+          "retracted_wrong_commit": {
+            "none": 5,
+            "retracted_wrong_commit": 0,
+            "qualified_earlier_certainty": 0
+          },
+          "qualified_earlier_certainty": {
+            "none": 0,
+            "retracted_wrong_commit": 0,
+            "qualified_earlier_certainty": 0
+          }
+        }
+      }
+    },
+    "zai-org/GLM-Z1-9B-0414": {
+      "grading_rule_version": "exp2-part2-dual-llm-v1.3-input-blind",
+      "exp2_protocol_summary": {
+        "CONCAT": {
+          "n_problems": 100,
+          "n_trajectories": 300,
+          "structural_zero_E": true,
+          "Y": [
+            0.9367,
+            0.9367
+          ],
+          "E": [
+            0.0,
+            0.0
+          ],
+          "J": [
+            0.9367,
+            0.9367
+          ],
+          "Y_minus_J_eq_YE": [
+            0.0,
+            0.0
+          ],
+          "P_E1_given_Y1": [
+            0.0,
+            0.0
+          ],
+          "final_empty_trunc_rate": 0.0067,
+          "final_vis_trunc_rate": 0.0,
+          "final_non_trunc_empty_rate": 0.0,
+          "final_explicit_abstain_rate": [
+            0.0167,
+            0.0167
+          ],
+          "empty_truncated_turn_rate": 0.0067,
+          "vis_truncated_turn_rate": 0.0,
+          "non_trunc_empty_turn_rate": 0.0,
+          "mean_tokens_per_trajectory": 3345.9
+        },
+        "CONCAT_MATCHED": {
+          "n_problems": 100,
+          "n_trajectories": 300,
+          "structural_zero_E": true,
+          "Y": [
+            0.92,
+            0.92
+          ],
+          "E": [
+            0.0,
+            0.0
+          ],
+          "J": [
+            0.92,
+            0.92
+          ],
+          "Y_minus_J_eq_YE": [
+            0.0,
+            0.0
+          ],
+          "P_E1_given_Y1": [
+            0.0,
+            0.0
+          ],
+          "final_empty_trunc_rate": 0.0067,
+          "final_vis_trunc_rate": 0.0,
+          "final_non_trunc_empty_rate": 0.0,
+          "final_explicit_abstain_rate": [
+            0.0167,
+            0.0167
+          ],
+          "empty_truncated_turn_rate": 0.0067,
+          "vis_truncated_turn_rate": 0.0,
+          "non_trunc_empty_turn_rate": 0.0,
+          "mean_tokens_per_trajectory": 3289.9
+        },
+        "DYN_FREE": {
+          "n_problems": 100,
+          "n_trajectories": 300,
+          "structural_zero_E": false,
+          "Y": [
+            0.8733,
+            0.88
+          ],
+          "E": [
+            0.1767,
+            0.2133
+          ],
+          "J": [
+            0.7133,
+            0.74
+          ],
+          "Y_minus_J_eq_YE": [
+            0.1367,
+            0.1633
+          ],
+          "P_E1_given_Y1": [
+            0.1559,
+            0.1863
+          ],
+          "final_empty_trunc_rate": 0.0,
+          "final_vis_trunc_rate": 0.0,
+          "final_non_trunc_empty_rate": 0.0,
+          "final_explicit_abstain_rate": [
+            0.0333,
+            0.0367
+          ],
+          "empty_truncated_turn_rate": 0.0009,
+          "vis_truncated_turn_rate": 0.0,
+          "non_trunc_empty_turn_rate": 0.0,
+          "mean_tokens_per_trajectory": 10514.0
+        },
+        "DYN_REQUEST": {
+          "n_problems": 100,
+          "n_trajectories": 300,
+          "structural_zero_E": false,
+          "Y": [
+            0.8533,
+            0.86
+          ],
+          "E": [
+            0.15,
+            0.18
+          ],
+          "J": [
+            0.72,
+            0.74
+          ],
+          "Y_minus_J_eq_YE": [
+            0.1167,
+            0.1367
+          ],
+          "P_E1_given_Y1": [
+            0.1362,
+            0.1595
+          ],
+          "final_empty_trunc_rate": 0.01,
+          "final_vis_trunc_rate": 0.0,
+          "final_non_trunc_empty_rate": 0.0,
+          "final_explicit_abstain_rate": [
+            0.05,
+            0.05
+          ],
+          "empty_truncated_turn_rate": 0.0043,
+          "vis_truncated_turn_rate": 0.0,
+          "non_trunc_empty_turn_rate": 0.0,
+          "mean_tokens_per_trajectory": 9075.6
+        },
+        "DYN_REQUEST_GUARD": {
+          "n_problems": 100,
+          "n_trajectories": 300,
+          "structural_zero_E": false,
+          "Y": [
+            0.85,
+            0.8567
+          ],
+          "E": [
+            0.1433,
+            0.1667
+          ],
+          "J": [
+            0.7367,
+            0.7567
+          ],
+          "Y_minus_J_eq_YE": [
+            0.0967,
+            0.1167
+          ],
+          "P_E1_given_Y1": [
+            0.1133,
+            0.1367
+          ],
+          "final_empty_trunc_rate": 0.02,
+          "final_vis_trunc_rate": 0.0,
+          "final_non_trunc_empty_rate": 0.0,
+          "final_explicit_abstain_rate": [
+            0.0433,
+            0.0467
+          ],
+          "empty_truncated_turn_rate": 0.0069,
+          "vis_truncated_turn_rate": 0.0,
+          "non_trunc_empty_turn_rate": 0.0,
+          "mean_tokens_per_trajectory": 9401.0
+        },
+        "FULL": {
+          "n_problems": 100,
+          "n_trajectories": 300,
+          "structural_zero_E": true,
+          "Y": [
+            0.9433,
+            0.9467
+          ],
+          "E": [
+            0.0,
+            0.0
+          ],
+          "J": [
+            0.9433,
+            0.9467
+          ],
+          "Y_minus_J_eq_YE": [
+            0.0,
+            0.0
+          ],
+          "P_E1_given_Y1": [
+            0.0,
+            0.0
+          ],
+          "final_empty_trunc_rate": 0.0133,
+          "final_vis_trunc_rate": 0.0033,
+          "final_non_trunc_empty_rate": 0.0,
+          "final_explicit_abstain_rate": [
+            0.01,
+            0.01
+          ],
+          "empty_truncated_turn_rate": 0.0133,
+          "vis_truncated_turn_rate": 0.0033,
+          "non_trunc_empty_turn_rate": 0.0,
+          "mean_tokens_per_trajectory": 3617.3
+        }
+      },
+      "exp2_no_trunc_sensitivity": {
+        "CONCAT": {
+          "n_problems": 100,
+          "n_trajectories": 298,
+          "structural_zero_E": true,
+          "Y": [
+            0.9367,
+            0.9367
+          ],
+          "E": [
+            0.0,
+            0.0
+          ],
+          "J": [
+            0.9367,
+            0.9367
+          ]
+        },
+        "CONCAT_MATCHED": {
+          "n_problems": 100,
+          "n_trajectories": 298,
+          "structural_zero_E": true,
+          "Y": [
+            0.9233,
+            0.9233
+          ],
+          "E": [
+            0.0,
+            0.0
+          ],
+          "J": [
+            0.9233,
+            0.9233
+          ]
+        },
+        "DYN_FREE": {
+          "n_problems": 100,
+          "n_trajectories": 299,
+          "structural_zero_E": false,
+          "Y": [
+            0.8733,
+            0.88
+          ],
+          "E": [
+            0.1767,
+            0.2133
+          ],
+          "J": [
+            0.7133,
+            0.74
+          ]
+        },
+        "DYN_REQUEST": {
+          "n_problems": 100,
+          "n_trajectories": 295,
+          "structural_zero_E": false,
+          "Y": [
+            0.8567,
+            0.8633
+          ],
+          "E": [
+            0.155,
+            0.185
+          ],
+          "J": [
+            0.72,
+            0.74
+          ]
+        },
+        "DYN_REQUEST_GUARD": {
+          "n_problems": 100,
+          "n_trajectories": 292,
+          "structural_zero_E": false,
+          "Y": [
+            0.8667,
+            0.8733
+          ],
+          "E": [
+            0.1467,
+            0.1767
+          ],
+          "J": [
+            0.7383,
+            0.765
+          ]
+        },
+        "FULL": {
+          "n_problems": 100,
+          "n_trajectories": 295,
+          "structural_zero_E": true,
+          "Y": [
+            0.9583,
+            0.9617
+          ],
+          "E": [
+            0.0,
+            0.0
+          ],
+          "J": [
+            0.9583,
+            0.9617
+          ]
+        }
+      },
+      "exp2_contrasts": {
+        "FULL_minus_CONCAT_Y": {
+          "point_L": 0.0067,
+          "point_U": 0.01,
+          "env_lo": -0.0233,
+          "env_hi": 0.04,
+          "n_problems": 100,
+          "is_primary": true
+        },
+        "CONCAT_minus_CONCAT_MATCHED_Y": {
+          "point_L": 0.0167,
+          "point_U": 0.0167,
+          "env_lo": -0.0067,
+          "env_hi": 0.0433,
+          "n_problems": 100,
+          "is_primary": true
+        },
+        "CONCAT_MATCHED_minus_DYN_FREE_Y": {
+          "point_L": 0.04,
+          "point_U": 0.0467,
+          "env_lo": -0.0067,
+          "env_hi": 0.0933,
+          "n_problems": 100,
+          "is_primary": true
+        },
+        "CONCAT_minus_DYN_FREE_Y": {
+          "point_L": 0.0567,
+          "point_U": 0.0633,
+          "env_lo": 0.01,
+          "env_hi": 0.11,
+          "n_problems": 100,
+          "is_primary": false
+        },
+        "DYN_REQUEST_minus_DYN_FREE_Y": {
+          "point_L": -0.0267,
+          "point_U": -0.0133,
+          "env_lo": -0.07,
+          "env_hi": 0.03,
+          "n_problems": 100,
+          "is_primary": false
+        },
+        "DYN_REQUEST_minus_DYN_FREE_E": {
+          "point_L": -0.0633,
+          "point_U": 0.0033,
+          "env_lo": -0.1,
+          "env_hi": 0.0433,
+          "n_problems": 100,
+          "is_primary": true
+        },
+        "DYN_REQUEST_GUARD_minus_DYN_REQUEST_E": {
+          "point_L": -0.0367,
+          "point_U": 0.0167,
+          "env_lo": -0.08,
+          "env_hi": 0.06,
+          "n_problems": 100,
+          "is_primary": true
+        },
+        "DYN_REQUEST_GUARD_minus_DYN_REQUEST_J": {
+          "point_L": -0.0033,
+          "point_U": 0.0367,
+          "env_lo": -0.0533,
+          "env_hi": 0.09,
+          "n_problems": 100,
+          "is_primary": true
+        },
+        "DYN_REQUEST_GUARD_minus_DYN_REQUEST_Y": {
+          "point_L": -0.01,
+          "point_U": 0.0033,
+          "env_lo": -0.0467,
+          "env_hi": 0.04,
+          "n_problems": 100,
+          "is_primary": false
+        },
+        "CONCAT_minus_CONCAT_MATCHED_Y_permuted_only": {
+          "point_L": 0.01,
+          "point_U": 0.01,
+          "env_lo": -0.025,
+          "env_hi": 0.045,
+          "n_problems": 100,
+          "is_primary": true
+        }
+      },
+      "exp2_order_breakdown": {
+        "canonical": {
+          "CONCAT": {
+            "n_trajectories": 100,
+            "Y": [
+              0.93,
+              0.93
+            ],
+            "E": [
+              0.0,
+              0.0
+            ],
+            "J": [
+              0.93,
+              0.93
+            ]
+          },
+          "CONCAT_MATCHED": {
+            "n_trajectories": 100,
+            "Y": [
+              0.9,
+              0.9
+            ],
+            "E": [
+              0.0,
+              0.0
+            ],
+            "J": [
+              0.9,
+              0.9
+            ]
+          },
+          "DYN_FREE": {
+            "n_trajectories": 100,
+            "Y": [
+              0.86,
+              0.86
+            ],
+            "E": [
+              0.15,
+              0.2
+            ],
+            "J": [
+              0.74,
+              0.78
+            ]
+          },
+          "DYN_REQUEST": {
+            "n_trajectories": 100,
+            "Y": [
+              0.86,
+              0.87
+            ],
+            "E": [
+              0.14,
+              0.15
+            ],
+            "J": [
+              0.74,
+              0.76
+            ]
+          },
+          "DYN_REQUEST_GUARD": {
+            "n_trajectories": 100,
+            "Y": [
+              0.86,
+              0.87
+            ],
+            "E": [
+              0.14,
+              0.15
+            ],
+            "J": [
+              0.77,
+              0.78
+            ]
+          },
+          "FULL": {
+            "n_trajectories": 100,
+            "Y": [
+              0.93,
+              0.93
+            ],
+            "E": [
+              0.0,
+              0.0
+            ],
+            "J": [
+              0.93,
+              0.93
+            ]
+          }
+        },
+        "paired_permuted": {
+          "CONCAT": {
+            "n_trajectories": 200,
+            "Y": [
+              0.94,
+              0.94
+            ],
+            "E": [
+              0.0,
+              0.0
+            ],
+            "J": [
+              0.94,
+              0.94
+            ]
+          },
+          "CONCAT_MATCHED": {
+            "n_trajectories": 200,
+            "Y": [
+              0.93,
+              0.93
+            ],
+            "E": [
+              0.0,
+              0.0
+            ],
+            "J": [
+              0.93,
+              0.93
+            ]
+          },
+          "DYN_FREE": {
+            "n_trajectories": 200,
+            "Y": [
+              0.88,
+              0.89
+            ],
+            "E": [
+              0.19,
+              0.22
+            ],
+            "J": [
+              0.7,
+              0.72
+            ]
+          },
+          "DYN_REQUEST": {
+            "n_trajectories": 200,
+            "Y": [
+              0.85,
+              0.855
+            ],
+            "E": [
+              0.155,
+              0.195
+            ],
+            "J": [
+              0.71,
+              0.73
+            ]
+          },
+          "DYN_REQUEST_GUARD": {
+            "n_trajectories": 200,
+            "Y": [
+              0.845,
+              0.85
+            ],
+            "E": [
+              0.145,
+              0.175
+            ],
+            "J": [
+              0.72,
+              0.745
+            ]
+          },
+          "FULL": {
+            "n_trajectories": 200,
+            "Y": [
+              0.95,
+              0.955
+            ],
+            "E": [
+              0.0,
+              0.0
+            ],
+            "J": [
+              0.95,
+              0.955
+            ]
+          }
+        }
+      },
+      "exp3_nonfinal_scope": {
+        "DYN_FREE": {
+          "nonfinal_turns": 852,
+          "rates": {
+            "Wait": 0.5951,
+            "Conditional": 0.1326,
+            "Partial/Other": 0.0035,
+            "Commit": 0.081,
+            "Unresolved": 0.0223,
+            "NonCommit_Disagreed": 0.1643,
+            "EMPTY_TRUNCATED": 0.0012,
+            "NON_TRUNC_EMPTY": 0.0
+          },
+          "counts": {
+            "Wait": 507,
+            "Commit": 69,
+            "Conditional": 113,
+            "NonCommit_Disagreed": 140,
+            "Unresolved": 19,
+            "Partial/Other": 3,
+            "EMPTY_TRUNCATED": 1
+          }
+        },
+        "DYN_REQUEST": {
+          "nonfinal_turns": 852,
+          "rates": {
+            "Wait": 0.6995,
+            "Conditional": 0.0775,
+            "Partial/Other": 0.0035,
+            "Commit": 0.0739,
+            "Unresolved": 0.0164,
+            "NonCommit_Disagreed": 0.1268,
+            "EMPTY_TRUNCATED": 0.0023,
+            "NON_TRUNC_EMPTY": 0.0
+          },
+          "counts": {
+            "Wait": 596,
+            "NonCommit_Disagreed": 108,
+            "Conditional": 66,
+            "Commit": 63,
+            "Unresolved": 14,
+            "Partial/Other": 3,
+            "EMPTY_TRUNCATED": 2
+          }
+        },
+        "DYN_REQUEST_GUARD": {
+          "nonfinal_turns": 852,
+          "rates": {
+            "Wait": 0.696,
+            "Conditional": 0.081,
+            "Partial/Other": 0.0035,
+            "Commit": 0.0716,
+            "Unresolved": 0.0164,
+            "NonCommit_Disagreed": 0.1291,
+            "EMPTY_TRUNCATED": 0.0023,
+            "NON_TRUNC_EMPTY": 0.0
+          },
+          "counts": {
+            "Wait": 593,
+            "NonCommit_Disagreed": 110,
+            "Commit": 61,
+            "Conditional": 69,
+            "EMPTY_TRUNCATED": 2,
+            "Unresolved": 14,
+            "Partial/Other": 3
+          }
+        }
+      },
+      "exp3_explicit_repair": {
+        "DYN_FREE": {
+          "skipped": false,
+          "event_positive_L": 53,
+          "event_positive_U": 64,
+          "explicit_retracted_range": [
+            0,
+            1
+          ],
+          "confirmed_repair_rate": [
+            0.0,
+            0.0189
+          ],
+          "explicit_repair_rate": [
+            0.0,
+            0.0189
+          ],
+          "repair_given_Y1_rate": [
+            0.0,
+            0.0244
+          ],
+          "repair_types": {
+            "none": 63,
+            "Unresolved": 1
+          }
+        },
+        "DYN_REQUEST": {
+          "skipped": false,
+          "event_positive_L": 45,
+          "event_positive_U": 54,
+          "explicit_retracted_range": [
+            1,
+            3
+          ],
+          "confirmed_repair_rate": [
+            0.0222,
+            0.0667
+          ],
+          "explicit_repair_rate": [
+            0.0185,
+            0.0667
+          ],
+          "repair_given_Y1_rate": [
+            0.0,
+            0.0571
+          ],
+          "repair_types": {
+            "none": 51,
+            "Unresolved": 2,
+            "retracted_wrong_commit": 1
+          }
+        },
+        "DYN_REQUEST_GUARD": {
+          "skipped": false,
+          "event_positive_L": 43,
+          "event_positive_U": 50,
+          "explicit_retracted_range": [
+            0,
+            5
+          ],
+          "confirmed_repair_rate": [
+            0.0,
+            0.1163
+          ],
+          "explicit_repair_rate": [
+            0.0,
+            0.1163
+          ],
+          "repair_given_Y1_rate": [
+            0.0,
+            0.069
+          ],
+          "repair_types": {
+            "Unresolved": 5,
+            "none": 45
+          }
+        }
+      },
+      "exp3_commit_hazard": {
+        "DYN_FREE": {
+          "turn_1": {
+            "at_risk_range": [
+              300,
+              300
+            ],
+            "first_commit_range": [
+              13,
+              18
+            ],
+            "hazard_rate": [
+              0.0433,
+              0.06
+            ]
+          },
+          "turn_2": {
+            "at_risk_range": [
+              282,
+              287
+            ],
+            "first_commit_range": [
+              13,
+              19
+            ],
+            "hazard_rate": [
+              0.0456,
+              0.0669
+            ]
+          },
+          "turn_3": {
+            "at_risk_range": [
+              152,
+              152
+            ],
+            "first_commit_range": [
+              11,
+              14
+            ],
+            "hazard_rate": [
+              0.0724,
+              0.0921
+            ]
+          },
+          "turn_4": {
+            "at_risk_range": [
+              57,
+              58
+            ],
+            "first_commit_range": [
+              11,
+              14
+            ],
+            "hazard_rate": [
+              0.1897,
+              0.2414
+            ]
+          },
+          "turn_5": {
+            "at_risk_range": [
+              15,
+              16
+            ],
+            "first_commit_range": [
+              2,
+              3
+            ],
+            "hazard_rate": [
+              0.1333,
+              0.1875
+            ]
+          }
+        },
+        "DYN_REQUEST": {
+          "turn_1": {
+            "at_risk_range": [
+              300,
+              300
+            ],
+            "first_commit_range": [
+              12,
+              17
+            ],
+            "hazard_rate": [
+              0.04,
+              0.0567
+            ]
+          },
+          "turn_2": {
+            "at_risk_range": [
+              283,
+              288
+            ],
+            "first_commit_range": [
+              11,
+              15
+            ],
+            "hazard_rate": [
+              0.0382,
+              0.0526
+            ]
+          },
+          "turn_3": {
+            "at_risk_range": [
+              153,
+              157
+            ],
+            "first_commit_range": [
+              6,
+              9
+            ],
+            "hazard_rate": [
+              0.0385,
+              0.0584
+            ]
+          },
+          "turn_4": {
+            "at_risk_range": [
+              63,
+              64
+            ],
+            "first_commit_range": [
+              13,
+              15
+            ],
+            "hazard_rate": [
+              0.2031,
+              0.2344
+            ]
+          },
+          "turn_5": {
+            "at_risk_range": [
+              15,
+              15
+            ],
+            "first_commit_range": [
+              2,
+              2
+            ],
+            "hazard_rate": [
+              0.1333,
+              0.1333
+            ]
+          }
+        },
+        "DYN_REQUEST_GUARD": {
+          "turn_1": {
+            "at_risk_range": [
+              300,
+              300
+            ],
+            "first_commit_range": [
+              10,
+              11
+            ],
+            "hazard_rate": [
+              0.0333,
+              0.0367
+            ]
+          },
+          "turn_2": {
+            "at_risk_range": [
+              289,
+              290
+            ],
+            "first_commit_range": [
+              10,
+              16
+            ],
+            "hazard_rate": [
+              0.0346,
+              0.0552
+            ]
+          },
+          "turn_3": {
+            "at_risk_range": [
+              150,
+              154
+            ],
+            "first_commit_range": [
+              9,
+              14
+            ],
+            "hazard_rate": [
+              0.0588,
+              0.0915
+            ]
+          },
+          "turn_4": {
+            "at_risk_range": [
+              57,
+              59
+            ],
+            "first_commit_range": [
+              7,
+              10
+            ],
+            "hazard_rate": [
+              0.1207,
+              0.1724
+            ]
+          },
+          "turn_5": {
+            "at_risk_range": [
+              16,
+              17
+            ],
+            "first_commit_range": [
+              3,
+              5
+            ],
+            "hazard_rate": [
+              0.1875,
+              0.2941
+            ]
+          }
+        }
+      },
+      "exp3_mechanism_and_depth": {
+        "DYN_FREE": {
+          "TypeA_UniqueValue": {
+            "n_trajectories": 204,
+            "E": [
+              0.152,
+              0.1863
+            ],
+            "J": [
+              0.7598,
+              0.7941
+            ]
+          },
+          "TypeB_Extremum": {
+            "n_trajectories": 96,
+            "E": [
+              0.2292,
+              0.2708
+            ],
+            "J": [
+              0.6146,
+              0.625
+            ]
+          },
+          "k=3": {
+            "n_trajectories": 132,
+            "exploratory_only": false,
+            "E": [
+              0.0909,
+              0.1439
+            ],
+            "J": [
+              0.7727,
+              0.8258
+            ]
+          },
+          "k=4": {
+            "n_trajectories": 102,
+            "exploratory_only": false,
+            "E": [
+              0.1863,
+              0.2059
+            ],
+            "J": [
+              0.7745,
+              0.7843
+            ]
+          },
+          "k=5": {
+            "n_trajectories": 48,
+            "exploratory_only": false,
+            "E": [
+              0.3542,
+              0.3958
+            ],
+            "J": [
+              0.4167,
+              0.4167
+            ]
+          },
+          "k=6": {
+            "n_trajectories": 18,
+            "exploratory_only": true,
+            "E": [
+              0.2778,
+              0.2778
+            ],
+            "J": [
+              0.7222,
+              0.7222
+            ]
+          }
+        },
+        "DYN_REQUEST": {
+          "TypeA_UniqueValue": {
+            "n_trajectories": 204,
+            "E": [
+              0.1324,
+              0.1569
+            ],
+            "J": [
+              0.7696,
+              0.7843
+            ]
+          },
+          "TypeB_Extremum": {
+            "n_trajectories": 96,
+            "E": [
+              0.1875,
+              0.2292
+            ],
+            "J": [
+              0.6146,
+              0.6458
+            ]
+          },
+          "k=3": {
+            "n_trajectories": 132,
+            "exploratory_only": false,
+            "E": [
+              0.0909,
+              0.1136
+            ],
+            "J": [
+              0.8106,
+              0.8258
+            ]
+          },
+          "k=4": {
+            "n_trajectories": 102,
+            "exploratory_only": false,
+            "E": [
+              0.1569,
+              0.1961
+            ],
+            "J": [
+              0.7157,
+              0.7451
+            ]
+          },
+          "k=5": {
+            "n_trajectories": 48,
+            "exploratory_only": false,
+            "E": [
+              0.25,
+              0.2917
+            ],
+            "J": [
+              0.5,
+              0.5208
+            ]
+          },
+          "k=6": {
+            "n_trajectories": 18,
+            "exploratory_only": true,
+            "E": [
+              0.2778,
+              0.2778
+            ],
+            "J": [
+              0.6667,
+              0.6667
+            ]
+          }
+        },
+        "DYN_REQUEST_GUARD": {
+          "TypeA_UniqueValue": {
+            "n_trajectories": 204,
+            "E": [
+              0.1127,
+              0.1225
+            ],
+            "J": [
+              0.8088,
+              0.8137
+            ]
+          },
+          "TypeB_Extremum": {
+            "n_trajectories": 96,
+            "E": [
+              0.2083,
+              0.2604
+            ],
+            "J": [
+              0.5833,
+              0.6354
+            ]
+          },
+          "k=3": {
+            "n_trajectories": 132,
+            "exploratory_only": false,
+            "E": [
+              0.053,
+              0.0606
+            ],
+            "J": [
+              0.8636,
+              0.8712
+            ]
+          },
+          "k=4": {
+            "n_trajectories": 102,
+            "exploratory_only": false,
+            "E": [
+              0.1667,
+              0.1961
+            ],
+            "J": [
+              0.7059,
+              0.7353
+            ]
+          },
+          "k=5": {
+            "n_trajectories": 48,
+            "exploratory_only": false,
+            "E": [
+              0.2917,
+              0.3333
+            ],
+            "J": [
+              0.4792,
+              0.5208
+            ]
+          },
+          "k=6": {
+            "n_trajectories": 18,
+            "exploratory_only": true,
+            "E": [
+              0.2778,
+              0.3333
+            ],
+            "J": [
+              0.6667,
+              0.6667
+            ]
+          }
+        }
+      },
+      "exp4a_judge_calibration": {
+        "grading_rule_version": "exp2-part2-dual-llm-v1.3-input-blind",
+        "final_source_counts": {
+          "llm_dual_agree:1": 1613,
+          "llm_dual_agree:0": 163,
+          "empty_truncated": 17,
+          "llm_dual_disagree:1vs0": 7
+        },
+        "judge_failures": {
+          "final_primary_fail": 0,
+          "final_secondary_fail": 0,
+          "scope_primary_fail": 0,
+          "scope_secondary_fail": 0,
+          "repair_primary_fail": 0,
+          "repair_secondary_fail": 0
+        },
+        "dual_scope_pairs": 2551,
+        "dual_scope_agreement": 0.8412,
+        "dual_scope_category_kappa": 0.6299,
+        "dual_scope_kappa": 0.6299,
+        "scope_confusion_matrix": {
+          "Wait": {
+            "Wait": 1696,
+            "Conditional": 4,
+            "Partial/Other": 0,
+            "Commit": 2,
+            "Unresolved": 0
+          },
+          "Conditional": {
+            "Wait": 351,
+            "Conditional": 248,
+            "Partial/Other": 0,
+            "Commit": 10,
+            "Unresolved": 0
+          },
+          "Partial/Other": {
+            "Wait": 2,
+            "Conditional": 1,
+            "Partial/Other": 9,
+            "Commit": 0,
+            "Unresolved": 0
+          },
+          "Commit": {
+            "Wait": 8,
+            "Conditional": 23,
+            "Partial/Other": 4,
+            "Commit": 193,
+            "Unresolved": 0
+          },
+          "Unresolved": {
+            "Wait": 0,
+            "Conditional": 0,
+            "Partial/Other": 0,
+            "Commit": 0,
+            "Unresolved": 0
+          }
+        },
+        "dual_commit_pairs": 2551,
+        "dual_commit_agreement": 0.9816,
+        "dual_commit_kappa": 0.8814,
+        "commit_confusion_matrix": {
+          "Commit": {
+            "Commit": 193,
+            "NonCommit": 35
+          },
+          "NonCommit": {
+            "Commit": 12,
+            "NonCommit": 2311
+          }
+        },
+        "dual_final_pairs": 1783,
+        "dual_final_agreement": 0.9961,
+        "dual_final_kappa": 0.9768,
+        "final_confusion_matrix": {
+          "True": {
+            "True": 1613,
+            "False": 7
+          },
+          "False": {
+            "True": 0,
+            "False": 163
+          }
+        },
+        "dual_repair_pairs": 168,
+        "dual_repair_agreement": 0.9524,
+        "dual_repair_kappa": 0.1755,
+        "repair_confusion_matrix": {
+          "True": {
+            "True": 1,
+            "False": 4
+          },
+          "False": {
+            "True": 4,
+            "False": 159
+          }
+        },
+        "dual_repair_type_agreement": 0.9524,
+        "dual_repair_type_kappa": 0.1805,
+        "repair_type_confusion_matrix": {
+          "none": {
+            "none": 159,
+            "retracted_wrong_commit": 2,
+            "qualified_earlier_certainty": 2
+          },
+          "retracted_wrong_commit": {
+            "none": 4,
+            "retracted_wrong_commit": 1,
+            "qualified_earlier_certainty": 0
+          },
+          "qualified_earlier_certainty": {
+            "none": 0,
+            "retracted_wrong_commit": 0,
+            "qualified_earlier_certainty": 0
+          }
+        }
+      }
+    },
+    "Qwen/Qwen3-14B": {
+      "grading_rule_version": "exp2-part2-dual-llm-v1.3-input-blind",
+      "exp2_protocol_summary": {
+        "CONCAT": {
+          "n_problems": 100,
+          "n_trajectories": 300,
+          "structural_zero_E": true,
+          "Y": [
+            0.96,
+            0.96
+          ],
+          "E": [
+            0.0,
+            0.0
+          ],
+          "J": [
+            0.96,
+            0.96
+          ],
+          "Y_minus_J_eq_YE": [
+            0.0,
+            0.0
+          ],
+          "P_E1_given_Y1": [
+            0.0,
+            0.0
+          ],
+          "final_empty_trunc_rate": 0.02,
+          "final_vis_trunc_rate": 0.0,
+          "final_non_trunc_empty_rate": 0.0,
+          "final_explicit_abstain_rate": [
+            0.0033,
+            0.0033
+          ],
+          "empty_truncated_turn_rate": 0.02,
+          "vis_truncated_turn_rate": 0.0,
+          "non_trunc_empty_turn_rate": 0.0,
+          "mean_tokens_per_trajectory": 5022.3
+        },
+        "CONCAT_MATCHED": {
+          "n_problems": 100,
+          "n_trajectories": 300,
+          "structural_zero_E": true,
+          "Y": [
+            0.95,
+            0.95
+          ],
+          "E": [
+            0.0,
+            0.0
+          ],
+          "J": [
+            0.95,
+            0.95
+          ],
+          "Y_minus_J_eq_YE": [
+            0.0,
+            0.0
+          ],
+          "P_E1_given_Y1": [
+            0.0,
+            0.0
+          ],
+          "final_empty_trunc_rate": 0.0267,
+          "final_vis_trunc_rate": 0.0,
+          "final_non_trunc_empty_rate": 0.0,
+          "final_explicit_abstain_rate": [
+            0.0033,
+            0.0033
+          ],
+          "empty_truncated_turn_rate": 0.0267,
+          "vis_truncated_turn_rate": 0.0,
+          "non_trunc_empty_turn_rate": 0.0,
+          "mean_tokens_per_trajectory": 5133.6
+        },
+        "DYN_FREE": {
+          "n_problems": 100,
+          "n_trajectories": 300,
+          "structural_zero_E": false,
+          "Y": [
+            0.9167,
+            0.92
+          ],
+          "E": [
+            0.1433,
+            0.1933
+          ],
+          "J": [
+            0.7633,
+            0.81
+          ],
+          "Y_minus_J_eq_YE": [
+            0.11,
+            0.1567
+          ],
+          "P_E1_given_Y1": [
+            0.1196,
+            0.1703
+          ],
+          "final_empty_trunc_rate": 0.0067,
+          "final_vis_trunc_rate": 0.0033,
+          "final_non_trunc_empty_rate": 0.0,
+          "final_explicit_abstain_rate": [
+            0.0167,
+            0.0167
+          ],
+          "empty_truncated_turn_rate": 0.0043,
+          "vis_truncated_turn_rate": 0.0009,
+          "non_trunc_empty_turn_rate": 0.0,
+          "mean_tokens_per_trajectory": 13449.5
+        },
+        "DYN_REQUEST": {
+          "n_problems": 100,
+          "n_trajectories": 300,
+          "structural_zero_E": false,
+          "Y": [
+            0.9233,
+            0.9267
+          ],
+          "E": [
+            0.1467,
+            0.17
+          ],
+          "J": [
+            0.7967,
+            0.8133
+          ],
+          "Y_minus_J_eq_YE": [
+            0.1133,
+            0.1267
+          ],
+          "P_E1_given_Y1": [
+            0.1223,
+            0.1372
+          ],
+          "final_empty_trunc_rate": 0.0067,
+          "final_vis_trunc_rate": 0.0033,
+          "final_non_trunc_empty_rate": 0.0,
+          "final_explicit_abstain_rate": [
+            0.0,
+            0.0
+          ],
+          "empty_truncated_turn_rate": 0.0026,
+          "vis_truncated_turn_rate": 0.0009,
+          "non_trunc_empty_turn_rate": 0.0,
+          "mean_tokens_per_trajectory": 11179.9
+        },
+        "DYN_REQUEST_GUARD": {
+          "n_problems": 100,
+          "n_trajectories": 300,
+          "structural_zero_E": false,
+          "Y": [
+            0.9267,
+            0.9267
+          ],
+          "E": [
+            0.1267,
+            0.1533
+          ],
+          "J": [
+            0.8133,
+            0.8367
+          ],
+          "Y_minus_J_eq_YE": [
+            0.09,
+            0.1133
+          ],
+          "P_E1_given_Y1": [
+            0.0971,
+            0.1223
+          ],
+          "final_empty_trunc_rate": 0.0033,
+          "final_vis_trunc_rate": 0.0,
+          "final_non_trunc_empty_rate": 0.0,
+          "final_explicit_abstain_rate": [
+            0.0167,
+            0.02
+          ],
+          "empty_truncated_turn_rate": 0.0017,
+          "vis_truncated_turn_rate": 0.0,
+          "non_trunc_empty_turn_rate": 0.0,
+          "mean_tokens_per_trajectory": 10662.1
+        },
+        "FULL": {
+          "n_problems": 100,
+          "n_trajectories": 300,
+          "structural_zero_E": true,
+          "Y": [
+            0.97,
+            0.97
+          ],
+          "E": [
+            0.0,
+            0.0
+          ],
+          "J": [
+            0.97,
+            0.97
+          ],
+          "Y_minus_J_eq_YE": [
+            0.0,
+            0.0
+          ],
+          "P_E1_given_Y1": [
+            0.0,
+            0.0
+          ],
+          "final_empty_trunc_rate": 0.0167,
+          "final_vis_trunc_rate": 0.0033,
+          "final_non_trunc_empty_rate": 0.0,
+          "final_explicit_abstain_rate": [
+            0.0,
+            0.0
+          ],
+          "empty_truncated_turn_rate": 0.0167,
+          "vis_truncated_turn_rate": 0.0033,
+          "non_trunc_empty_turn_rate": 0.0,
+          "mean_tokens_per_trajectory": 5271.1
+        }
+      },
+      "exp2_no_trunc_sensitivity": {
+        "CONCAT": {
+          "n_problems": 99,
+          "n_trajectories": 294,
+          "structural_zero_E": true,
+          "Y": [
+            0.9798,
+            0.9798
+          ],
+          "E": [
+            0.0,
+            0.0
+          ],
+          "J": [
+            0.9798,
+            0.9798
+          ]
+        },
+        "CONCAT_MATCHED": {
+          "n_problems": 99,
+          "n_trajectories": 292,
+          "structural_zero_E": true,
+          "Y": [
+            0.9714,
+            0.9714
+          ],
+          "E": [
+            0.0,
+            0.0
+          ],
+          "J": [
+            0.9714,
+            0.9714
+          ]
+        },
+        "DYN_FREE": {
+          "n_problems": 99,
+          "n_trajectories": 294,
+          "structural_zero_E": false,
+          "Y": [
+            0.9276,
+            0.931
+          ],
+          "E": [
+            0.1414,
+            0.1919
+          ],
+          "J": [
+            0.7727,
+            0.8199
+          ]
+        },
+        "DYN_REQUEST": {
+          "n_problems": 100,
+          "n_trajectories": 296,
+          "structural_zero_E": false,
+          "Y": [
+            0.9283,
+            0.9317
+          ],
+          "E": [
+            0.1533,
+            0.1733
+          ],
+          "J": [
+            0.8,
+            0.8167
+          ]
+        },
+        "DYN_REQUEST_GUARD": {
+          "n_problems": 100,
+          "n_trajectories": 298,
+          "structural_zero_E": false,
+          "Y": [
+            0.9317,
+            0.9317
+          ],
+          "E": [
+            0.1233,
+            0.1517
+          ],
+          "J": [
+            0.815,
+            0.8383
+          ]
+        },
+        "FULL": {
+          "n_problems": 100,
+          "n_trajectories": 294,
+          "structural_zero_E": true,
+          "Y": [
+            0.9767,
+            0.9767
+          ],
+          "E": [
+            0.0,
+            0.0
+          ],
+          "J": [
+            0.9767,
+            0.9767
+          ]
+        }
+      },
+      "exp2_contrasts": {
+        "FULL_minus_CONCAT_Y": {
+          "point_L": 0.01,
+          "point_U": 0.01,
+          "env_lo": -0.01,
+          "env_hi": 0.0367,
+          "n_problems": 100,
+          "is_primary": true
+        },
+        "CONCAT_minus_CONCAT_MATCHED_Y": {
+          "point_L": 0.01,
+          "point_U": 0.01,
+          "env_lo": -0.0067,
+          "env_hi": 0.0267,
+          "n_problems": 100,
+          "is_primary": true
+        },
+        "CONCAT_MATCHED_minus_DYN_FREE_Y": {
+          "point_L": 0.03,
+          "point_U": 0.0333,
+          "env_lo": -0.0033,
+          "env_hi": 0.07,
+          "n_problems": 100,
+          "is_primary": true
+        },
+        "CONCAT_minus_DYN_FREE_Y": {
+          "point_L": 0.04,
+          "point_U": 0.0433,
+          "env_lo": 0.0033,
+          "env_hi": 0.0867,
+          "n_problems": 100,
+          "is_primary": false
+        },
+        "DYN_REQUEST_minus_DYN_FREE_Y": {
+          "point_L": 0.0033,
+          "point_U": 0.01,
+          "env_lo": -0.0267,
+          "env_hi": 0.0433,
+          "n_problems": 100,
+          "is_primary": false
+        },
+        "DYN_REQUEST_minus_DYN_FREE_E": {
+          "point_L": -0.0467,
+          "point_U": 0.0267,
+          "env_lo": -0.08,
+          "env_hi": 0.0567,
+          "n_problems": 100,
+          "is_primary": true
+        },
+        "DYN_REQUEST_GUARD_minus_DYN_REQUEST_E": {
+          "point_L": -0.0433,
+          "point_U": 0.0067,
+          "env_lo": -0.0767,
+          "env_hi": 0.0367,
+          "n_problems": 100,
+          "is_primary": true
+        },
+        "DYN_REQUEST_GUARD_minus_DYN_REQUEST_J": {
+          "point_L": 0.0,
+          "point_U": 0.04,
+          "env_lo": -0.04,
+          "env_hi": 0.08,
+          "n_problems": 100,
+          "is_primary": true
+        },
+        "DYN_REQUEST_GUARD_minus_DYN_REQUEST_Y": {
+          "point_L": 0.0,
+          "point_U": 0.0033,
+          "env_lo": -0.03,
+          "env_hi": 0.03,
+          "n_problems": 100,
+          "is_primary": false
+        },
+        "CONCAT_minus_CONCAT_MATCHED_Y_permuted_only": {
+          "point_L": 0.02,
+          "point_U": 0.02,
+          "env_lo": -0.01,
+          "env_hi": 0.05,
+          "n_problems": 100,
+          "is_primary": true
+        }
+      },
+      "exp2_order_breakdown": {
+        "canonical": {
+          "CONCAT": {
+            "n_trajectories": 100,
+            "Y": [
+              0.96,
+              0.96
+            ],
+            "E": [
+              0.0,
+              0.0
+            ],
+            "J": [
+              0.96,
+              0.96
+            ]
+          },
+          "CONCAT_MATCHED": {
+            "n_trajectories": 100,
+            "Y": [
+              0.97,
+              0.97
+            ],
+            "E": [
+              0.0,
+              0.0
+            ],
+            "J": [
+              0.97,
+              0.97
+            ]
+          },
+          "DYN_FREE": {
+            "n_trajectories": 100,
+            "Y": [
+              0.91,
+              0.91
+            ],
+            "E": [
+              0.13,
+              0.17
+            ],
+            "J": [
+              0.79,
+              0.82
+            ]
+          },
+          "DYN_REQUEST": {
+            "n_trajectories": 100,
+            "Y": [
+              0.91,
+              0.91
+            ],
+            "E": [
+              0.18,
+              0.2
+            ],
+            "J": [
+              0.77,
+              0.78
+            ]
+          },
+          "DYN_REQUEST_GUARD": {
+            "n_trajectories": 100,
+            "Y": [
+              0.93,
+              0.93
+            ],
+            "E": [
+              0.11,
+              0.14
+            ],
+            "J": [
+              0.83,
+              0.86
+            ]
+          },
+          "FULL": {
+            "n_trajectories": 100,
+            "Y": [
+              0.97,
+              0.97
+            ],
+            "E": [
+              0.0,
+              0.0
+            ],
+            "J": [
+              0.97,
+              0.97
+            ]
+          }
+        },
+        "paired_permuted": {
+          "CONCAT": {
+            "n_trajectories": 200,
+            "Y": [
+              0.96,
+              0.96
+            ],
+            "E": [
+              0.0,
+              0.0
+            ],
+            "J": [
+              0.96,
+              0.96
+            ]
+          },
+          "CONCAT_MATCHED": {
+            "n_trajectories": 200,
+            "Y": [
+              0.94,
+              0.94
+            ],
+            "E": [
+              0.0,
+              0.0
+            ],
+            "J": [
+              0.94,
+              0.94
+            ]
+          },
+          "DYN_FREE": {
+            "n_trajectories": 200,
+            "Y": [
+              0.92,
+              0.925
+            ],
+            "E": [
+              0.15,
+              0.205
+            ],
+            "J": [
+              0.75,
+              0.805
+            ]
+          },
+          "DYN_REQUEST": {
+            "n_trajectories": 200,
+            "Y": [
+              0.93,
+              0.935
+            ],
+            "E": [
+              0.13,
+              0.155
+            ],
+            "J": [
+              0.81,
+              0.83
+            ]
+          },
+          "DYN_REQUEST_GUARD": {
+            "n_trajectories": 200,
+            "Y": [
+              0.925,
+              0.925
+            ],
+            "E": [
+              0.135,
+              0.16
+            ],
+            "J": [
+              0.805,
+              0.825
+            ]
+          },
+          "FULL": {
+            "n_trajectories": 200,
+            "Y": [
+              0.97,
+              0.97
+            ],
+            "E": [
+              0.0,
+              0.0
+            ],
+            "J": [
+              0.97,
+              0.97
+            ]
+          }
+        }
+      },
+      "exp3_nonfinal_scope": {
+        "DYN_FREE": {
+          "nonfinal_turns": 852,
+          "rates": {
+            "Wait": 0.6538,
+            "Conditional": 0.1455,
+            "Partial/Other": 0.0035,
+            "Commit": 0.0657,
+            "Unresolved": 0.0305,
+            "NonCommit_Disagreed": 0.0974,
+            "EMPTY_TRUNCATED": 0.0035,
+            "NON_TRUNC_EMPTY": 0.0
+          },
+          "counts": {
+            "Wait": 557,
+            "Conditional": 124,
+            "NonCommit_Disagreed": 83,
+            "Commit": 56,
+            "Unresolved": 26,
+            "Partial/Other": 3,
+            "EMPTY_TRUNCATED": 3
+          }
+        },
+        "DYN_REQUEST": {
+          "nonfinal_turns": 852,
+          "rates": {
+            "Wait": 0.7289,
+            "Conditional": 0.0904,
+            "Partial/Other": 0.0047,
+            "Commit": 0.0657,
+            "Unresolved": 0.0141,
+            "NonCommit_Disagreed": 0.0951,
+            "EMPTY_TRUNCATED": 0.0012,
+            "NON_TRUNC_EMPTY": 0.0
+          },
+          "counts": {
+            "Wait": 621,
+            "NonCommit_Disagreed": 81,
+            "Conditional": 77,
+            "Commit": 56,
+            "Unresolved": 12,
+            "Partial/Other": 4,
+            "EMPTY_TRUNCATED": 1
+          }
+        },
+        "DYN_REQUEST_GUARD": {
+          "nonfinal_turns": 852,
+          "rates": {
+            "Wait": 0.7371,
+            "Conditional": 0.1021,
+            "Partial/Other": 0.0059,
+            "Commit": 0.0599,
+            "Unresolved": 0.0153,
+            "NonCommit_Disagreed": 0.0786,
+            "EMPTY_TRUNCATED": 0.0012,
+            "NON_TRUNC_EMPTY": 0.0
+          },
+          "counts": {
+            "Wait": 628,
+            "Commit": 51,
+            "Conditional": 87,
+            "NonCommit_Disagreed": 67,
+            "Unresolved": 13,
+            "Partial/Other": 5,
+            "EMPTY_TRUNCATED": 1
+          }
+        }
+      },
+      "exp3_explicit_repair": {
+        "DYN_FREE": {
+          "skipped": false,
+          "event_positive_L": 43,
+          "event_positive_U": 58,
+          "explicit_retracted_range": [
+            0,
+            1
+          ],
+          "confirmed_repair_rate": [
+            0.0,
+            0.0233
+          ],
+          "explicit_repair_rate": [
+            0.0,
+            0.0233
+          ],
+          "repair_given_Y1_rate": [
+            0.0,
+            0.0
+          ],
+          "repair_types": {
+            "none": 57,
+            "Unresolved": 1
+          }
+        },
+        "DYN_REQUEST": {
+          "skipped": false,
+          "event_positive_L": 44,
+          "event_positive_U": 51,
+          "explicit_retracted_range": [
+            2,
+            6
+          ],
+          "confirmed_repair_rate": [
+            0.0455,
+            0.1364
+          ],
+          "explicit_repair_rate": [
+            0.0392,
+            0.1364
+          ],
+          "repair_given_Y1_rate": [
+            0.0263,
+            0.1471
+          ],
+          "repair_types": {
+            "none": 45,
+            "Unresolved": 4,
+            "retracted_wrong_commit": 2
+          }
+        },
+        "DYN_REQUEST_GUARD": {
+          "skipped": false,
+          "event_positive_L": 38,
+          "event_positive_U": 46,
+          "explicit_retracted_range": [
+            1,
+            4
+          ],
+          "confirmed_repair_rate": [
+            0.0263,
+            0.0789
+          ],
+          "explicit_repair_rate": [
+            0.0217,
+            0.1026
+          ],
+          "repair_given_Y1_rate": [
+            0.0,
+            0.0714
+          ],
+          "repair_types": {
+            "none": 42,
+            "Unresolved": 3,
+            "retracted_wrong_commit": 1
+          }
+        }
+      },
+      "exp3_commit_hazard": {
+        "DYN_FREE": {
+          "turn_1": {
+            "at_risk_range": [
+              300,
+              300
+            ],
+            "first_commit_range": [
+              4,
+              7
+            ],
+            "hazard_rate": [
+              0.0133,
+              0.0233
+            ]
+          },
+          "turn_2": {
+            "at_risk_range": [
+              293,
+              296
+            ],
+            "first_commit_range": [
+              13,
+              21
+            ],
+            "hazard_rate": [
+              0.0441,
+              0.0714
+            ]
+          },
+          "turn_3": {
+            "at_risk_range": [
+              155,
+              158
+            ],
+            "first_commit_range": [
+              6,
+              17
+            ],
+            "hazard_rate": [
+              0.0387,
+              0.1076
+            ]
+          },
+          "turn_4": {
+            "at_risk_range": [
+              56,
+              61
+            ],
+            "first_commit_range": [
+              10,
+              16
+            ],
+            "hazard_rate": [
+              0.1724,
+              0.2667
+            ]
+          },
+          "turn_5": {
+            "at_risk_range": [
+              16,
+              17
+            ],
+            "first_commit_range": [
+              3,
+              5
+            ],
+            "hazard_rate": [
+              0.1765,
+              0.3125
+            ]
+          }
+        },
+        "DYN_REQUEST": {
+          "turn_1": {
+            "at_risk_range": [
+              300,
+              300
+            ],
+            "first_commit_range": [
+              3,
+              4
+            ],
+            "hazard_rate": [
+              0.01,
+              0.0133
+            ]
+          },
+          "turn_2": {
+            "at_risk_range": [
+              296,
+              297
+            ],
+            "first_commit_range": [
+              11,
+              15
+            ],
+            "hazard_rate": [
+              0.037,
+              0.0507
+            ]
+          },
+          "turn_3": {
+            "at_risk_range": [
+              159,
+              162
+            ],
+            "first_commit_range": [
+              9,
+              15
+            ],
+            "hazard_rate": [
+              0.0563,
+              0.0932
+            ]
+          },
+          "turn_4": {
+            "at_risk_range": [
+              58,
+              62
+            ],
+            "first_commit_range": [
+              13,
+              16
+            ],
+            "hazard_rate": [
+              0.2167,
+              0.2667
+            ]
+          },
+          "turn_5": {
+            "at_risk_range": [
+              16,
+              16
+            ],
+            "first_commit_range": [
+              4,
+              5
+            ],
+            "hazard_rate": [
+              0.25,
+              0.3125
+            ]
+          }
+        },
+        "DYN_REQUEST_GUARD": {
+          "turn_1": {
+            "at_risk_range": [
+              300,
+              300
+            ],
+            "first_commit_range": [
+              4,
+              5
+            ],
+            "hazard_rate": [
+              0.0133,
+              0.0167
+            ]
+          },
+          "turn_2": {
+            "at_risk_range": [
+              295,
+              296
+            ],
+            "first_commit_range": [
+              8,
+              13
+            ],
+            "hazard_rate": [
+              0.0271,
+              0.0439
+            ]
+          },
+          "turn_3": {
+            "at_risk_range": [
+              159,
+              161
+            ],
+            "first_commit_range": [
+              12,
+              17
+            ],
+            "hazard_rate": [
+              0.0745,
+              0.1062
+            ]
+          },
+          "turn_4": {
+            "at_risk_range": [
+              57,
+              61
+            ],
+            "first_commit_range": [
+              8,
+              11
+            ],
+            "hazard_rate": [
+              0.1356,
+              0.1864
+            ]
+          },
+          "turn_5": {
+            "at_risk_range": [
+              18,
+              18
+            ],
+            "first_commit_range": [
+              3,
+              4
+            ],
+            "hazard_rate": [
+              0.1667,
+              0.2222
+            ]
+          }
+        }
+      },
+      "exp3_mechanism_and_depth": {
+        "DYN_FREE": {
+          "TypeA_UniqueValue": {
+            "n_trajectories": 204,
+            "E": [
+              0.1078,
+              0.1667
+            ],
+            "J": [
+              0.8137,
+              0.8725
+            ]
+          },
+          "TypeB_Extremum": {
+            "n_trajectories": 96,
+            "E": [
+              0.2188,
+              0.25
+            ],
+            "J": [
+              0.6562,
+              0.6771
+            ]
+          },
+          "k=3": {
+            "n_trajectories": 132,
+            "exploratory_only": false,
+            "E": [
+              0.0606,
+              0.1061
+            ],
+            "J": [
+              0.8485,
+              0.8939
+            ]
+          },
+          "k=4": {
+            "n_trajectories": 102,
+            "exploratory_only": false,
+            "E": [
+              0.1373,
+              0.1667
+            ],
+            "J": [
+              0.8039,
+              0.8333
+            ]
+          },
+          "k=5": {
+            "n_trajectories": 48,
+            "exploratory_only": false,
+            "E": [
+              0.3542,
+              0.4167
+            ],
+            "J": [
+              0.5,
+              0.5417
+            ]
+          },
+          "k=6": {
+            "n_trajectories": 18,
+            "exploratory_only": true,
+            "E": [
+              0.2222,
+              0.3889
+            ],
+            "J": [
+              0.6111,
+              0.7778
+            ]
+          }
+        },
+        "DYN_REQUEST": {
+          "TypeA_UniqueValue": {
+            "n_trajectories": 204,
+            "E": [
+              0.1176,
+              0.1324
+            ],
+            "J": [
+              0.8578,
+              0.8775
+            ]
+          },
+          "TypeB_Extremum": {
+            "n_trajectories": 96,
+            "E": [
+              0.2083,
+              0.25
+            ],
+            "J": [
+              0.6667,
+              0.6771
+            ]
+          },
+          "k=3": {
+            "n_trajectories": 132,
+            "exploratory_only": false,
+            "E": [
+              0.0606,
+              0.0758
+            ],
+            "J": [
+              0.8939,
+              0.9015
+            ]
+          },
+          "k=4": {
+            "n_trajectories": 102,
+            "exploratory_only": false,
+            "E": [
+              0.1275,
+              0.1373
+            ],
+            "J": [
+              0.8627,
+              0.8725
+            ]
+          },
+          "k=5": {
+            "n_trajectories": 48,
+            "exploratory_only": false,
+            "E": [
+              0.3542,
+              0.4167
+            ],
+            "J": [
+              0.4792,
+              0.5
+            ]
+          },
+          "k=6": {
+            "n_trajectories": 18,
+            "exploratory_only": true,
+            "E": [
+              0.3333,
+              0.3889
+            ],
+            "J": [
+              0.5556,
+              0.6667
+            ]
+          }
+        },
+        "DYN_REQUEST_GUARD": {
+          "TypeA_UniqueValue": {
+            "n_trajectories": 204,
+            "E": [
+              0.0686,
+              0.0931
+            ],
+            "J": [
+              0.8873,
+              0.9118
+            ]
+          },
+          "TypeB_Extremum": {
+            "n_trajectories": 96,
+            "E": [
+              0.25,
+              0.2812
+            ],
+            "J": [
+              0.6562,
+              0.6771
+            ]
+          },
+          "k=3": {
+            "n_trajectories": 132,
+            "exploratory_only": false,
+            "E": [
+              0.0455,
+              0.0606
+            ],
+            "J": [
+              0.9091,
+              0.9242
+            ]
+          },
+          "k=4": {
+            "n_trajectories": 102,
+            "exploratory_only": false,
+            "E": [
+              0.1373,
+              0.1569
+            ],
+            "J": [
+              0.8137,
+              0.8333
+            ]
+          },
+          "k=5": {
+            "n_trajectories": 48,
+            "exploratory_only": false,
+            "E": [
+              0.3125,
+              0.375
+            ],
+            "J": [
+              0.5625,
+              0.6042
+            ]
+          },
+          "k=6": {
+            "n_trajectories": 18,
+            "exploratory_only": true,
+            "E": [
+              0.1667,
+              0.2222
+            ],
+            "J": [
+              0.7778,
+              0.8333
+            ]
+          }
+        }
+      },
+      "exp4a_judge_calibration": {
+        "grading_rule_version": "exp2-part2-dual-llm-v1.3-input-blind",
+        "final_source_counts": {
+          "llm_dual_agree:1": 1694,
+          "llm_dual_agree:0": 80,
+          "empty_truncated": 24,
+          "llm_dual_disagree:1vs0": 2
+        },
+        "judge_failures": {
+          "final_primary_fail": 0,
+          "final_secondary_fail": 0,
+          "scope_primary_fail": 0,
+          "scope_secondary_fail": 0,
+          "repair_primary_fail": 0,
+          "repair_secondary_fail": 0
+        },
+        "dual_scope_pairs": 2551,
+        "dual_scope_agreement": 0.8895,
+        "dual_scope_category_kappa": 0.7243,
+        "dual_scope_kappa": 0.7243,
+        "scope_confusion_matrix": {
+          "Wait": {
+            "Wait": 1806,
+            "Conditional": 2,
+            "Partial/Other": 1,
+            "Commit": 0,
+            "Unresolved": 0
+          },
+          "Conditional": {
+            "Wait": 228,
+            "Conditional": 288,
+            "Partial/Other": 0,
+            "Commit": 13,
+            "Unresolved": 0
+          },
+          "Partial/Other": {
+            "Wait": 0,
+            "Conditional": 0,
+            "Partial/Other": 12,
+            "Commit": 1,
+            "Unresolved": 0
+          },
+          "Commit": {
+            "Wait": 8,
+            "Conditional": 29,
+            "Partial/Other": 0,
+            "Commit": 163,
+            "Unresolved": 0
+          },
+          "Unresolved": {
+            "Wait": 0,
+            "Conditional": 0,
+            "Partial/Other": 0,
+            "Commit": 0,
+            "Unresolved": 0
+          }
+        },
+        "dual_commit_pairs": 2551,
+        "dual_commit_agreement": 0.98,
+        "dual_commit_kappa": 0.854,
+        "commit_confusion_matrix": {
+          "Commit": {
+            "Commit": 163,
+            "NonCommit": 37
+          },
+          "NonCommit": {
+            "Commit": 14,
+            "NonCommit": 2337
+          }
+        },
+        "dual_final_pairs": 1776,
+        "dual_final_agreement": 0.9989,
+        "dual_final_kappa": 0.9871,
+        "final_confusion_matrix": {
+          "True": {
+            "True": 1694,
+            "False": 2
+          },
+          "False": {
+            "True": 0,
+            "False": 80
+          }
+        },
+        "dual_repair_pairs": 155,
+        "dual_repair_agreement": 0.9484,
+        "dual_repair_kappa": 0.4015,
+        "repair_confusion_matrix": {
+          "True": {
+            "True": 3,
+            "False": 4
+          },
+          "False": {
+            "True": 4,
+            "False": 144
+          }
+        },
+        "dual_repair_type_agreement": 0.9484,
+        "dual_repair_type_kappa": 0.4015,
+        "repair_type_confusion_matrix": {
+          "none": {
+            "none": 144,
+            "retracted_wrong_commit": 4,
+            "qualified_earlier_certainty": 0
+          },
+          "retracted_wrong_commit": {
+            "none": 4,
+            "retracted_wrong_commit": 3,
+            "qualified_earlier_certainty": 0
+          },
+          "qualified_earlier_certainty": {
+            "none": 0,
+            "retracted_wrong_commit": 0,
+            "qualified_earlier_certainty": 0
+          }
+        }
+      }
+    }
+  }
+}

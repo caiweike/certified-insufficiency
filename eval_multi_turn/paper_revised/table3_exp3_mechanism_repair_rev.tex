@@ -1,0 +1,25 @@
+\begin{table*}[!t]
+\centering
+\caption{Non-final scope distribution (852 insufficient turns per cell; Dis./Oth.\ = non-commit judge disagreements, Partial/Other, Unresolved, and $<0.3\%$ empty truncations), regime-stratified $E$ and $Y{-}J$ ($[L,U]$, \%), and unprompted explicit retraction among $E_U{=}1$ trajectories (confirmed by both judges / flagged by either / $n$). Pooled retraction: $4/26/489$ ($0.8\%$--$5.3\%$).}
+\label{tab:exp3_mechanism}
+\footnotesize
+\setlength{\tabcolsep}{3.6pt}
+\renewcommand{\arraystretch}{0.96}
+\begin{tabular}{@{}llcccccccc@{}}
+\toprule
+Model & Protocol & Wait & Cond. & Commit & Dis./Oth. & \TA{} $E$ & \TA{} $Y{-}J$ & \TB{} $E$ & Retraction (both/any/$n$) \\
+\midrule
+\multirow{3}{*}{Qwen3-8B} & \pFREE & 63.6 & 14.3 & 8.5 & 13.6 & [13.2, 18.6] & [12.3, 16.7] & [25.0, 28.1] & 0 / 2 / 65 \\
+ & \pREQ & 73.9 & 8.9 & 6.8 & 10.3 & [10.3, 13.7] & [9.8, 13.2] & [20.8, 24.0] & 0 / 2 / 51 \\
+ & \pGRD & 77.3 & 6.3 & 6.2 & 10.1 & [9.3, 12.3] & [8.8, 11.8] & [21.9, 26.0] & 0 / 2 / 50 \\
+\midrule
+\multirow{3}{*}{GLM-Z1-9B} & \pFREE & 59.5 & 13.3 & 8.1 & 19.1 & [15.2, 18.6] & [13.7, 17.2] & [22.9, 27.1] & 0 / 1 / 64 \\
+ & \pREQ & 70.0 & 7.7 & 7.4 & 14.9 & [13.2, 15.7] & [12.3, 14.2] & [18.8, 22.9] & 1 / 3 / 54 \\
+ & \pGRD & 69.6 & 8.1 & 7.2 & 15.1 & [11.3, 12.3] & [9.8, 10.8] & [20.8, 26.0] & 0 / 5 / 50 \\
+\midrule
+\multirow{3}{*}{Qwen3-14B} & \pFREE & 65.4 & 14.6 & 6.6 & 13.5 & [10.8, 16.7] & [9.3, 15.2] & [21.9, 25.0] & 0 / 1 / 58 \\
+ & \pREQ & 72.9 & 9.0 & 6.6 & 11.5 & [11.8, 13.2] & [11.3, 12.7] & [20.8, 25.0] & 2 / 6 / 51 \\
+ & \pGRD & 73.7 & 10.2 & 6.0 & 10.1 & [6.9, 9.3] & [6.4, 8.8] & [25.0, 28.1] & 1 / 4 / 46 \\
+\bottomrule
+\end{tabular}
+\end{table*}

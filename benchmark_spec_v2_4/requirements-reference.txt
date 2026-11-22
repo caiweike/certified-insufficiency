@@ -1,0 +1,2 @@
+# Observed reference environment: CPython 3.11.9 on Windows.
+pyarrow==19.0.1

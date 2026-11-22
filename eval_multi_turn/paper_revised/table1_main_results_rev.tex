@@ -1,0 +1,35 @@
+\begin{table*}[!t]
+\centering
+\caption{Main results on \textsc{Test}~100 (100 problems $\times$ 3 reps = 300 trajectories per cell). $[L,U]$: dual-judge bounds (single value when $L{=}U$). $Y$: final accuracy; $E$: premature commitment on insufficient turns; $J{=}Y(1{-}E)$; $Y{-}J$: finally correct trajectories that committed prematurely.}
+\label{tab:main_results}
+\footnotesize
+\setlength{\tabcolsep}{4.0pt}
+\renewcommand{\arraystretch}{0.94}
+\begin{tabular}{@{}llcccccccc@{}}
+\toprule
+Model & Protocol & $Y$ (\%) & $E$ (\%) & $J$ (\%) & $Y-J$ (\%) & $P(E{=}1\mid Y{=}1)$ & Abstain (\%) & Trunc. (\%) & Tok./Traj \\
+\midrule
+\multirow{6}{*}{Qwen3-8B} & \pFULL & 94.0 & 0.0$^*$ & 94.0 & 0.0 & 0.0 & 0.3 & 3.3 & 4,959 \\
+ & \pCON & 94.7 & 0.0$^*$ & 94.7 & 0.0 & 0.0 & [0.3, 0.7] & 3.0 & 4,956 \\
+ & \pCONM & 93.7 & 0.0$^*$ & 93.7 & 0.0 & 0.0 & 0.3 & 3.0 & 4,931 \\
+ & \pFREE & 87.7 & [17.0, 21.7] & [72.7, 76.7] & [11.0, 15.0] & [12.6, 17.1] & 0.7 & 1.7 & 12,875 \\
+ & \pREQ & [85.3, 86.3] & [13.7, 17.0] & [74.0, 77.7] & [8.7, 11.7] & [10.0, 13.6] & 2.0 & 2.0 & 10,713 \\
+ & \pGRD & [86.7, 87.0] & [13.3, 16.7] & [75.3, 79.0] & [8.0, 11.3] & [9.2, 13.1] & [2.0, 2.3] & 1.3 & 10,301 \\
+\midrule
+\multirow{6}{*}{GLM-Z1-9B} & \pFULL & [94.3, 94.7] & 0.0$^*$ & [94.3, 94.7] & 0.0 & 0.0 & 1.0 & 1.7 & 3,617 \\
+ & \pCON & 93.7 & 0.0$^*$ & 93.7 & 0.0 & 0.0 & 1.7 & 0.7 & 3,346 \\
+ & \pCONM & 92.0 & 0.0$^*$ & 92.0 & 0.0 & 0.0 & 1.7 & 0.7 & 3,290 \\
+ & \pFREE & [87.3, 88.0] & [17.7, 21.3] & [71.3, 74.0] & [13.7, 16.3] & [15.6, 18.6] & [3.3, 3.7] & 0.3 & 10,514 \\
+ & \pREQ & [85.3, 86.0] & [15.0, 18.0] & [72.0, 74.0] & [11.7, 13.7] & [13.6, 16.0] & 5.0 & 1.7 & 9,076 \\
+ & \pGRD & [85.0, 85.7] & [14.3, 16.7] & [73.7, 75.7] & [9.7, 11.7] & [11.3, 13.7] & [4.3, 4.7] & 2.7 & 9,401 \\
+\midrule
+\multirow{6}{*}{Qwen3-14B} & \pFULL & 97.0 & 0.0$^*$ & 97.0 & 0.0 & 0.0 & 0.0 & 2.0 & 5,271 \\
+ & \pCON & 96.0 & 0.0$^*$ & 96.0 & 0.0 & 0.0 & 0.3 & 2.0 & 5,022 \\
+ & \pCONM & 95.0 & 0.0$^*$ & 95.0 & 0.0 & 0.0 & 0.3 & 2.7 & 5,134 \\
+ & \pFREE & [91.7, 92.0] & [14.3, 19.3] & [76.3, 81.0] & [11.0, 15.7] & [12.0, 17.0] & 1.7 & 2.0 & 13,450 \\
+ & \pREQ & [92.3, 92.7] & [14.7, 17.0] & [79.7, 81.3] & [11.3, 12.7] & [12.2, 13.7] & 0.0 & 1.3 & 11,180 \\
+ & \pGRD & 92.7 & [12.7, 15.3] & [81.3, 83.7] & [9.0, 11.3] & [9.7, 12.2] & [1.7, 2.0] & 0.7 & 10,662 \\
+\bottomrule
+\multicolumn{10}{@{}l}{\scriptsize $^*$Single-turn controls have no insufficient intermediate turns ($E\equiv 0$ structurally, hence $J\equiv Y$).}
+\end{tabular}
+\end{table*}

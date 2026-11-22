@@ -1,0 +1,8 @@
+numpy
+pandas
+matplotlib
+sympy  # tested with sympy==1.14.0
+openai
+pyarrow
+huggingface_hub
+# rollouts only (GPU): vllm==0.34.0  torch==2.14.0 (CUDA 13.0)

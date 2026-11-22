@@ -1,0 +1,558 @@
+{
+  "dev20_16k_audit": [
+    {
+      "name": "dev20_qwen3_8b_16384",
+      "model_id": "Qwen/Qwen3-8B",
+      "gpu_name": "NVIDIA A100-SXM4-80GB",
+      "vram_gib": 79.25,
+      "hf_model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "max_tokens": 16384,
+      "max_model_len": 32768,
+      "empty_history_mode": "empty",
+      "elapsed_sec": 865.74,
+      "trajectories": 100,
+      "total_turns": 202,
+      "empty_truncated_turns": 2,
+      "empty_truncated_by_protocol": {
+        "FULL": 0,
+        "CONCAT": 0,
+        "CONCAT_MATCHED": 1,
+        "DYN_FREE": 1,
+        "DYN_REQUEST": 0
+      },
+      "final_empty_truncated_by_protocol": {
+        "FULL": 0,
+        "CONCAT": 0,
+        "CONCAT_MATCHED": 1,
+        "DYN_FREE": 0,
+        "DYN_REQUEST": 0
+      },
+      "budget_clamped_turns": 0,
+      "nonfinal_dynamic_turns_total": 102,
+      "nonfinal_dynamic_turns_to_judge": 101,
+      "ambiguous_final_turns_to_judge": 15,
+      "sympy_status_counts": {
+        "CORRECT": 72,
+        "AMBIGUOUS_NEED_LLM": 15,
+        "INCORRECT_EXACT": 12,
+        "INCORRECT_ABSTAIN": 1
+      },
+      "sympy_status_by_protocol": {
+        "FULL": {
+          "CORRECT": 16,
+          "AMBIGUOUS_NEED_LLM": 3,
+          "INCORRECT_EXACT": 1
+        },
+        "CONCAT": {
+          "AMBIGUOUS_NEED_LLM": 3,
+          "CORRECT": 15,
+          "INCORRECT_EXACT": 2
+        },
+        "CONCAT_MATCHED": {
+          "CORRECT": 16,
+          "INCORRECT_EXACT": 2,
+          "INCORRECT_ABSTAIN": 1,
+          "AMBIGUOUS_NEED_LLM": 1
+        },
+        "DYN_FREE": {
+          "CORRECT": 13,
+          "INCORRECT_EXACT": 4,
+          "AMBIGUOUS_NEED_LLM": 3
+        },
+        "DYN_REQUEST": {
+          "CORRECT": 12,
+          "INCORRECT_EXACT": 3,
+          "AMBIGUOUS_NEED_LLM": 5
+        }
+      },
+      "pre_llm_y_bounds_by_protocol": {
+        "FULL": [
+          0.8,
+          0.95
+        ],
+        "CONCAT": [
+          0.75,
+          0.9
+        ],
+        "CONCAT_MATCHED": [
+          0.8,
+          0.85
+        ],
+        "DYN_FREE": [
+          0.65,
+          0.8
+        ],
+        "DYN_REQUEST": [
+          0.6,
+          0.85
+        ]
+      }
+    },
+    {
+      "name": "dev20_glm_z1_9b_0414_16384",
+      "model_id": "zai-org/GLM-Z1-9B-0414",
+      "gpu_name": "NVIDIA A100-SXM4-80GB",
+      "vram_gib": 79.25,
+      "hf_model_revision": "b221b06fefb23ca320922cf6e68ab5f2fb82de81",
+      "max_tokens": 16384,
+      "max_model_len": 32768,
+      "empty_history_mode": "empty",
+      "elapsed_sec": 638.93,
+      "trajectories": 100,
+      "total_turns": 202,
+      "empty_truncated_turns": 1,
+      "empty_truncated_by_protocol": {
+        "FULL": 0,
+        "CONCAT": 0,
+        "CONCAT_MATCHED": 0,
+        "DYN_FREE": 1,
+        "DYN_REQUEST": 0
+      },
+      "final_empty_truncated_by_protocol": {
+        "FULL": 0,
+        "CONCAT": 0,
+        "CONCAT_MATCHED": 0,
+        "DYN_FREE": 1,
+        "DYN_REQUEST": 0
+      },
+      "budget_clamped_turns": 0,
+      "nonfinal_dynamic_turns_total": 102,
+      "nonfinal_dynamic_turns_to_judge": 102,
+      "ambiguous_final_turns_to_judge": 24,
+      "sympy_status_counts": {
+        "CORRECT": 60,
+        "AMBIGUOUS_NEED_LLM": 24,
+        "INCORRECT_EXACT": 15,
+        "INCORRECT_ABSTAIN": 1
+      },
+      "sympy_status_by_protocol": {
+        "FULL": {
+          "CORRECT": 15,
+          "INCORRECT_EXACT": 3,
+          "AMBIGUOUS_NEED_LLM": 2
+        },
+        "CONCAT": {
+          "AMBIGUOUS_NEED_LLM": 4,
+          "INCORRECT_EXACT": 3,
+          "CORRECT": 13
+        },
+        "CONCAT_MATCHED": {
+          "CORRECT": 15,
+          "INCORRECT_EXACT": 3,
+          "AMBIGUOUS_NEED_LLM": 2
+        },
+        "DYN_FREE": {
+          "CORRECT": 9,
+          "AMBIGUOUS_NEED_LLM": 8,
+          "INCORRECT_EXACT": 2,
+          "INCORRECT_ABSTAIN": 1
+        },
+        "DYN_REQUEST": {
+          "CORRECT": 8,
+          "AMBIGUOUS_NEED_LLM": 8,
+          "INCORRECT_EXACT": 4
+        }
+      },
+      "pre_llm_y_bounds_by_protocol": {
+        "FULL": [
+          0.75,
+          0.85
+        ],
+        "CONCAT": [
+          0.65,
+          0.85
+        ],
+        "CONCAT_MATCHED": [
+          0.75,
+          0.85
+        ],
+        "DYN_FREE": [
+          0.45,
+          0.85
+        ],
+        "DYN_REQUEST": [
+          0.4,
+          0.8
+        ]
+      }
+    },
+    {
+      "name": "dev20_qwen3_14b_16384",
+      "model_id": "Qwen/Qwen3-14B",
+      "gpu_name": "NVIDIA A100-SXM4-80GB",
+      "vram_gib": 79.25,
+      "hf_model_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "max_tokens": 16384,
+      "max_model_len": 32768,
+      "empty_history_mode": "empty",
+      "elapsed_sec": 1351.92,
+      "trajectories": 100,
+      "total_turns": 202,
+      "empty_truncated_turns": 1,
+      "empty_truncated_by_protocol": {
+        "FULL": 0,
+        "CONCAT": 0,
+        "CONCAT_MATCHED": 0,
+        "DYN_FREE": 1,
+        "DYN_REQUEST": 0
+      },
+      "final_empty_truncated_by_protocol": {
+        "FULL": 0,
+        "CONCAT": 0,
+        "CONCAT_MATCHED": 0,
+        "DYN_FREE": 1,
+        "DYN_REQUEST": 0
+      },
+      "budget_clamped_turns": 0,
+      "nonfinal_dynamic_turns_total": 102,
+      "nonfinal_dynamic_turns_to_judge": 102,
+      "ambiguous_final_turns_to_judge": 45,
+      "sympy_status_counts": {
+        "AMBIGUOUS_NEED_LLM": 45,
+        "CORRECT": 47,
+        "INCORRECT_EXACT": 7,
+        "INCORRECT_ABSTAIN": 1
+      },
+      "sympy_status_by_protocol": {
+        "FULL": {
+          "AMBIGUOUS_NEED_LLM": 7,
+          "CORRECT": 12,
+          "INCORRECT_EXACT": 1
+        },
+        "CONCAT": {
+          "AMBIGUOUS_NEED_LLM": 11,
+          "CORRECT": 8,
+          "INCORRECT_EXACT": 1
+        },
+        "CONCAT_MATCHED": {
+          "AMBIGUOUS_NEED_LLM": 10,
+          "CORRECT": 8,
+          "INCORRECT_EXACT": 2
+        },
+        "DYN_FREE": {
+          "CORRECT": 7,
+          "AMBIGUOUS_NEED_LLM": 10,
+          "INCORRECT_EXACT": 2,
+          "INCORRECT_ABSTAIN": 1
+        },
+        "DYN_REQUEST": {
+          "CORRECT": 12,
+          "AMBIGUOUS_NEED_LLM": 7,
+          "INCORRECT_EXACT": 1
+        }
+      },
+      "pre_llm_y_bounds_by_protocol": {
+        "FULL": [
+          0.6,
+          0.95
+        ],
+        "CONCAT": [
+          0.4,
+          0.95
+        ],
+        "CONCAT_MATCHED": [
+          0.4,
+          0.9
+        ],
+        "DYN_FREE": [
+          0.35,
+          0.85
+        ],
+        "DYN_REQUEST": [
+          0.6,
+          0.95
+        ]
+      }
+    }
+  ],
+  "test100_16k_audit": [
+    {
+      "name": "test100_qwen3_8b_16384",
+      "model_id": "Qwen/Qwen3-8B",
+      "gpu_name": "NVIDIA A100-SXM4-80GB",
+      "vram_gib": 79.25,
+      "hf_model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "max_tokens": 16384,
+      "max_model_len": 32768,
+      "empty_history_mode": "empty",
+      "elapsed_sec": 0.0,
+      "trajectories": 1500,
+      "total_turns": 3204,
+      "empty_truncated_turns": 32,
+      "empty_truncated_by_protocol": {
+        "FULL": 7,
+        "CONCAT": 8,
+        "CONCAT_MATCHED": 7,
+        "DYN_FREE": 4,
+        "DYN_REQUEST": 6
+      },
+      "final_empty_truncated_by_protocol": {
+        "FULL": 7,
+        "CONCAT": 8,
+        "CONCAT_MATCHED": 7,
+        "DYN_FREE": 2,
+        "DYN_REQUEST": 5
+      },
+      "budget_clamped_turns": 0,
+      "nonfinal_dynamic_turns_total": 1704,
+      "nonfinal_dynamic_turns_to_judge": 1701,
+      "ambiguous_final_turns_to_judge": 214,
+      "sympy_status_counts": {
+        "CORRECT": 1189,
+        "AMBIGUOUS_NEED_LLM": 214,
+        "INCORRECT_EXACT": 63,
+        "INCORRECT_ABSTAIN": 34
+      },
+      "sympy_status_by_protocol": {
+        "FULL": {
+          "CORRECT": 250,
+          "AMBIGUOUS_NEED_LLM": 36,
+          "INCORRECT_EXACT": 6,
+          "INCORRECT_ABSTAIN": 8
+        },
+        "CONCAT": {
+          "CORRECT": 242,
+          "AMBIGUOUS_NEED_LLM": 45,
+          "INCORRECT_EXACT": 5,
+          "INCORRECT_ABSTAIN": 8
+        },
+        "CONCAT_MATCHED": {
+          "CORRECT": 243,
+          "AMBIGUOUS_NEED_LLM": 44,
+          "INCORRECT_EXACT": 5,
+          "INCORRECT_ABSTAIN": 8
+        },
+        "DYN_FREE": {
+          "CORRECT": 228,
+          "AMBIGUOUS_NEED_LLM": 45,
+          "INCORRECT_EXACT": 24,
+          "INCORRECT_ABSTAIN": 3
+        },
+        "DYN_REQUEST": {
+          "CORRECT": 226,
+          "AMBIGUOUS_NEED_LLM": 44,
+          "INCORRECT_EXACT": 23,
+          "INCORRECT_ABSTAIN": 7
+        }
+      },
+      "pre_llm_y_bounds_by_protocol": {
+        "FULL": [
+          0.8333,
+          0.9533
+        ],
+        "CONCAT": [
+          0.8067,
+          0.9567
+        ],
+        "CONCAT_MATCHED": [
+          0.81,
+          0.9567
+        ],
+        "DYN_FREE": [
+          0.76,
+          0.91
+        ],
+        "DYN_REQUEST": [
+          0.7533,
+          0.9
+        ]
+      }
+    },
+    {
+      "name": "test100_glm_z1_9b_0414_16384",
+      "model_id": "zai-org/GLM-Z1-9B-0414",
+      "gpu_name": "NVIDIA A100-SXM4-80GB",
+      "vram_gib": 79.25,
+      "hf_model_revision": "b221b06fefb23ca320922cf6e68ab5f2fb82de81",
+      "max_tokens": 16384,
+      "max_model_len": 32768,
+      "empty_history_mode": "empty",
+      "elapsed_sec": 0.0,
+      "trajectories": 1500,
+      "total_turns": 3204,
+      "empty_truncated_turns": 14,
+      "empty_truncated_by_protocol": {
+        "FULL": 4,
+        "CONCAT": 2,
+        "CONCAT_MATCHED": 2,
+        "DYN_FREE": 1,
+        "DYN_REQUEST": 5
+      },
+      "final_empty_truncated_by_protocol": {
+        "FULL": 4,
+        "CONCAT": 2,
+        "CONCAT_MATCHED": 2,
+        "DYN_FREE": 0,
+        "DYN_REQUEST": 3
+      },
+      "budget_clamped_turns": 0,
+      "nonfinal_dynamic_turns_total": 1704,
+      "nonfinal_dynamic_turns_to_judge": 1701,
+      "ambiguous_final_turns_to_judge": 401,
+      "sympy_status_counts": {
+        "CORRECT": 1012,
+        "AMBIGUOUS_NEED_LLM": 401,
+        "INCORRECT_ABSTAIN": 27,
+        "INCORRECT_EXACT": 60
+      },
+      "sympy_status_by_protocol": {
+        "FULL": {
+          "CORRECT": 243,
+          "AMBIGUOUS_NEED_LLM": 46,
+          "INCORRECT_ABSTAIN": 6,
+          "INCORRECT_EXACT": 5
+        },
+        "CONCAT": {
+          "AMBIGUOUS_NEED_LLM": 55,
+          "CORRECT": 229,
+          "INCORRECT_EXACT": 11,
+          "INCORRECT_ABSTAIN": 5
+        },
+        "CONCAT_MATCHED": {
+          "CORRECT": 223,
+          "AMBIGUOUS_NEED_LLM": 55,
+          "INCORRECT_ABSTAIN": 6,
+          "INCORRECT_EXACT": 16
+        },
+        "DYN_FREE": {
+          "CORRECT": 163,
+          "AMBIGUOUS_NEED_LLM": 116,
+          "INCORRECT_ABSTAIN": 4,
+          "INCORRECT_EXACT": 17
+        },
+        "DYN_REQUEST": {
+          "AMBIGUOUS_NEED_LLM": 129,
+          "CORRECT": 154,
+          "INCORRECT_EXACT": 11,
+          "INCORRECT_ABSTAIN": 6
+        }
+      },
+      "pre_llm_y_bounds_by_protocol": {
+        "FULL": [
+          0.81,
+          0.9633
+        ],
+        "CONCAT": [
+          0.7633,
+          0.9467
+        ],
+        "CONCAT_MATCHED": [
+          0.7433,
+          0.9267
+        ],
+        "DYN_FREE": [
+          0.5433,
+          0.93
+        ],
+        "DYN_REQUEST": [
+          0.5133,
+          0.9433
+        ]
+      }
+    },
+    {
+      "name": "test100_qwen3_14b_16384",
+      "model_id": "Qwen/Qwen3-14B",
+      "gpu_name": "NVIDIA A100-SXM4-80GB",
+      "vram_gib": 79.25,
+      "hf_model_revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "max_tokens": 16384,
+      "max_model_len": 32768,
+      "empty_history_mode": "empty",
+      "elapsed_sec": 9500.63,
+      "trajectories": 1500,
+      "total_turns": 3204,
+      "empty_truncated_turns": 27,
+      "empty_truncated_by_protocol": {
+        "FULL": 5,
+        "CONCAT": 6,
+        "CONCAT_MATCHED": 8,
+        "DYN_FREE": 5,
+        "DYN_REQUEST": 3
+      },
+      "final_empty_truncated_by_protocol": {
+        "FULL": 5,
+        "CONCAT": 6,
+        "CONCAT_MATCHED": 8,
+        "DYN_FREE": 2,
+        "DYN_REQUEST": 2
+      },
+      "budget_clamped_turns": 0,
+      "nonfinal_dynamic_turns_total": 1704,
+      "nonfinal_dynamic_turns_to_judge": 1700,
+      "ambiguous_final_turns_to_judge": 594,
+      "sympy_status_counts": {
+        "CORRECT": 853,
+        "AMBIGUOUS_NEED_LLM": 594,
+        "INCORRECT_EXACT": 30,
+        "INCORRECT_ABSTAIN": 23
+      },
+      "sympy_status_by_protocol": {
+        "FULL": {
+          "CORRECT": 191,
+          "AMBIGUOUS_NEED_LLM": 102,
+          "INCORRECT_EXACT": 2,
+          "INCORRECT_ABSTAIN": 5
+        },
+        "CONCAT": {
+          "AMBIGUOUS_NEED_LLM": 116,
+          "CORRECT": 174,
+          "INCORRECT_EXACT": 4,
+          "INCORRECT_ABSTAIN": 6
+        },
+        "CONCAT_MATCHED": {
+          "CORRECT": 175,
+          "AMBIGUOUS_NEED_LLM": 111,
+          "INCORRECT_ABSTAIN": 8,
+          "INCORRECT_EXACT": 6
+        },
+        "DYN_FREE": {
+          "CORRECT": 148,
+          "AMBIGUOUS_NEED_LLM": 143,
+          "INCORRECT_EXACT": 7,
+          "INCORRECT_ABSTAIN": 2
+        },
+        "DYN_REQUEST": {
+          "AMBIGUOUS_NEED_LLM": 122,
+          "CORRECT": 165,
+          "INCORRECT_EXACT": 11,
+          "INCORRECT_ABSTAIN": 2
+        }
+      },
+      "pre_llm_y_bounds_by_protocol": {
+        "FULL": [
+          0.6367,
+          0.9767
+        ],
+        "CONCAT": [
+          0.58,
+          0.9667
+        ],
+        "CONCAT_MATCHED": [
+          0.5833,
+          0.9533
+        ],
+        "DYN_FREE": [
+          0.4933,
+          0.97
+        ],
+        "DYN_REQUEST": [
+          0.55,
+          0.9567
+        ]
+      }
+    }
+  ],
+  "judge_call_budget_summary": {
+    "dev20_16k_3models": {
+      "final_ambiguous_primary": 84,
+      "nonfinal_scope_primary": 305,
+      "total_primary_nonrepair_calls": 389
+    },
+    "test100_16k_3models": {
+      "final_ambiguous_primary": 1209,
+      "nonfinal_scope_primary": 5102,
+      "total_primary_nonrepair_calls": 6311
+    }
+  }
+}

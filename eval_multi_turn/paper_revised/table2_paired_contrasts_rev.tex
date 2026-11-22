@@ -1,0 +1,32 @@
+\begin{table*}[!t]
+\centering
+\caption{Paired problem-bootstrap contrasts on \textsc{Test}~100 (pp, $B{=}10{,}000$). Outcome rows: point range $[L,U]$ and 95\% envelope CI (lo, hi); $^*$CI excludes 0. Interaction rows: $\Delta E_{\mathrm{TypeA}}{-}\Delta E_{\mathrm{TypeB}}$ for \pGRD$-$\pREQ{} (stratified bootstrap), by $E_L$/$E_U$; $^*$CI excludes 0. Scope rows: 95\% envelope CI / primary / secondary; $^\dagger$judge CI excludes 0 (no envelope does). \TA/\TB{} rows give envelopes; per-bound $E_L$/$E_U$ CIs appear in Fig.~\ref{fig:scope_hazard}b and Sec.~\ref{sec:exp4b}.}
+\label{tab:paired_contrasts}
+\footnotesize
+\setlength{\tabcolsep}{4.0pt}
+\renewcommand{\arraystretch}{0.96}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Paired contrast (pp) & Qwen3-8B & GLM-Z1-9B & Qwen3-14B \\
+\midrule
+\pFULL{} $-$ \pCON{} ($\Delta Y$) & $-$0.7 ($-$3.0, $+$1.3) & [$+$0.7, $+$1.0] ($-$2.3, $+$4.0) & $+$1.0 ($-$1.0, $+$3.7) \\
+\pCON{} $-$ \pCONM{} ($\Delta Y$) & $+$1.0 ($-$0.7, $+$3.0) & $+$1.7 ($-$0.7, $+$4.3) & $+$1.0 ($-$0.7, $+$2.7) \\
+\pCONM{} $-$ \pFREE{} ($\Delta Y$) & $+$6.0 ($+$2.3, $+$10.0)$^*$ & [$+$4.0, $+$4.7] ($-$0.7, $+$9.7) & [$+$3.0, $+$3.3] ($-$0.3, $+$7.3) \\
+\pREQ{} $-$ \pFREE{} ($\Delta Y$) & [$-$2.3, $-$1.3] ($-$6.0, $+$2.0) & [$-$2.7, $-$1.3] ($-$7.0, $+$3.3) & [$+$0.3, $+$1.0] ($-$2.7, $+$4.3) \\
+\pREQ{} $-$ \pFREE{} ($\Delta E$) & [$-$8.0, $+$0.0] ($-$12.3, $+$3.7) & [$-$6.3, $+$0.3] ($-$10.0, $+$4.7) & [$-$4.7, $+$2.7] ($-$8.0, $+$5.7) \\
+\midrule
+\pGRD{} $-$ \pREQ{} ($\Delta E$) & [$-$3.7, $+$3.0] ($-$7.3, $+$6.7) & [$-$3.7, $+$1.7] ($-$8.3, $+$6.0) & [$-$4.3, $+$0.7] ($-$7.7, $+$4.0) \\
+\pGRD{} $-$ \pREQ{} ($\Delta J$) & [$-$2.3, $+$5.0] ($-$7.3, $+$10.0) & [$-$0.3, $+$3.7] ($-$5.3, $+$9.0) & [$+$0.0, $+$4.0] ($-$4.0, $+$8.0) \\
+\pGRD{} $-$ \pREQ{} ($\Delta Y$) & [$+$0.3, $+$1.7] ($-$3.7, $+$5.3) & [$-$1.0, $+$0.3] ($-$4.7, $+$4.0) & [$+$0.0, $+$0.3] ($-$3.0, $+$3.0) \\
+\quad $\hookrightarrow$ \TA{} ($N{=}68$, $\Delta E$) & [$-$4.4, $+$2.0] ($-$8.8, $+$6.4) & [$-$4.4, $-$1.0] ($-$9.8, $+$3.4) & [$-$6.4, $-$2.5] ($-$10.3, $+$1.0) \\
+\quad $\hookrightarrow$ \TB{} ($N{=}32$, $\Delta E$) & [$-$2.1, $+$5.2] ($-$8.3, $+$11.5) & [$-$2.1, $+$7.3] ($-$10.4, $+$16.7) & [$+$0.0, $+$7.3] ($-$7.3, $+$13.5) \\
+\quad Interaction \TA$-$\TB, $E_L$ & $-$2.0 ($-$9.3, $+$5.7) & $-$4.0 ($-$14.0, $+$5.1) & $-$9.1 ($-$16.7, $-$2.4)$^*$ \\
+\quad Interaction \TA$-$\TB, $E_U$ & $-$3.6 ($-$11.1, $+$4.7) & $-$6.6 ($-$17.6, $+$3.7) & $-$7.0 ($-$14.3, $-$0.4)$^*$ \\
+\midrule
+\pREQ{} $-$ \pFREE{} (\texttt{Wait}) & [$-$2.6, $+$22.1] / $+$10.4$^\dagger$ / $+$8.5$^\dagger$ & [$-$9.8, $+$28.5] / $+$10.7$^\dagger$ / $+$7.0$^\dagger$ & [$-$6.5, $+$20.9] / $+$7.4$^\dagger$ / $+$7.2$^\dagger$ \\
+\pREQ{} $-$ \pFREE{} (\texttt{Cond.}) & [$-$21.0, $+$7.5] / $-$8.0$^\dagger$ / $-$5.5$^\dagger$ & [$-$27.9, $+$11.2] / $-$10.0$^\dagger$ / $-$5.8$^\dagger$ & [$-$21.1, $+$9.0] / $-$5.6$^\dagger$ / $-$6.8$^\dagger$ \\
+\pGRD{} $-$ \pREQ{} (\texttt{Wait}) & [$-$8.2, $+$14.8] / $+$3.2$^\dagger$ / $+$3.6$^\dagger$ & [$-$18.0, $+$16.0] / $-$0.5 / $-$0.8 & [$-$12.7, $+$12.5] / $+$0.7 / $-$0.7 \\
+\pGRD{} $-$ \pREQ{} (\texttt{Cond.}) & [$-$15.8, $+$9.9] / $-$2.1 / $-$3.3$^\dagger$ & [$-$16.9, $+$18.3] / $+$1.3 / $+$0.6 & [$-$13.5, $+$14.2] / $-$0.6 / $+$1.4 \\
+\bottomrule
+\end{tabular}
+\end{table*}

@@ -1,0 +1,15 @@
+*.py text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.tex text eol=lf
+*.json text eol=lf
+*.jsonl text eol=lf
+*.csv text eol=lf
+*.sha256 text eol=lf
+*.ipynb text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+LICENSE text eol=lf
+*.gz binary
+*.pdf binary
+*.png binary

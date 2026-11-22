@@ -1,0 +1,19 @@
+\begin{table*}[!t]
+\centering
+\caption{Dual-LLM judge agreement (primary \texttt{gpt-6.1-sol} vs.\ secondary \texttt{deepseek-v4.1-flash}; 0 parse failures on all 5,400 \textsc{Test} trajectories; on \textsc{Dev}~20, $\kappa_Y{=}1.000$, pooled $\kappa_E{=}0.924$ trajectory / $0.918$ turn, scope $\kappa{=}0.616$--$0.758$). Commit $E$ is evaluated per dynamic trajectory ($n{=}900$/model; turn-level $\kappa_E{=}0.854$--$0.881$). For explicit repair, raw agreement is inflated by the ${\le}5\%$ positive base rate; positive agreement $\mathrm{PA}{=}2n_{++}/(2n_{++}{+}n_{+-}{+}n_{-+})$ shows that the judges rarely agree on which trajectories retract.}
+\label{tab:exp4a_calibration}
+\footnotesize
+\setlength{\tabcolsep}{3.8pt}
+\renewcommand{\arraystretch}{0.96}
+\begin{tabular}{@{}lcccccccccc@{}}
+\toprule
+ & \multicolumn{2}{c}{Final $Y$} & \multicolumn{2}{c}{Commit $E$} & \multicolumn{2}{c}{4-class scope $C$} & \multicolumn{4}{c}{Explicit repair} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}\cmidrule(lr){8-11}
+Model & Agree & $\kappa$ & Agree & $\kappa$ & Agree & $\kappa$ & Agree & $\kappa$ & PA & $++/+-/-+/--$ \\
+\midrule
+Qwen3-8B & 99.77\% & 0.984 & 96.22\% & 0.863 & 89.3\% & 0.730 & 96.4\% & $-$0.010 & 0.00 & 0/5/1/160 \\
+GLM-Z1-9B & 99.61\% & 0.977 & 97.00\% & 0.895 & 84.1\% & 0.630 & 95.2\% & 0.175 & 0.20 & 1/4/4/159 \\
+Qwen3-14B & 99.89\% & 0.987 & 96.67\% & 0.873 & 88.9\% & 0.724 & 94.8\% & 0.402 & 0.43 & 3/4/4/144 \\
+\bottomrule
+\end{tabular}
+\end{table*}

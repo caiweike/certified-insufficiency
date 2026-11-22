@@ -1,0 +1,193 @@
+{
+  "total_trajectories": 5400,
+  "max_prompt_tokens_single_turn": 5356,
+  "max_prompt_plus_completion_single_turn": 19286,
+  "sympy_status_counts": {
+    "CORRECT": 2961,
+    "AMBIGUOUS_NEED_LLM": 2223,
+    "INCORRECT_ABSTAIN": 103,
+    "INCORRECT_EXACT": 113
+  },
+  "sympy_decided_total": 3177,
+  "sympy_decided_share": 0.5883,
+  "on_dual_llm_consensus": {
+    "n": 3167,
+    "exact_match": 3165,
+    "mismatch": 2,
+    "agreement_rate": 0.999368
+  },
+  "on_dual_llm_disagreed": {
+    "n": 10,
+    "matches_primary": 1,
+    "matches_secondary": 9,
+    "cases": [
+      {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4044___FULL___r2",
+        "sympy_status": "CORRECT",
+        "sympy_y": 1,
+        "primary_y": 1,
+        "secondary_y": 0,
+        "extracted": "\\dfrac{51}{50}",
+        "gold": "$d = \\frac{51}{50}$"
+      },
+      {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-370___DYN_REQUEST___r1",
+        "sympy_status": "INCORRECT_EXACT",
+        "sympy_y": 0,
+        "primary_y": 1,
+        "secondary_y": 0,
+        "extracted": "\\dfrac{4(k + 1)}{3}",
+        "gold": "$\\frac{8}{3}$"
+      },
+      {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-370___DYN_FREE___r2",
+        "sympy_status": "INCORRECT_EXACT",
+        "sympy_y": 0,
+        "primary_y": 1,
+        "secondary_y": 0,
+        "extracted": "\\dfrac{4(k + 1)}{3}",
+        "gold": "$\\frac{8}{3}$"
+      },
+      {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-350___DYN_REQUEST_GUARD___r0",
+        "sympy_status": "INCORRECT_EXACT",
+        "sympy_y": 0,
+        "primary_y": 1,
+        "secondary_y": 0,
+        "extracted": "\\dfrac{25}{n}",
+        "gold": "$\\frac{25}{3}$"
+      },
+      {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-370___DYN_REQUEST_GUARD___r2",
+        "sympy_status": "INCORRECT_EXACT",
+        "sympy_y": 0,
+        "primary_y": 1,
+        "secondary_y": 0,
+        "extracted": "\\dfrac{4(k + 1)}{3}",
+        "gold": "$\\frac{8}{3}$"
+      },
+      {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-comp-370___DYN_REQUEST___r2",
+        "sympy_status": "INCORRECT_EXACT",
+        "sympy_y": 0,
+        "primary_y": 1,
+        "secondary_y": 0,
+        "extracted": "\\dfrac{4(k + 1)}{3}",
+        "gold": "$\\frac{8}{3}$"
+      },
+      {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4845___DYN_REQUEST___r2",
+        "sympy_status": "INCORRECT_EXACT",
+        "sympy_y": 0,
+        "primary_y": 1,
+        "secondary_y": 0,
+        "extracted": "y = (a - 1)x + 1",
+        "gold": "$y=1$"
+      },
+      {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-comp-370___DYN_REQUEST___r1",
+        "sympy_status": "INCORRECT_EXACT",
+        "sympy_y": 0,
+        "primary_y": 1,
+        "secondary_y": 0,
+        "extracted": "\\dfrac{4(k + 1)}{3}",
+        "gold": "$\\frac{8}{3}$"
+      },
+      {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-comp-370___DYN_REQUEST___r2",
+        "sympy_status": "INCORRECT_EXACT",
+        "sympy_y": 0,
+        "primary_y": 1,
+        "secondary_y": 0,
+        "extracted": "\\dfrac{4(k + 1)}{3}",
+        "gold": "$\\frac{8}{3}$"
+      },
+      {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4147___DYN_REQUEST_GUARD___r1",
+        "sympy_status": "CORRECT",
+        "sympy_y": 1,
+        "primary_y": 0,
+        "secondary_y": 1,
+        "extracted": "2n^2",
+        "gold": "$2n^2$"
+      }
+    ]
+  },
+  "by_model": {
+    "Qwen/Qwen3-14B": {
+      "total": 1800,
+      "status_CORRECT": 865,
+      "sympy_decided": 920,
+      "decided_both_llm_agreed": 919,
+      "exact_match": 918,
+      "status_AMBIGUOUS_NEED_LLM": 880,
+      "status_INCORRECT_EXACT": 30,
+      "status_INCORRECT_ABSTAIN": 25,
+      "decided_llm_disagreed": 1,
+      "mismatch": 1
+    },
+    "Qwen/Qwen3-8B": {
+      "total": 1800,
+      "status_CORRECT": 1141,
+      "sympy_decided": 1232,
+      "decided_both_llm_agreed": 1228,
+      "exact_match": 1228,
+      "status_AMBIGUOUS_NEED_LLM": 568,
+      "status_INCORRECT_EXACT": 51,
+      "decided_llm_disagreed": 4,
+      "status_INCORRECT_ABSTAIN": 40
+    },
+    "zai-org/GLM-Z1-9B-0414": {
+      "total": 1800,
+      "status_CORRECT": 955,
+      "sympy_decided": 1025,
+      "decided_both_llm_agreed": 1020,
+      "exact_match": 1019,
+      "status_AMBIGUOUS_NEED_LLM": 775,
+      "status_INCORRECT_ABSTAIN": 38,
+      "status_INCORRECT_EXACT": 32,
+      "decided_llm_disagreed": 5,
+      "mismatch": 1
+    }
+  },
+  "mismatches": [
+    {
+      "model_id": "zai-org/GLM-Z1-9B-0414",
+      "trajectory_id": "ob-comp-370___DYN_FREE___r1",
+      "item_id": "ob-comp-370",
+      "protocol": "DYN_FREE",
+      "sympy_status": "INCORRECT_EXACT",
+      "sympy_y": 0,
+      "llm_y": 1,
+      "extracted": "\\dfrac{4(k + 1)}{3}",
+      "gold": "$\\frac{8}{3}$",
+      "reason": "sympy_expr_ne:4*k/3 + 4/3!=8/3",
+      "primary_rationale": "明确算出k=1时为8/3，末尾表达式代入亦一致。",
+      "secondary_rationale": "回复明确验证 k=1 时 k1+k2=8/3，与官方一致。"
+    },
+    {
+      "model_id": "Qwen/Qwen3-14B",
+      "trajectory_id": "ob-comp-370___DYN_REQUEST_GUARD___r2",
+      "item_id": "ob-comp-370",
+      "protocol": "DYN_REQUEST_GUARD",
+      "sympy_status": "INCORRECT_EXACT",
+      "sympy_y": 0,
+      "llm_y": 1,
+      "extracted": "\\dfrac{4(k + 1)}{3}",
+      "gold": "$\\frac{8}{3}$",
+      "reason": "sympy_expr_ne:4*k/3 + 4/3!=8/3",
+      "primary_rationale": "回复明确代入k=1得8/3，与标准答案一致。",
+      "secondary_rationale": "通式在k=1时得8/3，文中明确给出该值。"
+    }
+  ]
+}

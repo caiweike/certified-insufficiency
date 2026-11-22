@@ -1,0 +1,102 @@
+{
+  "by_protocol": {
+    "CONCAT": {
+      "budget_clamped_turns": 0,
+      "completed": 300,
+      "empty_truncated_turns": 8,
+      "trajectories": 300,
+      "turns": 300
+    },
+    "CONCAT_MATCHED": {
+      "budget_clamped_turns": 0,
+      "completed": 300,
+      "empty_truncated_turns": 7,
+      "trajectories": 300,
+      "turns": 300
+    },
+    "DYN_FREE": {
+      "budget_clamped_turns": 0,
+      "completed": 300,
+      "empty_truncated_turns": 4,
+      "trajectories": 300,
+      "turns": 1152
+    },
+    "DYN_REQUEST": {
+      "budget_clamped_turns": 0,
+      "completed": 300,
+      "empty_truncated_turns": 6,
+      "trajectories": 300,
+      "turns": 1152
+    },
+    "FULL": {
+      "budget_clamped_turns": 0,
+      "completed": 300,
+      "empty_truncated_turns": 7,
+      "trajectories": 300,
+      "turns": 300
+    }
+  },
+  "completed_trajectories": 1500,
+  "elapsed_sec": 0.0,
+  "prompt_manifest": {
+    "FINAL_SUFFIX": "f64debfe63a617b89d19c82790fc00628b618d0fc257647e4b96eccfa575b35a",
+    "NONFINAL_REQUEST_SUFFIX": "5f2a6d05c21b60683076e5e0e427b8a3799e2fbec0e07b1b4c0219450ad7e159",
+    "SCOPE_GUARD_PREAMBLE": "6dfe2b40a48b5aaf7e39da747c2826a791d1c8a608cc98240491e81f87bf79e9",
+    "TASK_PREAMBLE": "febb5625b2edfffa3a38ed2674a8b2aab914f18acb6775f4b344b6a5de8f8b6d"
+  },
+  "provenance": {
+    "cuda_version": "13.0",
+    "decoding_cfg": {
+      "enable_thinking": true,
+      "max_tokens": 16384,
+      "min_p": 0.0,
+      "temperature": 0.6,
+      "top_k": 20,
+      "top_p": 0.95
+    },
+    "gpu_name": "NVIDIA A100-SXM4-80GB",
+    "hf_model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "hf_tokenizer_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "llm_kwargs": {
+      "dtype": "bfloat16",
+      "gpu_memory_utilization": 0.9,
+      "max_model_len": 32768,
+      "model": "Qwen/Qwen3-8B",
+      "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "tokenizer_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+      "trust_remote_code": true
+    },
+    "model_id": "Qwen/Qwen3-8B",
+    "python_version": "3.13.16",
+    "torch_version": "2.14.0+cu130",
+    "vllm_version": "0.34.0",
+    "vram_gib": 79.25
+  },
+  "run_signature": {
+    "decoding_cfg": {
+      "enable_thinking": true,
+      "max_model_len": 32768,
+      "max_tokens": 16384,
+      "min_p": 0.0,
+      "temperature": 0.6,
+      "top_k": 20,
+      "top_p": 0.95
+    },
+    "empty_history_mode": "empty",
+    "hf_model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "hf_tokenizer_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "items_sha256": "234d06713de6a40228b09be12a883b23cb43daf37a50382eb220abe925e422ed",
+    "model_id": "Qwen/Qwen3-8B",
+    "plan_sha256": "a0d8d09916cb28ceea8b68357790a755bf1b29578afdd8b95f5b1ef7d2f88a5c",
+    "prompts_sha256": {
+      "FINAL_SUFFIX": "f64debfe63a617b89d19c82790fc00628b618d0fc257647e4b96eccfa575b35a",
+      "NONFINAL_REQUEST_SUFFIX": "5f2a6d05c21b60683076e5e0e427b8a3799e2fbec0e07b1b4c0219450ad7e159",
+      "SCOPE_GUARD_PREAMBLE": "6dfe2b40a48b5aaf7e39da747c2826a791d1c8a608cc98240491e81f87bf79e9",
+      "TASK_PREAMBLE": "febb5625b2edfffa3a38ed2674a8b2aab914f18acb6775f4b344b6a5de8f8b6d"
+    },
+    "splits": [
+      "TEST"
+    ]
+  },
+  "total_trajectories": 1500
+}

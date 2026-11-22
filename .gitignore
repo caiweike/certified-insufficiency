@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+*.aux
+*.log
+*.out
+.env
+# decompressed run data (recreate with: python unpack_data.py)
+eval_multi_turn/runs/**/*.jsonl

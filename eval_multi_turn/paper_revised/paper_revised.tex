@@ -1,0 +1,207 @@
+\documentclass[conference,letterpaper,10pt]{IEEEtran}
+
+\usepackage{cite}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs,multirow,array}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\urlstyle{same}
+\hyphenation{Deep-Seek multi-turn}
+\emergencystretch=1em
+\setlength{\textfloatsep}{5.0pt plus 1.5pt minus 1.5pt}
+\setlength{\dbltextfloatsep}{5.0pt plus 1.5pt minus 1.5pt}
+\setlength{\dblfloatsep}{4.0pt plus 1.5pt minus 1.5pt}
+\setlength{\abovecaptionskip}{2.5pt plus 1pt minus 1pt}
+\renewcommand{\dbltopfraction}{0.92}
+\renewcommand{\topfraction}{0.92}
+\renewcommand{\textfraction}{0.06}
+\renewcommand{\floatpagefraction}{0.88}
+\renewcommand{\dblfloatpagefraction}{0.88}
+\setcounter{dbltopnumber}{3}
+\setcounter{topnumber}{3}
+\setcounter{totalnumber}{4}
+
+% ---- unified protocol / regime names (used everywhere: text, tables, figures) ----
+\newcommand{\pFULL}{\texttt{FULL}}
+\newcommand{\pCON}{\texttt{CONCAT}}
+\newcommand{\pCONM}{\texttt{CONCAT-M}}
+\newcommand{\pFREE}{\texttt{FREE}}
+\newcommand{\pREQ}{\texttt{REQ}}
+\newcommand{\pGRD}{\texttt{GUARD}}
+\newcommand{\TA}{TypeA}
+\newcommand{\TB}{TypeB}
+
+\begin{document}
+
+\title{Certified Insufficiency and Premature Commitment:\\Process--Outcome Evaluation of Reasoning LLMs\\under Progressive Information Disclosure}
+
+\IEEEoverridecommandlockouts
+\author{%
+\IEEEauthorblockN{Weike Cai\textsuperscript{1,*}, Mohan Tang\textsuperscript{2,*}}
+\IEEEauthorblockA{\textit{\textsuperscript{1}School of Mathematics, Sichuan University, Chengdu, China}\\
+\textit{\textsuperscript{2}School of Mathematics and Statistics, Central China Normal University, Wuhan, China}\\
+caiweike@stu.scu.edu.cn, tangmohan@mails.ccnu.edu.cn}
+\thanks{\textsuperscript{*}Both authors contributed equally to this work and share first authorship.}
+}
+
+\maketitle
+
+\begin{abstract}
+In computer-supported collaborative design, requirements reach an AI assistant incrementally, yet assistants are usually scored only on the answer given once everything is known. Final-turn accuracy ($Y$) thus credits an assistant that committed to an unsupported answer before the specification was complete---\emph{premature commitment} ($E$). We study this failure under machine-checkable insufficiency. From OlympiadBench we build a frozen 120-problem benchmark (\textsc{Dev}~20/\textsc{Test}~100) whose SymPy leave-one-out certificates prove every condition clause necessary, separating a strictly underdetermined core (\TA, $N{=}68$) from a relaxed-extremum set (\TB, $N{=}32$) whose prefixes admit locally valid but unscoped answers. Across 5,400 trajectories from three open-weight reasoning models under six paired protocols, graded by two independent input-blind LLM judges with SymPy cross-checks of final answers, we find that: (1)~on the \TA{} core, $10.3\%$--$18.6\%$ of progressive-disclosure trajectories commit prematurely, so $9.3$--$17.2$~pp of final accuracy comes from trajectories that committed early; (2)~first-commit hazard grows with turn index (odds ${\times}2.3$ per turn) and, more weakly, with fewer remaining clauses; (3)~models rarely retract superseded claims unprompted ($0.8\%$--$5.3\%$ of committed trajectories); and (4)~a Turn-1 sufficiency guard lowers unconditional commits on \TA{} (pooled $-2.6$ to $-2.9$~pp) but not on \TB{} ($+2.4$ to $+2.8$~pp), partly by turning them into assumption-bound answers; the interaction is significant on \texttt{Qwen3-14B} yet statistically fragile when pooled. Collaborative interfaces therefore need explicit completeness signals and revision prompts rather than relying on model self-restraint.
+\end{abstract}
+
+\begin{IEEEkeywords}
+human--AI collaboration; collaborative design; progressive information disclosure; premature commitment; information sufficiency; reasoning LLMs.
+\end{IEEEkeywords}
+
+\section{Introduction}
+
+In computer-supported cooperative work in design (CSCWD), a specification rarely arrives in one piece: requirements and boundary conditions emerge over successive exchanges among stakeholders and, increasingly, AI assistants~\cite{ref7,ref14,ref21}. Intermediate responses in these exchanges are reused and built upon, steering downstream decisions long before the specification is final~\cite{ref15}. Design research has long recognized the cost of this dynamic: tools that force decisions before the needed information is available induce \emph{premature commitment}~\cite{ref23,ref24}, and early ideas anchor later exploration through \emph{design fixation}~\cite{ref25}. Tentative answers are not the problem---an assistant that says ``assuming no further constraints, the optimum is $X$'' keeps the design space open. The problem is an assistant that asserts an unconditional answer the disclosed premises cannot yet support, then silently moves on once the missing constraint arrives. Outcome-only evaluation cannot observe this behavior because it scores only the answer given after full disclosure~\cite{ref6,ref11,ref12}, and measuring it requires tasks in which insufficiency at every intermediate turn is provable rather than judged. We therefore use competition mathematics as a \emph{certifiable proxy} for incremental specification: each problem is split into clauses that stand in for stakeholder-supplied requirements, and symbolic certificates guarantee that every clause is necessary, so no intermediate turn fixes the full-task answer.
+
+Consider sequence task \texttt{ob-comp-416} (\TA, six turns). After five turns the target condition $a_m a_{m+1}{=}a_{m+2}$ has not been disclosed, yet \texttt{Qwen3-14B} states that ``the current information is sufficient to determine $m$; $m{=}5$.'' When the condition arrives it answers $m{=}2$ (correct, $Y{=}1$) without acknowledging its earlier claim. Final accuracy records a success; a collaborator who acted on Turn~5 received a wrong, confidently stated value. We therefore separate final accuracy $Y$, premature commitment $E$, joint process--outcome success $J{=}Y(1{-}E)$, and unprompted explicit retraction.
+
+Measuring $E$ rigorously faces two obstacles in prior multi-turn studies~\cite{ref1,ref4}: (i)~unverified prefixes risk penalizing valid deduction from redundant clauses, or conflating genuinely unidentifiable states with locally well-posed relaxed optima; and (ii)~comparing canonical single-turn prompts against permuted multi-turn histories confounds rewriting, ordering, and interaction. We address (i) with symbolic necessity certificates and an explicit regime split---\TA{} (every prefix underdetermined) versus \TB{} (prefixes may admit a valid relaxed optimum that must be scoped to unconfirmed completeness)---and (ii) with strictly paired control protocols. We ask:
+\begin{itemize}
+    \item \textbf{RQ1:} How large is the $Y{-}J$ gap under progressive disclosure, after controlling for rewriting and ordering, and does it persist on the \TA{} core?
+    \item \textbf{RQ2:} When do first commits occur, and how do current-answer requests shift scope (\texttt{Wait} vs.\ \texttt{Conditional})?
+    \item \textbf{RQ3:} When decisive clauses arrive, how often do models spontaneously retract earlier commits?
+    \item \textbf{RQ4:} Does a Turn-1 sufficiency guard reduce $E$, and does its effect differ between \TA{} and \TB?
+\end{itemize}
+
+Our contributions are (1)~a benchmark of 120 problems with SymPy-checked insufficiency certificates, separating \TA{} from \TB{} (Sec.~\ref{sec:benchmark}); (2)~a six-protocol paired study over three reasoning models (5,400 trajectories; Sec.~\ref{sec:method}--\ref{sec:exp2}); (3)~a turn-by-depth hazard and retraction audit (Sec.~\ref{sec:exp3}); and (4)~a Guard$\times$regime analysis and dual-judge reliability audit (Sec.~\ref{sec:exp4b}--\ref{sec:exp4a}). Prompts, certificates, code, and all judged trajectories are released at \url{https://github.com/caiweike/certified-insufficiency}.
+
+\section{Related Work}
+
+\textbf{Multi-turn underspecification and clarification.} Laban et al.~\cite{ref1} showed severe accuracy drops when tasks unfold across turns, motivating view-asymmetric distillation~\cite{ref2} and curriculum RL with abstention rewards~\cite{ref3}. Clarification benchmarks evaluate disambiguation and post-clarification answering~\cite{ref4,ref5}, and QuestBench~\cite{ref27} asks whether models can identify the single missing variable of an underspecified reasoning problem; reasoning models are also known to over-think when a premise is missing~\cite{ref28}. Selective QA and calibration~\cite{ref8,ref9,ref10} study single-turn abstention, and LLMs struggle to self-correct reasoning without external feedback~\cite{ref26}. We differ in measuring \emph{when} models commit across a disclosure sequence, grounding insufficiency at every intermediate turn in symbolic certificates, and separating unidentifiable prefixes (\TA) from relaxed optima (\TB).
+
+\textbf{Commitment in design and human--AI collaboration.} In the Cognitive Dimensions framework, premature commitment is a property of a notation or tool that forces users to decide before information is available~\cite{ref23,ref24}; design fixation describes how early solutions constrain later ideation~\cite{ref25}. We study the AI-side analogue: an assistant that commits on behalf of the team before the specification licenses it. Recent CSCWD work embeds LLMs into multi-round concept design~\cite{ref21}, building on mixed-initiative and human--AI interaction guidelines that ask assistants to convey uncertainty and support efficient correction~\cite{ref7,ref14,ref15}. Reasoning models such as Qwen3~\cite{ref16} and GLM~\cite{ref17} excel at single-turn math via long chain-of-thought~\cite{ref13,ref6}, but final-turn accuracy leaves these process properties unmeasured.
+
+\section{Formally Certified Benchmark}\label{sec:benchmark}
+
+We start from the 1,648 Chinese competition and CEE text-only open-ended problems in \textsc{OlympiadBench}~\cite{ref6} (408 competition, 1,240 CEE).
+
+\subsection{Eligibility Filtering and Stratification}
+A rule-based offline filter removes structurally invalid items ($-499$), out-of-domain items ($-30$), non-atomic multi-part items ($-639$), and near-duplicate clusters ($-76$), leaving 404 singletons. Stratified sampling assigns 100 provisional \textsc{Test}, 20 \textsc{Dev}, and 284 reserve items across four topic groups---Functions/Calculus/Trigonometry (G1), Algebra/Inequalities (G2), Sequences/Combinatorics/Number Theory (G3), Geometry/Analytic (G4)---crossed with the two answer regimes below.
+
+\subsection{Symbolic Certificates and Two Regimes}
+Each item is split at exact character spans into an opening stem/target $S_1$ and condition clauses $\{S_2,\dots,S_k\}$, $k\in\{3,\dots,6\}$. An LLM proposes a formalization and certificates, which SymPy~\cite{ref19} checks: the full clause set must be satisfiable and reproduce the official answer, and every $S_j$ ($j\ge2$) must be \emph{necessary}:
+\begin{itemize}
+    \item \textbf{\TA{} (unique value; strict underdetermination).} A \texttt{WitnessPair}: two assignments satisfying all clauses except $S_j$ with distinct target values. Any prefix missing $S_j$ imposes a subset of those constraints, so the witness pair remains feasible for \emph{every} prefix and \emph{every} disclosure order: no non-final turn determines the answer.
+    \item \textbf{\TB{} (extremum or range; relaxed scoping).} Each $S_j$ needs a relaxed certificate (\texttt{RelaxedCertificate}): an assignment satisfying all clauses except $S_j$ whose objective strictly beats or escapes the full-task extremum or range. Some relaxed prefixes nonetheless have a finite, unique optimum (e.g., $\max(\sin A{+}\sin B{+}\sin C){=}\tfrac{3\sqrt3}{2}$ over unconstrained triangles), so a \TB{} ``commit'' may be a correct answer \emph{to the relaxed problem} that omits the scope qualifier ``if no further constraints follow.'' We therefore treat \TB{} $E$ as an \emph{unscoped-answer} rate and base primary claims on \TA.
+\end{itemize}
+
+Stage~2 evaluated 364 candidates (initial slots plus reserves, audited sequentially) and rejected 244 (67.0\%): 90 clause-alignment failures, 86 redundant premises, 45 without a valid certificate, 15 answer-key mismatches, and 8 regime mismatches. TypeA items were the bottleneck: sequential auditing exhausted the \TA{} reserve available under our filters, yielding 81 verified \TA{} items (68 \textsc{Test}, 13 \textsc{Dev}); \TB{} fills the remaining 32 \textsc{Test} slots. \textsc{Test}~100 comprises G1 19/10, G2 13/10, G3 21/3, G4 15/9 (\TA/\TB) with $k{=}3/4/5/6$ for 44/34/16/6 items (mean $k{=}3.84$). Because the regimes differ in topic mix, depth, and baseline $E$, \TA--\TB{} differences are associational, not causal.
+
+\section{Paired Protocols, Metrics, and Judging}\label{sec:method}
+
+\subsection{Models and Decoding}
+We evaluate three open-weight reasoning models, Qwen3-8B and Qwen3-14B~\cite{ref16} and GLM-Z1-9B-0414~\cite{ref17}, at pinned HuggingFace revisions in BF16 via vLLM~\cite{ref18} with native thinking templates (temperature 0.6, top-$p$ 0.95, 16,384 output tokens, 32,768 context). Shared answering rules appear in Turn~1; conversation history carries only visible replies (thinking traces are stripped), and the largest single-turn context is 19,286 tokens. On \textsc{Dev}~20, a 16K budget reduced empty truncated replies to 1--2 per 100 trajectories versus 4K--8K budgets.
+
+\subsection{Six Strictly Paired Protocols}
+Each \textsc{Test} item runs $R{=}3$ repetitions per protocol (300 trajectories and 852 non-final insufficient turns per model--protocol cell; 5,400 trajectories in total). Rep~0 uses canonical order; Reps~1--2 apply shared permutations of $\{S_2,\dots,S_k\}$ with $S_1$ fixed. Protocols: (1)~\pFULL{} (original single-turn problem); (2)~\pCON{} (clauses concatenated canonically); (3)~\pCONM{} (concatenated in each rep's order; differs from \pCON{} only in Reps~1--2); (4)~\pFREE{} (one clause per turn; Turn-1 rules state that further conditions may or may not follow); (5)~\pREQ{} (\pFREE{} plus a per-turn request for the current answer and its basis); (6)~\pGRD{} (\pREQ{} plus a Turn-1 instruction to verify that the answer is uniquely determined before giving unconditional or \verb|\boxed{}| answers, and otherwise to wait or state assumptions explicitly). The final turn announces that all conditions have been given.
+
+\begin{figure}[!t]
+    \centering
+    \includegraphics[width=\columnwidth]{fig1_yj_gap.pdf}
+    \caption{Process--outcome gap $Y{-}J$ (= share of trajectories that are finally correct but committed prematurely) in the three multi-turn protocols. Bars: midpoint; whiskers: dual-judge $[L,U]$ bounds. Single-turn controls have $Y{-}J\equiv0$. Final accuracy remains high (85\%--93\% overall, 91\%--99\% on \TA; Table~\ref{tab:main_results}).}
+    \label{fig:y_vs_j}
+\end{figure}
+
+\subsection{Metrics and Inference}
+For item $i$, protocol $c$, rep $r$, and turn $t<k_i$, certificates fix the ground truth ``insufficient''. A scope judge labels each non-final visible reply as \texttt{Wait}, \texttt{Conditional} (answer explicitly bound to stated assumptions), \texttt{Commit} (unconditional answer), \texttt{Partial/Other}, or \texttt{Unresolved}. Turn-level commit bounds $[\underline e,\overline e]$ are $[1,1]$ for \texttt{Commit}, $[0,1]$ for \texttt{Unresolved}, and $[0,0]$ otherwise; when the two judges disagree on \texttt{Commit}, the turn receives $[0,1]$. Trajectory bounds are
+\begin{equation}
+\underline{E}_{icr} = \max_{t < k_i} \underline{e}_{icrt}, \qquad
+\overline{E}_{icr} = \max_{t < k_i} \overline{e}_{icrt},
+\end{equation}
+so $E_L$ counts commits confirmed by both judges and $E_U$ commits flagged by either. With final-accuracy bounds $[\underline Y,\overline Y]$, $J{=}Y(1{-}E)$ has bounds $[\underline Y(1{-}\overline E),\,\overline Y(1{-}\underline E)]$, and $Y{-}J{=}Y{\cdot}E$ counts premature commits that later end correct. The first-commit hazard is
+\begin{equation}
+h(t,k) = \mathbb{P}\!\left(e_{icrt}{=}1 \,\middle|\, k_i{=}k,\ \textstyle\max_{s<t} e_{icrs}{=}0\right),
+\end{equation}
+with remaining clauses $r{=}k{-}t\in\{1,\dots,5\}$. Because $t$ and $r$ are collinear within any fixed $k$, we fit a discrete-time logistic hazard model $\operatorname{logit} h = \alpha + \beta_t t + \beta_k k + \gamma_{\text{prot}} + \delta_{\text{model}}$; a pure remaining-clause account implies $\beta_t{=}{-}\beta_k$, a pure turn-index account $\beta_k{=}0$. Contrasts use 10,000-sample paired bootstraps over problems (stratified by regime for \TA--\TB{} interactions; item-clustered for the hazard model). We report the conservative cross-bound envelope $[A_L{-}B_U,\,A_U{-}B_L]$ with its 95\% CI, and per-judge CIs. We do not correct for multiplicity, so we call a protocol contrast \emph{significant} only if its envelope CI excludes zero; for regime-stratified effects and \TA--\TB{} interactions, \emph{significant} if the CIs of both $E_L$ and $E_U$ exclude zero; and \emph{suggestive} if only per-judge or one-bound CIs do.
+
+\subsection{Dual-LLM Judging}
+All 5,400 trajectories are graded by two LLM judges, a primary judge (\texttt{gpt-6.1-sol}) and a secondary judge (\texttt{deepseek-v4.1-flash}), both at temperature 0 with low reasoning effort (exact endpoints and dates are in the repository). They label (i)~final correctness and explicit abstention against the official answer, (ii)~non-final scope, and (iii)~explicit repair on every trajectory with $E_U{=}1$: whether the final turn retracts the earlier commit, qualifies its earlier certainty, or does neither. Both the scope and repair judges are input-blind: user turns contain only the raw disclosed clauses alongside visible assistant replies up to the judged turn---never future turns, the item ID, the regime label, or user protocol instructions (models themselves echo Guard-specific phrasing in $<0.5\%$ of replies). Rubrics were refined on \textsc{Dev}~20 and frozen before \textsc{Test} grading once both judges reached $\kappa{\ge}0.90$ on $Y$ and pooled $\kappa{\ge}0.85$ on $E$ with zero parse failures.
+
+\input{table1_main_results_rev}
+
+\section{Experimental Results}
+
+\subsection{Controls and the Process--Outcome Gap (RQ1)}\label{sec:exp2}
+\textbf{No detectable rewriting or reordering effect.} \pFULL$-$\pCON{} ranges from $-0.7$ to $+1.0$~pp and \pCON$-$\pCONM{} from $+1.0$ to $+1.7$~pp; every 95\% CI includes zero and excludes effects beyond $\pm4.3$~pp (Table~\ref{tab:paired_contrasts}). We cannot rule out smaller artifacts.
+
+\textbf{Disclosure lowers $Y$ modestly but opens a large $Y{-}J$ gap.} Moving from \pCONM{} to \pFREE{} lowers $Y$ by $3.0$--$6.0$~pp (significant for \texttt{Qwen3-8B} only) while roughly doubling tokens. Premature commitment affects $13.7\%$--$21.7\%$ of \pFREE/\pREQ{} trajectories, so $8.7$--$16.3$~pp of trajectories are finally correct yet committed early (Fig.~\ref{fig:y_vs_j}a). The gap persists on the \TA{} core, where $E$ is $10.3\%$--$18.6\%$ and $Y{-}J$ is $9.3$--$17.2$~pp under \pFREE/\pREQ{} despite $90.7\%$--$99.0\%$ final accuracy (Fig.~\ref{fig:y_vs_j}b, Table~\ref{tab:exp3_mechanism}). Among confirmed \TA{} commits that box an answer at both the commit turn and the final turn, only 36\% (43/121) match the final answer lexically, so most early commits are not simply the memorized final answer emitted early.
+
+\input{table2_paired_contrasts_rev}
+
+\subsection{Commit Timing, Scope, and Repair (RQ2--RQ3)}\label{sec:exp3}
+
+\begin{figure*}[!t]
+    \centering
+    \includegraphics[width=\textwidth]{fig2_hazard_guard_scope.pdf}
+    \caption{(a)~First-commit hazard $h(t,k)$ with confirmed commits ($E_L$), pooled over three models and three multi-turn protocols; $n$ = trajectories at risk; boxed cells are the last insufficient turn ($r{=}1$). (b)~Guard effect $\Delta E{=}$\pGRD$-$\pREQ{} by regime with 95\% paired-bootstrap CIs; filled/solid: $E_L$, hollow/dashed: $E_U$. (c)~Shares of non-final scope labels.}
+    \label{fig:scope_hazard}
+\end{figure*}
+
+\textbf{Hazard grows with turn index, and more weakly with proximity to completion.} Pooled over protocols, confirmed first-commit hazard rises from $2.4\%$ at $t{=}1$ to $17.6\%$ at $t{=}4$; per protocol, it rises from ${\le}0.5\%$ at $r{=}4$ to $8.0\%$--$8.9\%$ at $r{=}1$ ($9.5\%$--$11.6\%$ under $E_U$). Fig.~\ref{fig:scope_hazard}(a) separates the two indices: within fixed $k$ the rise is steep (e.g., $k{=}5$: $0.2\%\to4.6\%\to8.0\%\to21.7\%$), but at a fixed turn the dependence on $r$ is mixed ($t{=}2$: $3.7\%$, $5.6\%$, $4.6\%$ for $r{=}1,2,3$; $t{=}4$: $21.7\%$ vs.\ $8.1\%$ for $r{=}1,2$). The hazard model gives $\beta_t{=}0.85$ (odds ${\times}2.3$ per turn, 95\% CI $[1.7,3.4]$) and $\beta_k{=}{-}0.34$ (odds ${\times}0.71$ per additional clause, $[0.53,0.97]$). $\beta_t{+}\beta_k{=}0.51$ $[0.16,0.92]$ rejects a pure remaining-clause account, while $\beta_k{<}0$ also rejects a pure turn-index account (same pattern under $E_U$). Commit risk therefore accumulates mainly with dialogue length, and secondarily with proximity to completion. Mechanically, trajectory $E$ also grows with the number of insufficient turns ($7.3\%$--$10.1\%$ at $k{=}3$ vs.\ $31.5\%$--$36.6\%$ at $k{=}5$).
+
+\textbf{Current-answer requests shift \texttt{Conditional} toward \texttt{Wait} (suggestive).} \pREQ{} leaves $Y$ and $E$ unchanged relative to \pFREE{} (Table~\ref{tab:paired_contrasts}). Pooled, \texttt{Wait} rises $62.8\%\to72.3\%$ and \texttt{Conditional} drops $14.0\%\to8.6\%$ (Fig.~\ref{fig:scope_hazard}c). Each judge separately finds the shift for every model ($+7.0$ to $+10.7$~pp \texttt{Wait}), but cross-judge envelopes span zero because the secondary judge maps borderline partial derivations to \texttt{Wait} more often. Counting \texttt{Commit}+\texttt{Conditional} jointly confirms \pREQ{} lowers pooled answering by $11.6$~pp ($[-14.4,-8.8]$)---withholding provisional answers is not unambiguously better for collaboration.
+
+\textbf{Unprompted retraction is rare (RQ3).} Of 489 $E_U{=}1$ trajectories, both judges confirm explicit retraction in 4 and either judge in 26 ($0.8\%$--$5.3\%$; $0.0\%$--$2.6\%$ on \TA, $1.8\%$--$8.5\%$ on \TB), with zero unanimously confirmed certainty qualifications. Although the final prompt does not request a prior-turn audit, collaborators cannot rely on models to flag superseded claims spontaneously.
+
+\input{table3_exp3_mechanism_repair_rev}
+
+\subsection{Turn-1 Guard by Regime (RQ4)}\label{sec:exp4b}
+\textbf{Aggregate effect: small, not significant, no side effects.} Relative to \pREQ, \pGRD{} lowers confirmed $E$ by $0.3$--$2.0$~pp and lifts $J$ by $1.3$--$1.7$~pp; aggregate envelope CIs cross zero and rule out effects larger than about 10~pp. $Y$ shifts $-0.3$ to $+1.3$~pp, abstention stays $1.7\%$--$4.7\%$, and tokens fall $3.8\%$--$4.6\%$ for both Qwen3 models.
+
+\textbf{By regime: lower $E$ on \TA, none on \TB.} On \TA, \pGRD{} lowers $E$ for all three models ($E_L$: $-1.0$ to $-4.9$~pp; $E_U$: $-1.5$ to $-3.9$~pp); the effect is significant on \texttt{Qwen3-14B} ($E_L$: $-4.9$ $[-8.8,-1.5]$; $E_U$: $-3.9$ $[-7.4,-1.0]$) and suggestive when pooled ($E_L$: $-2.6$ $[-5.4,-0.2]$; $E_U$: $-2.9$ $[-6.0,0.0]$; Fig.~\ref{fig:scope_hazard}b), with a non-significant gain in pooled confirmed $J$ ($+3.3$~pp $[-0.3,+7.0]$; e.g., on 6-turn ellipse \texttt{ob-cee-3948}, Guard flags missing slope at Turns~4--5). On \TB, Guard shows no benefit (pooled $E_L$ $+2.4$ $[-2.4,+7.6]$; $E_U$ $+2.8$ $[-1.7,+8.0]$). Interaction $\Delta E_{\mathrm{TypeA}}{-}\Delta E_{\mathrm{TypeB}}$ is negative across every definition---pooled $E_L$: $-5.0$ $[-11.0,+0.5]$; $E_U$: $-5.7$ $[-11.8,-0.3]$; primary: $-5.0$ $[-10.9,+0.6]$; secondary: $-5.8$ $[-11.8,-0.3]$---significant on \texttt{Qwen3-14B} ($-9.1$ and $-7.0$~pp) and suggestive when pooled ($E_U$ only). Counting \texttt{Commit}+\texttt{Conditional} jointly removes the interaction ($-1.5$ $[-7.6,+4.8]$) and shrinks the \TA{} effect to non-significance ($-1.8$ $[-4.7,+0.8]$): the guard partly shifts commits into assumption-bound answers (\texttt{Qwen3-14B}, \texttt{GLM-Z1-9B}), whereas \texttt{Qwen3-8B} shifts toward \texttt{Wait} ($-5.9$~pp $[-10.3,-1.5]$). We still read the pooled interaction as consistent yet statistically fragile.
+
+\textbf{Interpretation.} Mechanistically, \TA{} prefixes lack a parameter detectable by a uniqueness check, whereas relaxed \TB{} optima pass local checks; more simply, Guard asks models to verify \emph{uniqueness}, which unique relaxed \TB{} optima satisfy. Separating these requires a completeness-oriented guard (``wait until all conditions are confirmed''), left to future work. Residual \TA{} commits ($6.9\%$--$12.3\%$ under \pGRD) may reflect Turn-1 instruction decay by late peak-hazard turns.
+
+\input{table4_exp4a_judge_audit_rev}
+
+\subsection{Dual-Judge Agreement}\label{sec:exp4a}
+On \textsc{Test}~100, judges agree on $99.61\%$--$99.89\%$ of final-correctness labels ($\kappa{=}0.977$--$0.987$), $96.22\%$--$97.00\%$ of dynamic-trajectory commits ($\kappa{=}0.863$--$0.895$; turn $\kappa{=}0.854$--$0.881$), and $84.1\%$--$89.3\%$ of 4-class scope labels ($\kappa{=}0.630$--$0.730$; Table~\ref{tab:exp4a_calibration}). Deterministic SymPy cross-checks decide 3,177/5,400 final replies (58.8\%) and match dual-judge consensus on 3,165/3,167 (99.94\%; the two mismatches box unsimplified formulas evaluated to gold in adjacent text), siding with the secondary judge on 9/10 judge disagreements. On explicit repair, raw agreement ($94.8\%$--$96.4\%$) is inflated by the ${\le}5\%$ positive rate~\cite{ref20}: positive agreement is $0.00$--$0.43$, so retraction is reported as an interval. For non-final scope and repair, agreement reflects reliability, not human-validated ground truth.
+
+\section{Discussion, Limitations, and Conclusion}
+
+\textbf{Implications for CSCWD systems.} First, outcome-only scoring hides process failures: on strictly underdetermined \TA{} tasks, $9.3$--$17.2$~pp of final accuracy rests on premature commits. Second, because commit risk accumulates over turns and peaks late, safeguards should act every turn (per-turn reminders or UI completeness states) rather than once at Turn~1. Third, given rare unprompted retraction and uniqueness-check blind spots on relaxed optima, collaborative interfaces need completeness indicators, explicit reconciliation prompts, or training-time abstention and revision rewards~\cite{ref3}.
+
+\textbf{Limitations.} (i)~\emph{Judging:} non-final scope and repair labels lack blind human validation, and input-level blinding cannot stop models from echoing Guard-specific phrasing ($<0.5\%$ of replies). (ii)~\emph{Benchmark:} SymPy checks LLM-formalized clauses whose alignment was verified automatically rather than by humans; \TB{} prefixes mix unbounded and finite-optimum relaxations; public OlympiadBench items admit contamination, though early commits mostly differ from final answers. (iii)~\emph{Scope:} three 8B--14B open-weight models from two families, math as a proxy for design specifications, one guard wording, and no multiplicity correction.
+
+\textbf{Conclusion.} Across 5,400 trajectories on certified tasks with progressive disclosure, reasoning LLMs commit before the specification licenses it, increasingly so as a dialogue proceeds; final accuracy masks these commits; models rarely retract them unprompted; and a Turn-1 guard modestly lowers \TA{} commits, partly by rephrasing them as assumption-bound answers, while leaving \TB{} unchanged.
+
+\newpage
+{\scriptsize\def\IEEEbibitemsep{0pt plus 0.1pt}\begin{thebibliography}{00}
+
+\bibitem{ref7} E. Horvitz, ``Principles of mixed-initiative user interfaces,'' in \textit{Proc.\ CHI}, 1999, pp. 159--166.
+\bibitem{ref14} S. Amershi et al., ``Guidelines for human-AI interaction,'' in \textit{Proc.\ CHI}, 2019, pp. 1--13.
+\bibitem{ref21} X. Zhao et al., ``A bio-inspired design method based on LLM: A case study of flying car concept design,'' in \textit{Proc.\ IEEE CSCWD}, 2025, pp. 2478--2483.
+\bibitem{ref15} G. Bansal et al., ``Does the whole exceed its parts? The effect of AI explanations on complementary team performance,'' in \textit{Proc.\ CHI}, 2021, pp. 1--16.
+\bibitem{ref23} T. R. G. Green, ``Cognitive dimensions of notations,'' in \textit{People and Computers V: Proc.\ HCI'89}. Cambridge, U.K.: Cambridge Univ.\ Press, 1989, pp. 443--460.
+\bibitem{ref24} T. R. G. Green and M. Petre, ``Usability analysis of visual programming environments: A `cognitive dimensions' framework,'' \textit{J.\ Vis.\ Lang.\ Comput.}, vol. 7, no. 2, pp. 131--174, 1996.
+\bibitem{ref25} D. G. Jansson and S. M. Smith, ``Design fixation,'' \textit{Des.\ Stud.}, vol. 12, no. 1, pp. 3--11, 1991.
+\bibitem{ref6} C. He et al., ``OlympiadBench: A challenging benchmark for promoting AGI with olympiad-level bilingual multimodal scientific problems,'' in \textit{Proc.\ ACL}, 2024, pp. 3828--3850.
+\bibitem{ref11} K. Cobbe et al., ``Training verifiers to solve math word problems,'' arXiv:2110.14168, 2021.
+\bibitem{ref12} D. Hendrycks et al., ``Measuring mathematical problem solving with the MATH dataset,'' in \textit{NeurIPS Datasets and Benchmarks}, 2021.
+\bibitem{ref1} P. Laban, H. Hayashi, Y. Zhou, and J. Neville, ``LLMs get lost in multi-turn conversation,'' arXiv:2505.06120, 2025.
+\bibitem{ref4} S. Luo et al., ``ClarifyMT-Bench: Benchmarking and improving multi-turn clarification for conversational large language models,'' arXiv:2512.21120, 2025.
+\bibitem{ref2} T. Chen, S. Wu, and J. Leskovec, ``Found in conversation: LLMs teach themselves to close the multi-turn gap,'' arXiv:2605.24432, 2026.
+\bibitem{ref3} M. Li et al., ``Mitigating lost in multi-turn conversation via curriculum RL with verifiable accuracy and abstention rewards,'' in \textit{Proc.\ ACL (Volume 1: Long Papers)}, 2026, pp. 33364--33381.
+\bibitem{ref5} J. Su and J. Healey, ``Clarification is not enough: Post-clarification answering remains the bottleneck in multi-turn QA,'' arXiv:2605.25204, 2026.
+\bibitem{ref27} B. Z. Li, B. Kim, and Z. Wang, ``QuestBench: Can LLMs ask the right question to acquire information in reasoning tasks?'' in \textit{Proc.\ NeurIPS (Datasets and Benchmarks Track)}, 2025.
+\bibitem{ref28} C. Fan, M. Li, L. Sun, and T. Zhou, ``Missing premise exacerbates overthinking: Are reasoning models losing critical thinking skill?'' arXiv:2504.06514, 2025.
+\bibitem{ref8} S. Rao and H. Daum\'{e} III, ``Learning to ask good questions: Ranking clarification questions using neural expected value of perfect information,'' in \textit{Proc.\ ACL}, 2018, pp. 2737--2746.
+\bibitem{ref9} A. Kamath, R. Jia, and P. Liang, ``Selective question answering under domain shift,'' in \textit{Proc.\ ACL}, 2020, pp. 5684--5696.
+\bibitem{ref10} S. Kadavath et al., ``Language models (mostly) know what they know,'' arXiv:2207.05221, 2022.
+\bibitem{ref26} J. Huang et al., ``Large language models cannot self-correct reasoning yet,'' in \textit{Proc.\ ICLR}, 2024.
+\bibitem{ref16} A. Yang et al., ``Qwen3 technical report,'' arXiv:2505.09388, 2025.
+\bibitem{ref17} Team GLM (A. Zeng et al.), ``ChatGLM: A family of large language models from GLM-130B to GLM-4 All Tools,'' arXiv:2406.12793, 2024.
+\bibitem{ref13} J. Wei et al., ``Chain-of-thought prompting elicits reasoning in large language models,'' in \textit{NeurIPS}, vol. 35, 2022, pp. 24824--24837.
+\bibitem{ref19} A. Meurer et al., ``SymPy: Symbolic computing in Python,'' \textit{PeerJ Comput.\ Sci.}, vol. 3, e103, 2017.
+\bibitem{ref18} W. Kwon et al., ``Efficient memory management for large language model serving with PagedAttention,'' in \textit{Proc.\ ACM SOSP}, 2023, pp. 611--626.
+\bibitem{ref20} A. R. Feinstein and D. V. Cicchetti, ``High agreement but low kappa: I. The problems of two paradoxes,'' \textit{J.\ Clin.\ Epidemiol.}, vol. 43, no. 6, pp. 543--549, 1990.
+
+\end{thebibliography}}
+
+\end{document}
