@@ -1,0 +1,1823 @@
+{
+  "seed": 2026,
+  "n_typeA_items": 68,
+  "total_evaluated_nonfinal_prefixes": 591,
+  "total_unique_evaluated_prefixes": 366,
+  "items": {
+    "A01": {
+      "item_id": "ob-cee-4990",
+      "macro_subfield": "G4_Geom_Analytic",
+      "canonical_k": 4,
+      "n_eval_prefixes": 9,
+      "n_unique_eval_prefixes": 6,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        [
+          "S1",
+          "S2",
+          "S4",
+          "S3"
+        ],
+        [
+          "S1",
+          "S3",
+          "S4",
+          "S2"
+        ]
+      ]
+    },
+    "A02": {
+      "item_id": "ob-comp-211",
+      "macro_subfield": "G1_Func_Calc_Trig",
+      "canonical_k": 4,
+      "n_eval_prefixes": 9,
+      "n_unique_eval_prefixes": 6,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        [
+          "S1",
+          "S4",
+          "S2",
+          "S3"
+        ],
+        [
+          "S1",
+          "S4",
+          "S3",
+          "S2"
+        ]
+      ]
+    },
+    "A03": {
+      "item_id": "ob-comp-370",
+      "macro_subfield": "G4_Geom_Analytic",
+      "canonical_k": 6,
+      "n_eval_prefixes": 15,
+      "n_unique_eval_prefixes": 9,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6"
+        ],
+        [
+          "S1",
+          "S2",
+          "S6",
+          "S3",
+          "S4",
+          "S5"
+        ],
+        [
+          "S1",
+          "S2",
+          "S4",
+          "S3",
+          "S6",
+          "S5"
+        ]
+      ]
+    },
+    "A04": {
+      "item_id": "ob-cee-3336",
+      "macro_subfield": "G2_Alg_Ineq",
+      "canonical_k": 3,
+      "n_eval_prefixes": 6,
+      "n_unique_eval_prefixes": 3,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ]
+      ]
+    },
+    "A05": {
+      "item_id": "ob-cee-4106",
+      "macro_subfield": "G1_Func_Calc_Trig",
+      "canonical_k": 5,
+      "n_eval_prefixes": 12,
+      "n_unique_eval_prefixes": 9,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5"
+        ],
+        [
+          "S1",
+          "S3",
+          "S4",
+          "S2",
+          "S5"
+        ],
+        [
+          "S1",
+          "S5",
+          "S4",
+          "S2",
+          "S3"
+        ]
+      ]
+    },
+    "A06": {
+      "item_id": "ob-cee-4295",
+      "macro_subfield": "G1_Func_Calc_Trig",
+      "canonical_k": 3,
+      "n_eval_prefixes": 6,
+      "n_unique_eval_prefixes": 3,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ]
+      ]
+    },
+    "A07": {
+      "item_id": "ob-cee-3283",
+      "macro_subfield": "G2_Alg_Ineq",
+      "canonical_k": 3,
+      "n_eval_prefixes": 6,
+      "n_unique_eval_prefixes": 3,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ]
+      ]
+    },
+    "A08": {
+      "item_id": "ob-cee-3258",
+      "macro_subfield": "G2_Alg_Ineq",
+      "canonical_k": 3,
+      "n_eval_prefixes": 6,
+      "n_unique_eval_prefixes": 3,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ]
+      ]
+    },
+    "A09": {
+      "item_id": "ob-comp-779",
+      "macro_subfield": "G4_Geom_Analytic",
+      "canonical_k": 5,
+      "n_eval_prefixes": 12,
+      "n_unique_eval_prefixes": 7,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5"
+        ],
+        [
+          "S1",
+          "S2",
+          "S4",
+          "S5",
+          "S3"
+        ],
+        [
+          "S1",
+          "S4",
+          "S2",
+          "S5",
+          "S3"
+        ]
+      ]
+    },
+    "A10": {
+      "item_id": "ob-cee-4736",
+      "macro_subfield": "G3_Seq_Comb_NT",
+      "canonical_k": 4,
+      "n_eval_prefixes": 9,
+      "n_unique_eval_prefixes": 6,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2",
+          "S4"
+        ],
+        [
+          "S1",
+          "S4",
+          "S3",
+          "S2"
+        ]
+      ]
+    },
+    "A11": {
+      "item_id": "ob-cee-4352",
+      "macro_subfield": "G3_Seq_Comb_NT",
+      "canonical_k": 4,
+      "n_eval_prefixes": 9,
+      "n_unique_eval_prefixes": 5,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        [
+          "S1",
+          "S3",
+          "S4",
+          "S2"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2",
+          "S4"
+        ]
+      ]
+    },
+    "A12": {
+      "item_id": "ob-cee-4752",
+      "macro_subfield": "G3_Seq_Comb_NT",
+      "canonical_k": 4,
+      "n_eval_prefixes": 9,
+      "n_unique_eval_prefixes": 6,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        [
+          "S1",
+          "S4",
+          "S3",
+          "S2"
+        ],
+        [
+          "S1",
+          "S2",
+          "S4",
+          "S3"
+        ]
+      ]
+    },
+    "A13": {
+      "item_id": "ob-cee-3907",
+      "macro_subfield": "G1_Func_Calc_Trig",
+      "canonical_k": 3,
+      "n_eval_prefixes": 6,
+      "n_unique_eval_prefixes": 3,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ]
+      ]
+    },
+    "A14": {
+      "item_id": "ob-comp-241",
+      "macro_subfield": "G2_Alg_Ineq",
+      "canonical_k": 3,
+      "n_eval_prefixes": 6,
+      "n_unique_eval_prefixes": 3,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ]
+      ]
+    },
+    "A15": {
+      "item_id": "ob-comp-474",
+      "macro_subfield": "G3_Seq_Comb_NT",
+      "canonical_k": 3,
+      "n_eval_prefixes": 6,
+      "n_unique_eval_prefixes": 3,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ]
+      ]
+    },
+    "A16": {
+      "item_id": "ob-cee-4729",
+      "macro_subfield": "G3_Seq_Comb_NT",
+      "canonical_k": 5,
+      "n_eval_prefixes": 12,
+      "n_unique_eval_prefixes": 9,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5"
+        ],
+        [
+          "S1",
+          "S4",
+          "S2",
+          "S5",
+          "S3"
+        ],
+        [
+          "S1",
+          "S3",
+          "S4",
+          "S2",
+          "S5"
+        ]
+      ]
+    },
+    "A17": {
+      "item_id": "ob-cee-3285",
+      "macro_subfield": "G2_Alg_Ineq",
+      "canonical_k": 4,
+      "n_eval_prefixes": 9,
+      "n_unique_eval_prefixes": 6,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        [
+          "S1",
+          "S4",
+          "S3",
+          "S2"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2",
+          "S4"
+        ]
+      ]
+    },
+    "A18": {
+      "item_id": "ob-cee-3982",
+      "macro_subfield": "G1_Func_Calc_Trig",
+      "canonical_k": 4,
+      "n_eval_prefixes": 9,
+      "n_unique_eval_prefixes": 5,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        [
+          "S1",
+          "S2",
+          "S4",
+          "S3"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2",
+          "S4"
+        ]
+      ]
+    },
+    "A19": {
+      "item_id": "ob-cee-4026",
+      "macro_subfield": "G1_Func_Calc_Trig",
+      "canonical_k": 5,
+      "n_eval_prefixes": 12,
+      "n_unique_eval_prefixes": 8,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5"
+        ],
+        [
+          "S1",
+          "S5",
+          "S4",
+          "S2",
+          "S3"
+        ],
+        [
+          "S1",
+          "S5",
+          "S4",
+          "S3",
+          "S2"
+        ]
+      ]
+    },
+    "A20": {
+      "item_id": "ob-cee-3844",
+      "macro_subfield": "G4_Geom_Analytic",
+      "canonical_k": 6,
+      "n_eval_prefixes": 15,
+      "n_unique_eval_prefixes": 12,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2",
+          "S5",
+          "S6",
+          "S4"
+        ],
+        [
+          "S1",
+          "S6",
+          "S5",
+          "S4",
+          "S2",
+          "S3"
+        ]
+      ]
+    },
+    "A21": {
+      "item_id": "ob-cee-4044",
+      "macro_subfield": "G3_Seq_Comb_NT",
+      "canonical_k": 5,
+      "n_eval_prefixes": 12,
+      "n_unique_eval_prefixes": 9,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5"
+        ],
+        [
+          "S1",
+          "S5",
+          "S3",
+          "S2",
+          "S4"
+        ],
+        [
+          "S1",
+          "S4",
+          "S2",
+          "S3",
+          "S5"
+        ]
+      ]
+    },
+    "A22": {
+      "item_id": "ob-cee-4016",
+      "macro_subfield": "G1_Func_Calc_Trig",
+      "canonical_k": 4,
+      "n_eval_prefixes": 9,
+      "n_unique_eval_prefixes": 5,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2",
+          "S4"
+        ],
+        [
+          "S1",
+          "S3",
+          "S4",
+          "S2"
+        ]
+      ]
+    },
+    "A23": {
+      "item_id": "ob-cee-4438",
+      "macro_subfield": "G4_Geom_Analytic",
+      "canonical_k": 6,
+      "n_eval_prefixes": 15,
+      "n_unique_eval_prefixes": 11,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6"
+        ],
+        [
+          "S1",
+          "S2",
+          "S5",
+          "S4",
+          "S6",
+          "S3"
+        ],
+        [
+          "S1",
+          "S4",
+          "S5",
+          "S3",
+          "S2",
+          "S6"
+        ]
+      ]
+    },
+    "A24": {
+      "item_id": "ob-cee-3889",
+      "macro_subfield": "G1_Func_Calc_Trig",
+      "canonical_k": 3,
+      "n_eval_prefixes": 6,
+      "n_unique_eval_prefixes": 3,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ]
+      ]
+    },
+    "A25": {
+      "item_id": "ob-cee-4798",
+      "macro_subfield": "G4_Geom_Analytic",
+      "canonical_k": 3,
+      "n_eval_prefixes": 6,
+      "n_unique_eval_prefixes": 3,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ]
+      ]
+    },
+    "A26": {
+      "item_id": "ob-cee-3282",
+      "macro_subfield": "G2_Alg_Ineq",
+      "canonical_k": 3,
+      "n_eval_prefixes": 6,
+      "n_unique_eval_prefixes": 3,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ]
+      ]
+    },
+    "A27": {
+      "item_id": "ob-comp-268",
+      "macro_subfield": "G2_Alg_Ineq",
+      "canonical_k": 3,
+      "n_eval_prefixes": 6,
+      "n_unique_eval_prefixes": 3,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ]
+      ]
+    },
+    "A28": {
+      "item_id": "ob-cee-4646",
+      "macro_subfield": "G3_Seq_Comb_NT",
+      "canonical_k": 3,
+      "n_eval_prefixes": 6,
+      "n_unique_eval_prefixes": 3,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ]
+      ]
+    },
+    "A29": {
+      "item_id": "ob-cee-4070",
+      "macro_subfield": "G1_Func_Calc_Trig",
+      "canonical_k": 5,
+      "n_eval_prefixes": 12,
+      "n_unique_eval_prefixes": 8,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5"
+        ],
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S5",
+          "S4"
+        ],
+        [
+          "S1",
+          "S5",
+          "S4",
+          "S2",
+          "S3"
+        ]
+      ]
+    },
+    "A30": {
+      "item_id": "ob-cee-3921",
+      "macro_subfield": "G1_Func_Calc_Trig",
+      "canonical_k": 3,
+      "n_eval_prefixes": 6,
+      "n_unique_eval_prefixes": 3,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ]
+      ]
+    },
+    "A31": {
+      "item_id": "ob-cee-4654",
+      "macro_subfield": "G3_Seq_Comb_NT",
+      "canonical_k": 3,
+      "n_eval_prefixes": 6,
+      "n_unique_eval_prefixes": 3,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ]
+      ]
+    },
+    "A32": {
+      "item_id": "ob-cee-4580",
+      "macro_subfield": "G3_Seq_Comb_NT",
+      "canonical_k": 6,
+      "n_eval_prefixes": 15,
+      "n_unique_eval_prefixes": 13,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6"
+        ],
+        [
+          "S1",
+          "S5",
+          "S6",
+          "S2",
+          "S4",
+          "S3"
+        ],
+        [
+          "S1",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S2"
+        ]
+      ]
+    },
+    "A33": {
+      "item_id": "ob-cee-4060",
+      "macro_subfield": "G1_Func_Calc_Trig",
+      "canonical_k": 4,
+      "n_eval_prefixes": 9,
+      "n_unique_eval_prefixes": 5,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        [
+          "S1",
+          "S2",
+          "S4",
+          "S3"
+        ],
+        [
+          "S1",
+          "S4",
+          "S2",
+          "S3"
+        ]
+      ]
+    },
+    "A34": {
+      "item_id": "ob-cee-4014",
+      "macro_subfield": "G1_Func_Calc_Trig",
+      "canonical_k": 4,
+      "n_eval_prefixes": 9,
+      "n_unique_eval_prefixes": 5,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        [
+          "S1",
+          "S3",
+          "S4",
+          "S2"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2",
+          "S4"
+        ]
+      ]
+    },
+    "A35": {
+      "item_id": "ob-cee-4147",
+      "macro_subfield": "G3_Seq_Comb_NT",
+      "canonical_k": 5,
+      "n_eval_prefixes": 12,
+      "n_unique_eval_prefixes": 9,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5"
+        ],
+        [
+          "S1",
+          "S2",
+          "S5",
+          "S4",
+          "S3"
+        ],
+        [
+          "S1",
+          "S3",
+          "S5",
+          "S2",
+          "S4"
+        ]
+      ]
+    },
+    "A36": {
+      "item_id": "ob-comp-710",
+      "macro_subfield": "G4_Geom_Analytic",
+      "canonical_k": 4,
+      "n_eval_prefixes": 9,
+      "n_unique_eval_prefixes": 6,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        [
+          "S1",
+          "S4",
+          "S3",
+          "S2"
+        ],
+        [
+          "S1",
+          "S4",
+          "S2",
+          "S3"
+        ]
+      ]
+    },
+    "A37": {
+      "item_id": "ob-cee-4029",
+      "macro_subfield": "G1_Func_Calc_Trig",
+      "canonical_k": 4,
+      "n_eval_prefixes": 9,
+      "n_unique_eval_prefixes": 6,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        [
+          "S1",
+          "S3",
+          "S4",
+          "S2"
+        ],
+        [
+          "S1",
+          "S2",
+          "S4",
+          "S3"
+        ]
+      ]
+    },
+    "A38": {
+      "item_id": "ob-comp-490",
+      "macro_subfield": "G1_Func_Calc_Trig",
+      "canonical_k": 3,
+      "n_eval_prefixes": 6,
+      "n_unique_eval_prefixes": 3,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ]
+      ]
+    },
+    "A39": {
+      "item_id": "ob-cee-4800",
+      "macro_subfield": "G4_Geom_Analytic",
+      "canonical_k": 4,
+      "n_eval_prefixes": 9,
+      "n_unique_eval_prefixes": 6,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        [
+          "S1",
+          "S3",
+          "S4",
+          "S2"
+        ],
+        [
+          "S1",
+          "S2",
+          "S4",
+          "S3"
+        ]
+      ]
+    },
+    "A40": {
+      "item_id": "ob-cee-4882",
+      "macro_subfield": "G4_Geom_Analytic",
+      "canonical_k": 3,
+      "n_eval_prefixes": 6,
+      "n_unique_eval_prefixes": 3,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ]
+      ]
+    },
+    "A41": {
+      "item_id": "ob-cee-3298",
+      "macro_subfield": "G2_Alg_Ineq",
+      "canonical_k": 4,
+      "n_eval_prefixes": 9,
+      "n_unique_eval_prefixes": 5,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2",
+          "S4"
+        ],
+        [
+          "S1",
+          "S3",
+          "S4",
+          "S2"
+        ]
+      ]
+    },
+    "A42": {
+      "item_id": "ob-cee-4021",
+      "macro_subfield": "G1_Func_Calc_Trig",
+      "canonical_k": 4,
+      "n_eval_prefixes": 9,
+      "n_unique_eval_prefixes": 6,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        [
+          "S1",
+          "S4",
+          "S3",
+          "S2"
+        ],
+        [
+          "S1",
+          "S3",
+          "S4",
+          "S2"
+        ]
+      ]
+    },
+    "A43": {
+      "item_id": "ob-cee-3333",
+      "macro_subfield": "G2_Alg_Ineq",
+      "canonical_k": 3,
+      "n_eval_prefixes": 6,
+      "n_unique_eval_prefixes": 3,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ]
+      ]
+    },
+    "A44": {
+      "item_id": "ob-cee-3289",
+      "macro_subfield": "G2_Alg_Ineq",
+      "canonical_k": 3,
+      "n_eval_prefixes": 6,
+      "n_unique_eval_prefixes": 3,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ]
+      ]
+    },
+    "A45": {
+      "item_id": "ob-comp-418",
+      "macro_subfield": "G3_Seq_Comb_NT",
+      "canonical_k": 3,
+      "n_eval_prefixes": 6,
+      "n_unique_eval_prefixes": 3,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ]
+      ]
+    },
+    "A46": {
+      "item_id": "ob-cee-3245",
+      "macro_subfield": "G1_Func_Calc_Trig",
+      "canonical_k": 3,
+      "n_eval_prefixes": 6,
+      "n_unique_eval_prefixes": 3,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ]
+      ]
+    },
+    "A47": {
+      "item_id": "ob-comp-785",
+      "macro_subfield": "G3_Seq_Comb_NT",
+      "canonical_k": 4,
+      "n_eval_prefixes": 9,
+      "n_unique_eval_prefixes": 5,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2",
+          "S4"
+        ],
+        [
+          "S1",
+          "S2",
+          "S4",
+          "S3"
+        ]
+      ]
+    },
+    "A48": {
+      "item_id": "ob-comp-624",
+      "macro_subfield": "G2_Alg_Ineq",
+      "canonical_k": 3,
+      "n_eval_prefixes": 6,
+      "n_unique_eval_prefixes": 3,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ]
+      ]
+    },
+    "A49": {
+      "item_id": "ob-cee-4682",
+      "macro_subfield": "G3_Seq_Comb_NT",
+      "canonical_k": 4,
+      "n_eval_prefixes": 9,
+      "n_unique_eval_prefixes": 5,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2",
+          "S4"
+        ],
+        [
+          "S1",
+          "S3",
+          "S4",
+          "S2"
+        ]
+      ]
+    },
+    "A50": {
+      "item_id": "ob-cee-4957",
+      "macro_subfield": "G4_Geom_Analytic",
+      "canonical_k": 4,
+      "n_eval_prefixes": 9,
+      "n_unique_eval_prefixes": 7,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        [
+          "S1",
+          "S4",
+          "S2",
+          "S3"
+        ],
+        [
+          "S1",
+          "S3",
+          "S4",
+          "S2"
+        ]
+      ]
+    },
+    "A51": {
+      "item_id": "ob-cee-4566",
+      "macro_subfield": "G3_Seq_Comb_NT",
+      "canonical_k": 4,
+      "n_eval_prefixes": 9,
+      "n_unique_eval_prefixes": 5,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        [
+          "S1",
+          "S2",
+          "S4",
+          "S3"
+        ],
+        [
+          "S1",
+          "S4",
+          "S2",
+          "S3"
+        ]
+      ]
+    },
+    "A52": {
+      "item_id": "ob-cee-7048",
+      "macro_subfield": "G4_Geom_Analytic",
+      "canonical_k": 4,
+      "n_eval_prefixes": 9,
+      "n_unique_eval_prefixes": 5,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        [
+          "S1",
+          "S4",
+          "S2",
+          "S3"
+        ],
+        [
+          "S1",
+          "S2",
+          "S4",
+          "S3"
+        ]
+      ]
+    },
+    "A53": {
+      "item_id": "ob-cee-4964",
+      "macro_subfield": "G4_Geom_Analytic",
+      "canonical_k": 4,
+      "n_eval_prefixes": 9,
+      "n_unique_eval_prefixes": 5,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        [
+          "S1",
+          "S2",
+          "S4",
+          "S3"
+        ],
+        [
+          "S1",
+          "S4",
+          "S2",
+          "S3"
+        ]
+      ]
+    },
+    "A54": {
+      "item_id": "ob-cee-4845",
+      "macro_subfield": "G1_Func_Calc_Trig",
+      "canonical_k": 3,
+      "n_eval_prefixes": 6,
+      "n_unique_eval_prefixes": 3,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ]
+      ]
+    },
+    "A55": {
+      "item_id": "ob-comp-107",
+      "macro_subfield": "G2_Alg_Ineq",
+      "canonical_k": 4,
+      "n_eval_prefixes": 9,
+      "n_unique_eval_prefixes": 5,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        [
+          "S1",
+          "S3",
+          "S4",
+          "S2"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2",
+          "S4"
+        ]
+      ]
+    },
+    "A56": {
+      "item_id": "ob-comp-416",
+      "macro_subfield": "G3_Seq_Comb_NT",
+      "canonical_k": 6,
+      "n_eval_prefixes": 15,
+      "n_unique_eval_prefixes": 10,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6"
+        ],
+        [
+          "S1",
+          "S3",
+          "S4",
+          "S2",
+          "S5",
+          "S6"
+        ],
+        [
+          "S1",
+          "S2",
+          "S6",
+          "S4",
+          "S3",
+          "S5"
+        ]
+      ]
+    },
+    "A57": {
+      "item_id": "ob-cee-4667",
+      "macro_subfield": "G1_Func_Calc_Trig",
+      "canonical_k": 3,
+      "n_eval_prefixes": 6,
+      "n_unique_eval_prefixes": 3,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ]
+      ]
+    },
+    "A58": {
+      "item_id": "ob-cee-4968",
+      "macro_subfield": "G4_Geom_Analytic",
+      "canonical_k": 5,
+      "n_eval_prefixes": 12,
+      "n_unique_eval_prefixes": 8,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5"
+        ],
+        [
+          "S1",
+          "S4",
+          "S2",
+          "S3",
+          "S5"
+        ],
+        [
+          "S1",
+          "S3",
+          "S4",
+          "S2",
+          "S5"
+        ]
+      ]
+    },
+    "A59": {
+      "item_id": "ob-cee-4187",
+      "macro_subfield": "G4_Geom_Analytic",
+      "canonical_k": 5,
+      "n_eval_prefixes": 12,
+      "n_unique_eval_prefixes": 10,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5"
+        ],
+        [
+          "S1",
+          "S3",
+          "S5",
+          "S2",
+          "S4"
+        ],
+        [
+          "S1",
+          "S4",
+          "S3",
+          "S5",
+          "S2"
+        ]
+      ]
+    },
+    "A60": {
+      "item_id": "ob-cee-4656",
+      "macro_subfield": "G3_Seq_Comb_NT",
+      "canonical_k": 3,
+      "n_eval_prefixes": 6,
+      "n_unique_eval_prefixes": 3,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ]
+      ]
+    },
+    "A61": {
+      "item_id": "ob-cee-4687",
+      "macro_subfield": "G3_Seq_Comb_NT",
+      "canonical_k": 3,
+      "n_eval_prefixes": 6,
+      "n_unique_eval_prefixes": 3,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ]
+      ]
+    },
+    "A62": {
+      "item_id": "ob-cee-4685",
+      "macro_subfield": "G3_Seq_Comb_NT",
+      "canonical_k": 3,
+      "n_eval_prefixes": 6,
+      "n_unique_eval_prefixes": 3,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ]
+      ]
+    },
+    "A63": {
+      "item_id": "ob-comp-351",
+      "macro_subfield": "G3_Seq_Comb_NT",
+      "canonical_k": 4,
+      "n_eval_prefixes": 9,
+      "n_unique_eval_prefixes": 6,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        [
+          "S1",
+          "S3",
+          "S4",
+          "S2"
+        ],
+        [
+          "S1",
+          "S2",
+          "S4",
+          "S3"
+        ]
+      ]
+    },
+    "A64": {
+      "item_id": "ob-cee-4339",
+      "macro_subfield": "G3_Seq_Comb_NT",
+      "canonical_k": 4,
+      "n_eval_prefixes": 9,
+      "n_unique_eval_prefixes": 6,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        [
+          "S1",
+          "S4",
+          "S2",
+          "S3"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2",
+          "S4"
+        ]
+      ]
+    },
+    "A65": {
+      "item_id": "ob-cee-3948",
+      "macro_subfield": "G4_Geom_Analytic",
+      "canonical_k": 6,
+      "n_eval_prefixes": 15,
+      "n_unique_eval_prefixes": 11,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6"
+        ],
+        [
+          "S1",
+          "S4",
+          "S5",
+          "S6",
+          "S2",
+          "S3"
+        ],
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S5",
+          "S6",
+          "S4"
+        ]
+      ]
+    },
+    "A66": {
+      "item_id": "ob-comp-631",
+      "macro_subfield": "G2_Alg_Ineq",
+      "canonical_k": 3,
+      "n_eval_prefixes": 6,
+      "n_unique_eval_prefixes": 3,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ]
+      ]
+    },
+    "A67": {
+      "item_id": "ob-cee-4696",
+      "macro_subfield": "G3_Seq_Comb_NT",
+      "canonical_k": 4,
+      "n_eval_prefixes": 9,
+      "n_unique_eval_prefixes": 6,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        [
+          "S1",
+          "S3",
+          "S4",
+          "S2"
+        ],
+        [
+          "S1",
+          "S2",
+          "S4",
+          "S3"
+        ]
+      ]
+    },
+    "A68": {
+      "item_id": "ob-cee-3984",
+      "macro_subfield": "G1_Func_Calc_Trig",
+      "canonical_k": 3,
+      "n_eval_prefixes": 6,
+      "n_unique_eval_prefixes": 3,
+      "disclosure_orders": [
+        [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ],
+        [
+          "S1",
+          "S3",
+          "S2"
+        ]
+      ]
+    }
+  }
+}
