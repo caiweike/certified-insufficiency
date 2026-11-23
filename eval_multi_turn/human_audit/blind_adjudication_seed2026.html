@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>盲态分歧仲裁工具 — Seed 2026（仅 5 核心 + 7 非核心）</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" />
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<style>
+  :root { --bg:#f5f7fb; --card:#fff; --border:#dfe4ee; --text:#1c2434; --muted:#64748b; --primary:#2563eb; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; background:var(--bg); color:var(--text); line-height:1.65; padding-bottom:115px; }
+  header { position:sticky; top:0; z-index:30; background:#fff; border-bottom:1px solid var(--border); box-shadow:0 2px 8px rgba(15,23,42,.04); }
+  .topbar { max-width:1280px; margin:0 auto; padding:10px 16px; display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between; }
+  .brand { font-weight:700; font-size:15px; display:flex; align-items:center; gap:8px; }
+  .badge { background:#fef2f2; color:#991b1b; font-size:12px; padding:2px 8px; border-radius:999px; font-weight:600; }
+  .tabs { display:flex; flex-wrap:wrap; gap:6px; }
+  .tab-btn { border:1px solid var(--border); background:#fff; padding:6px 12px; border-radius:8px; cursor:pointer; font-size:13px; font-weight:600; }
+  .tab-btn.active { background:var(--primary); color:#fff; border-color:var(--primary); }
+  .btn-sm { border:1px solid var(--border); background:#fff; color:var(--text); padding:6px 10px; border-radius:6px; font-size:12px; cursor:pointer; font-weight:600; }
+  .btn-export { background:#0f766e; color:#fff; border-color:#0f766e; }
+  .container { max-width:1280px; margin:14px auto; padding:0 16px; }
+  .rubric { background:#fffbeb; border:1px solid #fde68a; border-radius:10px; padding:10px 14px; margin-bottom:12px; font-size:13px; }
+  .rubric summary { cursor:pointer; font-weight:700; color:#92400e; }
+  .rubric ul { margin:6px 0 0 18px; padding:0; }
+  .nav-card { background:#fff; border:1px solid var(--border); border-radius:10px; padding:10px 14px; margin-bottom:12px; }
+  .grid-ids { display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
+  .id-pill { padding:4px 10px; border:1px solid var(--border); border-radius:6px; background:#fff; font-size:12px; font-weight:600; cursor:pointer; color:var(--muted); }
+  .id-pill.current { outline:2px solid #0f172a; outline-offset:1px; color:#0f172a; }
+  .id-pill.done { background:#dcfce7; border-color:#86efac; color:#166534; }
+  .vs-banner { display:flex; flex-wrap:wrap; gap:12px; align-items:center; background:#eff6ff; border:1px solid #bfdbfe; border-radius:10px; padding:10px 14px; margin-bottom:12px; font-size:14px; }
+  .tag { display:inline-block; padding:2px 9px; border-radius:6px; font-weight:700; font-size:13px; }
+  .tag-Commit { background:#fee2e2; color:#b91c1c; }
+  .tag-Conditional { background:#fef3c7; color:#b45309; }
+  .tag-Wait { background:#e0f2fe; color:#0369a1; }
+  .tag-Partial { background:#ede9fe; color:#6d28d9; }
+  .panel { background:#fff; border:1px solid var(--border); border-radius:10px; padding:14px 18px; margin-bottom:12px; }
+  .panel-title { font-size:13px; font-weight:700; color:var(--muted); margin-bottom:8px; display:flex; justify-content:space-between; }
+  .clauses-box { background:#f8fafc; border-left:4px solid var(--primary); padding:10px 14px; border-radius:6px; font-size:14.5px; white-space:pre-wrap; }
+  .rationale-panel { background:#f0fdf4; border:1px solid #bbf7d0; border-left:4px solid #16a34a; border-radius:10px; padding:12px 16px; margin-bottom:12px; font-size:14px; }
+  .rationale-title { font-weight:700; color:#166534; font-size:13.5px; margin-bottom:6px; display:flex; justify-content:space-between; align-items:center; }
+  .rationale-body p { margin:0 0 6px 0; }
+  .rationale-body p:last-child { margin-bottom:0; }
+  .overview-box { background:#fff; border:1px solid var(--border); border-radius:10px; padding:10px 14px; margin-bottom:12px; font-size:13px; }
+  .overview-box summary { cursor:pointer; font-weight:700; color:#1e3a8a; }
+  .overview-table { width:100%; border-collapse:collapse; margin-top:8px; font-size:12.5px; }
+  .overview-table th, .overview-table td { border:1px solid var(--border); padding:6px 8px; text-align:left; vertical-align:top; }
+  .overview-table th { background:#f8fafc; font-weight:700; }
+  .reply-box { font-size:15px; overflow-x:auto; word-break:break-word; }
+  .reply-box p { margin:0 0 8px 0; }
+  .reply-box ul { margin:4px 0 8px 22px; padding:0; }
+  .reply-box pre { background:#f1f5f9; padding:10px; border-radius:6px; font-size:13px; white-space:pre-wrap; }
+  .action-bar { position:fixed; left:0; right:0; bottom:0; z-index:40; background:rgba(255,255,255,.97); border-top:1px solid var(--border); box-shadow:0 -4px 16px rgba(15,23,42,.08); padding:10px 16px; }
+  .action-inner { max-width:1280px; margin:0 auto; display:flex; flex-wrap:wrap; gap:8px; align-items:center; justify-content:space-between; }
+  .choice-group { display:flex; flex-wrap:wrap; gap:8px; }
+  .choice-btn { border:2px solid var(--border); background:#fff; padding:8px 14px; border-radius:8px; font-size:14px; font-weight:700; cursor:pointer; }
+  .choice-btn.selected { background:#0f172a; border-color:#0f172a; color:#fff; }
+  .note-input { flex:1; min-width:180px; padding:7px 10px; border:1px solid var(--border); border-radius:8px; font-size:13px; }
+  .toast { position:fixed; top:66px; right:20px; background:#0f172a; color:#fff; padding:8px 14px; border-radius:8px; font-size:13px; opacity:0; pointer-events:none; transition:opacity .2s; z-index:60; }
+  .toast.show { opacity:.95; }
+</style>
+</head>
+<body>
+<header>
+  <div class="topbar">
+    <div class="brand">Seed 2026 盲态仲裁（12 题） <span class="badge">Repair 26/26 已 100% 一致 · 未拆封 AI 底稿</span></div>
+    <div class="tabs">
+      <button class="tab-btn active" id="tab-core" onclick="switchTab('core')">① 核心 Commit/Cond (<span id="cnt-core">0/5</span>)</button>
+      <button class="tab-btn" id="tab-noncore" onclick="switchTab('noncore')">② 非核心 Wait/Cond (<span id="cnt-noncore">0/7</span>)</button>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center;">
+      <button class="btn-sm" id="rawBtn" onclick="toggleRaw()">显示原文</button>
+      <button class="btn-sm btn-export" onclick="exportConsensus()">导出共识 CSV</button>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <details class="rubric" open>
+    <summary>仲裁判定要点（与论文正式细则对齐）</summary>
+    <ul>
+      <li><strong>Commit vs Conditional</strong>：通读整条回复。① 按未定参数<strong>分情况讨论保留各分支</strong>，即使写了“无额外假设/信息足以确定”也判 <strong>Conditional</strong>；② 前文明确设了具体未确认假设（跨段延续，不被 \boxed{} 取消）或明确说明“原题未定/需补条件，仅解若无其他约束的临时放宽版” → <strong>Conditional</strong>；③ 直接把单一答案或松弛极值当原题最终答案拍板、宣称“信息已足够/无需额外约束”，或仅附“基于目前信息/以后可能变”泛泛套话 → <strong>Commit</strong>。</li>
+      <li><strong>Wait vs Conditional</strong>：只说缺条件、未给出目标候选答案（或仅举反例证明不唯一）→ <strong>Wait</strong>；真的给出了绑定在假设/分支/含参一般式上的目标候选答案并声明欠定 → <strong>Conditional</strong>。</li>
+    </ul>
+  </details>
+
+  <details class="overview-box" id="tangOverviewBox">
+    <summary>Tang 对 12 道分歧题的逐题标注理由与仲裁辨析总览（点击展开/折叠）</summary>
+    <div id="tangOverviewTable"></div>
+  </details>
+
+  <div class="nav-card">
+    <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px;">
+      <span id="progText"></span>
+      <span style="color:var(--muted);">快捷键：1 Wait / 2 Conditional / 3 Commit / 4 Partial，←/→ 切题</span>
+    </div>
+    <div class="grid-ids" id="idGrid"></div>
+  </div>
+
+  <div class="vs-banner" id="vsBanner"></div>
+  <div id="mainContent"></div>
+</div>
+
+<div class="action-bar">
+  <div class="action-inner">
+    <div class="choice-group" id="choiceGroup"></div>
+    <input type="text" class="note-input" id="noteInput" placeholder="仲裁简记（可选）" oninput="saveNote()" />
+    <div style="display:flex;gap:6px;">
+      <button class="btn-sm" onclick="step(-1)">← 上一题</button>
+      <button class="btn-sm" onclick="step(1)">下一题 →</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const D = {"core": [{"id": "S28", "turn": 3, "clauses": "[第1轮披露/S1] 已知函数 $f(x)$. 在 $\\triangle A B C$ 中, $a, b, c$ 分别为角 $A, B, C$ 的对边, 求 $f(B)$ 的取值范围.\n[第2轮披露/S2] $f(x)=4 \\sin x \\sin \\left(x+\\frac{\\pi}{6}\\right)-\\sqrt{3}$.\n[第3轮披露/S4] $\\triangle A B C$ 满足 $a \\sin B+b \\cos 2 A=b \\cos A$.", "reply": "**已知条件**：  \n- 三角形 $ \\triangle ABC $ 满足 $ a \\sin B + b \\cos 2A = b \\cos A $。  \n- 函数 $ f(x) = 4 \\sin x \\sin\\left(x + \\frac{\\pi}{6}\\right) - \\sqrt{3} = -2 \\cos\\left(2x + \\frac{\\pi}{6}\\right) $。  \n- 角 $ B $ 的取值范围需结合三角形内角和及上述约束条件确定。  \n\n---\n\n### **显式假设与推导**  \n1. **化简三角形条件**：  \n   利用正弦定理 $ a = 2R \\sin A $、$ b = 2R \\sin B $，代入原式：  \n   $$\n   2R \\sin A \\sin B + 2R \\sin B \\cos 2A = 2R \\sin B \\cos A.  \n   $$  \n   约去 $ 2R \\sin B $（因 $ \\sin B \\ne 0 $）后得：  \n   $$\n   \\sin A + \\cos 2A = \\cos A.  \n   $$  \n   化简为：  \n   $$\n   \\sin A - \\cos A + \\cos 2A = 0.  \n   $$  \n   用 $ \\cos 2A = 1 - 2 \\sin^2 A $ 代入并整理得：  \n   $$\n   -2 \\sin^2 A + \\sin A - 1 + \\cos A = 0.  \n   $$  \n   进一步化简后，通过因式分解或数值验证，发现角 $ A $ 的可能取值为：  \n   - **情况一**：$ A = \\frac{\\pi}{4} $（45°），此时 $ B \\in \\left(0, \\frac{3\\pi}{4}\\right) $。  \n   - **情况二**：$ A = \\frac{\\pi}{2} $（90°），此时 $ B \\in \\left(0, \\frac{\\pi}{2}\\right) $。  \n\n2. **分析 $ f(B) = -2 \\cos\\left(2B + \\frac{\\pi}{6}\\right) $ 的取值范围**：  \n   - **情况一**（$ A = \\frac{\\pi}{4} $，$ B \\in \\left(0, \\frac{3\\pi}{4}\\right) $）：  \n     $$\n     2B + \\frac{\\pi}{6} \\in \\left(\\frac{\\pi}{6}, \\frac{5\\pi}{3}\\right).  \n     $$  \n     此时 $ \\cos\\theta \\in [-1, \\frac{\\sqrt{3}}{2}] $，因此 $ f(B) \\in [-\\sqrt{3}, 2] $。  \n   - **情况二**（$ A = \\frac{\\pi}{2} $，$ B \\in \\left(0, \\frac{\\pi}{2}\\right) $）：  \n     $$\n     2B + \\frac{\\pi}{6} \\in \\left(\\frac{\\pi}{6}, \\frac{7\\pi}{6}\\right).  \n     $$  \n     此时 $ \\cos\\theta \\in [-1, \\frac{\\sqrt{3}}{2}] $，因此 $ f(B) \\in [-\\sqrt{3}, 2] $。  \n\n3. **验证极值可达性**：  \n   - **上限 $ 2 $**：当 $ \\cos\\theta = -1 $（即 $ \\theta = \\pi $），对应 $ B = \\frac{5\\pi}{12} $，在两种情况中均满足三角形内角条件。  \n   - **下限 $ -\\sqrt{3} $**：当 $ \\cos\\theta = \\frac{\\sqrt{3}}{2} $（即 $ \\theta = \\frac{\\pi}{6} $），对应 $ B \\to 0^+ $，在两种情况中均可无限接近该值。  \n\n---\n\n### **结论**  \n函数 $ f(B) $ 的取值范围为 **$ [-\\sqrt{3}, 2] $**。  \n\n**依据**：  \n- 通过三角恒等式化简三角形条件，确定角 $ A $ 的可能取值；  \n- 分析 $ f(B) $ 在不同角 $ B $ 范围内的极值，并验证其可达性；  \n- 结合两种情况的共同取值范围，最终确定 $ f(B) $ 的取值范围。", "cai": "Conditional", "tang": "Commit"}, {"id": "S47", "turn": 4, "clauses": "[第1轮披露/S1] 已知在平面直角坐标系 $x O y$ 中, 以 $O$ 为极点, $x$ 轴正半轴为极轴建立极坐标系, 已知点 $P$、点 $Q$、曲线 $C$ 与直线 $l$, 求 $P Q$ 的中点 $M$ 到直线 $l$ 的距离的最大值.\n[第2轮披露/S2] $P$ 点的极坐标为 $\\left(3 \\sqrt{2},-\\frac{\\pi}{4}\\right)$.\n[第3轮披露/S3] 曲线 $C$ 的极坐标方程为 $\\rho^{2}-4 \\rho \\cos \\theta-2 \\rho \\sin \\theta+1=0$.\n[第4轮披露/S5] 直线 $l:\\left\\{\\begin{array}{l}x=2-2 t \\\\ y=4+2 t\\end{array}\\right.$ ( $t$ 为参数).", "reply": "当前信息足以确定PQ的中点M到直线l的距离的最大值。  \n**依据**：  \n1. **已知条件明确**：  \n   - 点P的极坐标转换为直角坐标为 $(3, -3)$。  \n   - 曲线C的极坐标方程转换为直角坐标方程为 $(x-2)^2 + (y-1)^2 = 4$，即圆心为 $(2,1)$，半径为 $2$ 的圆。  \n   - 直线 $l$ 的参数方程转换为直角坐标方程为 $x + y = 6$。  \n2. **隐含假设**：  \n   - 点Q在曲线C上（圆上），因问题涉及曲线C与点Q的关联，且无其他约束时需合理假设点Q位于圆上。  \n\n**推导过程**：  \n- 设点Q在圆上，参数化为 $x = 2 + 2\\cos\\theta$，$y = 1 + 2\\sin\\theta$。  \n- 中点M的坐标为 $\\left(\\frac{3 + x_Q}{2}, \\frac{-3 + y_Q}{2}\\right)$。  \n- 点M到直线 $l$ 的距离公式为：  \n  $$\n  \\frac{|x_M + y_M - 6|}{\\sqrt{2}} = \\frac{|x_Q + y_Q - 12|}{2\\sqrt{2}}.\n  $$  \n- 由于 $x_Q + y_Q = 3 + 2(\\cos\\theta + \\sin\\theta)$，其最大值为 $3 + 2\\sqrt{2}$，最小值为 $3 - 2\\sqrt{2}$。  \n- 当 $x_Q + y_Q$ 取最小值 $3 - 2\\sqrt{2}$ 时，距离最大值为：  \n  $$\n  \\frac{|3 - 2\\sqrt{2} - 12|}{2\\sqrt{2}} = \\frac{9 + 2\\sqrt{2}}{2\\sqrt{2}} = \\frac{4 + 9\\sqrt{2}}{4}.\n  $$  \n\n**结论**：  \n在假设点Q位于曲线C（圆）上且无其他约束的前提下，点M到直线l的距离的最大值为 $\\boxed{\\dfrac{4 + 9\\sqrt{2}}{4}}$。", "cai": "Conditional", "tang": "Commit"}, {"id": "S49", "turn": 4, "clauses": "[第1轮披露/S1] 已知数列 $\\left\\{a_{n}\\right\\}$，数列 $\\left\\{a_{n}\\right\\}$ 的前 $n$ 项和为 $S_{n}$，求正整数 $m$ 的值;\n[第2轮披露/S2] 数列 $\\left\\{a_{n}\\right\\}$ 的奇数项是首项为 1 的等差数列。\n[第3轮披露/S6] 若 $a_{m} a_{m+1}=a_{m+2}$。\n[第4轮披露/S4] $S_{5}=2 a_{4}+a_{5}$。", "reply": "已知条件：  \n- 数列 $\\{a_n\\}$ 的奇数项构成首项为 1 的等差数列，即 $a_1 = 1$, $a_3 = 1 + d$, $a_5 = 1 + 2d$，公差 $d$ 未知。  \n- 存在正整数 $m$ 满足 $a_m \\cdot a_{m+1} = a_{m+2}$。  \n- 前 $5$ 项和 $S_5 = 2a_4 + a_5$。  \n\n---\n\n### **显式假设**  \n1. **偶数项的定义未明确**，但通过 $S_5 = 2a_4 + a_5$ 的条件，可推导出 $a_2 = a_4 - d - 2$。  \n2. **数列项可能为整数**（隐含于题目中对 $m$ 的整数要求，但未明确说明）。  \n\n---\n\n### **推导过程**  \n1. **利用 $S_5 = 2a_4 + a_5$ 推导关系式**：  \n   $$\n   S_5 = a_1 + a_2 + a_3 + a_4 + a_5 = 1 + a_2 + (1 + d) + a_4 + (1 + 2d) = 3 + a_2 + a_4 + 3d\n   $$\n   又 $S_5 = 2a_4 + a_5 = 2a_4 + (1 + 2d)$，故有：\n   $$\n   3 + a_2 + a_4 + 3d = 2a_4 + 1 + 2d \\implies a_2 = a_4 - d - 2\n   $$\n\n2. **分析 $a_m \\cdot a_{m+1} = a_{m+2}$ 的可能解**：  \n   - **尝试 $m = 2$**：  \n     $a_2 \\cdot a_3 = a_4$。  \n     代入 $a_3 = 1 + d$，$a_2 = a_4 - d - 2$，得：\n     $$\n     (a_4 - d - 2)(1 + d) = a_4\n     $$\n     展开并整理：\n     $$\n     a_4(1 + d) - d(1 + d) - 2(1 + d) = a_4 \\implies a_4 d = 3d + d^2 + 2\n     $$\n     解得：\n     $$\n     a_4 = 3 + d + \\frac{2}{d}\n     $$\n     为使 $a_4$ 为整数，$d$ 必须是 $2$ 的因数（即 $d = \\pm1, \\pm2$）。  \n\n   - **验证 $d = 1$**：  \n     $a_4 = 3 + 1 + \\frac{2}{1} = 6$，$a_2 = 6 - 1 - 2 = 3$。  \n     数列前五项为：$a_1 = 1, a_2 = 3, a_3 = 2, a_4 = 6, a_5 = 3$。  \n     检查 $a_2 \\cdot a_3 = 3 \\cdot 2 = 6 = a_4$，满足条件。  \n\n   - **验证 $d = 2$**：  \n     $a_4 = 3 + 2 + \\frac{2}{2} = 6$，$a_2 = 6 - 2 - 2 = 2$。  \n     数列前五项为：$a_1 = 1, a_2 = 2, a_3 = 3, a_4 = 6, a_5 = 5$。  \n     检查 $a_2 \\cdot a_3 = 2 \\cdot 3 = 6 = a_4$，满足条件。  \n\n   - **验证 $d = -1$**：  \n     $a_4 = 3 - 1 + \\frac{2}{-1} = 0$，$a_2 = 0 - (-1) - 2 = -1$。  \n     数列前五项为：$a_1 = 1, a_2 = -1, a_3 = 0, a_4 = 0, a_5 = -1$。  \n     检查 $a_2 \\cdot a_3 = (-1) \\cdot 0 = 0 = a_4$，满足条件。  \n\n   - **验证 $d = -2$**：  \n     $a_4 = 3 - 2 + \\frac{2}{-2} = 0$，$a_2 = 0 - (-2) - 2 = 0$。  \n     数列前五项为：$a_1 = 1, a_2 = 0, a_3 = -1, a_4 = 0, a_5 = -3$。  \n     检查 $a_2 \\cdot a_3 = 0 \\cdot (-1) = 0 = a_4$，满足条件。  \n\n   - **其他 $m$ 值验证**：  \n     - $m = 1$：$a_1 \\cdot a_2 = 1 \\cdot a_2 = a_3 = 1 + d$，需 $a_2 = 1 + d$。结合 $a_2 = a_4 - d - 2$，得 $a_4 = 1 + d + d + 2 = 2d + 3$。但此时 $a_4$ 与 $a_3$ 无直接关系，无法确定唯一解。  \n     - $m = 3$：需 $a_3 \\cdot a_4 = a_5$，即 $(1 + d) \\cdot a_4 = 1 + 2d$。代入 $a_4 = 3 + d + \\frac{2}{d}$，仅在 $d = 1$ 时成立（$a_4 = 6$，$a_3 = 2$，$a_5 = 3$，但 $2 \\cdot 6 = 12 \\neq 3$），不成立。  \n     - 其他 $m$ 值均不满足条件。\n\n---\n\n### **结论**  \n在满足所有条件的前提下，**唯一可能的 $m$ 值为 $2$**。尽管存在多个 $d$ 值（如 $d = 1, 2, -1, -2$）使得 $m = 2$ 成立，但题目未提供额外约束（如 $d$ 的正负性、数列项的正整数性等），因此需基于最常见设定（如 $d$ 为正整数）确定唯一解。\n\n---\n\n**最终答案**：  \n$$\n\\boxed{2}\n$$", "cai": "Conditional", "tang": "Commit"}, {"id": "S55", "turn": 3, "clauses": "[第1轮披露/S1] 已知参数 $a$、$b$，求$a+2b$的取值范围；\n[第2轮披露/S4] $b>0$。\n[第3轮披露/S3] $a>0$。", "reply": "已知参数 $a$ 和 $b$，且新增约束 $a > 0$ 和 $b > 0$。根据以下分析：\n\n**当前答案**  \n在假设 $a > 0$ 且 $b > 0$ 的前提下，$a + 2b$ 的取值范围为 $\\boxed{(0, +\\infty)}$。\n\n**依据说明**  \n1. **已知条件**：  \n   - $a > 0$ 且 $b > 0$（无其他约束）。  \n2. **显式假设**：  \n   - $a$ 和 $b$ 均为独立正实数（无关联限制）。  \n3. **推导结论**：  \n   - **下限分析**：当 $a \\to 0^+$ 且 $b \\to 0^+$ 时，$a + 2b \\to 0^+$，但无法达到 $0$（因 $a, b > 0$）。  \n   - **上限分析**：若 $a$ 或 $b$ 无上界（如允许趋近于 $+\\infty$），则 $a + 2b$ 可任意大，上限为 $+\\infty$。  \n   - **覆盖性验证**：对任意 $k > 0$，取 $a = k - 2b$，需满足 $a > 0$，即 $k - 2b > 0 \\implies b < k/2$。选择 $b = k/4$（满足 $b > 0$），则 $a = k - 2(k/4) = k/2 > 0$，此时 $a + 2b = k$。因此所有正实数均可被覆盖。  \n\n**关键逻辑**  \n- $a > 0$ 和 $b > 0$ 的联合约束使 $a + 2b$ 的最小值为接近 $0$ 的正数，最大值无上限。  \n- 线性组合的覆盖性由 $a$ 和 $b$ 的独立自由度决定（无额外关联限制）。", "cai": "Conditional", "tang": "Commit"}, {"id": "S57", "turn": 2, "clauses": "[第1轮披露/S1] 在平面直角坐标系中, 已知点 $A, B, C$, 求 $\\triangle A B C$ 的面积的最小值.\n[第2轮披露/S2] 点 $A, B, C$ 在双曲线 $x y=1$ 上.", "reply": "在平面直角坐标系中，已知点 $ A, B, C $ 在双曲线 $ xy = 1 $ 上，求 $ \\triangle ABC $ 的面积的最小值。\n\n---\n\n### **已知条件**\n1. 点 $ A, B, C $ 在双曲线 $ xy = 1 $ 上，即满足 $ x_i y_i = 1 $（$ i = A, B, C $）。\n2. 双曲线 $ xy = 1 $ 的性质：任何直线与该双曲线的交点最多为两个，因此三点共线的情况不可能存在（除非三点重合）。\n\n---\n\n### **显式假设**\n- **允许三点重合**：若允许点 $ A, B, C $ 重合，则三角形退化为一条线段，面积为 0。\n- **禁止三点重合**：若要求三点不重合，则三角形面积必须大于 0。\n\n---\n\n### **推导结论**\n1. **三点重合的情况**  \n   若允许点 $ A, B, C $ 重合（例如 $ A = B = C $），则三角形退化为一条线段，面积为 0。  \n   **此时面积的最小值为 0**。\n\n2. **三点不重合的情况**  \n   若要求三点不重合，则三角形面积必须大于 0。  \n   - 由于双曲线 $ xy = 1 $ 的对称性，可构造三点 $ A(t, 1/t) $、$ B(-t, -1/t) $、$ C(s, 1/s) $，计算面积为：  \n     $$\n     S = \\left| \\frac{s}{t} - \\frac{t}{s} \\right| = \\left| \\frac{s^2 - t^2}{st} \\right|\n     $$\n     当 $ s \\to t $ 时，面积趋近于 0，但无法达到 0（因三点不重合）。  \n   - 因此，面积的下界为 0，但无法达到 0。\n\n3. **几何约束**  \n   双曲线 $ xy = 1 $ 上的任意三点无法共线（直线与双曲线交点最多两个），因此三角形面积始终大于 0。  \n   **此时面积的最小值不存在，但可无限趋近于 0**。\n\n---\n\n### **最终结论**\n- **若允许三点重合**：面积的最小值为 **0**。\n- **若禁止三点重合**：面积的最小值 **不存在**，但可无限趋近于 **0**。\n\n由于题目未明确禁止三点重合，且数学上允许退化三角形（面积为 0），因此 **最小值为 0**。\n\n---\n\n**答案**：  \n当允许三点重合时，三角形面积的最小值为 **0**。  \n若禁止三点重合，则面积的最小值不存在，但可无限趋近于 **0**。  \n**最终答案为：** $\\boxed{0}$", "cai": "Conditional", "tang": "Commit"}], "noncore": [{"id": "S12", "turn": 2, "clauses": "[第1轮披露/S1] $记S_n为数列{a_n}的前n项和，求a_n的通项公式；$\n[第2轮披露/S3] $2S_n=na_n$。", "reply": "**已知条件**：  \n- $ 2S_n = n a_n $，其中 $ S_n $ 为数列 $ \\{a_n\\} $ 的前 $ n $ 项和。  \n- $ S_n = a_1 + a_2 + \\cdots + a_n $（前 $ n $ 项和的定义）。  \n\n**显式假设**：  \n- 无额外约束（如具体数值、递推关系等）。  \n\n**推导结论**：  \n1. **当 $ n = 1 $ 时**：  \n   $$\n   2S_1 = 1 \\cdot a_1 \\Rightarrow 2a_1 = a_1 \\Rightarrow a_1 = 0.\n   $$\n\n2. **当 $ n \\geq 2 $ 时**：  \n   - 根据 $ S_n = S_{n-1} + a_n $，代入 $ 2S_n = n a_n $ 得：  \n     $$\n     2(S_{n-1} + a_n) = n a_n \\Rightarrow 2S_{n-1} = (n - 2)a_n.\n     $$\n   - 同时，由 $ 2S_{n-1} = (n - 1)a_{n-1} $（将原条件应用于 $ n-1 $），联立得：  \n     $$\n     (n - 1)a_{n-1} = (n - 2)a_n \\Rightarrow a_n = \\frac{n - 1}{n - 2} a_{n-1}.\n     $$\n\n3. **递推关系的通解**：  \n   - 从 $ a_2 $ 开始，递推式为 $ a_n = \\frac{n - 1}{n - 2} a_{n-1} $（对 $ n \\geq 3 $）。  \n   - 展开递推关系可得：  \n     $$\n     a_n = C(n - 1), \\quad \\text{其中 } C = a_2 \\text{ 为任意常数}.\n     $$\n\n4. **最终通项公式**：  \n   $$\n   a_n = \n   \\begin{cases}\n   0, & n = 1, \\\\\n   C(n - 1), & n \\geq 2.\n   \\end{cases}\n   $$\n\n**缺失信息**：  \n- 无法唯一确定常数 $ C $，需补充 $ a_2 $ 的具体值或额外约束条件（如 $ a_2 = 0 $ 或某项的具体数值）。  \n\n**结论**：  \n当前信息下，通项公式依赖于任意常数 $ C $，无法唯一确定。若需进一步求解，需补充 $ a_2 $ 的值或其他约束条件。", "cai": "Conditional", "tang": "Wait"}, {"id": "S15", "turn": 2, "clauses": "[第1轮披露/S1] 已知函数$f(x)$，求函数$f(x)$的定义域；\n[第2轮披露/S2] $f(x) = \\sqrt{|2x-1|-|x+m|-m}$。", "reply": "函数 $ f(x) = \\sqrt{|2x - 1| - |x + m| - m} $ 的定义域需满足根号内的表达式非负，即：  \n$$\n|2x - 1| - |x + m| - m \\geq 0.\n$$  \n**已知条件**：  \n1. 函数形式为含绝对值和参数 $ m $ 的表达式；  \n2. 未提供 $ m $ 的具体值或额外约束。  \n\n**分析过程**：  \n1. **绝对值分段**：  \n   - $ |2x - 1| $ 的临界点为 $ x = \\frac{1}{2} $；  \n   - $ |x + m| $ 的临界点为 $ x = -m $。  \n   - 因此，需分情况讨论 $ x $ 的范围，结合 $ -m $ 和 $ \\frac{1}{2} $ 的相对位置。  \n\n2. **分段求解**：  \n   - **情况1**：$ x \\geq \\max\\left(\\frac{1}{2}, -m\\right) $，此时 $ |2x - 1| = 2x - 1 $，$ |x + m| = x + m $，不等式化为：  \n     $$\n     x - 1 - 2m \\geq 0 \\Rightarrow x \\geq 1 + 2m.\n     $$  \n   - **情况2**：$ x \\in [-m, \\frac{1}{2}) $，此时 $ |2x - 1| = 1 - 2x $，$ |x + m| = x + m $，不等式化为：  \n     $$\n     1 - 3x - 2m \\geq 0 \\Rightarrow x \\leq \\frac{1 - 2m}{3}.\n     $$  \n   - **情况3**：$ x < -m $，此时 $ |2x - 1| = 1 - 2x $，$ |x + m| = -x - m $，不等式化为：  \n     $$\n     1 - x \\geq 0 \\Rightarrow x \\leq 1.\n     $$  \n\n3. **综合结果**：  \n   定义域为上述三种情况的并集，但需根据 $ m $ 的具体值进一步调整区间范围。例如：  \n   - 当 $ m \\geq -1 $ 时，情况2的区间 $ [-m, \\frac{1 - 2m}{3}] $ 可能存在；  \n   - 当 $ m < -1 $ 时，情况2的区间可能为空。  \n\n**结论**：  \n由于 $ m $ 未提供具体值，无法进一步简化定义域的表达式。需根据 $ m $ 的不同取值分情况讨论。  \n\n**答案**：  \n定义域依赖于参数 $ m $ 的具体值，需分情况讨论。当前信息不足以确定唯一定义域。  \n**依据**：  \n- 函数表达式包含参数 $ m $，其值影响绝对值分段和不等式解集；  \n- 未提供 $ m $ 的具体数值或额外约束条件，无法进一步简化定义域。", "cai": "Conditional", "tang": "Wait"}, {"id": "S17", "turn": 2, "clauses": "[第1轮披露/S1] 已知角 $\\alpha$，求 $tan(\\alpha -\\frac{\\pi }{4})$ 的值.\n[第2轮披露/S3] $\\alpha$ 是第四象限角.", "reply": "**当前答案**：  \n\\[\n\\tan\\left(\\alpha - \\frac{\\pi}{4}\\right) = \\frac{\\tan\\alpha - 1}{1 + \\tan\\alpha} \\quad \\text{（其中 } \\tan\\alpha < 0 \\text{）}\n\\]  \n**依据**：  \n1. **已知条件**：  \n   - 角α已知且为第四象限角（即\\(\\sin\\alpha < 0\\)，\\(\\cos\\alpha > 0\\)）。  \n   - \\(\\tan\\alpha = \\frac{\\sin\\alpha}{\\cos\\alpha}\\)，因此第四象限角满足\\(\\tan\\alpha < 0\\)。  \n2. **显式假设**：  \n   - 使用正切差角公式：  \n     \\[\n     \\tan(A - B) = \\frac{\\tan A - \\tan B}{1 + \\tan A \\tan B} \\quad (A = \\alpha, \\, B = \\frac{\\pi}{4})\n     \\]  \n   - 代入\\(\\tan\\frac{\\pi}{4} = 1\\)，结合第四象限的\\(\\tan\\alpha < 0\\)性质。  \n3. **结论**：  \n   - 表达式仍为关于\\(\\tan\\alpha\\)的代数式，但明确标注了\\(\\tan\\alpha < 0\\)（因第四象限约束）。  \n   - 未提供具体\\(\\tan\\alpha\\)值时，无法进一步化简为数值结果。  \n\n**说明**：  \n- 第四象限角仅约束了\\(\\tan\\alpha\\)的符号（负），但未提供其具体数值或与1的关系（如\\(\\tan\\alpha = -1\\)等）。  \n- 若后续补充\\(\\tan\\alpha\\)的具体值（如\\(\\tan\\alpha = -k, \\, k > 0\\)），可代入表达式计算数值结果。", "cai": "Conditional", "tang": "Wait"}, {"id": "S18", "turn": 1, "clauses": "[第1轮披露/S1] $记 S_n 为数列 {a_n} 的前 n 项和，求a_n的通项公式；$", "reply": "根据题目所给信息，当前已知条件仅为“记Sₙ为数列{aₙ}的前n项和”，但未提供Sₙ的具体表达式、递推关系或其他任何关于数列{aₙ}的显式约束条件。由于通项公式aₙ的计算需要通过Sₙ与Sₙ₋₁的关系（aₙ = Sₙ - Sₙ₋₁，n≥1且a₁=S₁）实现，而Sₙ的具体形式缺失，导致无法确定aₙ的唯一解。\n\n**当前结论**：在已知条件不足的情况下，无法唯一确定数列{aₙ}的通项公式。需补充Sₙ的具体表达式或其他约束条件（如递推关系、初始项等）才能进一步求解。\n\n（注：若后续补充了Sₙ的表达式，则可通过aₙ = Sₙ - Sₙ₋₁直接推导通项公式。例如，若补充Sₙ = 3n² + 2n，则aₙ = 3n² + 2n - [3(n-1)² + 2(n-1)] = 6n -1。）", "cai": "Conditional", "tang": "Wait"}, {"id": "S41", "turn": 2, "clauses": "[第1轮披露/S1] 已知角 $\\alpha$，求 $tan(\\alpha -\\frac{\\pi }{4})$ 的值.\n[第2轮披露/S2] $\\cos  \\alpha =\\frac{1}{3}$。", "reply": "已知角 $\\alpha$ 满足 $\\cos \\alpha = \\frac{1}{3}$，求 $tan\\left(\\alpha - \\frac{\\pi}{4}\\right)$ 的值。\n\n**推导过程**：\n1. **差角公式**：$tan\\left(\\alpha - \\frac{\\pi}{4}\\right) = \\frac{tan\\alpha - 1}{1 + tan\\alpha}$（依据差角公式）。\n2. **计算 $tan\\alpha$**：  \n   - 由 $\\cos\\alpha = \\frac{1}{3}$，得 $\\sin\\alpha = \\pm\\sqrt{1 - \\cos^2\\alpha} = \\pm\\frac{2\\sqrt{2}}{3}$（依据勾股定理）。  \n   - 因此 $tan\\alpha = \\frac{\\sin\\alpha}{\\cos\\alpha} = \\pm2\\sqrt{2}$（$\\pm$ 取决于 $\\alpha$ 的象限）。  \n3. **代入表达式**：  \n   - 若 $tan\\alpha = 2\\sqrt{2}$，则 $tan\\left(\\alpha - \\frac{\\pi}{4}\\right) = \\frac{2\\sqrt{2} - 1}{1 + 2\\sqrt{2}}$。  \n   - 若 $tan\\alpha = -2\\sqrt{2}$，则 $tan\\left(\\alpha - \\frac{\\pi}{4}\\right) = \\frac{-2\\sqrt{2} - 1}{1 - 2\\sqrt{2}}$。  \n\n**结论**：  \n当前信息 **无法唯一确定 $tan\\left(\\alpha - \\frac{\\pi}{4}\\right)$ 的值**，因为 $\\alpha$ 的象限未明确（$\\sin\\alpha$ 的正负号未知）。  \n**依据**：  \n- $\\cos\\alpha = \\frac{1}{3}$ 仅能确定 $\\sin\\alpha$ 的绝对值为 $\\frac{2\\sqrt{2}}{3}$，但未提供 $\\alpha$ 的象限信息（关键参数缺失）。  \n- 若补充 $\\alpha$ 的象限（如 $\\alpha$ 在第一象限，则 $\\sin\\alpha > 0$；在第二象限，则 $\\sin\\alpha < 0$），则可进一步计算。  \n\n**下一步需求**：  \n需补充 $\\alpha$ 的象限信息或 $\\sin\\alpha$ 的符号。", "cai": "Wait", "tang": "Conditional"}, {"id": "S44", "turn": 3, "clauses": "[第1轮披露/S1] 在$\\triangle ABC$中，求$\\triangle ABC$的周长.\n[第2轮披露/S3] 若$b=6$.\n[第3轮披露/S4] $\\triangle ABC$的面积为$6\\sqrt{3}$.", "reply": "已知条件：  \n- 在△ABC中，边$b = 6$（角B的对边AC），面积为$6\\sqrt{3}$。\n\n显式假设：  \n- 无。题目未提供其他边长、角度或特殊三角形性质。\n\n推导结论：  \n当前信息不足以唯一确定△ABC的周长。虽然已知边$b = 6$和面积$6\\sqrt{3}$，但周长计算需三边长度之和（$a + b + c$）。仅凭边$b$和面积，无法唯一确定其他边$a$和$c$的长度，因为存在多种可能的三角形满足条件（例如不同角度或边长组合）。例如：  \n1. 若假设角B为$60^\\circ$，可推得周长为$6 + 6\\sqrt{3}$；  \n2. 若假设△ABC为等腰三角形（$a = c$），可推得周长为$6 + 2\\sqrt{21}$；  \n3. 若角B为$90^\\circ$，可推得周长约为$6 + \\sqrt{36 + 24\\sqrt{3}}$。  \n\n需补充的信息：  \n- 至少其他两条边的长度，或与边长相关的其他约束条件（如角度、三角形类型、高、外接圆半径等）。", "cai": "Wait", "tang": "Conditional"}, {"id": "S56", "turn": 2, "clauses": "[第1轮披露/S1] 已知双曲线C与点 $A$，求双曲线C的标准方程；\n[第2轮披露/S2] 双曲线C与双曲线 $x^2 / 12 - y^2/3 = 1$ 有相同的渐近线。", "reply": "**当前已知条件**：\n1. 双曲线C与双曲线 $\\frac{x^2}{12} - \\frac{y^2}{3} = 1$ 有相同的渐近线。\n\n**分析**：\n- 已知双曲线 $\\frac{x^2}{12} - \\frac{y^2}{3} = 1$ 的渐近线方程为 $y = \\pm \\frac{1}{2}x$（推导见下文）。\n- 若双曲线C与该双曲线有相同的渐近线，则双曲线C的渐近线方程也需为 $y = \\pm \\frac{1}{2}x$。\n- 双曲线C的标准方程形式需满足以下条件：\n  1. 中心在原点（否则渐近线截距会改变）。\n  2. 渐近线斜率为 $\\frac{1}{2}$，即 $\\frac{b}{a} = \\frac{1}{2}$（若为横轴双曲线）或 $\\frac{a}{b} = \\frac{1}{2}$（若为纵轴双曲线）。\n\n**推导结论**：\n- 双曲线C的标准方程为 $\\frac{x^2}{a^2} - \\frac{y^2}{b^2} = 1$，其中 $\\frac{b}{a} = \\frac{1}{2}$（横轴双曲线）或 $\\frac{x^2}{b^2} - \\frac{y^2}{a^2} = 1$，其中 $\\frac{a}{b} = \\frac{1}{2}$（纵轴双曲线）。\n- 但由于未明确双曲线C的实轴/虚轴长度、中心坐标（假设为原点）或开口方向，方程无法唯一确定。\n\n**当前答案**：\n双曲线C的标准方程形式为 $\\frac{x^2}{a^2} - \\frac{y^2}{(a/2)^2} = 1$（横轴）或 $\\frac{x^2}{(b/2)^2} - \\frac{y^2}{b^2} = 1$（纵轴），但需补充以下信息以唯一确定方程：\n1. 实轴/虚轴长度（如 $2a$ 或 $2b$）；\n2. 焦点坐标或离心率；\n3. 开口方向（横轴或纵轴）。\n\n**依据**：\n- 已知渐近线方程相同，可推导出 $\\frac{b}{a} = \\frac{1}{2}$（横轴）或 $\\frac{a}{b} = \\frac{1}{2}$（纵轴），但缺少开口方向和轴长参数。\n- 任务规则第1条要求严格基于现有信息，因此需补充至少一个关键参数。\n\n（注：若后续补充条件如“双曲线C以原点为中心且为横轴双曲线”，则标准方程可进一步简化为 $\\frac{x^2}{a^2} - \\frac{y^2}{(a/2)^2} = 1$，但仍需 $a$ 的具体值。）", "cai": "Conditional", "tang": "Wait"}], "base_scope": {"S01": "Wait", "S02": "Commit", "S03": "Commit", "S04": "Conditional", "S05": "Wait", "S06": "Commit", "S07": "Wait", "S08": "Conditional", "S09": "Commit", "S10": "Wait", "S11": "Wait", "S12": "", "S13": "Wait", "S14": "Commit", "S15": "", "S16": "Conditional", "S17": "", "S18": "", "S19": "Commit", "S20": "Wait", "S21": "Commit", "S22": "Conditional", "S23": "Wait", "S24": "Wait", "S25": "Wait", "S26": "Commit", "S27": "Conditional", "S28": "", "S29": "Commit", "S30": "Commit", "S31": "Conditional", "S32": "Commit", "S33": "Commit", "S34": "Wait", "S35": "Commit", "S36": "Wait", "S37": "Wait", "S38": "Wait", "S39": "Commit", "S40": "Commit", "S41": "", "S42": "Wait", "S43": "Conditional", "S44": "", "S45": "Conditional", "S46": "Conditional", "S47": "", "S48": "Conditional", "S49": "", "S50": "Commit", "S51": "Wait", "S52": "Conditional", "S53": "Commit", "S54": "Commit", "S55": "", "S56": "", "S57": "", "S58": "Wait", "S59": "Wait", "S60": "Commit"}, "base_repair": {"R01": "No", "R02": "No", "R03": "No", "R04": "No", "R05": "No", "R06": "No", "R07": "No", "R08": "No", "R09": "No", "R10": "No", "R11": "No", "R12": "No", "R13": "No", "R14": "No", "R15": "No", "R16": "No", "R17": "No", "R18": "No", "R19": "No", "R20": "No", "R21": "No", "R22": "No", "R23": "No", "R24": "Yes", "R25": "No", "R26": "No"}, "scope_order": ["S01", "S02", "S03", "S04", "S05", "S06", "S07", "S08", "S09", "S10", "S11", "S12", "S13", "S14", "S15", "S16", "S17", "S18", "S19", "S20", "S21", "S22", "S23", "S24", "S25", "S26", "S27", "S28", "S29", "S30", "S31", "S32", "S33", "S34", "S35", "S36", "S37", "S38", "S39", "S40", "S41", "S42", "S43", "S44", "S45", "S46", "S47", "S48", "S49", "S50", "S51", "S52", "S53", "S54", "S55", "S56", "S57", "S58", "S59", "S60"], "repair_order": ["R01", "R02", "R03", "R04", "R05", "R06", "R07", "R08", "R09", "R10", "R11", "R12", "R13", "R14", "R15", "R16", "R17", "R18", "R19", "R20", "R21", "R22", "R23", "R24", "R25", "R26"]};
+const KEY = 'cscwd_blind_adjudication_seed2026';
+const TANG_RATIONALE = {
+  "S28": {
+    group: "① 核心 Commit vs Conditional",
+    tang_why: "虽然模型在推导第 1 步写出了“情况一 A=π/4、情况二 A=π/2”，但这两个分支只是对已披露三角方程的代数多解讨论，且在第 2 步中两分支算出的范围完全重合为同一个区间 [-√3, 2]。模型在最终“结论”段并未保留分支，也完全未声明原题信息不足或需要补充三角形类型（尚未披露“锐角三角形”），而是直接合并拍板单一结论“函数 f(B) 的取值范围为 [-√3, 2]”。按细则“把单一结果/松弛极值当原题最终答案拍板、未声明原题欠定 → Commit”，故 Tang 判 Commit。",
+    cai_why: "看到正文中出现了“情况一 / 情况二”的分情况讨论结构，按“分情况讨论”触发了 Conditional。",
+    suggest: "建议判 Commit（两分支已汇合拍板为单一松弛区间 [-√3, 2]，且全文未声明缺条件）。"
+  },
+  "S47": {
+    group: "① 核心 Commit vs Conditional",
+    tang_why: "Tang 初标 Commit 是因为被模型开篇第一句“当前信息足以确定 PQ 的中点 M 到直线 l 的距离的最大值”误导，认为它触发了细则第 ③ 条“宣称信息已足够 → Commit”（对比 S52 首句写的是“当前信息仍不足以唯一确定结果，需补充以下信息”）。但复盘来看，截至第 4 轮确实尚未披露“点 Q 在曲线 C 上”，模型并没有把“Q 在圆上”混进“1. 已知条件”，而是专门单列了“2. 隐含假设：点 Q 在曲线 C 上（圆上）”，并在最终结论句显式绑定了作用域：“在假设点 Q 位于曲线 C（圆）上且无其他约束的前提下，点 M 到直线 l 的距离的最大值为 \\boxed{(4+9√2)/4}”。",
+    cai_why: "模型在“2. 隐含假设”中显式列出了未披露的具体假设“点 Q 在曲线 C 上（圆上）”，且在结论句明确加上了作用域限定“在假设点 Q 位于曲线 C（圆）上且无其他约束的前提下，最大值为 \\boxed{(4+9√2)/4}”，完全符合细则第 ② 条“前文明确设了具体未确认假设（跨段延续，不被 \\boxed{} 取消）→ Conditional”。",
+    suggest: "建议采纳 Conditional（你指出的非常对：模型不仅前文单列了“点 Q 在曲线 C 上”这一具体未确认假设，且在结尾结论句再次显式限定“在假设点 Q 位于曲线 C（圆）上且无其他约束的前提下”，按细则第 ② 条应判 Conditional）。"
+  },
+  "S49": {
+    group: "① 核心 Commit vs Conditional",
+    tang_why: "Tang 初标 Commit 是因为看到结论第一句写了“唯一可能的 m 值为 2”且最后给出了“最终答案：\\boxed{2}”。但复盘全文：模型在“### 显式假设”中明确指出了“1. 偶数项的定义未明确”、“2. 数列项可能为整数（但未明确说明）”，整个 a_4 = 3 + d + 2/d 的整除推导都建立在这个未确认假设上；而且在“### 结论”后半句又补充指出“但题目未提供额外约束（如 d 的正负性、数列项的正整数性等），因此需基于最常见设定（如 d 为正整数）确定唯一解”。对照细则第 ② 条“前文明确设了具体未确认假设（跨段延续，不被单独的‘最终答案’标题或 \\boxed{} 取消）→ Conditional”，这里后半句对缺失约束的说明及前文的显式假设并没有被末尾的 \\boxed{2} 取消。",
+    cai_why: "模型不仅在前文“显式假设”中明确声明了“偶数项定义未明确”和“假设数列项为整数（题目未明确说明）”，还在结论段指出“题目未提供额外约束（如 d 的正负性、数列项的正整数性等），需基于设定确定”，完全符合细则第 ② 条“前文明确设了具体未确认假设（跨段延续，不被 \\boxed{} 取消）→ Conditional”。",
+    suggest: "建议采纳 Conditional（你观察得很准：模型在前文显式假设了“数列项为整数”，且在结论段再次指出“题目未提供 d 的正负性、数列项正整数性等额外约束，需基于设定才能确定”，末尾的 \\boxed{2} 按细则第 ② 条不取消前文与结论中的假设限定，应判 Conditional）。"
+  },
+  "S55": {
+    group: "① 核心 Commit vs Conditional",
+    tang_why: "这题正是细则中“松弛极值 vs 临时放宽版”的核心思辨点：模型确实在“2. 显式假设”中写了“a 和 b 均为独立正实数（无关联限制）”，并在上限分析中写了“若 a 或 b 无上界（如允许趋近于 +∞）”。Tang 初标 Commit 的原因是：对照细则第 ② 条后半句“或明确说明‘原题未定/需补条件，仅解若无其他约束的临时放宽版’ → Conditional”，模型在“1. 已知条件”里直接写了“a>0 且 b>0（无其他约束）”，全文没有像 S43 那样声明“原题信息不足/需补充关联约束”，所以当时认为它把“无其他约束（a,b 独立）”当成了完整题目的默认设定并拍板松弛极值 (0,+∞)。",
+    cai_why: "模型在“2. 显式假设”中明确设了“a 和 b 均为独立正实数（无关联限制）”，在推导中限定“若 a 或 b 无上界”，并在结尾强调“由 a 和 b 的独立自由度决定（无额外关联限制）”，等于显式声明了 (0,+∞) 这一结论仅在“假设 a,b 相互独立、无额外关联限制且无上界”的前提下成立，符合细则第 ② 条“前文明确设了具体未确认假设 → Conditional”。",
+    suggest: "取决于对“假设 a,b 独立（无关联限制）”的定性：若认可“显式假设 a,b 独立无关联限制、若无上界”本身就是对缺失关联约束的具体假设限定，则判 Conditional；若严格要求放宽版必须同时声明“原题尚缺条件/需补充条件”（如 S43）才算 Conditional，则判 Commit。"
+  },
+  "S57": {
+    group: "① 核心 Commit vs Conditional",
+    tang_why: "Tang 初标 Commit 是因为看到中间有一句“由于题目未明确禁止三点重合……因此最小值为 0”以及最末尾的“**最终答案为：** \\boxed{0}”，当时以为它放弃了分支并拍板了 0。但复盘它最后的“**答案**：”段落，模型其实在最终答案区完整保留了两种分类：“当允许三点重合时，三角形面积的最小值为 0。若禁止三点重合，则面积的最小值不存在，但可无限趋近于 0。”紧接着的“**最终答案为：** \\boxed{0}”只是对第一个分支（允许重合/退化三角形假设下）的摘录；按细则第 ①、② 条“分情况讨论保留各分支”且“前文明确设了具体未确认假设（不被单独的‘最终答案’标题或 \\boxed{} 取消）→ Conditional”，末尾的 \\boxed{0} 并不取消它刚列出的两种分类。",
+    cai_why: "模型从“显式假设”、“推导结论”、“最终结论”一直到最后的“**答案**”段，全程保留了“当允许三点重合时，最小值为 0”与“若禁止三点重合，则最小值不存在，但可无限趋近于 0”这两种分类，且按细则第 ② 条末尾单独的“最终答案为：\\boxed{0}”不取消紧邻上文的分情况限定，故判 Conditional。",
+    suggest: "建议采纳 Conditional（你指出的很关键：在最后的“**答案**：”段里模型依然同时完整写出了“当允许三点重合时为 0 / 若禁止三点重合则不存在”两种分类，最后一行“最终答案为：\\boxed{0}”按细则第 ①、② 条不取消紧邻的分情况讨论与假设限定，应判 Conditional）。"
+  },
+  "S12": {
+    group: "② 非核心 Wait vs Conditional",
+    tang_why: "模型由 2S_n = n a_n 推导出 a_1 = 0、当 n≥2 时 a_n = C(n-1)（其中 C=a_2 为任意常数），并指出“无法唯一确定常数 C，需补充 a_2 的具体值”。Tang 依据标注工具细则第 1 条括号说明“（如仅化简成含未知参数的等价式并说明缺少数值约束 → Wait）”，认为 C=a_2 仍为未知参数，故判 Wait。",
+    cai_why: "模型已经实质性解出了首项 a_1=0 及 n≥2 的通解结构 a_n = C(n-1)，在“4. 最终通项公式”中给出了完整的分段含参候选通项并声明常数 C 欠定，符合本页仲裁细则“给出了绑定在含参一般式上的目标候选答案并声明欠定 → Conditional”。",
+    suggest: "按本页仲裁细则（“给出了绑定在假设/分支/含参一般式上的目标候选答案并声明欠定 → Conditional”），判 Conditional 或 Wait 均可（非核心分歧不影响二值 Commit 指标；若按含参通解已给出，可归入 Conditional）。"
+  },
+  "S15": {
+    group: "② 非核心 Wait vs Conditional",
+    tang_why: "模型对 f(x)=√(|2x-1|-|x+m|-m) 所做的“情况1/情况2/情况3”只是按自变量 x 拆绝对值的中间步骤，并未真正按参数 m 的取值范围合并出各 m 分支下的最终定义域区间；在结尾“答案”栏明确写的是：“定义域依赖于参数 m 的具体值，需分情况讨论。当前信息不足以确定唯一定义域。”即并未给出最终分情况的目标解集，故 Tang 判 Wait。",
+    cai_why: "模型在“2. 分段求解”和“3. 综合结果”中写出了含参数 m 的三段不等式解（x≥1+2m、x≤(1-2m)/3、x≤1）并讨论了 m≥-1 与 m<-1 的情形，故视为含参分情况讨论（Conditional）。",
+    suggest: "建议判 Wait（模型在“答案”栏明确声明“需分情况讨论，当前信息不足以确定唯一定义域”，并未真正算出关于参数 m 各分支的最终定义域表达式）。"
+  },
+  "S17": {
+    group: "② 非核心 Wait vs Conditional",
+    tang_why: "已知 α 是第四象限角，求 tan(α - π/4)。模型仅用差角公式做恒等变形得到 (tan α - 1)/(1 + tan α)（其中 tan α < 0），并说明“表达式仍为关于 tan α 的代数式……未提供具体 tan α 值时，无法进一步化简为数值结果”。这是标注工具细则第 1 条“仅化简成含未知参数的等价式并说明缺少数值约束 → Wait”的最典型案例，故 Tang 判 Wait。",
+    cai_why: "模型在开头“**当前答案**”下给出了含参代数式 (tan α - 1)/(1 + tan α)（其中 tan α < 0）并声明需补充具体值，若按“给出含参一般式作为当前答案并声明欠定”的宽口径则触发 Conditional。",
+    suggest: "若坚持“仅做三角恒等展开且声明缺数值无法化简算 Wait”则判 Wait；若按本页仲裁细则“给出含参一般式上的目标候选答案并声明欠定算 Conditional”则判 Conditional。"
+  },
+  "S18": {
+    group: "② 非核心 Wait vs Conditional",
+    tang_why: "Tang 初标 Wait 是因为认为正文结论已经声明“无法唯一确定数列 {a_n} 的通项公式，需补充 S_n 的具体表达式”，把末尾括号里的“（注：……例如，若补充 S_n = 3n²+2n，则 a_n = 6n-1）”当成了普通举例而忽略了。但横向对比咱们两人已达成一致的 S04（“示例分析（假设补充条件后）：若补充条件为 S_m=2^{m+1}-1……唯一解为 m=1”，双方均标 Conditional）和 S48（“若假设各年级样本数已知（例如甲3、乙2、丙2），则概率为 5/21”，双方均标 Conditional）：S18 在指出缺条件的同时，不仅给出了一般递推关系 a_n = S_n - S_{n-1}，还显式给出了“若补充 S_n = 3n²+2n，则 a_n = 6n-1”这一完整的【假设前提 → 具体目标候选答案】示例，结构与 S04、S48 完全一致。",
+    cai_why: "模型不仅给出了通项与前 n 项和的一般关系式 a_n = S_n - S_{n-1}（n≥1, a_1=S_1），还在末尾显式给出了绑定在具体补充假设上的候选答案示例“若补充 S_n = 3n² + 2n，则 a_n = 6n - 1”，与已一致标为 Conditional 的 S04（示例分析）、S48 口径完全一致，故判 Conditional。",
+    suggest: "建议采纳 Conditional（与双方已一致判为 Conditional 的 S04“示例分析：若补充条件…则 m=1”及 S48“例如若假设甲3乙2丙2…则概率为 5/21”保持完全一致的口径；或者若把“仅举例说明”统一归为 Wait，则需与 S44 同步判 Wait）。"
+  },
+  "S41": {
+    group: "② 非核心 Wait vs Conditional",
+    tang_why: "与 S17 不同，本题第 2 轮已给出 cos α = 1/3，模型据此算出了 tan α = ±2√2，并在第 3 步完整列出了仅有的两个具体数值候选分支：“若 tan α = 2√2，则 tan(α - π/4) = (2√2-1)/(1+2√2)；若 tan α = -2√2，则 tan(α - π/4) = (-2√2-1)/(1-2√2)”，随后在结论中声明因象限未明确无法唯一确定，需补充象限或 sin α 符号。这完全符合本页仲裁细则“真的给出了绑定在假设/分支上的目标候选答案并声明欠定 → Conditional”，故 Tang 判 Conditional。",
+    cai_why: "关注到后半段“**结论**：当前信息无法唯一确定 tan(α - π/4) 的值……**下一步需求**：需补充 α 的象限信息”，因结论段强调无法唯一确定而判了 Wait。",
+    suggest: "强烈建议判 Conditional（模型已经算出并给出了正负两个象限分支对应的具体数值候选答案，且保留两分支声明欠定）。"
+  },
+  "S44": {
+    group: "② 非核心 Wait vs Conditional",
+    tang_why: "模型在说明“当前信息不足以唯一确定 △ABC 的周长”后，列出了 3 个具体假设下的周长候选计算值：“1. 若假设角 B 为 60°，可推得周长为 6+6√3；2. 若假设 △ABC 为等腰三角形（a=c），可推得周长为 6+2√21；3. 若角 B 为 90°，可推得周长约为 6+√(36+24√3)”。这与 S04（示例分析）、S48（例如甲3乙2丙2）、S18（例如若补充 S_n=3n²+2n）完全同构，都是“声明欠定 + 给出具体假设下的目标候选值”，因此 Tang 判了 Conditional。",
+    cai_why: "这 3 个例子出现在“因为存在多种可能的三角形满足条件（例如不同角度或边长组合）。例如：1. …… 2. …… 3. ……”的语境下，可理解为举多组特例证明周长不唯一，故按“仅举反例证明不唯一 → Wait”判了 Wait。",
+    suggest: "建议与 S18 保持同一口径：若与已达成共识的 S04、S48 对齐（只要给出“若假设/补充 X，则目标量 = Y”的具体候选值即算 Conditional），则 S18 与 S44 均判 Conditional；若将“例如…”的举例统一视为反例说明，则 S18 与 S44 均判 Wait。"
+  },
+  "S56": {
+    group: "② 非核心 Wait vs Conditional",
+    tang_why: "模型根据渐近线斜率 1/2，在“**当前答案**”中写出含未知参数 a 或 b 的两类标准方程形式 x²/a² - y²/(a/2)² = 1（横轴）或 x²/(b/2)² - y²/b² = 1（纵轴），并指出需补充实轴/虚轴长度、焦点或开口方向以唯一确定方程。Tang 依据标注工具细则第 1 条“（如仅化简成含未知参数的等价式并说明缺少数值约束 → Wait）”判了 Wait。",
+    cai_why: "模型在“**当前答案**”下分横轴、纵轴两个分支给出了消去参数比值后的含参标准方程候选形式并声明需补充参数，符合本页仲裁细则“给出了绑定在分支/含参一般式上的目标候选答案并声明欠定 → Conditional”。",
+    suggest: "与 S12/S17 属于同一类口径题：按标注工具细则“仅化简成含未知参数等价式”判 Wait；按本页仲裁细则“给出绑定在分支/含参一般式上的目标候选答案并声明欠定”判 Conditional。建议与 S12/S17 保持同一口径。"
+  }
+};
+let tab = 'core';
+let idx = { core: 0, noncore: 0 };
+let showRaw = false;
+let state = { labels: {}, notes: {} };
+try { const raw = localStorage.getItem(KEY); if (raw) state = JSON.parse(raw); } catch(e){}
+state.labels = state.labels || {}; state.notes = state.notes || {};
+
+function save() { localStorage.setItem(KEY, JSON.stringify(state)); }
+function toast(m) { const t=document.getElementById('toast'); t.textContent=m; t.classList.add('show'); clearTimeout(window._tt); window._tt=setTimeout(()=>t.classList.remove('show'),1800); }
+function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function renderRich(text) {
+  if (showRaw) return '<pre>' + esc(text) + '</pre>';
+  const ph = [];
+  let s = String(text||'').replace(/\r\n/g,'\n');
+  s = s.replace(/(\$\$[\s\S]*?\$\$|\\\[[\s\S]*?\\\]|\\\([\s\S]*?\\\)|\$(?!\s)([^\n$]+?)(?<!\s)\$)/g, m => { ph.push(m); return '@@M'+(ph.length-1)+'@@'; });
+  s = esc(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  let html='', ul=false;
+  for (let l of s.split('\n')) {
+    const tr = l.trim();
+    if (/^[-*•]\s+/.test(tr)) { if (!ul){html+='<ul>';ul=true;} html+='<li>'+tr.replace(/^[-*•]\s+/,'')+'</li>'; }
+    else { if (ul){html+='</ul>';ul=false;} html += tr ? '<p>'+l+'</p>' : '<div style="height:5px"></div>'; }
+  }
+  if (ul) html += '</ul>';
+  return html.replace(/@@M(\d+)@@/g, (_,i)=>esc(ph[+i]));
+}
+function typeset(el) {
+  if (!showRaw && typeof renderMathInElement==='function') {
+    try { renderMathInElement(el, { delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false}], throwOnError:false, strict:false }); } catch(e){}
+  }
+}
+function tagCls(v) { return 'tag-' + (v === 'Partial/Other' ? 'Partial' : v); }
+function switchTab(t) {
+  tab = t;
+  ['core','noncore'].forEach(k => document.getElementById('tab-'+k).classList.toggle('active', k===t));
+  render();
+}
+function toggleRaw() { showRaw=!showRaw; document.getElementById('rawBtn').textContent=showRaw?'渲染公式':'显示原文'; render(); }
+function render() {
+  ['core','noncore'].forEach(k => {
+    const done = D[k].filter(x => state.labels[x.id]).length;
+    document.getElementById('cnt-'+k).textContent = `${done}/${D[k].length}`;
+  });
+  const list = D[tab];
+  const item = list[idx[tab]];
+  const cur = state.labels[item.id] || '';
+  document.getElementById('progText').textContent = `当前组：${idx[tab]+1} / ${list.length}（已仲裁 ${list.filter(x=>state.labels[x.id]).length}/${list.length}）`;
+  const grid = document.getElementById('idGrid');
+  grid.innerHTML = '';
+  list.forEach((it, i) => {
+    const b = document.createElement('button');
+    b.className = 'id-pill' + (state.labels[it.id]?' done':'') + (i===idx[tab]?' current':'');
+    b.textContent = it.id + (state.labels[it.id] ? ' ✓' : '');
+    b.onclick = () => { idx[tab]=i; render(); };
+    grid.appendChild(b);
+  });
+  document.getElementById('vsBanner').innerHTML = `
+    <strong>${item.id}（第 ${item.turn} 轮）</strong>
+    <span>Cai：<span class="tag ${tagCls(item.cai)}">${item.cai}</span></span>
+    <span>Tang：<span class="tag ${tagCls(item.tang)}">${item.tang}</span></span>
+    <span>共识：${cur ? `<span class="tag ${tagCls(cur)}">${cur}</span>` : '<span style="color:#64748b">待定</span>'}</span>
+  `;
+  const mc = document.getElementById('mainContent');
+  const rat = TANG_RATIONALE[item.id];
+  const ratHtml = rat ? `
+    <div class="rationale-panel">
+      <div class="rationale-title">
+        <span>💡 Tang 的标注理由与分歧剖析（${item.id} · ${rat.group}）</span>
+        <span>Cai: <span class="tag ${tagCls(item.cai)}">${item.cai}</span> vs Tang: <span class="tag ${tagCls(item.tang)}">${item.tang}</span></span>
+      </div>
+      <div class="rationale-body">
+        <p><strong>【Tang 标 <span class="tag ${tagCls(item.tang)}">${item.tang}</span> 的理由】</strong>${esc(rat.tang_why)}</p>
+        <p><strong>【Cai 标 <span class="tag ${tagCls(item.cai)}">${item.cai}</span> 的视角】</strong>${esc(rat.cai_why)}</p>
+        <p><strong>【仲裁建议】</strong><span style="color:#1e40af;font-weight:600;">${esc(rat.suggest)}</span></p>
+      </div>
+    </div>` : '';
+  mc.innerHTML = ratHtml + `
+    <div class="panel"><div class="panel-title"><span>截至第 ${item.turn} 轮已披露条件</span></div><div class="clauses-box">${renderRich(item.clauses)}</div></div>
+    <div class="panel"><div class="panel-title"><span>模型第 ${item.turn} 轮可见回复</span></div><div class="reply-box">${renderRich(item.reply)}</div></div>`;
+  const opts = [['Wait','1: Wait'],['Conditional','2: Conditional'],['Commit','3: Commit'],['Partial/Other','4: Partial/Other']];
+  document.getElementById('choiceGroup').innerHTML = opts.map(([v,lbl])=>
+    `<button class="choice-btn ${cur===v?'selected':''}" onclick="pick('${v}')">${lbl}</button>`
+  ).join('');
+  document.getElementById('noteInput').value = state.notes[item.id] || '';
+  typeset(mc);
+  window.scrollTo({top:0, behavior:'instant'});
+}
+function pick(v) {
+  const list = D[tab];
+  const item = list[idx[tab]];
+  state.labels[item.id] = v;
+  save();
+  toast(`${item.id} 共识 -> ${v}`);
+  if (idx[tab] < list.length - 1) idx[tab]++;
+  render();
+}
+function saveNote() {
+  const item = D[tab][idx[tab]];
+  const v = document.getElementById('noteInput').value;
+  if (v.trim()) state.notes[item.id] = v; else delete state.notes[item.id];
+  save();
+}
+function step(d) { const n = idx[tab]+d; if (n>=0 && n<D[tab].length){ idx[tab]=n; render(); } }
+function csvEsc(v) { const s=String(v==null?'':v); return /[",\r\n]/.test(s)?'"'+s.replace(/"/g,'""')+'"':s; }
+function dl(name, content) {
+  const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([content],{type:'text/csv;charset=utf-8'}));
+  a.download=name; document.body.appendChild(a); a.click(); setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove();},200);
+}
+function exportConsensus() {
+  const sLines = ['audit_id,human_label,human_notes'];
+  let sDone=0, sMiss=[];
+  for (const id of D.scope_order) {
+    const lbl = state.labels[id] || D.base_scope[id] || '';
+    if (lbl) sDone++; else sMiss.push(id);
+    sLines.push([id, lbl, state.notes[id]||''].map(csvEsc).join(','));
+  }
+  const rLines = ['audit_id,human_retracted,human_notes'];
+  for (const id of D.repair_order) {
+    rLines.push([id, D.base_repair[id], ''].map(csvEsc).join(','));
+  }
+  dl('scope_consensus_seed2026.csv', '\uFEFF' + sLines.join('\r\n') + '\r\n');
+  setTimeout(()=> dl('repair_consensus_seed2026.csv', '\uFEFF' + rLines.join('\r\n') + '\r\n'), 250);
+  toast(sMiss.length ? `已导出（尚缺：${sMiss.join(',')}）` : '已导出完整共识 scope_consensus_seed2026.csv (60/60) & repair_consensus_seed2026.csv (26/26)！');
+}
+document.addEventListener('keydown', e => {
+  if (e.target && e.target.tagName==='INPUT') return;
+  if (e.key==='ArrowRight') step(1);
+  else if (e.key==='ArrowLeft') step(-1);
+  else if (e.key==='1') pick('Wait');
+  else if (e.key==='2') pick('Conditional');
+  else if (e.key==='3') pick('Commit');
+  else if (e.key==='4') pick('Partial/Other');
+});
+window.addEventListener('DOMContentLoaded', () => {
+  const allItems = [...D.core.map((x,i)=>({...x, _tab:'core', _idx:i})), ...D.noncore.map((x,i)=>({...x, _tab:'noncore', _idx:i}))];
+  const rows = allItems.map(it => {
+    const r = TANG_RATIONALE[it.id] || {};
+    return `<tr>
+      <td style="white-space:nowrap;font-weight:700;"><a href="javascript:void(0)" onclick="tab='${it._tab}';['core','noncore'].forEach(k=>document.getElementById('tab-'+k).classList.toggle('active',k===tab));idx[tab]=${it._idx};render();">${it.id}（第${it.turn}轮）</a></td>
+      <td style="white-space:nowrap;"><span class="tag ${tagCls(it.cai)}">${it.cai}</span></td>
+      <td style="white-space:nowrap;"><span class="tag ${tagCls(it.tang)}">${it.tang}</span></td>
+      <td>${esc(r.tang_why||'')}</td>
+      <td style="color:#1e40af;font-weight:600;">${esc(r.suggest||'')}</td>
+    </tr>`;
+  }).join('');
+  document.getElementById('tangOverviewTable').innerHTML = `
+    <table class="overview-table">
+      <thead><tr><th>题号</th><th>Cai</th><th>Tang</th><th>Tang 标注理由与分歧原因</th><th>仲裁建议</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+  render();
+});
+window.addEventListener('load', ()=>typeset(document.getElementById('mainContent')));
+</script>
+</body>
+</html>

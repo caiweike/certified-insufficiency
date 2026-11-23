@@ -17,9 +17,9 @@ Code, benchmark, and judged trajectories for the IEEE CSCWD paper
 | `eval_multi_turn/judge_v13_input_blind.py` | Input-blind judging of non-final scope and explicit repair |
 | `eval_multi_turn/sympy_answer_grader.py`, `revision_analysis/` | Deterministic SymPy cross-check of final answers |
 | `eval_multi_turn/runs/` | All judged trajectories (see *Data*) |
-| `eval_multi_turn/analyze_experiments.py`, `revision_analysis_v13/` | Statistics; `extract_tables.py` builds the flat tables the tables and figures are computed from |
+| `eval_multi_turn/analyze_experiments.py`, `revision_analysis_v13/` | Statistics; `extract_tables.py` builds flat tables; `run_robustness_checks.py` runs `B=10,000` offline sensitivity, covariate hazard, token-mechanism, and CoT trace checks |
 | `eval_multi_turn/verify_cached_judgments.py` | Offline check of every judge label against the recorded judge responses |
-| `eval_multi_turn/human_audit/` | Blind human audit (`SEED=2026`): 60 stratified non-final turns + all 26 repair candidates, independent & consensus CSVs, scoring script |
+| `eval_multi_turn/human_audit/` | Author-conducted audits (`SEED=2026`): 60-turn scope + 26 repair candidates (independent/consensus CSVs & HTML UIs), 30-item SymPy formalization-faithfulness audit, and 20-item neutral-framed dual-negative repair control audit |
 | `eval_multi_turn/paper_revised/` | Paper source, tables, figures, and `regenerate_v13_assets.py` |
 | `MANIFEST.sha256` | SHA-256 checksums for every tracked file in this repository |
 
@@ -80,9 +80,12 @@ Run every command from the repository root, after `python unpack_data.py`; use `
      --output eval_multi_turn/runs/runs_16k_v13_blind/test100_exp2_4_full_summary_16384_v13_blind.json
    python eval_multi_turn/revision_analysis_v13/extract_tables.py
    ```
-5. Regenerate all tables, figures, and reported numbers:
-   `python eval_multi_turn/paper_revised/regenerate_v13_assets.py`
-6. Reproduce the blind human audit statistics (pre-adjudication human–human agreement and blind-adjudicated consensus vs. dual LLM judges):
+5. Regenerate all tables, figures, reported numbers, and offline robustness checks (`B=10,000`):
+   ```bash
+   python eval_multi_turn/paper_revised/regenerate_v13_assets.py
+   python eval_multi_turn/revision_analysis_v13/run_robustness_checks.py
+   ```
+6. Reproduce all human audit statistics (Scope-60 + Repair-26 independent/consensus audits, plus the 30-item formalization-faithfulness and 20-item neutral-framed dual-negative Repair control audits):
    ```bash
    python eval_multi_turn/human_audit/score_human_audit.py \
      --scope-a eval_multi_turn/human_audit/scope_cai.csv \
@@ -92,7 +95,9 @@ Run every command from the repository root, after `python unpack_data.py`; use `
    python eval_multi_turn/human_audit/score_human_audit.py \
      --scope-a eval_multi_turn/human_audit/scope_consensus_seed2026.csv \
      --repair-a eval_multi_turn/human_audit/repair_consensus_seed2026.csv
+   python eval_multi_turn/human_audit/score_cert_and_neg_repair_audit.py
    ```
+   *(All three single-file offline audit interfaces — `blind_audit_tool_seed2026.html`, `blind_adjudication_seed2026.html`, and `cert_and_neg_repair_audit_seed2026.html` — are archived in `eval_multi_turn/human_audit/` for full transparency: the Scope-60/Repair-26 headers mirror the input-blind LLM judge system prompt framing symmetrically, while the 20-item negative-control Repair audit uses neutral phrasing.)*
 
 Steps 4–5 reproduce `test100_exp2_4_full_summary_16384_v13_blind.json`, `revision_analysis_v13/*.csv`, `v13_paper_numbers.json`, and the four `table*_rev.tex` files exactly (up to JSON key order / line endings); PDF figures may differ in embedded metadata/fonts across platforms.
 

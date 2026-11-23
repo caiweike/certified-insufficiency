@@ -1,0 +1,952 @@
+{
+  "seed": 20261024,
+  "bootstrap_B": 10000,
+  "lexical_match_sensitivity": {
+    "n_lex_matched_dynamic_trajs": 88,
+    "all_commit_stats": {
+      "n_eL_trajs": 398,
+      "n_with_both_boxes": 268,
+      "n_lex_matched": 88,
+      "n_boxed_changed": 180,
+      "n_unboxed_commit_or_final": 130
+    },
+    "typeA_commit_stats": {
+      "n_eL_trajs": 208,
+      "n_with_both_boxes": 127,
+      "n_lex_matched": 46,
+      "n_boxed_changed": 81,
+      "n_unboxed_commit_or_final": 81
+    },
+    "excl_lex_ALL": {
+      "Qwen3-8B": {
+        "DYN_FREE": {
+          "n": 289,
+          "e_L": 13.84,
+          "e_U": 18.69,
+          "y_L": 88.24,
+          "j_L": 75.43,
+          "yj_L": 8.65,
+          "yj_U": 12.8
+        },
+        "DYN_REQUEST": {
+          "n": 294,
+          "e_L": 11.9,
+          "e_U": 15.31,
+          "y_L": 86.05,
+          "j_L": 75.51,
+          "yj_L": 6.8,
+          "yj_U": 11.56
+        },
+        "DYN_REQUEST_GUARD": {
+          "n": 289,
+          "e_L": 10.03,
+          "e_U": 13.49,
+          "y_L": 86.85,
+          "j_L": 78.2,
+          "yj_L": 4.84,
+          "yj_U": 9.0
+        }
+      },
+      "GLM-Z1-9B-0414": {
+        "DYN_FREE": {
+          "n": 287,
+          "e_L": 13.94,
+          "e_U": 17.77,
+          "y_L": 88.15,
+          "j_L": 74.56,
+          "yj_L": 10.8,
+          "yj_U": 14.29
+        },
+        "DYN_REQUEST": {
+          "n": 295,
+          "e_L": 13.56,
+          "e_U": 16.61,
+          "y_L": 85.42,
+          "j_L": 73.22,
+          "yj_L": 10.17,
+          "yj_U": 12.88
+        },
+        "DYN_REQUEST_GUARD": {
+          "n": 289,
+          "e_L": 11.07,
+          "e_U": 13.49,
+          "y_L": 85.12,
+          "j_L": 76.47,
+          "yj_L": 6.57,
+          "yj_U": 9.34
+        }
+      },
+      "Qwen3-14B": {
+        "DYN_FREE": {
+          "n": 291,
+          "e_L": 11.68,
+          "e_U": 16.84,
+          "y_L": 92.44,
+          "j_L": 78.69,
+          "yj_L": 8.93,
+          "yj_U": 14.09
+        },
+        "DYN_REQUEST": {
+          "n": 292,
+          "e_L": 12.33,
+          "e_U": 14.73,
+          "y_L": 92.81,
+          "j_L": 81.85,
+          "yj_L": 9.25,
+          "yj_U": 11.3
+        },
+        "DYN_REQUEST_GUARD": {
+          "n": 286,
+          "e_L": 8.39,
+          "e_U": 11.19,
+          "y_L": 93.01,
+          "j_L": 85.31,
+          "yj_L": 5.24,
+          "yj_U": 7.69
+        }
+      }
+    },
+    "excl_lex_TypeA": {
+      "Qwen3-8B": {
+        "DYN_FREE": {
+          "n": 198,
+          "e_L": 10.61,
+          "e_U": 16.16,
+          "y_L": 92.93,
+          "j_L": 78.28,
+          "yj_L": 10.1,
+          "yj_U": 14.65
+        },
+        "DYN_REQUEST": {
+          "n": 202,
+          "e_L": 9.41,
+          "e_U": 12.87,
+          "y_L": 92.57,
+          "j_L": 80.69,
+          "yj_L": 7.43,
+          "yj_U": 13.37
+        },
+        "DYN_REQUEST_GUARD": {
+          "n": 198,
+          "e_L": 6.57,
+          "e_U": 9.6,
+          "y_L": 94.44,
+          "j_L": 85.35,
+          "yj_L": 5.56,
+          "yj_U": 9.6
+        }
+      },
+      "GLM-Z1-9B-0414": {
+        "DYN_FREE": {
+          "n": 197,
+          "e_L": 12.18,
+          "e_U": 15.74,
+          "y_L": 92.39,
+          "j_L": 78.68,
+          "yj_L": 10.15,
+          "yj_U": 14.72
+        },
+        "DYN_REQUEST": {
+          "n": 201,
+          "e_L": 11.94,
+          "e_U": 14.43,
+          "y_L": 90.55,
+          "j_L": 78.11,
+          "yj_L": 10.95,
+          "yj_U": 12.94
+        },
+        "DYN_REQUEST_GUARD": {
+          "n": 198,
+          "e_L": 8.59,
+          "e_U": 9.6,
+          "y_L": 90.91,
+          "j_L": 83.33,
+          "yj_L": 7.07,
+          "yj_U": 8.08
+        }
+      },
+      "Qwen3-14B": {
+        "DYN_FREE": {
+          "n": 199,
+          "e_L": 8.54,
+          "e_U": 14.57,
+          "y_L": 96.48,
+          "j_L": 83.42,
+          "yj_L": 7.04,
+          "yj_U": 13.57
+        },
+        "DYN_REQUEST": {
+          "n": 200,
+          "e_L": 10.0,
+          "e_U": 11.5,
+          "y_L": 98.5,
+          "j_L": 87.5,
+          "yj_L": 9.0,
+          "yj_U": 11.5
+        },
+        "DYN_REQUEST_GUARD": {
+          "n": 197,
+          "e_L": 3.55,
+          "e_U": 6.09,
+          "y_L": 97.97,
+          "j_L": 91.88,
+          "yj_L": 3.55,
+          "yj_U": 6.09
+        }
+      }
+    }
+  },
+  "hazard_robustness": {
+    "baseline_eL": {
+      "n_turns": 7442,
+      "n_events": 398,
+      "n_items": 100,
+      "n_patterns": 126,
+      "B": 10000,
+      "columns": [
+        "const",
+        "t",
+        "k",
+        "prot_DYN_REQUEST",
+        "prot_DYN_REQUEST_GUARD",
+        "mod_GLM-Z1-9B-0414",
+        "mod_Qwen3-14B"
+      ],
+      "beta_t_fixed_k": {
+        "pt": 0.8452623748998624,
+        "ci95": [
+          0.5463921670471585,
+          1.184279196237349
+        ],
+        "or_pt": 2.3285886976529038,
+        "or_ci95": [
+          1.7270109973682946,
+          3.268330147550335
+        ],
+        "excludes_0": true
+      },
+      "beta_t_plus_k_fixed_r": {
+        "pt": 0.5063520115164593,
+        "ci95": [
+          0.15395131679806456,
+          0.8966918356179993
+        ],
+        "or_pt": 1.6592272990808905,
+        "or_ci95": [
+          1.1664340996493434,
+          2.4514797838102984
+        ],
+        "excludes_0": true
+      },
+      "beta_k_fixed_t": {
+        "pt": -0.33891036338340325,
+        "ci95": [
+          -0.6287927921546194,
+          -0.034128146151580344
+        ],
+        "or_pt": 0.7125463164676977,
+        "or_ci95": [
+          0.5332351382502112,
+          0.9664476501548672
+        ],
+        "excludes_0": true
+      }
+    },
+    "baseline_eU": {
+      "n_turns": 7371,
+      "n_events": 489,
+      "n_items": 100,
+      "n_patterns": 126,
+      "B": 10000,
+      "columns": [
+        "const",
+        "t",
+        "k",
+        "prot_DYN_REQUEST",
+        "prot_DYN_REQUEST_GUARD",
+        "mod_GLM-Z1-9B-0414",
+        "mod_Qwen3-14B"
+      ],
+      "beta_t_fixed_k": {
+        "pt": 0.793017925391197,
+        "ci95": [
+          0.5116970521821458,
+          1.1329212443267014
+        ],
+        "or_pt": 2.2100561565074552,
+        "or_ci95": [
+          1.6681196803670222,
+          3.104712890637468
+        ],
+        "excludes_0": true
+      },
+      "beta_t_plus_k_fixed_r": {
+        "pt": 0.4735129053418503,
+        "ci95": [
+          0.15230525794982955,
+          0.8268655174055001
+        ],
+        "or_pt": 1.6056247053033565,
+        "or_ci95": [
+          1.1645156598443098,
+          2.286141626734153
+        ],
+        "excludes_0": true
+      },
+      "beta_k_fixed_t": {
+        "pt": -0.31950502004934667,
+        "ci95": [
+          -0.6066953219176865,
+          -0.02083074097703374
+        ],
+        "or_pt": 0.7265085552580349,
+        "or_ci95": [
+          0.5451494389929981,
+          0.9793847202420985
+        ],
+        "excludes_0": true
+      }
+    },
+    "plus_covs_eL": {
+      "n_turns": 7442,
+      "n_events": 398,
+      "n_items": 100,
+      "n_patterns": 603,
+      "B": 10000,
+      "columns": [
+        "const",
+        "t",
+        "k",
+        "prot_DYN_REQUEST",
+        "prot_DYN_REQUEST_GUARD",
+        "mod_GLM-Z1-9B-0414",
+        "mod_Qwen3-14B",
+        "is_typeB",
+        "sf_G2_Alg_Ineq",
+        "sf_G3_Seq_Comb_NT",
+        "sf_G4_Geom_Analytic"
+      ],
+      "beta_t_fixed_k": {
+        "pt": 0.8731696672330067,
+        "ci95": [
+          0.59160433951503,
+          1.2281337189182868
+        ],
+        "or_pt": 2.3944885697198544,
+        "or_ci95": [
+          1.806884948187058,
+          3.414850514705063
+        ],
+        "excludes_0": true
+      },
+      "beta_t_plus_k_fixed_r": {
+        "pt": 0.6215223998869596,
+        "ci95": [
+          0.3013677533828855,
+          1.0501309461345332
+        ],
+        "or_pt": 1.861760229000803,
+        "or_ci95": [
+          1.3517063447260533,
+          2.8580253409319027
+        ],
+        "excludes_0": true
+      },
+      "beta_k_fixed_t": {
+        "pt": -0.25164726734604714,
+        "ci95": [
+          -0.6046327035845566,
+          0.14673507669800287
+        ],
+        "or_pt": 0.7775189460263833,
+        "or_ci95": [
+          0.5462750346582272,
+          1.158047128718662
+        ],
+        "excludes_0": false
+      },
+      "beta_typeB": {
+        "pt": 1.181952740823116,
+        "ci95": [
+          0.471752661123936,
+          1.951793069052879
+        ],
+        "or_pt": 3.260735361074622,
+        "or_ci95": [
+          1.6028008997225496,
+          7.0413018084835715
+        ],
+        "excludes_0": true
+      }
+    },
+    "excl_k6_plus_covs_eL": {
+      "n_turns": 6647,
+      "n_events": 357,
+      "n_items": 94,
+      "n_patterns": 513,
+      "B": 10000,
+      "columns": [
+        "const",
+        "t",
+        "k",
+        "prot_DYN_REQUEST",
+        "prot_DYN_REQUEST_GUARD",
+        "mod_GLM-Z1-9B-0414",
+        "mod_Qwen3-14B",
+        "is_typeB",
+        "sf_G2_Alg_Ineq",
+        "sf_G3_Seq_Comb_NT",
+        "sf_G4_Geom_Analytic"
+      ],
+      "beta_t_fixed_k": {
+        "pt": 0.8028661760021554,
+        "ci95": [
+          0.48220696259962453,
+          1.1930265432155642
+        ],
+        "or_pt": 2.231928870603659,
+        "or_ci95": [
+          1.6196449565474504,
+          3.2970447706822967
+        ],
+        "excludes_0": true
+      },
+      "beta_t_plus_k_fixed_r": {
+        "pt": 0.7916174385399357,
+        "ci95": [
+          0.3692253241629676,
+          1.3212918343728906
+        ],
+        "or_pt": 2.2069631682699358,
+        "or_ci95": [
+          1.4466135239359241,
+          3.748260382591971
+        ],
+        "excludes_0": true
+      },
+      "beta_k_fixed_t": {
+        "pt": -0.011248737462219648,
+        "ci95": [
+          -0.4277930445670602,
+          0.4413051324310799
+        ],
+        "or_pt": 0.9888142930258477,
+        "or_ci95": [
+          0.6519463246719608,
+          1.554735030051647
+        ],
+        "excludes_0": false
+      },
+      "beta_typeB": {
+        "pt": 1.215093775439875,
+        "ci95": [
+          0.42902553613300864,
+          2.1023303789313688
+        ],
+        "or_pt": 3.3706101299493616,
+        "or_ci95": [
+          1.5357602512746695,
+          8.185222373986921
+        ],
+        "excludes_0": true
+      }
+    },
+    "excl_lex_plus_covs_eL": {
+      "n_turns": 7140,
+      "n_events": 310,
+      "n_items": 100,
+      "n_patterns": 603,
+      "B": 10000,
+      "columns": [
+        "const",
+        "t",
+        "k",
+        "prot_DYN_REQUEST",
+        "prot_DYN_REQUEST_GUARD",
+        "mod_GLM-Z1-9B-0414",
+        "mod_Qwen3-14B",
+        "is_typeB",
+        "sf_G2_Alg_Ineq",
+        "sf_G3_Seq_Comb_NT",
+        "sf_G4_Geom_Analytic"
+      ],
+      "beta_t_fixed_k": {
+        "pt": 0.6490958809421336,
+        "ci95": [
+          0.3778427416868555,
+          0.9785175618702959
+        ],
+        "or_pt": 1.9138097347198553,
+        "or_ci95": [
+          1.4591334639653404,
+          2.660509276690165
+        ],
+        "excludes_0": true
+      },
+      "beta_t_plus_k_fixed_r": {
+        "pt": 0.5693783393581395,
+        "ci95": [
+          0.21361331736834915,
+          1.0500704769182831
+        ],
+        "or_pt": 1.7671681310167369,
+        "or_ci95": [
+          1.2381437935153108,
+          2.857852523604631
+        ],
+        "excludes_0": true
+      },
+      "beta_k_fixed_t": {
+        "pt": -0.07971754158399397,
+        "ci95": [
+          -0.40231318868023475,
+          0.32965614531787063
+        ],
+        "or_pt": 0.9233771251954762,
+        "or_ci95": [
+          0.6687712612992838,
+          1.3904899197819742
+        ],
+        "excludes_0": false
+      },
+      "beta_typeB": {
+        "pt": 1.2336436563331636,
+        "ci95": [
+          0.3707752369773632,
+          2.0988377155126265
+        ],
+        "or_pt": 3.433718059082658,
+        "or_ci95": [
+          1.4488573872211907,
+          8.156684013681458
+        ],
+        "excludes_0": true
+      }
+    },
+    "typeA_excl_lex_plus_sf_eL": {
+      "n_turns": 5022,
+      "n_events": 162,
+      "n_items": 68,
+      "n_patterns": 378,
+      "B": 10000,
+      "columns": [
+        "const",
+        "t",
+        "k",
+        "prot_DYN_REQUEST",
+        "prot_DYN_REQUEST_GUARD",
+        "mod_GLM-Z1-9B-0414",
+        "mod_Qwen3-14B",
+        "sf_G2_Alg_Ineq",
+        "sf_G3_Seq_Comb_NT",
+        "sf_G4_Geom_Analytic"
+      ],
+      "beta_t_fixed_k": {
+        "pt": 0.588441994047011,
+        "ci95": [
+          0.26337101102282534,
+          1.0154525042621867
+        ],
+        "or_pt": 1.8011799790559093,
+        "or_ci95": [
+          1.301309429543179,
+          2.760612303620905
+        ],
+        "excludes_0": true
+      },
+      "beta_t_plus_k_fixed_r": {
+        "pt": 0.340416399702293,
+        "ci95": [
+          -0.1008541163384635,
+          0.91319895769202
+        ],
+        "or_pt": 1.405532732139976,
+        "or_ci95": [
+          0.9040649115657238,
+          2.4922825010743
+        ],
+        "excludes_0": false
+      },
+      "beta_k_fixed_t": {
+        "pt": -0.24802559434471805,
+        "ci95": [
+          -0.6484738451995218,
+          0.2510693369846649
+        ],
+        "or_pt": 0.780339970732235,
+        "or_ci95": [
+          0.5228431076997506,
+          1.2853992069465132
+        ],
+        "excludes_0": false
+      }
+    }
+  },
+  "token_mechanism": {
+    "by_protocol": {
+      "DYN_FREE": {
+        "mean_nonfinal_turn_comp": 2083.7,
+        "mean_traj_nonfinal_comp": 5917.8,
+        "mean_final_turn_comp": 3080.0,
+        "mean_traj_tot_comp": 8997.7,
+        "mean_traj_tot_tokens": 12279.7
+      },
+      "DYN_REQUEST": {
+        "mean_nonfinal_turn_comp": 1557.2,
+        "mean_traj_nonfinal_comp": 4422.5,
+        "mean_final_turn_comp": 3034.5,
+        "mean_traj_tot_comp": 7457.0,
+        "mean_traj_tot_tokens": 10322.9
+      },
+      "DYN_REQUEST_GUARD": {
+        "mean_nonfinal_turn_comp": 1442.5,
+        "mean_traj_nonfinal_comp": 4096.8,
+        "mean_final_turn_comp": 2963.4,
+        "mean_traj_tot_comp": 7060.2,
+        "mean_traj_tot_tokens": 10121.3
+      }
+    },
+    "by_protocol_and_scope": {
+      "DYN_FREE": {
+        "Wait": {
+          "n_turns": 1606,
+          "share_pct": 62.83,
+          "mean_comp_tokens": 1303.2
+        },
+        "Conditional": {
+          "n_turns": 359,
+          "share_pct": 14.05,
+          "mean_comp_tokens": 3868.9
+        },
+        "Commit": {
+          "n_turns": 197,
+          "share_pct": 7.71,
+          "mean_comp_tokens": 4215.1
+        }
+      },
+      "DYN_REQUEST": {
+        "Wait": {
+          "n_turns": 1847,
+          "share_pct": 72.26,
+          "mean_comp_tokens": 1085.0
+        },
+        "Conditional": {
+          "n_turns": 219,
+          "share_pct": 8.57,
+          "mean_comp_tokens": 3319.0
+        },
+        "Commit": {
+          "n_turns": 177,
+          "share_pct": 6.92,
+          "mean_comp_tokens": 3616.2
+        }
+      },
+      "DYN_REQUEST_GUARD": {
+        "Wait": {
+          "n_turns": 1880,
+          "share_pct": 73.55,
+          "mean_comp_tokens": 1035.1
+        },
+        "Conditional": {
+          "n_turns": 210,
+          "share_pct": 8.22,
+          "mean_comp_tokens": 2792.9
+        },
+        "Commit": {
+          "n_turns": 165,
+          "share_pct": 6.46,
+          "mean_comp_tokens": 3449.8
+        }
+      }
+    },
+    "by_model_protocol": {
+      "Qwen3-8B": {
+        "DYN_FREE": {
+          "mean_nonfinal_turn_comp": 2197.5,
+          "mean_final_turn_comp": 3334.9
+        },
+        "DYN_REQUEST": {
+          "mean_nonfinal_turn_comp": 1595.0,
+          "mean_final_turn_comp": 3422.5
+        },
+        "DYN_REQUEST_GUARD": {
+          "mean_nonfinal_turn_comp": 1447.4,
+          "mean_final_turn_comp": 3224.8
+        }
+      },
+      "GLM-Z1-9B-0414": {
+        "DYN_FREE": {
+          "mean_nonfinal_turn_comp": 1782.1,
+          "mean_final_turn_comp": 2256.4
+        },
+        "DYN_REQUEST": {
+          "mean_nonfinal_turn_comp": 1395.8,
+          "mean_final_turn_comp": 2259.8
+        },
+        "DYN_REQUEST_GUARD": {
+          "mean_nonfinal_turn_comp": 1369.2,
+          "mean_final_turn_comp": 2359.8
+        }
+      },
+      "Qwen3-14B": {
+        "DYN_FREE": {
+          "mean_nonfinal_turn_comp": 2271.6,
+          "mean_final_turn_comp": 3648.5
+        },
+        "DYN_REQUEST": {
+          "mean_nonfinal_turn_comp": 1680.8,
+          "mean_final_turn_comp": 3421.3
+        },
+        "DYN_REQUEST_GUARD": {
+          "mean_nonfinal_turn_comp": 1511.0,
+          "mean_final_turn_comp": 3305.6
+        }
+      }
+    }
+  },
+  "exploratory_cot_typeA_changed": {
+    "n_typeA_boxed_changed": 81,
+    "n_final_cot_refs_prior": 59,
+    "pct_final_cot_refs_prior": 72.8,
+    "by_model": {
+      "Qwen3-8B": {
+        "n_changed": 24,
+        "n_cot_refs_prior": 19,
+        "pct": 79.2
+      },
+      "GLM-Z1-9B-0414": {
+        "n_changed": 34,
+        "n_cot_refs_prior": 24,
+        "pct": 70.6
+      },
+      "Qwen3-14B": {
+        "n_changed": 23,
+        "n_cot_refs_prior": 16,
+        "pct": 69.6
+      }
+    },
+    "sample_cases": [
+      {
+        "model": "GLM-Z1-9B-0414",
+        "protocol": "DYN_FREE",
+        "item": "ob-cee-3948",
+        "traj": "ob-cee-3948___DYN_FREE___r0",
+        "first_commit_t": 4,
+        "first_commit_box": "\\frac{3\\sqrt{2}|k|\\sqrt{1-2k^2}}{1+2k^2}",
+        "final_box": "1",
+        "cot_len": 2469,
+        "cot_refs_prior": true,
+        "matched_terms": [
+          "之前的公式",
+          "之前的推导",
+          "检查之前的推导"
+        ]
+      },
+      {
+        "model": "GLM-Z1-9B-0414",
+        "protocol": "DYN_REQUEST_GUARD",
+        "item": "ob-cee-3948",
+        "traj": "ob-cee-3948___DYN_REQUEST_GUARD___r0",
+        "first_commit_t": 4,
+        "first_commit_box": "\\frac{3|k|\\sqrt{2-4k^2}}{1+2k^2}",
+        "final_box": "1",
+        "cot_len": 1414,
+        "cot_refs_prior": false,
+        "matched_terms": []
+      },
+      {
+        "model": "GLM-Z1-9B-0414",
+        "protocol": "DYN_REQUEST",
+        "item": "ob-cee-3948",
+        "traj": "ob-cee-3948___DYN_REQUEST___r0",
+        "first_commit_t": 4,
+        "first_commit_box": "S=\\frac{3\\sqrt{2}|k|\\sqrt{1-2k^2}}{1+2k^2}",
+        "final_box": "1",
+        "cot_len": 1464,
+        "cot_refs_prior": true,
+        "matched_terms": [
+          "回顾之前的推导"
+        ]
+      },
+      {
+        "model": "GLM-Z1-9B-0414",
+        "protocol": "DYN_FREE",
+        "item": "ob-cee-3984",
+        "traj": "ob-cee-3984___DYN_FREE___r1",
+        "first_commit_t": 1,
+        "first_commit_box": "\\tan(\\alpha-\\frac{\\pi}{4})=\\frac{\\tan\\alpha-1}{1+\\tan\\alpha}",
+        "final_box": "\\tan(\\alpha-\\frac{\\pi}{4})=\\frac{9+4\\sqrt{2}}{7}",
+        "cot_len": 2649,
+        "cot_refs_prior": true,
+        "matched_terms": [
+          "之前已经推",
+          "之前的表达式",
+          "之前的计算",
+          "检查计算"
+        ]
+      },
+      {
+        "model": "GLM-Z1-9B-0414",
+        "protocol": "DYN_REQUEST_GUARD",
+        "item": "ob-cee-4026",
+        "traj": "ob-cee-4026___DYN_REQUEST_GUARD___r0",
+        "first_commit_t": 2,
+        "first_commit_box": "\\frac{2}{\\sqrt[4]{3}}\\sqrt{S_2}",
+        "final_box": "\\frac{1}{2}",
+        "cot_len": 2510,
+        "cot_refs_prior": true,
+        "matched_terms": [
+          "之前的推导"
+        ]
+      },
+      {
+        "model": "GLM-Z1-9B-0414",
+        "protocol": "DYN_REQUEST_GUARD",
+        "item": "ob-cee-4029",
+        "traj": "ob-cee-4029___DYN_REQUEST_GUARD___r2",
+        "first_commit_t": 1,
+        "first_commit_box": "\\frac{1}{2}ab\\sinC",
+        "final_box": "\\frac{15\\sqrt{7}}{4}",
+        "cot_len": 1285,
+        "cot_refs_prior": false,
+        "matched_terms": []
+      },
+      {
+        "model": "GLM-Z1-9B-0414",
+        "protocol": "DYN_FREE",
+        "item": "ob-cee-4070",
+        "traj": "ob-cee-4070___DYN_FREE___r2",
+        "first_commit_t": 2,
+        "first_commit_box": "n\\cdot\\log_{2}a_1+n(n-1)\\log_{2}r",
+        "final_box": "n^2",
+        "cot_len": 1368,
+        "cot_refs_prior": true,
+        "matched_terms": [
+          "之前的结果"
+        ]
+      },
+      {
+        "model": "GLM-Z1-9B-0414",
+        "protocol": "DYN_REQUEST_GUARD",
+        "item": "ob-cee-4070",
+        "traj": "ob-cee-4070___DYN_REQUEST_GUARD___r2",
+        "first_commit_t": 2,
+        "first_commit_box": "n\\log_{2}a_n",
+        "final_box": "n^2",
+        "cot_len": 1158,
+        "cot_refs_prior": true,
+        "matched_terms": [
+          "之前的推导",
+          "之前的结论"
+        ]
+      },
+      {
+        "model": "GLM-Z1-9B-0414",
+        "protocol": "DYN_REQUEST_GUARD",
+        "item": "ob-cee-4106",
+        "traj": "ob-cee-4106___DYN_REQUEST_GUARD___r2",
+        "first_commit_t": 4,
+        "first_commit_box": "[-1,0)",
+        "final_box": "\\text{无法确定}",
+        "cot_len": 3424,
+        "cot_refs_prior": true,
+        "matched_terms": [
+          "之前已经得"
+        ]
+      },
+      {
+        "model": "GLM-Z1-9B-0414",
+        "protocol": "DYN_REQUEST",
+        "item": "ob-cee-4106",
+        "traj": "ob-cee-4106___DYN_REQUEST___r1",
+        "first_commit_t": 4,
+        "first_commit_box": "-1",
+        "final_box": "2-\\sqrt{7}",
+        "cot_len": 2131,
+        "cot_refs_prior": false,
+        "matched_terms": []
+      },
+      {
+        "model": "GLM-Z1-9B-0414",
+        "protocol": "DYN_FREE",
+        "item": "ob-cee-4147",
+        "traj": "ob-cee-4147___DYN_FREE___r0",
+        "first_commit_t": 4,
+        "first_commit_box": "S'_{2n}=\\frac{16^n-1}{5}",
+        "final_box": "S'_{2n}=2n^2",
+        "cot_len": 6573,
+        "cot_refs_prior": true,
+        "matched_terms": [
+          "之前的假设",
+          "之前的推导",
+          "之前的结论"
+        ]
+      },
+      {
+        "model": "GLM-Z1-9B-0414",
+        "protocol": "DYN_FREE",
+        "item": "ob-cee-4147",
+        "traj": "ob-cee-4147___DYN_FREE___r1",
+        "first_commit_t": 3,
+        "first_commit_box": "2n\\log_2r(\\log_2a_1+n\\log_2r)",
+        "final_box": "2n^2",
+        "cot_len": 4168,
+        "cot_refs_prior": true,
+        "matched_terms": [
+          "之前假设",
+          "之前的推导",
+          "之前的结果",
+          "之前的计算",
+          "回顾之前的推导"
+        ]
+      },
+      {
+        "model": "GLM-Z1-9B-0414",
+        "protocol": "DYN_FREE",
+        "item": "ob-cee-4147",
+        "traj": "ob-cee-4147___DYN_FREE___r2",
+        "first_commit_t": 3,
+        "first_commit_box": "2n(n+\\log_2a_1)",
+        "final_box": "2n^2",
+        "cot_len": 1663,
+        "cot_refs_prior": true,
+        "matched_terms": [
+          "之前推",
+          "之前的推导",
+          "之前的表达式"
+        ]
+      },
+      {
+        "model": "GLM-Z1-9B-0414",
+        "protocol": "DYN_REQUEST_GUARD",
+        "item": "ob-cee-4147",
+        "traj": "ob-cee-4147___DYN_REQUEST_GUARD___r1",
+        "first_commit_t": 3,
+        "first_commit_box": "2n\\log_2r(\\log_2a_1+n\\log_2r)",
+        "final_box": "2n^2",
+        "cot_len": 2088,
+        "cot_refs_prior": true,
+        "matched_terms": [
+          "之前的推导",
+          "回顾之前的推导"
+        ]
+      },
+      {
+        "model": "GLM-Z1-9B-0414",
+        "protocol": "DYN_REQUEST",
+        "item": "ob-cee-4147",
+        "traj": "ob-cee-4147___DYN_REQUEST___r0",
+        "first_commit_t": 4,
+        "first_commit_box": "\\frac{16^n-1}{5}",
+        "final_box": "\\text{条件矛盾，无法确定}",
+        "cot_len": 3549,
+        "cot_refs_prior": true,
+        "matched_terms": [
+          "之前的假设",
+          "之前的推导",
+          "之前的结论"
+        ]
+      }
+    ]
+  }
+}

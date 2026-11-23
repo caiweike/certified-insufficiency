@@ -1,0 +1,126 @@
+{
+  "seed": 2026,
+  "annotator": "cai (author-verified)",
+  "cert_audit_30": {
+    "n_total": 30,
+    "counts": {
+      "Faithful": 26,
+      "Minor": 3,
+      "Unfaithful": 1
+    },
+    "faithful_rate": 0.8667,
+    "insufficiency_preserved_rate": 0.9667,
+    "by_mechanism": {
+      "TypeA": {
+        "Faithful": 18,
+        "Minor": 1,
+        "Unfaithful": 1
+      },
+      "TypeB": {
+        "Faithful": 8,
+        "Minor": 2
+      }
+    },
+    "by_subfield": {
+      "G1_Func_Calc_Trig": {
+        "Faithful": 8,
+        "Minor": 1
+      },
+      "G2_Alg_Ineq": {
+        "Faithful": 7
+      },
+      "G3_Seq_Comb_NT": {
+        "Minor": 1,
+        "Faithful": 5,
+        "Unfaithful": 1
+      },
+      "G4_Geom_Analytic": {
+        "Faithful": 6,
+        "Minor": 1
+      }
+    },
+    "non_faithful_items": [
+      {
+        "audit_id": "C05",
+        "item_id": "ob-cee-4070",
+        "mech": "TypeA",
+        "subfield": "G1_Func_Calc_Trig",
+        "verdict": "Minor",
+        "notes": ""
+      },
+      {
+        "audit_id": "C09",
+        "item_id": "ob-cee-4010",
+        "mech": "TypeB",
+        "subfield": "G3_Seq_Comb_NT",
+        "verdict": "Minor",
+        "notes": ""
+      },
+      {
+        "audit_id": "C12",
+        "item_id": "ob-cee-4147",
+        "mech": "TypeA",
+        "subfield": "G3_Seq_Comb_NT",
+        "verdict": "Unfaithful",
+        "notes": ""
+      },
+      {
+        "audit_id": "C16",
+        "item_id": "ob-comp-627",
+        "mech": "TypeB",
+        "subfield": "G4_Geom_Analytic",
+        "verdict": "Minor",
+        "notes": ""
+      }
+    ],
+    "unfaithful_prefix_impact": {
+      "ob-cee-4147": {
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ],
+          [
+            "S1",
+            "S2",
+            "S5",
+            "S4",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S5",
+            "S2",
+            "S4"
+          ]
+        ],
+        "non_final_prefixes_containing_S3_S4_S5": 0
+      }
+    }
+  },
+  "neg_repair_20": {
+    "pool_size_dual_negative_eU": 463,
+    "n_total": 20,
+    "unique_items": 20,
+    "by_model": {
+      "Qwen/Qwen3-14B": 6,
+      "Qwen/Qwen3-8B": 7,
+      "zai-org/GLM-Z1-9B-0414": 7
+    },
+    "n_yes": 0,
+    "n_no": 20,
+    "n_empty_final_reply": 1,
+    "empty_final_reply_ids": [
+      "N13"
+    ],
+    "n_nonempty_final_reply": 19,
+    "clopper_pearson_95_upper_all20": 0.1684,
+    "clopper_pearson_95_upper_nonempty": 0.1765,
+    "one_sided_95_upper_all20": 0.1391,
+    "one_sided_95_upper_nonempty": 0.1459
+  }
+}

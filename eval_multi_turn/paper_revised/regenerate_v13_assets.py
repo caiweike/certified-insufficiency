@@ -509,7 +509,7 @@ def main() -> None:
     plt.close(fig)
 
     # ---------------- FIGURE 2: 3-panel (a) h(t,k) heatmap, (b) Guard forest, (c) Scope stacked bar ----------------
-    fig, axes = plt.subplots(1, 3, figsize=(7.16, 1.80), gridspec_kw={"width_ratios": [1.05, 1.25, 1.15]})
+    fig, axes = plt.subplots(1, 3, figsize=(7.16, 1.92), gridspec_kw={"width_ratios": [1.05, 1.25, 1.15]})
 
     # Panel (a): h(t, k) heatmap
     ax = axes[0]
@@ -534,8 +534,8 @@ def main() -> None:
             if tv < kv:
                 val = mat[r_i, c_i]
                 txt_col = "white" if val >= 14 else "#111111"
-                ax.text(c_i, r_i - 0.12, f"{val:.1f}", ha="center", va="center", color=txt_col, fontsize=7.5, fontweight="bold" if tv == kv - 1 else "normal")
-                ax.text(c_i, r_i + 0.24, f"n={cnts[r_i, c_i]}", ha="center", va="center", color=txt_col, fontsize=5.6, alpha=0.9)
+                ax.text(c_i, r_i - 0.16, f"{val:.1f}", ha="center", va="center", color=txt_col, fontsize=7.4, fontweight="bold" if tv == kv - 1 else "normal")
+                ax.text(c_i, r_i + 0.25, f"n={cnts[r_i, c_i]}", ha="center", va="center", color=txt_col, fontsize=5.4, alpha=0.92)
                 if tv == kv - 1:
                     rect = mpatches.Rectangle((c_i - 0.48, r_i - 0.48), 0.96, 0.96, fill=False, edgecolor="#111111", linewidth=1.2)
                     ax.add_patch(rect)
@@ -543,8 +543,8 @@ def main() -> None:
     ax.set_xticklabels(ts)
     ax.set_yticks(range(len(ks)))
     ax.set_yticklabels(ks)
-    ax.set_xlabel(r"Turn $t$  (boxed: last insufficient turn, $r=1$)", fontsize=7.2)
-    ax.set_ylabel(r"Task depth $k$", fontsize=7.5)
+    ax.set_xlabel(r"Turn $t$  (boxed: last insufficient turn, $r=1$)", fontsize=7.2, labelpad=4)
+    ax.set_ylabel(r"Task depth $k$", fontsize=7.5, labelpad=6)
     ax.set_title(r"(a) First-commit hazard (%), $E_L$", fontsize=8.2, pad=4)
 
     # Panel (b): Guard effect by regime forest plot
@@ -566,24 +566,24 @@ def main() -> None:
             ls = "-" if solid else "--"
             mfc = col_hex if solid else "white"
             mk = "o" if solid else "s"
-            ax.plot([lo, hi], [y0 + off, y0 + off], color=col_hex, linestyle=ls, linewidth=1.05, zorder=3)
-            ax.plot(pt, y0 + off, marker=mk, markersize=4.0, color=col_hex, markerfacecolor=mfc, markeredgewidth=0.9, zorder=4)
+            ax.plot([lo, hi], [y0 + off, y0 + off], color=col_hex, linestyle=ls, linewidth=1.1, zorder=3)
+            ax.plot(pt, y0 + off, marker=mk, markersize=4.4, color=col_hex, markerfacecolor=mfc, markeredgewidth=0.95, zorder=4)
     ax.set_yticks(y_pos)
     ax.set_yticklabels(row_disp, fontsize=7.5)
-    ax.set_xlim(-11.5, 13.5)
-    ax.set_xlabel(r"$\Delta E = \mathrm{GUARD} - \mathrm{REQ}$ (pp, 95% CI)", fontsize=7.5)
+    ax.set_xlim(-11.5, 14.5)
+    ax.set_xlabel(r"$\Delta E = \mathrm{GUARD} - \mathrm{REQ}$ (pp, 95% CI)", fontsize=7.5, labelpad=4)
     ax.set_title("(b) Guard effect by regime", fontsize=8.2, pad=4)
     ax.spines["top"].set_visible(False)
     ax.spines["right"].set_visible(False)
     ax.grid(axis="x", linestyle=":", linewidth=0.5, alpha=0.5)
     h_leg = [
-        plt.Line2D([0], [0], color=colA, marker="o", markersize=3.8, lw=1.1, label="TypeA"),
-        plt.Line2D([0], [0], color=colB, marker="o", markersize=3.8, lw=1.1, label="TypeB"),
-        plt.Line2D([0], [0], color="#222222", marker="o", markersize=3.8, lw=1.1, label=r"$E_L$"),
-        plt.Line2D([0], [0], color="#222222", marker="s", mfc="white", markersize=3.8, lw=1.0, ls="--", label=r"$E_U$"),
+        plt.Line2D([0], [0], color=colA, marker="o", markersize=4.2, lw=1.1, label="TypeA"),
+        plt.Line2D([0], [0], color=colB, marker="o", markersize=4.2, lw=1.1, label="TypeB"),
+        plt.Line2D([0], [0], color="#222222", marker="o", markersize=4.2, lw=1.1, label=r"$E_L$"),
+        plt.Line2D([0], [0], color="#222222", marker="s", mfc="white", markersize=4.2, lw=1.0, ls="--", label=r"$E_U$"),
     ]
-    ax.legend(handles=h_leg, frameon=False, ncol=4, loc="upper center", bbox_to_anchor=(0.5, -0.46),
-              handlelength=1.1, columnspacing=0.65, handletextpad=0.3, fontsize=6.6)
+    ax.legend(handles=h_leg, frameon=False, ncol=4, loc="upper center", bbox_to_anchor=(0.5, -0.50),
+              handlelength=1.1, columnspacing=0.75, handletextpad=0.35, fontsize=6.8)
 
     # Panel (c): Non-final scope stacked horizontal bar (3 models pooled)
     ax = axes[2]
@@ -607,12 +607,12 @@ def main() -> None:
     ax.set_yticks(ys)
     ax.set_yticklabels(p_names, fontsize=7.5)
     ax.set_xlim(0, 100)
-    ax.set_xlabel("Share of insufficient turns (%)", fontsize=7.5)
+    ax.set_xlabel("Share of insufficient turns (%)", fontsize=7.5, labelpad=4)
     ax.set_title("(c) Non-final scope, 3 models pooled", fontsize=8.2, pad=4)
     ax.spines["top"].set_visible(False)
     ax.spines["right"].set_visible(False)
-    ax.legend(frameon=False, ncol=2, loc="upper center", bbox_to_anchor=(0.5, -0.44),
-              handlelength=0.9, columnspacing=0.8, handletextpad=0.35, fontsize=6.6)
+    ax.legend(frameon=False, ncol=2, loc="upper center", bbox_to_anchor=(0.5, -0.48),
+              handlelength=0.9, columnspacing=0.8, handletextpad=0.35, fontsize=6.8)
 
     fig.tight_layout(pad=0.45, w_pad=0.8)
     fig.savefig(REV_DIR / "fig2_hazard_guard_scope.pdf", bbox_inches="tight")
