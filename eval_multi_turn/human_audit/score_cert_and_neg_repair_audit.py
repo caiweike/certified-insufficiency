@@ -44,21 +44,9 @@ def open_jsonl_auto(base_no_ext: Path):
 
 
 def clopper_pearson_upper_zero(n: int, alpha: float = 0.05) -> float:
-    """Exact two-sided Clopper-Pearson upper bound when k=0 out of n."""
+    """Exact one-sided / two-sided Clopper-Pearson upper bound when k=0 out of n."""
+    # Two-sided 95% CI upper bound for k=0 is 1 - (alpha/2)^(1/n); one-sided 95% is 1 - alpha^(1/n)
     return 1.0 - (alpha / 2.0) ** (1.0 / n)
-
-
-def hypergeom_upper_zero(N: int, n: int, alpha: float = 0.05) -> tuple[int, float]:
-    """Exact finite-population one-sided (1-alpha) upper bound on positives K in N
-    when drawing n without replacement yields 0 positives: largest K with P(X=0|N,K,n) >= alpha."""
-    k_max = 0
-    for K in range(0, N - n + 1):
-        p0 = math.comb(N - K, n) / math.comb(N, n)
-        if p0 >= alpha:
-            k_max = K
-        else:
-            break
-    return k_max, k_max / N
 
 
 def main() -> None:
@@ -172,18 +160,6 @@ def main() -> None:
             "clopper_pearson_95_upper_nonempty": round(clopper_pearson_upper_zero(n_nonempty, 0.05), 4) if n_yes == 0 else None,
             "one_sided_95_upper_all20": round(1.0 - 0.05 ** (1.0 / 20), 4) if n_yes == 0 else None,
             "one_sided_95_upper_nonempty": round(1.0 - 0.05 ** (1.0 / n_nonempty), 4) if n_yes == 0 else None,
-            "hypergeom_95_upper_all20_K": hypergeom_upper_zero(key["neg_repair_pool_size"], 20, 0.05)[0] if n_yes == 0 else None,
-            "hypergeom_95_upper_all20_rate": round(hypergeom_upper_zero(key["neg_repair_pool_size"], 20, 0.05)[1], 4) if n_yes == 0 else None,
-            "hypergeom_95_upper_nonempty_K": hypergeom_upper_zero(key["neg_repair_pool_size"], n_nonempty, 0.05)[0] if n_yes == 0 else None,
-            "hypergeom_95_upper_nonempty_rate": round(hypergeom_upper_zero(key["neg_repair_pool_size"], n_nonempty, 0.05)[1], 4) if n_yes == 0 else None,
-            "total_489_retraction_95_interval_all20": [
-                round(1 / 489, 4),
-                round((1 + hypergeom_upper_zero(key["neg_repair_pool_size"], 20, 0.05)[0]) / 489, 4),
-            ] if n_yes == 0 else None,
-            "total_489_retraction_95_interval_nonempty": [
-                round(1 / 489, 4),
-                round((1 + hypergeom_upper_zero(key["neg_repair_pool_size"], n_nonempty, 0.05)[0]) / 489, 4),
-            ] if n_yes == 0 else None,
         },
     }
     out_path = HERE / "cert_and_neg_repair_results_seed2026.json"

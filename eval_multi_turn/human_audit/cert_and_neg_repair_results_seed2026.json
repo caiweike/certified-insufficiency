@@ -121,18 +121,6 @@
     "clopper_pearson_95_upper_all20": 0.1684,
     "clopper_pearson_95_upper_nonempty": 0.1765,
     "one_sided_95_upper_all20": 0.1391,
-    "one_sided_95_upper_nonempty": 0.1459,
-    "hypergeom_95_upper_all20_K": 63,
-    "hypergeom_95_upper_all20_rate": 0.1361,
-    "hypergeom_95_upper_nonempty_K": 66,
-    "hypergeom_95_upper_nonempty_rate": 0.1425,
-    "total_489_retraction_95_interval_all20": [
-      0.002,
-      0.1309
-    ],
-    "total_489_retraction_95_interval_nonempty": [
-      0.002,
-      0.137
-    ]
+    "one_sided_95_upper_nonempty": 0.1459
   }
 }
