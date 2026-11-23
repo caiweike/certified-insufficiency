@@ -1,9 +1,21 @@
 #!/usr/bin/env python3
-"""Pre-registered M-rater No-Adjudication [L, U] & Exact Finite-Population Scorer (SEED=2026).
+"""Design-based M-rater No-Adjudication [L, U] Audit Scorer (SEED=2026).
 
 Supports ANY number of independent raters M >= 2 with zero post-hoc self-adjudication:
-  python score_unified_audit_seed2026.py --raters cai tang
-  python score_unified_audit_seed2026.py --raters cai tang rater3 --external rater3
+  python score_unified_audit_seed2026.py --raters cai tang yu --external yu
+
+Design-based inference correcting for balanced_pick() unequal inclusion probabilities:
+  - Scope-120 : Estimates exact unit inclusion probabilities pi_i via M=50,000 Monte Carlo
+                replays of balanced_pick() (exact lazy Fisher-Yates equivalent), then
+                computes stratum-calibrated Hajek estimates with conservative linearized
+                Hansen-Hurwitz unequal-probability 95% CIs (also reporting raw HT and
+                naive N_h/n_h for sensitivity comparison).
+  - Repair-100: Computes exact unit inclusion probabilities pi_j across all 457 non-empty
+                dual-negative controls via M=50,000 replays of balanced_pick() per model,
+                and computes a Monte Carlo design-calibrated adversarial 95% upper bound
+                (max_{|S|=K} P_design(S cap A = empty) >= alpha via greedy + 1-swap search
+                and item-cluster packing). Naive SRSWOR hypergeometric is retained ONLY as
+                a documented diagnostic contrast showing why SRSWOR understates miss risk.
 
 Expects for each rater <r> in this directory:
   - cert_100_<r>.csv
@@ -12,6 +24,8 @@ Expects for each rater <r> in this directory:
 
 Reads:
   - _unified_audit_key_DO_NOT_OPEN.json
+  - build_unified_audit_seed2026.py (population definitions & balanced_pick constants)
+  - ../runs/runs_16k_v13_blind/judged_test100_*_v13_blind.jsonl[.gz]
   - ../revision_analysis_v13/traj.csv
 
 Writes:
@@ -25,7 +39,9 @@ import csv
 import itertools
 import json
 import math
+import random
 import re
+import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -36,6 +52,9 @@ HERE = Path(__file__).resolve().parent
 EVAL_DIR = HERE.parent
 TRAJ_CSV = EVAL_DIR / "revision_analysis_v13" / "traj.csv"
 DYN_PROTOS = ["DYN_FREE", "DYN_REQUEST", "DYN_REQUEST_GUARD"]
+
+sys.path.insert(0, str(HERE))
+import build_unified_audit_seed2026 as bmod  # noqa: E402
 
 
 def pairwise_metrics(a: list, b: list, cats: list, weights: list[float] | None = None) -> dict:
@@ -69,7 +88,6 @@ def multi_rater_agreement(rater_lists: dict[str, list], cats: list, weights: lis
     w = [1.0] * n if weights is None else list(weights)
     W = sum(w)
 
-    # Weighted pairwise agreement across M raters (generalized Fleiss / Gwet AC1)
     po_num = 0.0
     cat_tot = {c: 0.0 for c in cats}
     unanimous = 0.0
@@ -107,7 +125,6 @@ def multi_rater_agreement(rater_lists: dict[str, list], cats: list, weights: lis
 
 
 def hypergeom_tail_le(N: int, K: int, n: int, k_obs: int) -> float:
-    """P(X <= k_obs | N, K, n) under exact hypergeometric distribution."""
     denom = math.comb(N, n)
     lo = max(0, n - (N - K))
     hi = min(k_obs, K, n)
@@ -115,24 +132,19 @@ def hypergeom_tail_le(N: int, K: int, n: int, k_obs: int) -> float:
 
 
 def hypergeom_tail_ge(N: int, K: int, n: int, k_obs: int) -> float:
-    """P(X >= k_obs | N, K, n) under exact hypergeometric distribution."""
     denom = math.comb(N, n)
     lo = max(k_obs, n - (N - K))
     hi = min(K, n)
     return sum(math.comb(K, x) * math.comb(N - K, n - x) for x in range(lo, hi + 1)) / denom
 
 
-def hypergeom_ci_exact(N: int, n: int, k_obs: int, alpha: float = 0.05) -> dict:
-    """Exact distribution-free finite-population bounds for K in N given k_obs in n:
-    - one-sided 95% upper bound K_upper_95_1s: largest K with P(X <= k_obs) >= alpha
-    - two-sided 95% CI [K_lo_95_2s, K_hi_95_2s]: P(X >= k_obs) >= alpha/2 and P(X <= k_obs) >= alpha/2
-    """
+def hypergeom_ci_srswor_diagnostic(N: int, n: int, k_obs: int, alpha: float = 0.05) -> dict:
+    """Naive SRSWOR hypergeometric CI — retained ONLY as a diagnostic contrast to balanced_pick."""
     k_u1 = max(K for K in range(k_obs, N - (n - k_obs) + 1) if hypergeom_tail_le(N, K, n, k_obs) >= alpha)
     k_u2 = max(K for K in range(k_obs, N - (n - k_obs) + 1) if hypergeom_tail_le(N, K, n, k_obs) >= alpha / 2.0)
-    if k_obs == 0:
-        k_l2 = 0
-    else:
-        k_l2 = min(K for K in range(k_obs, N - (n - k_obs) + 1) if hypergeom_tail_ge(N, K, n, k_obs) >= alpha / 2.0)
+    k_l2 = 0 if k_obs == 0 else min(
+        K for K in range(k_obs, N - (n - k_obs) + 1) if hypergeom_tail_ge(N, K, n, k_obs) >= alpha / 2.0
+    )
     return {
         "N": N,
         "n": n,
@@ -141,6 +153,291 @@ def hypergeom_ci_exact(N: int, n: int, k_obs: int, alpha: float = 0.05) -> dict:
         "one_sided_95_upper_rate": round(k_u1 / N, 4),
         "two_sided_95_K": [k_l2, k_u2],
         "two_sided_95_rate": [round(k_l2 / N, 4), round(k_u2 / N, 4)],
+    }
+
+
+def load_populations() -> tuple[dict[str, list[dict]], dict[str, list[dict]]]:
+    """Reconstruct exact Scope-120 and Repair-100 population pools identically to build_unified_audit_seed2026.py."""
+    scope_pools: dict[str, list[dict]] = {k: [] for k in bmod.SCOPE_QUOTAS}
+    repair_neg_by_model: dict[str, list[dict]] = defaultdict(list)
+
+    for slug in bmod.JUDGED_SLUGS:
+        for rec in bmod.read_jsonl_auto(bmod.V13_DIR / f"{slug}.jsonl"):
+            proto = rec.get("protocol")
+            if proto not in bmod.DYN_PROTOS:
+                continue
+            mid = rec["model_id"]
+            tid = rec["trajectory_id"]
+            iid = rec["item_id"]
+            mech_short = "TypeA" if rec.get("verified_mechanism") == "TypeA_UniqueValue" else "TypeB"
+            turns = rec["turns"]
+            for td in turns:
+                if td.get("is_final_turn"):
+                    continue
+                t_idx = int(td["turn_idx"])
+                st = bmod.scope_stratum(
+                    str(td.get("primary_scope") or ""),
+                    str(td.get("secondary_scope") or ""),
+                    mech_short,
+                )
+                scope_pools[st].append({
+                    "unique_key": (mid, tid, t_idx),
+                    "model_id": mid,
+                    "protocol": proto,
+                    "item_id": iid,
+                    "stratum": st,
+                })
+            if int(rec.get("e_U") or 0) == 1:
+                rep_obj = rec.get("repair") or {}
+                if not rep_obj.get("primary_retracted") and not rep_obj.get("secondary_retracted"):
+                    fin_td = [td for td in turns if td.get("is_final_turn")][0]
+                    if (fin_td.get("visible_reply") or "").strip():
+                        repair_neg_by_model[mid].append({
+                            "unique_key": (mid, tid),
+                            "model_id": mid,
+                            "protocol": proto,
+                            "item_id": iid,
+                        })
+    return scope_pools, repair_neg_by_model
+
+
+def draw_balanced_pick_fast(
+    item_ids: list[str],
+    bucket_members: list[list[int]],
+    n: int,
+    rng: random.Random,
+) -> list[int]:
+    """Distributionally exact, fast O(n + k_buckets) simulator of build_unified_audit_seed2026.balanced_pick().
+
+    Proof of distributional equivalence:
+      Shuffling the whole pool uniformly induces independent uniform permutations within
+      each group bucket. Popping from the end of each bucket is therefore identically
+      distributed to lazy Fisher-Yates sampling without replacement inside each bucket.
+    """
+    nb = len(bucket_members)
+    b_order = list(range(nb))
+    rng.shuffle(b_order)
+
+    # Maintain lazy Fisher-Yates state only for buckets actually touched
+    b_copies = [list(m) for m in bucket_members]
+    b_rem = [len(m) for m in bucket_members]
+
+    picked: list[int] = []
+    used_items: set[str] = set()
+    used_idx: set[int] = set()
+
+    # Pass 1: unique items across balanced buckets
+    progressed = True
+    while len(picked) < n and progressed:
+        progressed = False
+        for bi in b_order:
+            if len(picked) >= n:
+                break
+            rem = b_rem[bi]
+            arr = b_copies[bi]
+            while rem > 0:
+                j = rng.randrange(rem)
+                cand = arr[j]
+                rem -= 1
+                arr[j] = arr[rem]
+                arr[rem] = cand
+                if item_ids[cand] not in used_items:
+                    picked.append(cand)
+                    used_items.add(item_ids[cand])
+                    used_idx.add(cand)
+                    progressed = True
+                    break
+            b_rem[bi] = rem
+
+    # Pass 2: remaining unused units balanced across buckets (only reached if unique items < n)
+    if len(picked) < n:
+        rem_buckets: list[list[int]] = []
+        for m in bucket_members:
+            left = [x for x in m if x not in used_idx]
+            if left:
+                rem_buckets.append(left)
+        r_order = list(range(len(rem_buckets)))
+        rng.shuffle(r_order)
+        r_rem = [len(m) for m in rem_buckets]
+        progressed = True
+        while len(picked) < n and progressed:
+            progressed = False
+            for ri in r_order:
+                if len(picked) >= n:
+                    break
+                rem = r_rem[ri]
+                if rem > 0:
+                    arr = rem_buckets[ri]
+                    j = rng.randrange(rem)
+                    cand = arr[j]
+                    rem -= 1
+                    arr[j] = arr[rem]
+                    picked.append(cand)
+                    used_idx.add(cand)
+                    r_rem[ri] = rem
+                    progressed = True
+    return picked
+
+
+def simulate_scope_inclusion_probs(scope_pools: dict[str, list[dict]], mc_draws: int, seed: int = 20260501) -> tuple[dict, dict]:
+    """Estimate exact design inclusion probabilities pi_i for all 7,668 non-final turns under balanced_pick."""
+    rng = random.Random(seed)
+    pi_lookup: dict[tuple, float] = {}
+    stratum_diag: dict[str, dict] = {}
+    for st, q in bmod.SCOPE_QUOTAS.items():
+        pool_s = sorted(scope_pools[st], key=lambda x: x["unique_key"])
+        N_h = len(pool_s)
+        item_ids = [x["item_id"] for x in pool_s]
+        bmap: dict[tuple, list[int]] = defaultdict(list)
+        for i, x in enumerate(pool_s):
+            bmap[(x["model_id"], x["protocol"])].append(i)
+        bucket_members = [bmap[k] for k in sorted(bmap.keys())]
+
+        hits = np.zeros(N_h, dtype=np.int64)
+        for _ in range(mc_draws):
+            for idx in draw_balanced_pick_fast(item_ids, bucket_members, q, rng):
+                hits[idx] += 1
+        pis = hits / float(mc_draws)
+        for i, x in enumerate(pool_s):
+            pi_lookup[x["unique_key"]] = float(pis[i])
+        stratum_diag[st] = {
+            "N": N_h,
+            "n": q,
+            "naive_pi": round(q / N_h, 5),
+            "design_pi_min": round(float(pis.min()), 5),
+            "design_pi_median": round(float(np.median(pis)), 5),
+            "design_pi_max": round(float(pis.max()), 5),
+            "max_to_min_ratio": round(float(pis.max() / max(pis.min(), 1e-12)), 2),
+        }
+    return pi_lookup, stratum_diag
+
+
+def simulate_repair_design_bound(
+    repair_neg_by_model: dict[str, list[dict]],
+    mc_draws: int,
+    seed: int = 20260505,
+) -> dict:
+    """Monte Carlo design-calibrated adversarial 95% upper bound under balanced_pick for Repair-100 controls (N=457, n=74)."""
+    rng = random.Random(seed)
+    mids = list(bmod.REPAIR_NEG_MODEL_QUOTAS.keys())
+    model_diag: dict[str, dict] = {}
+    worst_p: dict[str, list[float]] = {}
+    max_k_per_model = 45
+
+    for mid in mids:
+        q = bmod.REPAIR_NEG_MODEL_QUOTAS[mid]
+        pool_s = sorted(repair_neg_by_model[mid], key=lambda x: x["unique_key"])
+        N_m = len(pool_s)
+        item_ids = [x["item_id"] for x in pool_s]
+        bmap: dict[str, list[int]] = defaultdict(list)
+        for i, x in enumerate(pool_s):
+            bmap[x["protocol"]].append(i)
+        bucket_members = [bmap[k] for k in sorted(bmap.keys())]
+
+        not_picked = np.ones((N_m, mc_draws), dtype=bool)
+        for d in range(mc_draws):
+            for idx in draw_balanced_pick_fast(item_ids, bucket_members, q, rng):
+                not_picked[idx, d] = False
+
+        pis = 1.0 - not_picked.mean(axis=1)
+        model_diag[mid] = {
+            "N": N_m,
+            "n": q,
+            "naive_pi": round(q / N_m, 4),
+            "design_pi_min": round(float(pis.min()), 4),
+            "design_pi_median": round(float(np.median(pis)), 4),
+            "design_pi_max": round(float(pis.max()), 4),
+        }
+
+        # Adversarial subset maximization of P_design(S cap A = empty | |S|=k):
+        # Greedy forward selection + 1-swap local refinement, plus whole-item cluster packing check
+        cur = np.ones(mc_draws, dtype=bool)
+        chosen: list[int] = []
+        p_best = [1.0]
+        for k in range(1, max_k_per_model + 1):
+            best_i, best_c = -1, -1
+            for i in range(N_m):
+                if i in chosen:
+                    continue
+                c = int(np.count_nonzero(cur & not_picked[i]))
+                if c > best_c:
+                    best_c = c
+                    best_i = i
+            chosen.append(best_i)
+            cur = cur & not_picked[best_i]
+
+            s_set = set(chosen)
+            improved = True
+            while improved:
+                improved = False
+                for out_i in list(s_set):
+                    rem = s_set - {out_i}
+                    base = np.ones(mc_draws, dtype=bool)
+                    for j in rem:
+                        base &= not_picked[j]
+                    best_in, best_val = out_i, best_c
+                    for in_i in range(N_m):
+                        if in_i in rem:
+                            continue
+                        val = int(np.count_nonzero(base & not_picked[in_i]))
+                        if val > best_val:
+                            best_val = val
+                            best_in = in_i
+                    if best_in != out_i:
+                        s_set.remove(out_i)
+                        s_set.add(best_in)
+                        best_c = best_val
+                        improved = True
+            p_best.append(best_c / float(mc_draws))
+
+        icnt = Counter(item_ids)
+        items_sorted = sorted(
+            icnt.keys(),
+            key=lambda iid: (-sum(1 for x in pool_s if x["item_id"] == iid and x["protocol"] == "DYN_FREE"), -icnt[iid]),
+        )
+        ord_whole = [i for iid in items_sorted for i, x in enumerate(pool_s) if x["item_id"] == iid]
+        cm = np.ones(mc_draws, dtype=bool)
+        for k in range(1, max_k_per_model + 1):
+            cm = cm & not_picked[ord_whole[k - 1]]
+            v = int(np.count_nonzero(cm)) / float(mc_draws)
+            if v > p_best[k]:
+                p_best[k] = v
+
+        worst_p[mid] = p_best
+
+    # Combine across the 3 independent models: max_{k1+k2+k3 = K} prod_m P_m(k_m)
+    p_comb: dict[int, float] = {}
+    best_split: dict[int, tuple[int, int, int]] = {}
+    for K in range(0, 60):
+        best = 0.0
+        sp = (0, 0, 0)
+        for k1 in range(min(K, max_k_per_model) + 1):
+            for k2 in range(min(K - k1, max_k_per_model) + 1):
+                k3 = K - k1 - k2
+                if k3 > max_k_per_model:
+                    continue
+                val = worst_p[mids[0]][k1] * worst_p[mids[1]][k2] * worst_p[mids[2]][k3]
+                if val > best:
+                    best = val
+                    sp = (k1, k2, k3)
+        p_comb[K] = best
+        best_split[K] = sp
+
+    k95_1s = max(K for K, v in p_comb.items() if v >= 0.05)
+    k95_2s = max(K for K, v in p_comb.items() if v >= 0.025)
+    return {
+        "mc_draws_per_model": mc_draws,
+        "mc_seed": seed,
+        "model_inclusion_probs": model_diag,
+        "worst_case_P_zero_obs_at_K16_srswor_cutoff": round(p_comb[16], 4),
+        "one_sided_95_upper_K": k95_1s,
+        "one_sided_95_upper_rate": round(k95_1s / 457.0, 4),
+        "one_sided_95_P_at_K": round(p_comb[k95_1s], 4),
+        "one_sided_95_split": list(best_split[k95_1s]),
+        "two_sided_95_upper_K": k95_2s,
+        "two_sided_95_upper_rate": round(k95_2s / 457.0, 4),
+        "two_sided_95_P_at_K": round(p_comb[k95_2s], 4),
+        "two_sided_95_split": list(best_split[k95_2s]),
     }
 
 
@@ -182,7 +479,12 @@ def score_cert(raters: list[str], key: dict, T_dyn: pd.DataFrame) -> dict:
         for i in sub_ids:
             flips = [data[r][i]["prefix_flip"].strip() == "Yes" for r in raters]
             if any(flips):
-                cnts = [count_flagged_prefixes(data[r][i].get("affected_prefixes", "")) if data[r][i]["prefix_flip"].strip() == "Yes" else 0 for r in raters]
+                cnts = [
+                    count_flagged_prefixes(data[r][i].get("affected_prefixes", ""))
+                    if data[r][i]["prefix_flip"].strip() == "Yes"
+                    else 0
+                    for r in raters
+                ]
                 if all(flips):
                     pref_L += min(cnts)
                 pref_U += max(cnts)
@@ -199,7 +501,6 @@ def score_cert(raters: list[str], key: dict, T_dyn: pd.DataFrame) -> dict:
                     "sum_e_U": int(sub_t["e_U"].sum()),
                 })
 
-        # Worst-case metric impact if all items with any rater prefix_flip=Yes are dropped
         sub_iids = {c_key[i]["item_id"] for i in sub_ids}
         flagged_iids = {x["item_id"] for x in flagged_items}
         T_sub = T_dyn[T_dyn["item"].isin(sub_iids)]
@@ -267,7 +568,13 @@ def score_cert(raters: list[str], key: dict, T_dyn: pd.DataFrame) -> dict:
     }
 
 
-def score_scope(raters: list[str], key: dict) -> dict:
+def score_scope(
+    raters: list[str],
+    key: dict,
+    pi_lookup: dict[tuple, float],
+    stratum_diag: dict[str, dict],
+    mc_draws: int,
+) -> dict:
     s_key = key["scope_120"]["turns"]
     pop_counts = key["scope_120"]["stratum_population_counts"]
     quotas = key["scope_120"]["stratum_sample_quotas"]
@@ -282,10 +589,54 @@ def score_scope(raters: list[str], key: dict) -> dict:
         assert all(v in valid_sc for v in sc_map[r]), f"Invalid scope label in {r}"
 
     bin_map = {r: [int(v == "Commit") for v in sc_map[r]] for r in raters}
-    weights = [pop_counts[s_key[i]["stratum"]] / quotas[s_key[i]["stratum"]] for i in ids]
-    W_tot = sum(weights)  # equals 7,668 exactly!
 
-    # No-adjudication human [h_L, h_U] binary commit bounds
+    # Design weights:
+    # 1. Raw Horvitz-Thompson w_ht = 1 / pi_i
+    # 2. Stratum-calibrated Hajek w_hajek = N_h * (1 / pi_i) / sum_{j in s_h} (1 / pi_j)  [PRIMARY]
+    # 3. Naive N_h / n_h [sensitivity comparison only]
+    strata_list = [s_key[i]["stratum"] for i in ids]
+    raw_ht = [1.0 / pi_lookup[(s_key[i]["model_id"], s_key[i]["trajectory_id"], int(s_key[i]["turn_idx"]))] for i in ids]
+    naive_w = [pop_counts[s_key[i]["stratum"]] / quotas[s_key[i]["stratum"]] for i in ids]
+
+    st_indices: dict[str, list[int]] = defaultdict(list)
+    for idx, st in enumerate(strata_list):
+        st_indices[st].append(idx)
+
+    hajek_w = [0.0] * len(ids)
+    for st, idxs in st_indices.items():
+        s_ht = sum(raw_ht[k] for k in idxs)
+        N_h = float(pop_counts[st])
+        for k in idxs:
+            hajek_w[k] = N_h * (raw_ht[k] / s_ht)
+
+    N_tot = float(sum(pop_counts.values()))  # 7,668 exactly
+
+    def w_mean(arr: list[int], w: list[float]) -> float:
+        return sum(a * wi for a, wi in zip(arr, w)) / sum(w)
+
+    def hajek_linearized_ci(arr: list[int]) -> dict:
+        """Stratum-calibrated Hajek ratio estimator with conservative linearized Hansen-Hurwitz 95% CI."""
+        est = 0.0
+        var = 0.0
+        for st, idxs in st_indices.items():
+            N_h = float(pop_counts[st])
+            n_h = len(idxs)
+            d = np.array([raw_ht[k] for k in idxs], dtype=float)
+            y = np.array([arr[k] for k in idxs], dtype=float)
+            ybar_h = float(np.sum(d * y) / np.sum(d))
+            est += (N_h / N_tot) * ybar_h
+            u = n_h * (d / np.sum(d)) * (y - ybar_h)
+            var_h = float(np.sum(u * u) / (n_h * (n_h - 1)))
+            var += ((N_h / N_tot) ** 2) * var_h
+        se = math.sqrt(var)
+        lo = max(0.0, est - 1.96 * se)
+        hi = min(1.0, est + 1.96 * se)
+        return {
+            "pct": round(est * 100.0, 2),
+            "se_pct": round(se * 100.0, 2),
+            "ci95": [round(lo * 100.0, 2), round(hi * 100.0, 2)],
+        }
+
     h_L = [int(all(bin_map[r][idx] == 1 for r in raters)) for idx in range(len(ids))]
     h_U = [int(any(bin_map[r][idx] == 1 for r in raters)) for idx in range(len(ids))]
     e_L = [int(s_key[i]["e_L"]) for i in ids]
@@ -293,99 +644,102 @@ def score_scope(raters: list[str], key: dict) -> dict:
     j_pri = [int(s_key[i]["pri"] == "Commit") for i in ids]
     j_sec = [int(s_key[i]["sec"] == "Commit") for i in ids]
 
-    # Interval compatibility: [h_L, h_U] intersects [e_L, e_U] iff h_L <= e_U and e_L <= h_U
     compat = [int(h_L[k] <= e_U[k] and e_L[k] <= h_U[k]) for k in range(len(ids))]
     compat_unw = sum(compat) / len(ids)
-    compat_ipw = sum(c * w for c, w in zip(compat, weights)) / W_tot
+    compat_hajek = hajek_linearized_ci(compat)
 
-    # IPW commit prevalence bounds: human [h_L, h_U] vs LLM [e_L, e_U]
-    # Also stratified bootstrap 95% CIs (B=10,000, seed=20261024)
-    rng = np.random.default_rng(20261024)
-    B = 10_000
-    st_indices = defaultdict(list)
-    for idx, i in enumerate(ids):
-        st_indices[s_key[i]["stratum"]].append(idx)
-
-    def ipw_rate(arr: list[int]) -> float:
-        return sum(a * w for a, w in zip(arr, weights)) / W_tot
-
-    def boot_ipw_ci(arr: list[int]) -> list[float]:
-        arr_np = np.array(arr, dtype=float)
-        draws = np.zeros(B, dtype=float)
-        for st, idxs in st_indices.items():
-            N_h = pop_counts[st]
-            n_h = len(idxs)
-            sub = arr_np[idxs]
-            picks = rng.integers(0, n_h, size=(B, n_h))
-            draws += N_h * sub[picks].mean(axis=1)
-        draws = draws / W_tot * 100.0
-        return [round(float(np.percentile(draws, 2.5)), 2), round(float(np.percentile(draws, 97.5)), 2)]
-
-    # Per-rater comparison against e_L, e_U, primary, secondary
     per_rater_vs_judges = {}
     for r in raters:
         per_rater_vs_judges[r] = {
-            "vs_eL_ipw": pairwise_metrics(bin_map[r], e_L, [0, 1], weights),
-            "vs_eU_ipw": pairwise_metrics(bin_map[r], e_U, [0, 1], weights),
-            "vs_pri_ipw": pairwise_metrics(bin_map[r], j_pri, [0, 1], weights),
-            "vs_sec_ipw": pairwise_metrics(bin_map[r], j_sec, [0, 1], weights),
-            "ipw_commit_rate_pct": round(ipw_rate(bin_map[r]) * 100, 2),
+            "vs_eL_design_hajek": pairwise_metrics(bin_map[r], e_L, [0, 1], hajek_w),
+            "vs_eU_design_hajek": pairwise_metrics(bin_map[r], e_U, [0, 1], hajek_w),
+            "vs_pri_design_hajek": pairwise_metrics(bin_map[r], j_pri, [0, 1], hajek_w),
+            "vs_sec_design_hajek": pairwise_metrics(bin_map[r], j_sec, [0, 1], hajek_w),
+            "design_hajek_commit_rate": hajek_linearized_ci(bin_map[r]),
         }
 
-    # Exact dual-agreed turns (where e_L == e_U and h_L == h_U)
     both_agreed_idx = [k for k in range(len(ids)) if e_L[k] == e_U[k] and h_L[k] == h_U[k]]
     both_agreed_match = sum(h_L[k] == e_L[k] for k in both_agreed_idx)
 
     maj_scope = None
+    h_maj = None
     if len(raters) >= 3 and len(raters) % 2 == 1:
         thr = len(raters) // 2 + 1
         h_maj = [int(sum(bin_map[r][k] for r in raters) >= thr) for k in range(len(ids))]
         maj_in_llm = [int(e_L[k] <= h_maj[k] <= e_U[k]) for k in range(len(ids))]
+        maj_prev = hajek_linearized_ci(h_maj)
         maj_scope = {
-            "ipw_commit_prevalence_pct": round(ipw_rate(h_maj) * 100, 2),
-            "ipw_commit_prevalence_ci95": boot_ipw_ci(h_maj),
-            "vs_eL_ipw": pairwise_metrics(h_maj, e_L, [0, 1], weights),
-            "vs_eU_ipw": pairwise_metrics(h_maj, e_U, [0, 1], weights),
-            "vs_pri_ipw": pairwise_metrics(h_maj, j_pri, [0, 1], weights),
-            "vs_sec_ipw": pairwise_metrics(h_maj, j_sec, [0, 1], weights),
+            "design_hajek_commit_prevalence_pct": maj_prev["pct"],
+            "design_hajek_commit_prevalence_se_pct": maj_prev["se_pct"],
+            "design_hajek_commit_prevalence_ci95": maj_prev["ci95"],
+            "vs_eL_design_hajek": pairwise_metrics(h_maj, e_L, [0, 1], hajek_w),
+            "vs_eU_design_hajek": pairwise_metrics(h_maj, e_U, [0, 1], hajek_w),
+            "vs_pri_design_hajek": pairwise_metrics(h_maj, j_pri, [0, 1], hajek_w),
+            "vs_sec_design_hajek": pairwise_metrics(h_maj, j_sec, [0, 1], hajek_w),
             "within_llm_bounds_unweighted": round(sum(maj_in_llm) / len(ids), 4),
-            "within_llm_bounds_ipw": round(ipw_rate(maj_in_llm), 4),
+            "within_llm_bounds_design_hajek": round(w_mean(maj_in_llm, hajek_w), 4),
+            "within_llm_bounds_design_hajek_ci95": hajek_linearized_ci(maj_in_llm)["ci95"],
         }
+
+    hL_prev = hajek_linearized_ci(h_L)
+    hU_prev = hajek_linearized_ci(h_U)
+
+    # Sensitivity table comparing calibrated Hajek vs raw HT vs naive N_h/n_h
+    weight_sensitivity = {}
+    for lbl, wvec in [("design_calibrated_hajek", hajek_w), ("raw_horvitz_thompson", raw_ht), ("naive_Nh_over_nh", naive_w)]:
+        entry = {
+            "weight_sum": round(sum(wvec), 1),
+            "interval_compatibility_pct": round(w_mean(compat, wvec) * 100.0, 2),
+            "hL_vs_eL_agree_pct": round(pairwise_metrics(h_L, e_L, [0, 1], wvec)["agree"] * 100.0, 2),
+            "human_L_pct": round(w_mean(h_L, wvec) * 100.0, 2),
+            "human_U_pct": round(w_mean(h_U, wvec) * 100.0, 2),
+            "llm_eL_pct": round(w_mean(e_L, wvec) * 100.0, 2),
+            "llm_eU_pct": round(w_mean(e_U, wvec) * 100.0, 2),
+        }
+        if h_maj is not None:
+            entry["human_majority_pct"] = round(w_mean(h_maj, wvec) * 100.0, 2)
+        weight_sensitivity[lbl] = entry
 
     return {
         "n_turns": len(ids),
-        "total_population_turns": int(round(W_tot)),
+        "total_population_turns": int(round(N_tot)),
+        "weighting_method": f"stratum_calibrated_hajek_from_balanced_pick_mc (M={mc_draws})",
+        "design_inclusion_prob_diagnostics": stratum_diag,
         "inter_rater": {
             "binary_commit_unweighted": multi_rater_agreement(bin_map, [0, 1]),
-            "binary_commit_ipw": multi_rater_agreement(bin_map, [0, 1], weights),
+            "binary_commit_design_hajek": multi_rater_agreement(bin_map, [0, 1], hajek_w),
             "four_class_unweighted": multi_rater_agreement(sc_map, ["Wait", "Conditional", "Commit", "Partial/Other"]),
-            "four_class_ipw": multi_rater_agreement(sc_map, ["Wait", "Conditional", "Commit", "Partial/Other"], weights),
+            "four_class_design_hajek": multi_rater_agreement(sc_map, ["Wait", "Conditional", "Commit", "Partial/Other"], hajek_w),
         },
         "human_bounds_vs_llm_bounds": {
             "interval_compatibility_unweighted": round(compat_unw, 4),
-            "interval_compatibility_ipw": round(compat_ipw, 4),
-            "hL_vs_eL_ipw": pairwise_metrics(h_L, e_L, [0, 1], weights),
-            "hU_vs_eU_ipw": pairwise_metrics(h_U, e_U, [0, 1], weights),
+            "interval_compatibility_design_hajek": round(compat_hajek["pct"] / 100.0, 4),
+            "interval_compatibility_design_hajek_ci95_pct": compat_hajek["ci95"],
+            "hL_vs_eL_design_hajek": pairwise_metrics(h_L, e_L, [0, 1], hajek_w),
+            "hU_vs_eU_design_hajek": pairwise_metrics(h_U, e_U, [0, 1], hajek_w),
             "both_human_and_judge_agreed_turns": {
                 "n": len(both_agreed_idx),
                 "n_match": both_agreed_match,
                 "agree_rate": round(both_agreed_match / len(both_agreed_idx), 4) if both_agreed_idx else None,
             },
-            "ipw_commit_prevalence_pct": {
-                "human_L": round(ipw_rate(h_L) * 100, 2),
-                "human_L_ci95": boot_ipw_ci(h_L),
-                "human_U": round(ipw_rate(h_U) * 100, 2),
-                "human_U_ci95": boot_ipw_ci(h_U),
-                "llm_eL_sample_ipw": round(ipw_rate(e_L) * 100, 2),
-                "llm_eU_sample_ipw": round(ipw_rate(e_U) * 100, 2),
+            "design_hajek_commit_prevalence_pct": {
+                "human_L": hL_prev["pct"],
+                "human_L_se": hL_prev["se_pct"],
+                "human_L_ci95": hL_prev["ci95"],
+                "human_U": hU_prev["pct"],
+                "human_U_se": hU_prev["se_pct"],
+                "human_U_ci95": hU_prev["ci95"],
+                "llm_eL_exact_population": round(w_mean(e_L, hajek_w) * 100.0, 2),
+                "llm_eU_exact_population": round(w_mean(e_U, hajek_w) * 100.0, 2),
             },
         },
         "majority_vote": maj_scope,
+        "weight_sensitivity_comparison": weight_sensitivity,
         "per_rater_vs_judges": per_rater_vs_judges,
     }
 
 
-def score_repair(raters: list[str], key: dict) -> dict:
+def score_repair(raters: list[str], key: dict, design_bound: dict) -> dict:
     r_key = key["repair_100"]["trajectories"]
     N_pool = int(key["repair_100"]["n_dual_neg_nonempty_pool"])
     N_tot = int(key["repair_100"]["total_eU_trajectories"])
@@ -414,15 +768,15 @@ def score_repair(raters: list[str], key: dict) -> dict:
     pos_L, pos_U = bounds_on(pos_ids)
     neg_L, neg_U = bounds_on(neg_ids)
 
-    hg_L = hypergeom_ci_exact(N_pool, len(neg_ids), neg_L, alpha=0.05)
-    hg_U = hypergeom_ci_exact(N_pool, len(neg_ids), neg_U, alpha=0.05)
-
-    # Exact distribution-free finite-population 95% envelope for total retraction across all 489 trajectories
-    # (6 deterministic empty replies contribute 0/6)
+    # Primary: Monte Carlo design-calibrated adversarial 95% bound under balanced_pick (valid when neg_U == 0)
+    assert neg_U == 0, "Design-calibrated 0-observed bound requires neg_U == 0; extend simulator for neg_U > 0."
     tot_lo_1s = (pos_L + neg_L) / N_tot
-    tot_hi_1s = (pos_U + hg_U["one_sided_95_upper_K"]) / N_tot
-    tot_lo_2s = (pos_L + hg_L["two_sided_95_K"][0]) / N_tot
-    tot_hi_2s = (pos_U + hg_U["two_sided_95_K"][1]) / N_tot
+    tot_hi_1s = (pos_U + design_bound["one_sided_95_upper_K"]) / N_tot
+    tot_lo_2s = (pos_L + neg_L) / N_tot
+    tot_hi_2s = (pos_U + design_bound["two_sided_95_upper_K"]) / N_tot
+
+    # Diagnostic only: naive SRSWOR hypergeometric (NOT valid under balanced_pick)
+    hg_diag = hypergeom_ci_srswor_diagnostic(N_pool, len(neg_ids), neg_U, alpha=0.05)
 
     maj_rep = None
     if len(raters) >= 3 and len(raters) % 2 == 1:
@@ -461,13 +815,15 @@ def score_repair(raters: list[str], key: dict) -> dict:
             "nonempty_controls_74": [neg_L, neg_U],
         },
         "majority_vote": maj_rep,
-        "finite_population_hypergeom_nonempty_457": {
-            "from_controls_L": hg_L,
-            "from_controls_U": hg_U,
-        },
+        "design_calibrated_mc_adversarial_nonempty_457": design_bound,
         "total_489_retraction_rate_pct": {
-            "conservative_95_one_sided_envelope": [round(tot_lo_1s * 100, 2), round(tot_hi_1s * 100, 2)],
-            "conservative_95_two_sided_envelope": [round(tot_lo_2s * 100, 2), round(tot_hi_2s * 100, 2)],
+            "design_calibrated_95_one_sided_envelope": [round(tot_lo_1s * 100, 2), round(tot_hi_1s * 100, 2)],
+            "design_calibrated_95_two_sided_envelope": [round(tot_lo_2s * 100, 2), round(tot_hi_2s * 100, 2)],
+        },
+        "srswor_reference_invalid_for_balanced_pick": {
+            "note": "Documented diagnostic only: assumes SRSWOR rather than balanced_pick; actual P_design(0 obs | K=16) is ~0.226, not 0.05.",
+            "nonempty_457_hypergeom": hg_diag,
+            "total_489_one_sided_if_srswor_pct": [round(pos_L / N_tot * 100, 2), round((pos_U + hg_diag["one_sided_95_upper_K"]) / N_tot * 100, 2)],
         },
     }
 
@@ -501,7 +857,7 @@ def summarize_ext_vs_author(out: dict, raters: list[str], externals: list[str]) 
         "cert_100_necessity": split_pairs(out["cert_100"]["ALL_100"]["agreement"]["binary_necessity_preserved"]["pairwise"]),
         "cert_100_prefix_flip": split_pairs(out["cert_100"]["ALL_100"]["agreement"]["binary_prefix_flip"]["pairwise"]),
         "scope_120_commit_unweighted": split_pairs(out["scope_120"]["inter_rater"]["binary_commit_unweighted"]["pairwise"]),
-        "scope_120_commit_ipw": split_pairs(out["scope_120"]["inter_rater"]["binary_commit_ipw"]["pairwise"]),
+        "scope_120_commit_design_hajek": split_pairs(out["scope_120"]["inter_rater"]["binary_commit_design_hajek"]["pairwise"]),
         "scope_120_four_class_unweighted": split_pairs(out["scope_120"]["inter_rater"]["four_class_unweighted"]["pairwise"]),
         "repair_100_all100": split_pairs(out["repair_100"]["inter_rater_all100"]["pairwise"]),
     }
@@ -509,8 +865,9 @@ def summarize_ext_vs_author(out: dict, raters: list[str], externals: list[str]) 
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--raters", nargs="+", required=True, help="List of rater slugs (M >= 2), e.g. --raters cai tang")
+    ap.add_argument("--raters", nargs="+", required=True, help="List of rater slugs (M >= 2), e.g. --raters cai tang yu")
     ap.add_argument("--external", nargs="*", default=[], help="Optional subset of raters who are external (non-author)")
+    ap.add_argument("--mc-draws", type=int, default=50000, help="Monte Carlo replays of balanced_pick for design-based inference")
     args = ap.parse_args()
     assert len(args.raters) >= 2, "Need at least 2 independent raters for [L, U] bounds"
 
@@ -518,29 +875,39 @@ def main() -> None:
     T = pd.read_csv(TRAJ_CSV)
     T_dyn = T[T["protocol"].isin(DYN_PROTOS)]
 
+    scope_pools, repair_neg_by_model = load_populations()
+    pi_scope, scope_diag = simulate_scope_inclusion_probs(scope_pools, mc_draws=args.mc_draws, seed=20260501)
+    repair_design_bound = simulate_repair_design_bound(repair_neg_by_model, mc_draws=args.mc_draws, seed=20260505)
+
     out = {
         "seed": key["seed"],
-        "protocol_version": key["protocol_version"],
+        "protocol_version": key["protocol_version"] + "_design_based_inference",
         "raters": args.raters,
         "external_raters": args.external,
+        "mc_design_draws": args.mc_draws,
         "cert_100": score_cert(args.raters, key, T_dyn),
-        "scope_120": score_scope(args.raters, key),
-        "repair_100": score_repair(args.raters, key),
+        "scope_120": score_scope(args.raters, key, pi_scope, scope_diag, args.mc_draws),
+        "repair_100": score_repair(args.raters, key, repair_design_bound),
     }
     ext_cmp = summarize_ext_vs_author(out, args.raters, args.external)
     if ext_cmp is not None:
         out["external_vs_author_audit"] = ext_cmp
+
     out_path = HERE / "unified_audit_results_seed2026.json"
     out_path.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
     print(f"Saved {out_path}")
     print(json.dumps({
-        "cert_TypeA_bounds": out["cert_100"]["TypeA_68"]["dual_or_multi_rater_bounds"],
-        "cert_TypeB_bounds": out["cert_100"]["TypeB_32"]["dual_or_multi_rater_bounds"],
-        "scope_120_summary": out["scope_120"]["human_bounds_vs_llm_bounds"],
-        "repair_100_summary": {
-            "bounds": out["repair_100"]["multi_rater_bounds"],
-            "total_489_95_pct": out["repair_100"]["total_489_retraction_rate_pct"],
+        "scope_120_design_hajek": out["scope_120"]["human_bounds_vs_llm_bounds"],
+        "scope_120_majority": out["scope_120"]["majority_vote"],
+        "scope_120_inter_rater_design_hajek": {
+            "binary_agree": out["scope_120"]["inter_rater"]["binary_commit_design_hajek"]["mean_pairwise_agree"],
+            "binary_ac1": out["scope_120"]["inter_rater"]["binary_commit_design_hajek"]["gwet_ac1"],
+            "four_class_agree": out["scope_120"]["inter_rater"]["four_class_design_hajek"]["mean_pairwise_agree"],
+            "four_class_kappa": out["scope_120"]["inter_rater"]["four_class_design_hajek"]["fleiss_kappa"],
         },
+        "scope_120_weight_sensitivity": out["scope_120"]["weight_sensitivity_comparison"],
+        "repair_100_design_bound": out["repair_100"]["design_calibrated_mc_adversarial_nonempty_457"],
+        "repair_100_total_489_pct": out["repair_100"]["total_489_retraction_rate_pct"],
     }, indent=2, ensure_ascii=False))
 
 
