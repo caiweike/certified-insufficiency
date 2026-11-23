@@ -328,7 +328,7 @@ def main() -> None:
     t3_lines = [
         r"\begin{table*}[!t]",
         r"\centering",
-        rf"\caption{{Non-final scope distribution (852 insufficient turns per cell; Dis./Oth.\ = non-commit judge disagreements, Partial/Other, Unresolved, and $<0.3\%$ empty truncations), regime-stratified $E$ and $Y{{-}}J$ ($[L,U]$, \%), and unprompted explicit retraction among $E_U{{=}}1$ trajectories (confirmed by both judges / flagged by either / $n$). Pooled retraction: ${tot_both}/{tot_any}/{tot_n}$ (${tot_both/tot_n*100:.1f}\%$--${tot_any/tot_n*100:.1f}\%$).}}",
+        rf"\caption{{Non-final scope (852 turns/cell; Dis./Oth.\ = non-commit disagreements, Partial/Other, Unresolved, $<0.3\%$ empty), regime-stratified $E$ and $Y{{-}}J$ ($[L,U]$, \%), and judge-flagged retraction on $E_U{{=}}1$ trajectories (both/either/$n$; pooled ${tot_both}/{tot_any}/{tot_n}$, ${tot_both/tot_n*100:.1f}\%$--${tot_any/tot_n*100:.1f}\%$; human confirms $1/26$).}}",
         r"\label{tab:exp3_mechanism}",
         r"\footnotesize",
         r"\setlength{\tabcolsep}{3.6pt}",
