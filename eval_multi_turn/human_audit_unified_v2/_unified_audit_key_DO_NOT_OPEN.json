@@ -1,0 +1,5847 @@
+{
+  "seed": 2026,
+  "protocol_version": "unified_neutral_no_adjudication_v2",
+  "cert_100": {
+    "n_items": 100,
+    "total_eval_prefixes_TypeA": 591,
+    "total_eval_prefixes_TypeB": 261,
+    "total_eval_prefixes_all": 852,
+    "items": {
+      "C001": {
+        "item_id": "ob-cee-4060",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G1_Func_Calc_Trig",
+        "canonical_k": 4,
+        "n_eval_prefixes": 9,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          [
+            "S1",
+            "S2",
+            "S4",
+            "S3"
+          ],
+          [
+            "S1",
+            "S4",
+            "S2",
+            "S3"
+          ]
+        ]
+      },
+      "C002": {
+        "item_id": "ob-cee-3245",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G1_Func_Calc_Trig",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C003": {
+        "item_id": "ob-comp-268",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G2_Alg_Ineq",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C004": {
+        "item_id": "ob-cee-4990",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G4_Geom_Analytic",
+        "canonical_k": 4,
+        "n_eval_prefixes": 9,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          [
+            "S1",
+            "S2",
+            "S4",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S4",
+            "S2"
+          ]
+        ]
+      },
+      "C005": {
+        "item_id": "ob-cee-3195",
+        "verified_mechanism": "TypeB_Extremum",
+        "mech_short": "TypeB",
+        "macro_subfield": "G1_Func_Calc_Trig",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C006": {
+        "item_id": "ob-cee-4147",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G3_Seq_Comb_NT",
+        "canonical_k": 5,
+        "n_eval_prefixes": 12,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ],
+          [
+            "S1",
+            "S2",
+            "S5",
+            "S4",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S5",
+            "S2",
+            "S4"
+          ]
+        ]
+      },
+      "C007": {
+        "item_id": "ob-comp-627",
+        "verified_mechanism": "TypeB_Extremum",
+        "mech_short": "TypeB",
+        "macro_subfield": "G4_Geom_Analytic",
+        "canonical_k": 5,
+        "n_eval_prefixes": 12,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ],
+          [
+            "S1",
+            "S3",
+            "S5",
+            "S2",
+            "S4"
+          ],
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S5",
+            "S4"
+          ]
+        ]
+      },
+      "C008": {
+        "item_id": "ob-cee-3889",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G1_Func_Calc_Trig",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C009": {
+        "item_id": "ob-cee-3278",
+        "verified_mechanism": "TypeB_Extremum",
+        "mech_short": "TypeB",
+        "macro_subfield": "G4_Geom_Analytic",
+        "canonical_k": 4,
+        "n_eval_prefixes": 9,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          [
+            "S1",
+            "S2",
+            "S4",
+            "S3"
+          ],
+          [
+            "S1",
+            "S4",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C010": {
+        "item_id": "ob-cee-4800",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G4_Geom_Analytic",
+        "canonical_k": 4,
+        "n_eval_prefixes": 9,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          [
+            "S1",
+            "S3",
+            "S4",
+            "S2"
+          ],
+          [
+            "S1",
+            "S2",
+            "S4",
+            "S3"
+          ]
+        ]
+      },
+      "C011": {
+        "item_id": "ob-comp-631",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G2_Alg_Ineq",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C012": {
+        "item_id": "ob-comp-350",
+        "verified_mechanism": "TypeB_Extremum",
+        "mech_short": "TypeB",
+        "macro_subfield": "G2_Alg_Ineq",
+        "canonical_k": 5,
+        "n_eval_prefixes": 12,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ],
+          [
+            "S1",
+            "S4",
+            "S3",
+            "S5",
+            "S2"
+          ],
+          [
+            "S1",
+            "S4",
+            "S3",
+            "S2",
+            "S5"
+          ]
+        ]
+      },
+      "C013": {
+        "item_id": "ob-cee-3906",
+        "verified_mechanism": "TypeB_Extremum",
+        "mech_short": "TypeB",
+        "macro_subfield": "G1_Func_Calc_Trig",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C014": {
+        "item_id": "ob-cee-3849",
+        "verified_mechanism": "TypeB_Extremum",
+        "mech_short": "TypeB",
+        "macro_subfield": "G4_Geom_Analytic",
+        "canonical_k": 5,
+        "n_eval_prefixes": 12,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ],
+          [
+            "S1",
+            "S2",
+            "S5",
+            "S4",
+            "S3"
+          ],
+          [
+            "S1",
+            "S5",
+            "S3",
+            "S2",
+            "S4"
+          ]
+        ]
+      },
+      "C015": {
+        "item_id": "ob-comp-625",
+        "verified_mechanism": "TypeB_Extremum",
+        "mech_short": "TypeB",
+        "macro_subfield": "G2_Alg_Ineq",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C016": {
+        "item_id": "ob-cee-3336",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G2_Alg_Ineq",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C017": {
+        "item_id": "ob-cee-4352",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G3_Seq_Comb_NT",
+        "canonical_k": 4,
+        "n_eval_prefixes": 9,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          [
+            "S1",
+            "S3",
+            "S4",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2",
+            "S4"
+          ]
+        ]
+      },
+      "C018": {
+        "item_id": "ob-comp-785",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G3_Seq_Comb_NT",
+        "canonical_k": 4,
+        "n_eval_prefixes": 9,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2",
+            "S4"
+          ],
+          [
+            "S1",
+            "S2",
+            "S4",
+            "S3"
+          ]
+        ]
+      },
+      "C019": {
+        "item_id": "ob-comp-662",
+        "verified_mechanism": "TypeB_Extremum",
+        "mech_short": "TypeB",
+        "macro_subfield": "G2_Alg_Ineq",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C020": {
+        "item_id": "ob-cee-4646",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G3_Seq_Comb_NT",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C021": {
+        "item_id": "ob-cee-3212",
+        "verified_mechanism": "TypeB_Extremum",
+        "mech_short": "TypeB",
+        "macro_subfield": "G2_Alg_Ineq",
+        "canonical_k": 4,
+        "n_eval_prefixes": 9,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          [
+            "S1",
+            "S4",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S2",
+            "S4",
+            "S3"
+          ]
+        ]
+      },
+      "C022": {
+        "item_id": "ob-cee-4339",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G3_Seq_Comb_NT",
+        "canonical_k": 4,
+        "n_eval_prefixes": 9,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          [
+            "S1",
+            "S4",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2",
+            "S4"
+          ]
+        ]
+      },
+      "C023": {
+        "item_id": "ob-comp-624",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G2_Alg_Ineq",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C024": {
+        "item_id": "ob-cee-3237",
+        "verified_mechanism": "TypeB_Extremum",
+        "mech_short": "TypeB",
+        "macro_subfield": "G1_Func_Calc_Trig",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C025": {
+        "item_id": "ob-cee-3919",
+        "verified_mechanism": "TypeB_Extremum",
+        "mech_short": "TypeB",
+        "macro_subfield": "G1_Func_Calc_Trig",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C026": {
+        "item_id": "ob-cee-4070",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G1_Func_Calc_Trig",
+        "canonical_k": 5,
+        "n_eval_prefixes": 12,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ],
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S5",
+            "S4"
+          ],
+          [
+            "S1",
+            "S5",
+            "S4",
+            "S2",
+            "S3"
+          ]
+        ]
+      },
+      "C027": {
+        "item_id": "ob-cee-4729",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G3_Seq_Comb_NT",
+        "canonical_k": 5,
+        "n_eval_prefixes": 12,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ],
+          [
+            "S1",
+            "S4",
+            "S2",
+            "S5",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S4",
+            "S2",
+            "S5"
+          ]
+        ]
+      },
+      "C028": {
+        "item_id": "ob-comp-67",
+        "verified_mechanism": "TypeB_Extremum",
+        "mech_short": "TypeB",
+        "macro_subfield": "G4_Geom_Analytic",
+        "canonical_k": 5,
+        "n_eval_prefixes": 12,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ],
+          [
+            "S1",
+            "S3",
+            "S4",
+            "S5",
+            "S2"
+          ],
+          [
+            "S1",
+            "S5",
+            "S3",
+            "S4",
+            "S2"
+          ]
+        ]
+      },
+      "C029": {
+        "item_id": "ob-cee-4682",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G3_Seq_Comb_NT",
+        "canonical_k": 4,
+        "n_eval_prefixes": 9,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2",
+            "S4"
+          ],
+          [
+            "S1",
+            "S3",
+            "S4",
+            "S2"
+          ]
+        ]
+      },
+      "C030": {
+        "item_id": "ob-cee-4654",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G3_Seq_Comb_NT",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C031": {
+        "item_id": "ob-cee-4752",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G3_Seq_Comb_NT",
+        "canonical_k": 4,
+        "n_eval_prefixes": 9,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          [
+            "S1",
+            "S4",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S2",
+            "S4",
+            "S3"
+          ]
+        ]
+      },
+      "C032": {
+        "item_id": "ob-comp-413",
+        "verified_mechanism": "TypeB_Extremum",
+        "mech_short": "TypeB",
+        "macro_subfield": "G1_Func_Calc_Trig",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C033": {
+        "item_id": "ob-comp-2",
+        "verified_mechanism": "TypeB_Extremum",
+        "mech_short": "TypeB",
+        "macro_subfield": "G4_Geom_Analytic",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C034": {
+        "item_id": "ob-cee-3335",
+        "verified_mechanism": "TypeB_Extremum",
+        "mech_short": "TypeB",
+        "macro_subfield": "G2_Alg_Ineq",
+        "canonical_k": 4,
+        "n_eval_prefixes": 9,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2",
+            "S4"
+          ],
+          [
+            "S1",
+            "S4",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C035": {
+        "item_id": "ob-cee-4021",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G1_Func_Calc_Trig",
+        "canonical_k": 4,
+        "n_eval_prefixes": 9,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          [
+            "S1",
+            "S4",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S4",
+            "S2"
+          ]
+        ]
+      },
+      "C036": {
+        "item_id": "ob-comp-761",
+        "verified_mechanism": "TypeB_Extremum",
+        "mech_short": "TypeB",
+        "macro_subfield": "G4_Geom_Analytic",
+        "canonical_k": 5,
+        "n_eval_prefixes": 12,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2",
+            "S4",
+            "S5"
+          ],
+          [
+            "S1",
+            "S5",
+            "S3",
+            "S4",
+            "S2"
+          ]
+        ]
+      },
+      "C037": {
+        "item_id": "ob-comp-490",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G1_Func_Calc_Trig",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C038": {
+        "item_id": "ob-comp-474",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G3_Seq_Comb_NT",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C039": {
+        "item_id": "ob-cee-4566",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G3_Seq_Comb_NT",
+        "canonical_k": 4,
+        "n_eval_prefixes": 9,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          [
+            "S1",
+            "S2",
+            "S4",
+            "S3"
+          ],
+          [
+            "S1",
+            "S4",
+            "S2",
+            "S3"
+          ]
+        ]
+      },
+      "C040": {
+        "item_id": "ob-cee-3258",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G2_Alg_Ineq",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C041": {
+        "item_id": "ob-cee-4014",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G1_Func_Calc_Trig",
+        "canonical_k": 4,
+        "n_eval_prefixes": 9,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          [
+            "S1",
+            "S3",
+            "S4",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2",
+            "S4"
+          ]
+        ]
+      },
+      "C042": {
+        "item_id": "ob-comp-211",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G1_Func_Calc_Trig",
+        "canonical_k": 4,
+        "n_eval_prefixes": 9,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          [
+            "S1",
+            "S4",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S4",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C043": {
+        "item_id": "ob-cee-4044",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G3_Seq_Comb_NT",
+        "canonical_k": 5,
+        "n_eval_prefixes": 12,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ],
+          [
+            "S1",
+            "S5",
+            "S3",
+            "S2",
+            "S4"
+          ],
+          [
+            "S1",
+            "S4",
+            "S2",
+            "S3",
+            "S5"
+          ]
+        ]
+      },
+      "C044": {
+        "item_id": "ob-cee-3921",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G1_Func_Calc_Trig",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C045": {
+        "item_id": "ob-cee-3240",
+        "verified_mechanism": "TypeB_Extremum",
+        "mech_short": "TypeB",
+        "macro_subfield": "G1_Func_Calc_Trig",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C046": {
+        "item_id": "ob-cee-3982",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G1_Func_Calc_Trig",
+        "canonical_k": 4,
+        "n_eval_prefixes": 9,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          [
+            "S1",
+            "S2",
+            "S4",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2",
+            "S4"
+          ]
+        ]
+      },
+      "C047": {
+        "item_id": "ob-cee-4696",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G3_Seq_Comb_NT",
+        "canonical_k": 4,
+        "n_eval_prefixes": 9,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          [
+            "S1",
+            "S3",
+            "S4",
+            "S2"
+          ],
+          [
+            "S1",
+            "S2",
+            "S4",
+            "S3"
+          ]
+        ]
+      },
+      "C048": {
+        "item_id": "ob-cee-4964",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G4_Geom_Analytic",
+        "canonical_k": 4,
+        "n_eval_prefixes": 9,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          [
+            "S1",
+            "S2",
+            "S4",
+            "S3"
+          ],
+          [
+            "S1",
+            "S4",
+            "S2",
+            "S3"
+          ]
+        ]
+      },
+      "C049": {
+        "item_id": "ob-cee-3907",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G1_Func_Calc_Trig",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C050": {
+        "item_id": "ob-comp-510",
+        "verified_mechanism": "TypeB_Extremum",
+        "mech_short": "TypeB",
+        "macro_subfield": "G2_Alg_Ineq",
+        "canonical_k": 4,
+        "n_eval_prefixes": 9,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          [
+            "S1",
+            "S2",
+            "S4",
+            "S3"
+          ],
+          [
+            "S1",
+            "S4",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C051": {
+        "item_id": "ob-comp-418",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G3_Seq_Comb_NT",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C052": {
+        "item_id": "ob-cee-3844",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G4_Geom_Analytic",
+        "canonical_k": 6,
+        "n_eval_prefixes": 15,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2",
+            "S5",
+            "S6",
+            "S4"
+          ],
+          [
+            "S1",
+            "S6",
+            "S5",
+            "S4",
+            "S2",
+            "S3"
+          ]
+        ]
+      },
+      "C053": {
+        "item_id": "ob-comp-351",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G3_Seq_Comb_NT",
+        "canonical_k": 4,
+        "n_eval_prefixes": 9,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          [
+            "S1",
+            "S3",
+            "S4",
+            "S2"
+          ],
+          [
+            "S1",
+            "S2",
+            "S4",
+            "S3"
+          ]
+        ]
+      },
+      "C054": {
+        "item_id": "ob-cee-4667",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G1_Func_Calc_Trig",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C055": {
+        "item_id": "ob-cee-4968",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G4_Geom_Analytic",
+        "canonical_k": 5,
+        "n_eval_prefixes": 12,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ],
+          [
+            "S1",
+            "S4",
+            "S2",
+            "S3",
+            "S5"
+          ],
+          [
+            "S1",
+            "S3",
+            "S4",
+            "S2",
+            "S5"
+          ]
+        ]
+      },
+      "C056": {
+        "item_id": "ob-cee-4112",
+        "verified_mechanism": "TypeB_Extremum",
+        "mech_short": "TypeB",
+        "macro_subfield": "G4_Geom_Analytic",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C057": {
+        "item_id": "ob-comp-416",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G3_Seq_Comb_NT",
+        "canonical_k": 6,
+        "n_eval_prefixes": 15,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ],
+          [
+            "S1",
+            "S3",
+            "S4",
+            "S2",
+            "S5",
+            "S6"
+          ],
+          [
+            "S1",
+            "S2",
+            "S6",
+            "S4",
+            "S3",
+            "S5"
+          ]
+        ]
+      },
+      "C058": {
+        "item_id": "ob-cee-4957",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G4_Geom_Analytic",
+        "canonical_k": 4,
+        "n_eval_prefixes": 9,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          [
+            "S1",
+            "S4",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S4",
+            "S2"
+          ]
+        ]
+      },
+      "C059": {
+        "item_id": "ob-cee-3991",
+        "verified_mechanism": "TypeB_Extremum",
+        "mech_short": "TypeB",
+        "macro_subfield": "G1_Func_Calc_Trig",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C060": {
+        "item_id": "ob-cee-4736",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G3_Seq_Comb_NT",
+        "canonical_k": 4,
+        "n_eval_prefixes": 9,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2",
+            "S4"
+          ],
+          [
+            "S1",
+            "S4",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C061": {
+        "item_id": "ob-cee-3340",
+        "verified_mechanism": "TypeB_Extremum",
+        "mech_short": "TypeB",
+        "macro_subfield": "G2_Alg_Ineq",
+        "canonical_k": 4,
+        "n_eval_prefixes": 9,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          [
+            "S1",
+            "S4",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S4",
+            "S2"
+          ]
+        ]
+      },
+      "C062": {
+        "item_id": "ob-cee-4026",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G1_Func_Calc_Trig",
+        "canonical_k": 5,
+        "n_eval_prefixes": 12,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ],
+          [
+            "S1",
+            "S5",
+            "S4",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S5",
+            "S4",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C063": {
+        "item_id": "ob-cee-4029",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G1_Func_Calc_Trig",
+        "canonical_k": 4,
+        "n_eval_prefixes": 9,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          [
+            "S1",
+            "S3",
+            "S4",
+            "S2"
+          ],
+          [
+            "S1",
+            "S2",
+            "S4",
+            "S3"
+          ]
+        ]
+      },
+      "C064": {
+        "item_id": "ob-cee-3285",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G2_Alg_Ineq",
+        "canonical_k": 4,
+        "n_eval_prefixes": 9,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          [
+            "S1",
+            "S4",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2",
+            "S4"
+          ]
+        ]
+      },
+      "C065": {
+        "item_id": "ob-cee-4187",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G4_Geom_Analytic",
+        "canonical_k": 5,
+        "n_eval_prefixes": 12,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ],
+          [
+            "S1",
+            "S3",
+            "S5",
+            "S2",
+            "S4"
+          ],
+          [
+            "S1",
+            "S4",
+            "S3",
+            "S5",
+            "S2"
+          ]
+        ]
+      },
+      "C066": {
+        "item_id": "ob-cee-3282",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G2_Alg_Ineq",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C067": {
+        "item_id": "ob-comp-710",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G4_Geom_Analytic",
+        "canonical_k": 4,
+        "n_eval_prefixes": 9,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          [
+            "S1",
+            "S4",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S4",
+            "S2",
+            "S3"
+          ]
+        ]
+      },
+      "C068": {
+        "item_id": "ob-cee-4438",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G4_Geom_Analytic",
+        "canonical_k": 6,
+        "n_eval_prefixes": 15,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ],
+          [
+            "S1",
+            "S2",
+            "S5",
+            "S4",
+            "S6",
+            "S3"
+          ],
+          [
+            "S1",
+            "S4",
+            "S5",
+            "S3",
+            "S2",
+            "S6"
+          ]
+        ]
+      },
+      "C069": {
+        "item_id": "ob-cee-4295",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G1_Func_Calc_Trig",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C070": {
+        "item_id": "ob-cee-4274",
+        "verified_mechanism": "TypeB_Extremum",
+        "mech_short": "TypeB",
+        "macro_subfield": "G3_Seq_Comb_NT",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C071": {
+        "item_id": "ob-cee-4016",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G1_Func_Calc_Trig",
+        "canonical_k": 4,
+        "n_eval_prefixes": 9,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2",
+            "S4"
+          ],
+          [
+            "S1",
+            "S3",
+            "S4",
+            "S2"
+          ]
+        ]
+      },
+      "C072": {
+        "item_id": "ob-cee-4580",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G3_Seq_Comb_NT",
+        "canonical_k": 6,
+        "n_eval_prefixes": 15,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ],
+          [
+            "S1",
+            "S5",
+            "S6",
+            "S2",
+            "S4",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S4",
+            "S5",
+            "S6",
+            "S2"
+          ]
+        ]
+      },
+      "C073": {
+        "item_id": "ob-cee-3948",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G4_Geom_Analytic",
+        "canonical_k": 6,
+        "n_eval_prefixes": 15,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ],
+          [
+            "S1",
+            "S4",
+            "S5",
+            "S6",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S5",
+            "S6",
+            "S4"
+          ]
+        ]
+      },
+      "C074": {
+        "item_id": "ob-comp-779",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G4_Geom_Analytic",
+        "canonical_k": 5,
+        "n_eval_prefixes": 12,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ],
+          [
+            "S1",
+            "S2",
+            "S4",
+            "S5",
+            "S3"
+          ],
+          [
+            "S1",
+            "S4",
+            "S2",
+            "S5",
+            "S3"
+          ]
+        ]
+      },
+      "C075": {
+        "item_id": "ob-comp-44",
+        "verified_mechanism": "TypeB_Extremum",
+        "mech_short": "TypeB",
+        "macro_subfield": "G2_Alg_Ineq",
+        "canonical_k": 4,
+        "n_eval_prefixes": 9,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          [
+            "S1",
+            "S3",
+            "S4",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2",
+            "S4"
+          ]
+        ]
+      },
+      "C076": {
+        "item_id": "ob-cee-3163",
+        "verified_mechanism": "TypeB_Extremum",
+        "mech_short": "TypeB",
+        "macro_subfield": "G1_Func_Calc_Trig",
+        "canonical_k": 4,
+        "n_eval_prefixes": 9,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2",
+            "S4"
+          ],
+          [
+            "S1",
+            "S4",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C077": {
+        "item_id": "ob-cee-4687",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G3_Seq_Comb_NT",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C078": {
+        "item_id": "ob-cee-3289",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G2_Alg_Ineq",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C079": {
+        "item_id": "ob-cee-4043",
+        "verified_mechanism": "TypeB_Extremum",
+        "mech_short": "TypeB",
+        "macro_subfield": "G3_Seq_Comb_NT",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C080": {
+        "item_id": "ob-cee-3300",
+        "verified_mechanism": "TypeB_Extremum",
+        "mech_short": "TypeB",
+        "macro_subfield": "G2_Alg_Ineq",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C081": {
+        "item_id": "ob-cee-3283",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G2_Alg_Ineq",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C082": {
+        "item_id": "ob-comp-298",
+        "verified_mechanism": "TypeB_Extremum",
+        "mech_short": "TypeB",
+        "macro_subfield": "G1_Func_Calc_Trig",
+        "canonical_k": 4,
+        "n_eval_prefixes": 9,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          [
+            "S1",
+            "S4",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S2",
+            "S4",
+            "S3"
+          ]
+        ]
+      },
+      "C083": {
+        "item_id": "ob-cee-3162",
+        "verified_mechanism": "TypeB_Extremum",
+        "mech_short": "TypeB",
+        "macro_subfield": "G1_Func_Calc_Trig",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C084": {
+        "item_id": "ob-cee-4010",
+        "verified_mechanism": "TypeB_Extremum",
+        "mech_short": "TypeB",
+        "macro_subfield": "G3_Seq_Comb_NT",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C085": {
+        "item_id": "ob-cee-4685",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G3_Seq_Comb_NT",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C086": {
+        "item_id": "ob-comp-241",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G2_Alg_Ineq",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C087": {
+        "item_id": "ob-cee-4798",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G4_Geom_Analytic",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C088": {
+        "item_id": "ob-cee-7048",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G4_Geom_Analytic",
+        "canonical_k": 4,
+        "n_eval_prefixes": 9,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          [
+            "S1",
+            "S4",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S2",
+            "S4",
+            "S3"
+          ]
+        ]
+      },
+      "C089": {
+        "item_id": "ob-comp-204",
+        "verified_mechanism": "TypeB_Extremum",
+        "mech_short": "TypeB",
+        "macro_subfield": "G2_Alg_Ineq",
+        "canonical_k": 5,
+        "n_eval_prefixes": 12,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ],
+          [
+            "S1",
+            "S5",
+            "S4",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S4",
+            "S2",
+            "S5",
+            "S3"
+          ]
+        ]
+      },
+      "C090": {
+        "item_id": "ob-cee-4656",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G3_Seq_Comb_NT",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C091": {
+        "item_id": "ob-comp-107",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G2_Alg_Ineq",
+        "canonical_k": 4,
+        "n_eval_prefixes": 9,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          [
+            "S1",
+            "S3",
+            "S4",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2",
+            "S4"
+          ]
+        ]
+      },
+      "C092": {
+        "item_id": "ob-comp-348",
+        "verified_mechanism": "TypeB_Extremum",
+        "mech_short": "TypeB",
+        "macro_subfield": "G4_Geom_Analytic",
+        "canonical_k": 5,
+        "n_eval_prefixes": 12,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ],
+          [
+            "S1",
+            "S5",
+            "S2",
+            "S4",
+            "S3"
+          ],
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S5",
+            "S4"
+          ]
+        ]
+      },
+      "C093": {
+        "item_id": "ob-comp-255",
+        "verified_mechanism": "TypeB_Extremum",
+        "mech_short": "TypeB",
+        "macro_subfield": "G4_Geom_Analytic",
+        "canonical_k": 4,
+        "n_eval_prefixes": 9,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2",
+            "S4"
+          ],
+          [
+            "S1",
+            "S4",
+            "S2",
+            "S3"
+          ]
+        ]
+      },
+      "C094": {
+        "item_id": "ob-cee-3984",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G1_Func_Calc_Trig",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C095": {
+        "item_id": "ob-cee-3298",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G2_Alg_Ineq",
+        "canonical_k": 4,
+        "n_eval_prefixes": 9,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2",
+            "S4"
+          ],
+          [
+            "S1",
+            "S3",
+            "S4",
+            "S2"
+          ]
+        ]
+      },
+      "C096": {
+        "item_id": "ob-comp-370",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G4_Geom_Analytic",
+        "canonical_k": 6,
+        "n_eval_prefixes": 15,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ],
+          [
+            "S1",
+            "S2",
+            "S6",
+            "S3",
+            "S4",
+            "S5"
+          ],
+          [
+            "S1",
+            "S2",
+            "S4",
+            "S3",
+            "S6",
+            "S5"
+          ]
+        ]
+      },
+      "C097": {
+        "item_id": "ob-cee-4882",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G4_Geom_Analytic",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C098": {
+        "item_id": "ob-cee-4845",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G1_Func_Calc_Trig",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      },
+      "C099": {
+        "item_id": "ob-cee-4106",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G1_Func_Calc_Trig",
+        "canonical_k": 5,
+        "n_eval_prefixes": 12,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ],
+          [
+            "S1",
+            "S3",
+            "S4",
+            "S2",
+            "S5"
+          ],
+          [
+            "S1",
+            "S5",
+            "S4",
+            "S2",
+            "S3"
+          ]
+        ]
+      },
+      "C100": {
+        "item_id": "ob-cee-3333",
+        "verified_mechanism": "TypeA_UniqueValue",
+        "mech_short": "TypeA",
+        "macro_subfield": "G2_Alg_Ineq",
+        "canonical_k": 3,
+        "n_eval_prefixes": 6,
+        "disclosure_orders": [
+          [
+            "S1",
+            "S2",
+            "S3"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ],
+          [
+            "S1",
+            "S3",
+            "S2"
+          ]
+        ]
+      }
+    }
+  },
+  "scope_120": {
+    "total_population_turns": 7668,
+    "stratum_population_counts": {
+      "agree_Commit_TypeA": 266,
+      "agree_Commit_TypeB": 273,
+      "disagree_Commit": 149,
+      "agree_Wait_TypeA": 4036,
+      "agree_Wait_TypeB": 1297,
+      "agree_Cond_TypeA": 491,
+      "agree_Cond_TypeB": 297,
+      "disagree_Wait_Cond": 801,
+      "other_noncommit": 58
+    },
+    "stratum_sample_quotas": {
+      "agree_Commit_TypeA": 18,
+      "agree_Commit_TypeB": 14,
+      "disagree_Commit": 16,
+      "agree_Wait_TypeA": 18,
+      "agree_Wait_TypeB": 12,
+      "agree_Cond_TypeA": 14,
+      "agree_Cond_TypeB": 10,
+      "disagree_Wait_Cond": 12,
+      "other_noncommit": 6
+    },
+    "unique_items": 70,
+    "turns": {
+      "S001": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-comp-44___DYN_FREE___r2",
+        "item_id": "ob-comp-44",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeB",
+        "canonical_k": 4,
+        "turn_idx": 3,
+        "stratum": "agree_Commit_TypeB",
+        "pri": "Commit",
+        "sec": "Commit",
+        "scope_C": "Commit",
+        "e_L": 1,
+        "e_U": 1
+      },
+      "S002": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-3984___DYN_REQUEST_GUARD___r1",
+        "item_id": "ob-cee-3984",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeA",
+        "canonical_k": 3,
+        "turn_idx": 1,
+        "stratum": "disagree_Commit",
+        "pri": "Wait",
+        "sec": "Commit",
+        "scope_C": "Unresolved",
+        "e_L": 0,
+        "e_U": 1
+      },
+      "S003": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-3340___DYN_REQUEST_GUARD___r0",
+        "item_id": "ob-cee-3340",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeB",
+        "canonical_k": 4,
+        "turn_idx": 2,
+        "stratum": "agree_Cond_TypeB",
+        "pri": "Conditional",
+        "sec": "Conditional",
+        "scope_C": "Conditional",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S004": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-3195___DYN_REQUEST_GUARD___r2",
+        "item_id": "ob-cee-3195",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeB",
+        "canonical_k": 3,
+        "turn_idx": 1,
+        "stratum": "disagree_Commit",
+        "pri": "Conditional",
+        "sec": "Commit",
+        "scope_C": "Unresolved",
+        "e_L": 0,
+        "e_U": 1
+      },
+      "S005": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4580___DYN_REQUEST___r0",
+        "item_id": "ob-cee-4580",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 6,
+        "turn_idx": 1,
+        "stratum": "agree_Wait_TypeA",
+        "pri": "Wait",
+        "sec": "Wait",
+        "scope_C": "Wait",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S006": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-67___DYN_FREE___r1",
+        "item_id": "ob-comp-67",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeB",
+        "canonical_k": 5,
+        "turn_idx": 2,
+        "stratum": "agree_Cond_TypeB",
+        "pri": "Conditional",
+        "sec": "Conditional",
+        "scope_C": "Conditional",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S007": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4736___DYN_FREE___r0",
+        "item_id": "ob-cee-4736",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeA",
+        "canonical_k": 4,
+        "turn_idx": 3,
+        "stratum": "agree_Commit_TypeA",
+        "pri": "Commit",
+        "sec": "Commit",
+        "scope_C": "Commit",
+        "e_L": 1,
+        "e_U": 1
+      },
+      "S008": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-comp-779___DYN_REQUEST___r1",
+        "item_id": "ob-comp-779",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 5,
+        "turn_idx": 4,
+        "stratum": "agree_Commit_TypeA",
+        "pri": "Commit",
+        "sec": "Commit",
+        "scope_C": "Commit",
+        "e_L": 1,
+        "e_U": 1
+      },
+      "S009": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-comp-710___DYN_REQUEST_GUARD___r2",
+        "item_id": "ob-comp-710",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeA",
+        "canonical_k": 4,
+        "turn_idx": 3,
+        "stratum": "agree_Wait_TypeA",
+        "pri": "Wait",
+        "sec": "Wait",
+        "scope_C": "Wait",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S010": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4070___DYN_REQUEST___r2",
+        "item_id": "ob-cee-4070",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 5,
+        "turn_idx": 4,
+        "stratum": "agree_Commit_TypeA",
+        "pri": "Commit",
+        "sec": "Commit",
+        "scope_C": "Commit",
+        "e_L": 1,
+        "e_U": 1
+      },
+      "S011": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-3849___DYN_REQUEST___r2",
+        "item_id": "ob-cee-3849",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeB",
+        "canonical_k": 5,
+        "turn_idx": 2,
+        "stratum": "agree_Wait_TypeB",
+        "pri": "Wait",
+        "sec": "Wait",
+        "scope_C": "Wait",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S012": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4957___DYN_FREE___r1",
+        "item_id": "ob-cee-4957",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeA",
+        "canonical_k": 4,
+        "turn_idx": 3,
+        "stratum": "agree_Commit_TypeA",
+        "pri": "Commit",
+        "sec": "Commit",
+        "scope_C": "Commit",
+        "e_L": 1,
+        "e_U": 1
+      },
+      "S013": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-3335___DYN_REQUEST___r0",
+        "item_id": "ob-cee-3335",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeB",
+        "canonical_k": 4,
+        "turn_idx": 1,
+        "stratum": "agree_Cond_TypeB",
+        "pri": "Conditional",
+        "sec": "Conditional",
+        "scope_C": "Conditional",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S014": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-3278___DYN_REQUEST_GUARD___r2",
+        "item_id": "ob-cee-3278",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeB",
+        "canonical_k": 4,
+        "turn_idx": 2,
+        "stratum": "agree_Wait_TypeB",
+        "pri": "Wait",
+        "sec": "Wait",
+        "scope_C": "Wait",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S015": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-761___DYN_REQUEST_GUARD___r0",
+        "item_id": "ob-comp-761",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeB",
+        "canonical_k": 5,
+        "turn_idx": 3,
+        "stratum": "agree_Commit_TypeB",
+        "pri": "Commit",
+        "sec": "Commit",
+        "scope_C": "Commit",
+        "e_L": 1,
+        "e_U": 1
+      },
+      "S016": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-comp-474___DYN_REQUEST_GUARD___r0",
+        "item_id": "ob-comp-474",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeA",
+        "canonical_k": 3,
+        "turn_idx": 2,
+        "stratum": "agree_Cond_TypeA",
+        "pri": "Conditional",
+        "sec": "Conditional",
+        "scope_C": "Conditional",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S017": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-3282___DYN_REQUEST___r2",
+        "item_id": "ob-cee-3282",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 3,
+        "turn_idx": 1,
+        "stratum": "agree_Wait_TypeA",
+        "pri": "Wait",
+        "sec": "Wait",
+        "scope_C": "Wait",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S018": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-comp-348___DYN_REQUEST_GUARD___r2",
+        "item_id": "ob-comp-348",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeB",
+        "canonical_k": 5,
+        "turn_idx": 4,
+        "stratum": "agree_Commit_TypeB",
+        "pri": "Commit",
+        "sec": "Commit",
+        "scope_C": "Commit",
+        "e_L": 1,
+        "e_U": 1
+      },
+      "S019": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-comp-255___DYN_REQUEST_GUARD___r1",
+        "item_id": "ob-comp-255",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeB",
+        "canonical_k": 4,
+        "turn_idx": 3,
+        "stratum": "disagree_Commit",
+        "pri": "Commit",
+        "sec": "Conditional",
+        "scope_C": "Unresolved",
+        "e_L": 0,
+        "e_U": 1
+      },
+      "S020": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-3212___DYN_FREE___r1",
+        "item_id": "ob-cee-3212",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeB",
+        "canonical_k": 4,
+        "turn_idx": 1,
+        "stratum": "agree_Wait_TypeB",
+        "pri": "Wait",
+        "sec": "Wait",
+        "scope_C": "Wait",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S021": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4106___DYN_REQUEST___r0",
+        "item_id": "ob-cee-4106",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 5,
+        "turn_idx": 4,
+        "stratum": "agree_Wait_TypeA",
+        "pri": "Wait",
+        "sec": "Wait",
+        "scope_C": "Wait",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S022": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-3240___DYN_REQUEST_GUARD___r1",
+        "item_id": "ob-cee-3240",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeB",
+        "canonical_k": 3,
+        "turn_idx": 2,
+        "stratum": "agree_Wait_TypeB",
+        "pri": "Wait",
+        "sec": "Wait",
+        "scope_C": "Wait",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S023": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-comp-67___DYN_REQUEST_GUARD___r1",
+        "item_id": "ob-comp-67",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeB",
+        "canonical_k": 5,
+        "turn_idx": 3,
+        "stratum": "disagree_Commit",
+        "pri": "Commit",
+        "sec": "Conditional",
+        "scope_C": "Unresolved",
+        "e_L": 0,
+        "e_U": 1
+      },
+      "S024": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-3982___DYN_FREE___r2",
+        "item_id": "ob-cee-3982",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeA",
+        "canonical_k": 4,
+        "turn_idx": 1,
+        "stratum": "agree_Wait_TypeA",
+        "pri": "Wait",
+        "sec": "Wait",
+        "scope_C": "Wait",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S025": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4438___DYN_REQUEST___r1",
+        "item_id": "ob-cee-4438",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 6,
+        "turn_idx": 5,
+        "stratum": "agree_Cond_TypeA",
+        "pri": "Conditional",
+        "sec": "Conditional",
+        "scope_C": "Conditional",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S026": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-comp-370___DYN_FREE___r0",
+        "item_id": "ob-comp-370",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeA",
+        "canonical_k": 6,
+        "turn_idx": 2,
+        "stratum": "agree_Cond_TypeA",
+        "pri": "Conditional",
+        "sec": "Conditional",
+        "scope_C": "Conditional",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S027": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-comp-416___DYN_FREE___r0",
+        "item_id": "ob-comp-416",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeA",
+        "canonical_k": 6,
+        "turn_idx": 4,
+        "stratum": "agree_Wait_TypeA",
+        "pri": "Wait",
+        "sec": "Wait",
+        "scope_C": "Wait",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S028": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-comp-761___DYN_FREE___r1",
+        "item_id": "ob-comp-761",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeB",
+        "canonical_k": 5,
+        "turn_idx": 2,
+        "stratum": "agree_Cond_TypeB",
+        "pri": "Conditional",
+        "sec": "Conditional",
+        "scope_C": "Conditional",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S029": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4968___DYN_FREE___r0",
+        "item_id": "ob-cee-4968",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeA",
+        "canonical_k": 5,
+        "turn_idx": 2,
+        "stratum": "agree_Wait_TypeA",
+        "pri": "Wait",
+        "sec": "Wait",
+        "scope_C": "Wait",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S030": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-3849___DYN_FREE___r0",
+        "item_id": "ob-cee-3849",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeB",
+        "canonical_k": 5,
+        "turn_idx": 4,
+        "stratum": "agree_Cond_TypeB",
+        "pri": "Conditional",
+        "sec": "Conditional",
+        "scope_C": "Conditional",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S031": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-3984___DYN_FREE___r2",
+        "item_id": "ob-cee-3984",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeA",
+        "canonical_k": 3,
+        "turn_idx": 1,
+        "stratum": "other_noncommit",
+        "pri": "Wait",
+        "sec": "Partial/Other",
+        "scope_C": "NonCommit_Disagreed",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S032": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4070___DYN_REQUEST_GUARD___r0",
+        "item_id": "ob-cee-4070",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeA",
+        "canonical_k": 5,
+        "turn_idx": 2,
+        "stratum": "agree_Wait_TypeA",
+        "pri": "Wait",
+        "sec": "Wait",
+        "scope_C": "Wait",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S033": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-3212___DYN_FREE___r2",
+        "item_id": "ob-cee-3212",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeB",
+        "canonical_k": 4,
+        "turn_idx": 3,
+        "stratum": "disagree_Wait_Cond",
+        "pri": "Conditional",
+        "sec": "Wait",
+        "scope_C": "NonCommit_Disagreed",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S034": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-comp-204___DYN_REQUEST___r2",
+        "item_id": "ob-comp-204",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeB",
+        "canonical_k": 5,
+        "turn_idx": 4,
+        "stratum": "other_noncommit",
+        "pri": "Wait",
+        "sec": "Partial/Other",
+        "scope_C": "NonCommit_Disagreed",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S035": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-255___DYN_REQUEST___r1",
+        "item_id": "ob-comp-255",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeB",
+        "canonical_k": 4,
+        "turn_idx": 3,
+        "stratum": "agree_Commit_TypeB",
+        "pri": "Commit",
+        "sec": "Commit",
+        "scope_C": "Commit",
+        "e_L": 1,
+        "e_U": 1
+      },
+      "S036": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-3162___DYN_REQUEST_GUARD___r2",
+        "item_id": "ob-cee-3162",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeB",
+        "canonical_k": 3,
+        "turn_idx": 1,
+        "stratum": "agree_Wait_TypeB",
+        "pri": "Wait",
+        "sec": "Wait",
+        "scope_C": "Wait",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S037": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-3195___DYN_REQUEST___r0",
+        "item_id": "ob-cee-3195",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeB",
+        "canonical_k": 3,
+        "turn_idx": 1,
+        "stratum": "agree_Commit_TypeB",
+        "pri": "Commit",
+        "sec": "Commit",
+        "scope_C": "Commit",
+        "e_L": 1,
+        "e_U": 1
+      },
+      "S038": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4968___DYN_REQUEST_GUARD___r1",
+        "item_id": "ob-cee-4968",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeA",
+        "canonical_k": 5,
+        "turn_idx": 4,
+        "stratum": "disagree_Wait_Cond",
+        "pri": "Conditional",
+        "sec": "Wait",
+        "scope_C": "NonCommit_Disagreed",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S039": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4752___DYN_FREE___r0",
+        "item_id": "ob-cee-4752",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeA",
+        "canonical_k": 4,
+        "turn_idx": 2,
+        "stratum": "disagree_Commit",
+        "pri": "Commit",
+        "sec": "Conditional",
+        "scope_C": "Unresolved",
+        "e_L": 0,
+        "e_U": 1
+      },
+      "S040": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-comp-416___DYN_FREE___r2",
+        "item_id": "ob-comp-416",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeA",
+        "canonical_k": 6,
+        "turn_idx": 4,
+        "stratum": "disagree_Commit",
+        "pri": "Commit",
+        "sec": "Conditional",
+        "scope_C": "Unresolved",
+        "e_L": 0,
+        "e_U": 1
+      },
+      "S041": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-3237___DYN_REQUEST_GUARD___r2",
+        "item_id": "ob-cee-3237",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeB",
+        "canonical_k": 3,
+        "turn_idx": 1,
+        "stratum": "agree_Wait_TypeB",
+        "pri": "Wait",
+        "sec": "Wait",
+        "scope_C": "Wait",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S042": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-comp-416___DYN_REQUEST_GUARD___r2",
+        "item_id": "ob-comp-416",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeA",
+        "canonical_k": 6,
+        "turn_idx": 5,
+        "stratum": "agree_Commit_TypeA",
+        "pri": "Commit",
+        "sec": "Commit",
+        "scope_C": "Commit",
+        "e_L": 1,
+        "e_U": 1
+      },
+      "S043": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-comp-351___DYN_REQUEST_GUARD___r0",
+        "item_id": "ob-comp-351",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeA",
+        "canonical_k": 4,
+        "turn_idx": 3,
+        "stratum": "disagree_Commit",
+        "pri": "Commit",
+        "sec": "Partial/Other",
+        "scope_C": "Unresolved",
+        "e_L": 0,
+        "e_U": 1
+      },
+      "S044": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-comp-350___DYN_FREE___r1",
+        "item_id": "ob-comp-350",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeB",
+        "canonical_k": 5,
+        "turn_idx": 4,
+        "stratum": "agree_Commit_TypeB",
+        "pri": "Commit",
+        "sec": "Commit",
+        "scope_C": "Commit",
+        "e_L": 1,
+        "e_U": 1
+      },
+      "S045": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4646___DYN_FREE___r0",
+        "item_id": "ob-cee-4646",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeA",
+        "canonical_k": 3,
+        "turn_idx": 2,
+        "stratum": "agree_Commit_TypeA",
+        "pri": "Commit",
+        "sec": "Commit",
+        "scope_C": "Commit",
+        "e_L": 1,
+        "e_U": 1
+      },
+      "S046": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-comp-350___DYN_REQUEST_GUARD___r2",
+        "item_id": "ob-comp-350",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeB",
+        "canonical_k": 5,
+        "turn_idx": 1,
+        "stratum": "disagree_Wait_Cond",
+        "pri": "Conditional",
+        "sec": "Wait",
+        "scope_C": "NonCommit_Disagreed",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S047": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-3849___DYN_REQUEST___r1",
+        "item_id": "ob-cee-3849",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeB",
+        "canonical_k": 5,
+        "turn_idx": 4,
+        "stratum": "agree_Commit_TypeB",
+        "pri": "Commit",
+        "sec": "Commit",
+        "scope_C": "Commit",
+        "e_L": 1,
+        "e_U": 1
+      },
+      "S048": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4656___DYN_FREE___r1",
+        "item_id": "ob-cee-4656",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeA",
+        "canonical_k": 3,
+        "turn_idx": 1,
+        "stratum": "agree_Commit_TypeA",
+        "pri": "Commit",
+        "sec": "Commit",
+        "scope_C": "Commit",
+        "e_L": 1,
+        "e_U": 1
+      },
+      "S049": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4295___DYN_FREE___r0",
+        "item_id": "ob-cee-4295",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeA",
+        "canonical_k": 3,
+        "turn_idx": 2,
+        "stratum": "disagree_Commit",
+        "pri": "Commit",
+        "sec": "Conditional",
+        "scope_C": "Unresolved",
+        "e_L": 0,
+        "e_U": 1
+      },
+      "S050": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4147___DYN_FREE___r0",
+        "item_id": "ob-cee-4147",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeA",
+        "canonical_k": 5,
+        "turn_idx": 3,
+        "stratum": "agree_Cond_TypeA",
+        "pri": "Conditional",
+        "sec": "Conditional",
+        "scope_C": "Conditional",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S051": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4798___DYN_FREE___r0",
+        "item_id": "ob-cee-4798",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeA",
+        "canonical_k": 3,
+        "turn_idx": 1,
+        "stratum": "agree_Wait_TypeA",
+        "pri": "Wait",
+        "sec": "Wait",
+        "scope_C": "Wait",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S052": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-comp-204___DYN_REQUEST___r0",
+        "item_id": "ob-comp-204",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeB",
+        "canonical_k": 5,
+        "turn_idx": 4,
+        "stratum": "agree_Commit_TypeB",
+        "pri": "Commit",
+        "sec": "Commit",
+        "scope_C": "Commit",
+        "e_L": 1,
+        "e_U": 1
+      },
+      "S053": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-3285___DYN_REQUEST___r0",
+        "item_id": "ob-cee-3285",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 4,
+        "turn_idx": 3,
+        "stratum": "disagree_Wait_Cond",
+        "pri": "Conditional",
+        "sec": "Wait",
+        "scope_C": "NonCommit_Disagreed",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S054": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-3163___DYN_FREE___r0",
+        "item_id": "ob-cee-3163",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeB",
+        "canonical_k": 4,
+        "turn_idx": 3,
+        "stratum": "agree_Wait_TypeB",
+        "pri": "Wait",
+        "sec": "Wait",
+        "scope_C": "Wait",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S055": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4752___DYN_REQUEST___r1",
+        "item_id": "ob-cee-4752",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 4,
+        "turn_idx": 1,
+        "stratum": "agree_Wait_TypeA",
+        "pri": "Wait",
+        "sec": "Wait",
+        "scope_C": "Wait",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S056": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-comp-67___DYN_FREE___r0",
+        "item_id": "ob-comp-67",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeB",
+        "canonical_k": 5,
+        "turn_idx": 2,
+        "stratum": "agree_Commit_TypeB",
+        "pri": "Commit",
+        "sec": "Commit",
+        "scope_C": "Commit",
+        "e_L": 1,
+        "e_U": 1
+      },
+      "S057": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-comp-351___DYN_REQUEST_GUARD___r0",
+        "item_id": "ob-comp-351",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeA",
+        "canonical_k": 4,
+        "turn_idx": 2,
+        "stratum": "agree_Commit_TypeA",
+        "pri": "Commit",
+        "sec": "Commit",
+        "scope_C": "Commit",
+        "e_L": 1,
+        "e_U": 1
+      },
+      "S058": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-3195___DYN_REQUEST_GUARD___r0",
+        "item_id": "ob-cee-3195",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeB",
+        "canonical_k": 3,
+        "turn_idx": 2,
+        "stratum": "other_noncommit",
+        "pri": "Partial/Other",
+        "sec": "Partial/Other",
+        "scope_C": "Partial/Other",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S059": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-3237___DYN_REQUEST___r0",
+        "item_id": "ob-cee-3237",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeB",
+        "canonical_k": 3,
+        "turn_idx": 2,
+        "stratum": "agree_Cond_TypeB",
+        "pri": "Conditional",
+        "sec": "Conditional",
+        "scope_C": "Conditional",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S060": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-3844___DYN_REQUEST_GUARD___r0",
+        "item_id": "ob-cee-3844",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeA",
+        "canonical_k": 6,
+        "turn_idx": 4,
+        "stratum": "disagree_Wait_Cond",
+        "pri": "Conditional",
+        "sec": "Wait",
+        "scope_C": "NonCommit_Disagreed",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S061": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-3948___DYN_FREE___r2",
+        "item_id": "ob-cee-3948",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeA",
+        "canonical_k": 6,
+        "turn_idx": 5,
+        "stratum": "disagree_Commit",
+        "pri": "Commit",
+        "sec": "Conditional",
+        "scope_C": "Unresolved",
+        "e_L": 0,
+        "e_U": 1
+      },
+      "S062": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-3982___DYN_REQUEST_GUARD___r1",
+        "item_id": "ob-cee-3982",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeA",
+        "canonical_k": 4,
+        "turn_idx": 3,
+        "stratum": "disagree_Wait_Cond",
+        "pri": "Conditional",
+        "sec": "Wait",
+        "scope_C": "NonCommit_Disagreed",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S063": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-3335___DYN_REQUEST___r0",
+        "item_id": "ob-cee-3335",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeB",
+        "canonical_k": 4,
+        "turn_idx": 2,
+        "stratum": "agree_Commit_TypeB",
+        "pri": "Commit",
+        "sec": "Commit",
+        "scope_C": "Commit",
+        "e_L": 1,
+        "e_U": 1
+      },
+      "S064": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4685___DYN_REQUEST_GUARD___r2",
+        "item_id": "ob-cee-4685",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeA",
+        "canonical_k": 3,
+        "turn_idx": 2,
+        "stratum": "agree_Cond_TypeA",
+        "pri": "Conditional",
+        "sec": "Conditional",
+        "scope_C": "Conditional",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S065": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-3948___DYN_REQUEST___r1",
+        "item_id": "ob-cee-3948",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 6,
+        "turn_idx": 1,
+        "stratum": "agree_Wait_TypeA",
+        "pri": "Wait",
+        "sec": "Wait",
+        "scope_C": "Wait",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S066": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-3335___DYN_REQUEST_GUARD___r2",
+        "item_id": "ob-cee-3335",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeB",
+        "canonical_k": 4,
+        "turn_idx": 2,
+        "stratum": "disagree_Commit",
+        "pri": "Conditional",
+        "sec": "Commit",
+        "scope_C": "Unresolved",
+        "e_L": 0,
+        "e_U": 1
+      },
+      "S067": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-comp-418___DYN_REQUEST___r2",
+        "item_id": "ob-comp-418",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 3,
+        "turn_idx": 2,
+        "stratum": "agree_Commit_TypeA",
+        "pri": "Commit",
+        "sec": "Commit",
+        "scope_C": "Commit",
+        "e_L": 1,
+        "e_U": 1
+      },
+      "S068": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-comp-662___DYN_FREE___r2",
+        "item_id": "ob-comp-662",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeB",
+        "canonical_k": 3,
+        "turn_idx": 2,
+        "stratum": "agree_Wait_TypeB",
+        "pri": "Wait",
+        "sec": "Wait",
+        "scope_C": "Wait",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S069": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4656___DYN_REQUEST_GUARD___r1",
+        "item_id": "ob-cee-4656",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeA",
+        "canonical_k": 3,
+        "turn_idx": 2,
+        "stratum": "other_noncommit",
+        "pri": "",
+        "sec": "",
+        "scope_C": "EMPTY_TRUNCATED",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S070": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-comp-255___DYN_FREE___r1",
+        "item_id": "ob-comp-255",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeB",
+        "canonical_k": 4,
+        "turn_idx": 2,
+        "stratum": "agree_Wait_TypeB",
+        "pri": "Wait",
+        "sec": "Wait",
+        "scope_C": "Wait",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S071": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-3163___DYN_REQUEST___r1",
+        "item_id": "ob-cee-3163",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeB",
+        "canonical_k": 4,
+        "turn_idx": 2,
+        "stratum": "disagree_Commit",
+        "pri": "Commit",
+        "sec": "Wait",
+        "scope_C": "Unresolved",
+        "e_L": 0,
+        "e_U": 1
+      },
+      "S072": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-625___DYN_REQUEST_GUARD___r2",
+        "item_id": "ob-comp-625",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeB",
+        "canonical_k": 3,
+        "turn_idx": 2,
+        "stratum": "agree_Commit_TypeB",
+        "pri": "Commit",
+        "sec": "Commit",
+        "scope_C": "Commit",
+        "e_L": 1,
+        "e_U": 1
+      },
+      "S073": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-comp-370___DYN_REQUEST_GUARD___r1",
+        "item_id": "ob-comp-370",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeA",
+        "canonical_k": 6,
+        "turn_idx": 5,
+        "stratum": "agree_Commit_TypeA",
+        "pri": "Commit",
+        "sec": "Commit",
+        "scope_C": "Commit",
+        "e_L": 1,
+        "e_U": 1
+      },
+      "S074": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4043___DYN_FREE___r1",
+        "item_id": "ob-cee-4043",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeB",
+        "canonical_k": 3,
+        "turn_idx": 1,
+        "stratum": "disagree_Wait_Cond",
+        "pri": "Conditional",
+        "sec": "Wait",
+        "scope_C": "NonCommit_Disagreed",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S075": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4685___DYN_FREE___r0",
+        "item_id": "ob-cee-4685",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeA",
+        "canonical_k": 3,
+        "turn_idx": 2,
+        "stratum": "agree_Wait_TypeA",
+        "pri": "Wait",
+        "sec": "Wait",
+        "scope_C": "Wait",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S076": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4696___DYN_REQUEST_GUARD___r0",
+        "item_id": "ob-cee-4696",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeA",
+        "canonical_k": 4,
+        "turn_idx": 1,
+        "stratum": "agree_Wait_TypeA",
+        "pri": "Wait",
+        "sec": "Wait",
+        "scope_C": "Wait",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S077": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-comp-627___DYN_REQUEST_GUARD___r2",
+        "item_id": "ob-comp-627",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeB",
+        "canonical_k": 5,
+        "turn_idx": 2,
+        "stratum": "agree_Cond_TypeB",
+        "pri": "Conditional",
+        "sec": "Conditional",
+        "scope_C": "Conditional",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S078": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4147___DYN_FREE___r0",
+        "item_id": "ob-cee-4147",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeA",
+        "canonical_k": 5,
+        "turn_idx": 4,
+        "stratum": "agree_Commit_TypeA",
+        "pri": "Commit",
+        "sec": "Commit",
+        "scope_C": "Commit",
+        "e_L": 1,
+        "e_U": 1
+      },
+      "S079": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-comp-474___DYN_REQUEST___r0",
+        "item_id": "ob-comp-474",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 3,
+        "turn_idx": 2,
+        "stratum": "disagree_Wait_Cond",
+        "pri": "Conditional",
+        "sec": "Wait",
+        "scope_C": "NonCommit_Disagreed",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S080": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4957___DYN_REQUEST_GUARD___r1",
+        "item_id": "ob-cee-4957",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeA",
+        "canonical_k": 4,
+        "turn_idx": 2,
+        "stratum": "agree_Cond_TypeA",
+        "pri": "Conditional",
+        "sec": "Conditional",
+        "scope_C": "Conditional",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S081": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-comp-627___DYN_REQUEST_GUARD___r0",
+        "item_id": "ob-comp-627",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeB",
+        "canonical_k": 5,
+        "turn_idx": 3,
+        "stratum": "agree_Commit_TypeB",
+        "pri": "Commit",
+        "sec": "Commit",
+        "scope_C": "Commit",
+        "e_L": 1,
+        "e_U": 1
+      },
+      "S082": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-627___DYN_REQUEST___r2",
+        "item_id": "ob-comp-627",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeB",
+        "canonical_k": 5,
+        "turn_idx": 4,
+        "stratum": "disagree_Commit",
+        "pri": "Commit",
+        "sec": "Wait",
+        "scope_C": "Unresolved",
+        "e_L": 0,
+        "e_U": 1
+      },
+      "S083": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4566___DYN_FREE___r1",
+        "item_id": "ob-cee-4566",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeA",
+        "canonical_k": 4,
+        "turn_idx": 3,
+        "stratum": "disagree_Wait_Cond",
+        "pri": "Conditional",
+        "sec": "Wait",
+        "scope_C": "NonCommit_Disagreed",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S084": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4352___DYN_FREE___r0",
+        "item_id": "ob-cee-4352",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeA",
+        "canonical_k": 4,
+        "turn_idx": 2,
+        "stratum": "agree_Commit_TypeA",
+        "pri": "Commit",
+        "sec": "Commit",
+        "scope_C": "Commit",
+        "e_L": 1,
+        "e_U": 1
+      },
+      "S085": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-3889___DYN_FREE___r1",
+        "item_id": "ob-cee-3889",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeA",
+        "canonical_k": 3,
+        "turn_idx": 1,
+        "stratum": "agree_Cond_TypeA",
+        "pri": "Conditional",
+        "sec": "Conditional",
+        "scope_C": "Conditional",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S086": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4010___DYN_REQUEST_GUARD___r1",
+        "item_id": "ob-cee-4010",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeB",
+        "canonical_k": 3,
+        "turn_idx": 1,
+        "stratum": "agree_Wait_TypeB",
+        "pri": "Wait",
+        "sec": "Wait",
+        "scope_C": "Wait",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S087": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-7048___DYN_FREE___r0",
+        "item_id": "ob-cee-7048",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeA",
+        "canonical_k": 4,
+        "turn_idx": 3,
+        "stratum": "agree_Cond_TypeA",
+        "pri": "Conditional",
+        "sec": "Conditional",
+        "scope_C": "Conditional",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S088": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-2___DYN_REQUEST_GUARD___r2",
+        "item_id": "ob-comp-2",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeB",
+        "canonical_k": 3,
+        "turn_idx": 2,
+        "stratum": "agree_Cond_TypeB",
+        "pri": "Conditional",
+        "sec": "Conditional",
+        "scope_C": "Conditional",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S089": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-44___DYN_REQUEST___r2",
+        "item_id": "ob-comp-44",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeB",
+        "canonical_k": 4,
+        "turn_idx": 3,
+        "stratum": "agree_Cond_TypeB",
+        "pri": "Conditional",
+        "sec": "Conditional",
+        "scope_C": "Conditional",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S090": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4682___DYN_REQUEST___r0",
+        "item_id": "ob-cee-4682",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 4,
+        "turn_idx": 1,
+        "stratum": "agree_Commit_TypeA",
+        "pri": "Commit",
+        "sec": "Commit",
+        "scope_C": "Commit",
+        "e_L": 1,
+        "e_U": 1
+      },
+      "S091": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4736___DYN_REQUEST___r1",
+        "item_id": "ob-cee-4736",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 4,
+        "turn_idx": 1,
+        "stratum": "disagree_Commit",
+        "pri": "Commit",
+        "sec": "Conditional",
+        "scope_C": "Unresolved",
+        "e_L": 0,
+        "e_U": 1
+      },
+      "S092": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-631___DYN_REQUEST_GUARD___r2",
+        "item_id": "ob-comp-631",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeA",
+        "canonical_k": 3,
+        "turn_idx": 2,
+        "stratum": "agree_Cond_TypeA",
+        "pri": "Conditional",
+        "sec": "Conditional",
+        "scope_C": "Conditional",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S093": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4729___DYN_REQUEST_GUARD___r2",
+        "item_id": "ob-cee-4729",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeA",
+        "canonical_k": 5,
+        "turn_idx": 2,
+        "stratum": "agree_Cond_TypeA",
+        "pri": "Conditional",
+        "sec": "Conditional",
+        "scope_C": "Conditional",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S094": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4654___DYN_REQUEST___r2",
+        "item_id": "ob-cee-4654",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 3,
+        "turn_idx": 2,
+        "stratum": "agree_Cond_TypeA",
+        "pri": "Conditional",
+        "sec": "Conditional",
+        "scope_C": "Conditional",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S095": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-3245___DYN_REQUEST_GUARD___r2",
+        "item_id": "ob-cee-3245",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeA",
+        "canonical_k": 3,
+        "turn_idx": 1,
+        "stratum": "agree_Wait_TypeA",
+        "pri": "Wait",
+        "sec": "Wait",
+        "scope_C": "Wait",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S096": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4667___DYN_REQUEST___r1",
+        "item_id": "ob-cee-4667",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 3,
+        "turn_idx": 2,
+        "stratum": "disagree_Wait_Cond",
+        "pri": "Conditional",
+        "sec": "Wait",
+        "scope_C": "NonCommit_Disagreed",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S097": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-comp-298___DYN_FREE___r0",
+        "item_id": "ob-comp-298",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeB",
+        "canonical_k": 4,
+        "turn_idx": 3,
+        "stratum": "agree_Commit_TypeB",
+        "pri": "Commit",
+        "sec": "Commit",
+        "scope_C": "Commit",
+        "e_L": 1,
+        "e_U": 1
+      },
+      "S098": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-comp-624___DYN_REQUEST___r2",
+        "item_id": "ob-comp-624",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 3,
+        "turn_idx": 2,
+        "stratum": "disagree_Commit",
+        "pri": "Conditional",
+        "sec": "Commit",
+        "scope_C": "Unresolved",
+        "e_L": 0,
+        "e_U": 1
+      },
+      "S099": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4339___DYN_REQUEST___r1",
+        "item_id": "ob-cee-4339",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 4,
+        "turn_idx": 3,
+        "stratum": "other_noncommit",
+        "pri": "",
+        "sec": "",
+        "scope_C": "EMPTY_TRUNCATED",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S100": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-3991___DYN_FREE___r0",
+        "item_id": "ob-cee-3991",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeB",
+        "canonical_k": 3,
+        "turn_idx": 2,
+        "stratum": "agree_Commit_TypeB",
+        "pri": "Commit",
+        "sec": "Commit",
+        "scope_C": "Commit",
+        "e_L": 1,
+        "e_U": 1
+      },
+      "S101": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4882___DYN_REQUEST___r0",
+        "item_id": "ob-cee-4882",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 3,
+        "turn_idx": 1,
+        "stratum": "agree_Cond_TypeA",
+        "pri": "Conditional",
+        "sec": "Conditional",
+        "scope_C": "Conditional",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S102": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4295___DYN_REQUEST_GUARD___r1",
+        "item_id": "ob-cee-4295",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeA",
+        "canonical_k": 3,
+        "turn_idx": 2,
+        "stratum": "agree_Wait_TypeA",
+        "pri": "Wait",
+        "sec": "Wait",
+        "scope_C": "Wait",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S103": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4029___DYN_FREE___r2",
+        "item_id": "ob-cee-4029",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeA",
+        "canonical_k": 4,
+        "turn_idx": 3,
+        "stratum": "agree_Wait_TypeA",
+        "pri": "Wait",
+        "sec": "Wait",
+        "scope_C": "Wait",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S104": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4566___DYN_REQUEST_GUARD___r0",
+        "item_id": "ob-cee-4566",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeA",
+        "canonical_k": 4,
+        "turn_idx": 1,
+        "stratum": "agree_Wait_TypeA",
+        "pri": "Wait",
+        "sec": "Wait",
+        "scope_C": "Wait",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S105": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-3948___DYN_REQUEST_GUARD___r0",
+        "item_id": "ob-cee-3948",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeA",
+        "canonical_k": 6,
+        "turn_idx": 5,
+        "stratum": "agree_Commit_TypeA",
+        "pri": "Commit",
+        "sec": "Commit",
+        "scope_C": "Commit",
+        "e_L": 1,
+        "e_U": 1
+      },
+      "S106": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-comp-510___DYN_REQUEST___r2",
+        "item_id": "ob-comp-510",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeB",
+        "canonical_k": 4,
+        "turn_idx": 3,
+        "stratum": "agree_Wait_TypeB",
+        "pri": "Wait",
+        "sec": "Wait",
+        "scope_C": "Wait",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S107": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4026___DYN_REQUEST_GUARD___r0",
+        "item_id": "ob-cee-4026",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeA",
+        "canonical_k": 5,
+        "turn_idx": 2,
+        "stratum": "agree_Commit_TypeA",
+        "pri": "Commit",
+        "sec": "Commit",
+        "scope_C": "Commit",
+        "e_L": 1,
+        "e_U": 1
+      },
+      "S108": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-comp-348___DYN_REQUEST___r0",
+        "item_id": "ob-comp-348",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeB",
+        "canonical_k": 5,
+        "turn_idx": 1,
+        "stratum": "agree_Wait_TypeB",
+        "pri": "Wait",
+        "sec": "Wait",
+        "scope_C": "Wait",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S109": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-comp-416___DYN_FREE___r2",
+        "item_id": "ob-comp-416",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeA",
+        "canonical_k": 6,
+        "turn_idx": 3,
+        "stratum": "agree_Cond_TypeA",
+        "pri": "Conditional",
+        "sec": "Conditional",
+        "scope_C": "Conditional",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S110": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-comp-370___DYN_REQUEST___r1",
+        "item_id": "ob-comp-370",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 6,
+        "turn_idx": 3,
+        "stratum": "agree_Wait_TypeA",
+        "pri": "Wait",
+        "sec": "Wait",
+        "scope_C": "Wait",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S111": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4295___DYN_REQUEST___r0",
+        "item_id": "ob-cee-4295",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 3,
+        "turn_idx": 2,
+        "stratum": "agree_Commit_TypeA",
+        "pri": "Commit",
+        "sec": "Commit",
+        "scope_C": "Commit",
+        "e_L": 1,
+        "e_U": 1
+      },
+      "S112": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-3844___DYN_REQUEST___r1",
+        "item_id": "ob-cee-3844",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 6,
+        "turn_idx": 5,
+        "stratum": "agree_Commit_TypeA",
+        "pri": "Commit",
+        "sec": "Commit",
+        "scope_C": "Commit",
+        "e_L": 1,
+        "e_U": 1
+      },
+      "S113": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4438___DYN_REQUEST___r1",
+        "item_id": "ob-cee-4438",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 6,
+        "turn_idx": 2,
+        "stratum": "disagree_Wait_Cond",
+        "pri": "Conditional",
+        "sec": "Wait",
+        "scope_C": "NonCommit_Disagreed",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S114": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4696___DYN_REQUEST___r0",
+        "item_id": "ob-cee-4696",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 4,
+        "turn_idx": 3,
+        "stratum": "agree_Cond_TypeA",
+        "pri": "Conditional",
+        "sec": "Conditional",
+        "scope_C": "Conditional",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S115": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4147___DYN_FREE___r0",
+        "item_id": "ob-cee-4147",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeA",
+        "canonical_k": 5,
+        "turn_idx": 3,
+        "stratum": "other_noncommit",
+        "pri": "Wait",
+        "sec": "Partial/Other",
+        "scope_C": "NonCommit_Disagreed",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S116": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-comp-350___DYN_REQUEST___r1",
+        "item_id": "ob-comp-350",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeB",
+        "canonical_k": 5,
+        "turn_idx": 1,
+        "stratum": "agree_Cond_TypeB",
+        "pri": "Conditional",
+        "sec": "Conditional",
+        "scope_C": "Conditional",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S117": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-comp-2___DYN_REQUEST___r0",
+        "item_id": "ob-comp-2",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeB",
+        "canonical_k": 3,
+        "turn_idx": 2,
+        "stratum": "disagree_Commit",
+        "pri": "Conditional",
+        "sec": "Commit",
+        "scope_C": "Unresolved",
+        "e_L": 0,
+        "e_U": 1
+      },
+      "S118": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-comp-44___DYN_FREE___r1",
+        "item_id": "ob-comp-44",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeB",
+        "canonical_k": 4,
+        "turn_idx": 1,
+        "stratum": "disagree_Wait_Cond",
+        "pri": "Conditional",
+        "sec": "Wait",
+        "scope_C": "NonCommit_Disagreed",
+        "e_L": 0,
+        "e_U": 0
+      },
+      "S119": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-comp-107___DYN_REQUEST_GUARD___r1",
+        "item_id": "ob-comp-107",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeA",
+        "canonical_k": 4,
+        "turn_idx": 3,
+        "stratum": "agree_Commit_TypeA",
+        "pri": "Commit",
+        "sec": "Commit",
+        "scope_C": "Commit",
+        "e_L": 1,
+        "e_U": 1
+      },
+      "S120": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4352___DYN_REQUEST___r0",
+        "item_id": "ob-cee-4352",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 4,
+        "turn_idx": 2,
+        "stratum": "disagree_Commit",
+        "pri": "Conditional",
+        "sec": "Commit",
+        "scope_C": "Unresolved",
+        "e_L": 0,
+        "e_U": 1
+      }
+    }
+  },
+  "repair_100": {
+    "total_eU_trajectories": 489,
+    "n_judge_flagged_census": 26,
+    "n_dual_neg_total": 463,
+    "n_dual_neg_empty_deterministic_zero": 6,
+    "n_dual_neg_nonempty_pool": 457,
+    "n_dual_neg_nonempty_sampled": 74,
+    "dual_neg_empty_trajectories": [
+      {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-comp-474___DYN_FREE___r2",
+        "item_id": "ob-comp-474",
+        "protocol": "DYN_FREE",
+        "early_turn": 1
+      },
+      {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-comp-761___DYN_REQUEST___r1",
+        "item_id": "ob-comp-761",
+        "protocol": "DYN_REQUEST",
+        "early_turn": 4
+      },
+      {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-761___DYN_REQUEST_GUARD___r0",
+        "item_id": "ob-comp-761",
+        "protocol": "DYN_REQUEST_GUARD",
+        "early_turn": 3
+      },
+      {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-3849___DYN_REQUEST_GUARD___r1",
+        "item_id": "ob-cee-3849",
+        "protocol": "DYN_REQUEST_GUARD",
+        "early_turn": 3
+      },
+      {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-comp-761___DYN_REQUEST___r2",
+        "item_id": "ob-comp-761",
+        "protocol": "DYN_REQUEST",
+        "early_turn": 4
+      },
+      {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-comp-67___DYN_REQUEST_GUARD___r1",
+        "item_id": "ob-comp-67",
+        "protocol": "DYN_REQUEST_GUARD",
+        "early_turn": 3
+      }
+    ],
+    "unique_items_in_74_controls": 46,
+    "trajectories": {
+      "R001": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4147___DYN_FREE___r0",
+        "item_id": "ob-cee-4147",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeA",
+        "canonical_k": 5,
+        "early_turn": 4,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R002": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-3335___DYN_FREE___r1",
+        "item_id": "ob-cee-3335",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeB",
+        "canonical_k": 4,
+        "early_turn": 3,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R003": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4147___DYN_FREE___r0",
+        "item_id": "ob-cee-4147",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeA",
+        "canonical_k": 5,
+        "early_turn": 4,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R004": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4957___DYN_REQUEST_GUARD___r1",
+        "item_id": "ob-cee-4957",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeA",
+        "canonical_k": 4,
+        "early_turn": 3,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R005": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-3163___DYN_FREE___r1",
+        "item_id": "ob-cee-3163",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeB",
+        "canonical_k": 4,
+        "early_turn": 3,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R006": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-211___DYN_REQUEST_GUARD___r1",
+        "item_id": "ob-comp-211",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeA",
+        "canonical_k": 4,
+        "early_turn": 3,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R007": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-3948___DYN_REQUEST___r2",
+        "item_id": "ob-cee-3948",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 6,
+        "early_turn": 5,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R008": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-107___DYN_REQUEST___r1",
+        "item_id": "ob-comp-107",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 4,
+        "early_turn": 3,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R009": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-comp-474___DYN_FREE___r0",
+        "item_id": "ob-comp-474",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeA",
+        "canonical_k": 3,
+        "early_turn": 1,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R010": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-3278___DYN_FREE___r0",
+        "item_id": "ob-cee-3278",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeB",
+        "canonical_k": 4,
+        "early_turn": 3,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R011": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-348___DYN_REQUEST_GUARD___r2",
+        "item_id": "ob-comp-348",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeB",
+        "canonical_k": 5,
+        "early_turn": 4,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R012": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4438___DYN_REQUEST___r1",
+        "item_id": "ob-cee-4438",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 6,
+        "early_turn": 5,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R013": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-comp-298___DYN_REQUEST___r2",
+        "item_id": "ob-comp-298",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeB",
+        "canonical_k": 4,
+        "early_turn": 2,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R014": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-comp-627___DYN_REQUEST___r1",
+        "item_id": "ob-comp-627",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeB",
+        "canonical_k": 5,
+        "early_turn": 4,
+        "rep_pri": 1,
+        "rep_sec": 1,
+        "judge_group": "dual_pos"
+      },
+      "R015": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4147___DYN_FREE___r2",
+        "item_id": "ob-cee-4147",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeA",
+        "canonical_k": 5,
+        "early_turn": 3,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R016": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-3991___DYN_FREE___r0",
+        "item_id": "ob-cee-3991",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeB",
+        "canonical_k": 3,
+        "early_turn": 2,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R017": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-627___DYN_REQUEST___r1",
+        "item_id": "ob-comp-627",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeB",
+        "canonical_k": 5,
+        "early_turn": 4,
+        "rep_pri": 1,
+        "rep_sec": 1,
+        "judge_group": "dual_pos"
+      },
+      "R018": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4187___DYN_REQUEST___r2",
+        "item_id": "ob-cee-4187",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 5,
+        "early_turn": 4,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R019": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-3195___DYN_REQUEST___r2",
+        "item_id": "ob-cee-3195",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeB",
+        "canonical_k": 3,
+        "early_turn": 1,
+        "rep_pri": 1,
+        "rep_sec": 0,
+        "judge_group": "single_pos"
+      },
+      "R020": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4736___DYN_REQUEST_GUARD___r2",
+        "item_id": "ob-cee-4736",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeA",
+        "canonical_k": 4,
+        "early_turn": 1,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R021": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-3849___DYN_REQUEST_GUARD___r1",
+        "item_id": "ob-cee-3849",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeB",
+        "canonical_k": 5,
+        "early_turn": 3,
+        "rep_pri": 1,
+        "rep_sec": 1,
+        "judge_group": "dual_pos"
+      },
+      "R022": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-comp-761___DYN_FREE___r2",
+        "item_id": "ob-comp-761",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeB",
+        "canonical_k": 5,
+        "early_turn": 3,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R023": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-3195___DYN_REQUEST_GUARD___r1",
+        "item_id": "ob-cee-3195",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeB",
+        "canonical_k": 3,
+        "early_turn": 1,
+        "rep_pri": 1,
+        "rep_sec": 0,
+        "judge_group": "single_pos"
+      },
+      "R024": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-3984___DYN_FREE___r1",
+        "item_id": "ob-cee-3984",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeA",
+        "canonical_k": 3,
+        "early_turn": 1,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R025": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4845___DYN_REQUEST_GUARD___r0",
+        "item_id": "ob-cee-4845",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeA",
+        "canonical_k": 3,
+        "early_turn": 2,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R026": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4070___DYN_REQUEST_GUARD___r2",
+        "item_id": "ob-cee-4070",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeA",
+        "canonical_k": 5,
+        "early_turn": 2,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R027": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4580___DYN_REQUEST___r1",
+        "item_id": "ob-cee-4580",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 6,
+        "early_turn": 3,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R028": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4438___DYN_REQUEST___r1",
+        "item_id": "ob-cee-4438",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 6,
+        "early_turn": 5,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R029": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-comp-627___DYN_REQUEST_GUARD___r0",
+        "item_id": "ob-comp-627",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeB",
+        "canonical_k": 5,
+        "early_turn": 3,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R030": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4106___DYN_FREE___r2",
+        "item_id": "ob-cee-4106",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeA",
+        "canonical_k": 5,
+        "early_turn": 3,
+        "rep_pri": 1,
+        "rep_sec": 0,
+        "judge_group": "single_pos"
+      },
+      "R031": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4187___DYN_REQUEST___r2",
+        "item_id": "ob-cee-4187",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 5,
+        "early_turn": 4,
+        "rep_pri": 0,
+        "rep_sec": 1,
+        "judge_group": "single_pos"
+      },
+      "R032": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-comp-416___DYN_REQUEST___r0",
+        "item_id": "ob-comp-416",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 6,
+        "early_turn": 5,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R033": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-comp-761___DYN_REQUEST___r2",
+        "item_id": "ob-comp-761",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeB",
+        "canonical_k": 5,
+        "early_turn": 3,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R034": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4682___DYN_REQUEST_GUARD___r1",
+        "item_id": "ob-cee-4682",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeA",
+        "canonical_k": 4,
+        "early_turn": 1,
+        "rep_pri": 0,
+        "rep_sec": 1,
+        "judge_group": "single_pos"
+      },
+      "R035": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-627___DYN_REQUEST_GUARD___r2",
+        "item_id": "ob-comp-627",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeB",
+        "canonical_k": 5,
+        "early_turn": 2,
+        "rep_pri": 1,
+        "rep_sec": 0,
+        "judge_group": "single_pos"
+      },
+      "R036": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-67___DYN_FREE___r0",
+        "item_id": "ob-comp-67",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeB",
+        "canonical_k": 5,
+        "early_turn": 4,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R037": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-3844___DYN_REQUEST_GUARD___r1",
+        "item_id": "ob-cee-3844",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeA",
+        "canonical_k": 6,
+        "early_turn": 5,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R038": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-418___DYN_FREE___r2",
+        "item_id": "ob-comp-418",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeA",
+        "canonical_k": 3,
+        "early_turn": 2,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R039": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4352___DYN_FREE___r2",
+        "item_id": "ob-cee-4352",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeA",
+        "canonical_k": 4,
+        "early_turn": 3,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R040": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-3984___DYN_REQUEST___r1",
+        "item_id": "ob-cee-3984",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 3,
+        "early_turn": 1,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R041": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-comp-67___DYN_REQUEST___r1",
+        "item_id": "ob-comp-67",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeB",
+        "canonical_k": 5,
+        "early_turn": 4,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R042": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-3195___DYN_REQUEST_GUARD___r1",
+        "item_id": "ob-cee-3195",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeB",
+        "canonical_k": 3,
+        "early_turn": 1,
+        "rep_pri": 1,
+        "rep_sec": 0,
+        "judge_group": "single_pos"
+      },
+      "R043": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-comp-255___DYN_REQUEST_GUARD___r1",
+        "item_id": "ob-comp-255",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeB",
+        "canonical_k": 4,
+        "early_turn": 3,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R044": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-416___DYN_REQUEST_GUARD___r2",
+        "item_id": "ob-comp-416",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeA",
+        "canonical_k": 6,
+        "early_turn": 5,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R045": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-comp-625___DYN_REQUEST_GUARD___r1",
+        "item_id": "ob-comp-625",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeB",
+        "canonical_k": 3,
+        "early_turn": 2,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R046": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-3889___DYN_REQUEST_GUARD___r0",
+        "item_id": "ob-cee-3889",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeA",
+        "canonical_k": 3,
+        "early_turn": 2,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R047": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4044___DYN_REQUEST_GUARD___r1",
+        "item_id": "ob-cee-4044",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeA",
+        "canonical_k": 5,
+        "early_turn": 4,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R048": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-627___DYN_REQUEST_GUARD___r0",
+        "item_id": "ob-comp-627",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeB",
+        "canonical_k": 5,
+        "early_turn": 2,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R049": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4736___DYN_FREE___r2",
+        "item_id": "ob-cee-4736",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeA",
+        "canonical_k": 4,
+        "early_turn": 3,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R050": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-761___DYN_FREE___r1",
+        "item_id": "ob-comp-761",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeB",
+        "canonical_k": 5,
+        "early_turn": 4,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R051": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-779___DYN_REQUEST___r2",
+        "item_id": "ob-comp-779",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 5,
+        "early_turn": 4,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R052": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-comp-44___DYN_REQUEST_GUARD___r1",
+        "item_id": "ob-comp-44",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeB",
+        "canonical_k": 4,
+        "early_turn": 3,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R053": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4957___DYN_FREE___r1",
+        "item_id": "ob-cee-4957",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeA",
+        "canonical_k": 4,
+        "early_turn": 3,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R054": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-comp-2___DYN_REQUEST_GUARD___r0",
+        "item_id": "ob-comp-2",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeB",
+        "canonical_k": 3,
+        "early_turn": 2,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R055": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4752___DYN_REQUEST___r2",
+        "item_id": "ob-cee-4752",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 4,
+        "early_turn": 3,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R056": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-370___DYN_FREE___r0",
+        "item_id": "ob-comp-370",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeA",
+        "canonical_k": 6,
+        "early_turn": 4,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R057": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-comp-204___DYN_REQUEST___r0",
+        "item_id": "ob-comp-204",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeB",
+        "canonical_k": 5,
+        "early_turn": 3,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R058": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-3948___DYN_REQUEST___r0",
+        "item_id": "ob-cee-3948",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 6,
+        "early_turn": 4,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R059": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-3906___DYN_FREE___r0",
+        "item_id": "ob-cee-3906",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeB",
+        "canonical_k": 3,
+        "early_turn": 2,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R060": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-3195___DYN_REQUEST_GUARD___r2",
+        "item_id": "ob-cee-3195",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeB",
+        "canonical_k": 3,
+        "early_turn": 1,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R061": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-3163___DYN_REQUEST___r1",
+        "item_id": "ob-cee-3163",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeB",
+        "canonical_k": 4,
+        "early_turn": 1,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R062": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-comp-627___DYN_FREE___r1",
+        "item_id": "ob-comp-627",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeB",
+        "canonical_k": 5,
+        "early_turn": 4,
+        "rep_pri": 1,
+        "rep_sec": 0,
+        "judge_group": "single_pos"
+      },
+      "R063": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-3195___DYN_REQUEST___r1",
+        "item_id": "ob-cee-3195",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeB",
+        "canonical_k": 3,
+        "early_turn": 1,
+        "rep_pri": 1,
+        "rep_sec": 0,
+        "judge_group": "single_pos"
+      },
+      "R064": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4070___DYN_FREE___r2",
+        "item_id": "ob-cee-4070",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeA",
+        "canonical_k": 5,
+        "early_turn": 2,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R065": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-comp-298___DYN_FREE___r0",
+        "item_id": "ob-comp-298",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeB",
+        "canonical_k": 4,
+        "early_turn": 2,
+        "rep_pri": 0,
+        "rep_sec": 1,
+        "judge_group": "single_pos"
+      },
+      "R066": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-comp-370___DYN_FREE___r0",
+        "item_id": "ob-comp-370",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeA",
+        "canonical_k": 6,
+        "early_turn": 5,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R067": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-474___DYN_REQUEST___r1",
+        "item_id": "ob-comp-474",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 3,
+        "early_turn": 1,
+        "rep_pri": 0,
+        "rep_sec": 1,
+        "judge_group": "single_pos"
+      },
+      "R068": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-comp-255___DYN_REQUEST___r0",
+        "item_id": "ob-comp-255",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeB",
+        "canonical_k": 4,
+        "early_turn": 3,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R069": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-3849___DYN_REQUEST_GUARD___r2",
+        "item_id": "ob-cee-3849",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeB",
+        "canonical_k": 5,
+        "early_turn": 4,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R070": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4295___DYN_REQUEST___r2",
+        "item_id": "ob-cee-4295",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 3,
+        "early_turn": 1,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R071": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4352___DYN_REQUEST___r0",
+        "item_id": "ob-cee-4352",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 4,
+        "early_turn": 2,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R072": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-631___DYN_REQUEST___r2",
+        "item_id": "ob-comp-631",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 3,
+        "early_turn": 2,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R073": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-3195___DYN_FREE___r1",
+        "item_id": "ob-cee-3195",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeB",
+        "canonical_k": 3,
+        "early_turn": 1,
+        "rep_pri": 1,
+        "rep_sec": 0,
+        "judge_group": "single_pos"
+      },
+      "R074": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4682___DYN_REQUEST___r2",
+        "item_id": "ob-cee-4682",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 4,
+        "early_turn": 3,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R075": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-3335___DYN_REQUEST___r1",
+        "item_id": "ob-cee-3335",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeB",
+        "canonical_k": 4,
+        "early_turn": 3,
+        "rep_pri": 1,
+        "rep_sec": 1,
+        "judge_group": "dual_pos"
+      },
+      "R076": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-3984___DYN_FREE___r2",
+        "item_id": "ob-cee-3984",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeA",
+        "canonical_k": 3,
+        "early_turn": 1,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R077": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-3195___DYN_FREE___r2",
+        "item_id": "ob-cee-3195",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeB",
+        "canonical_k": 3,
+        "early_turn": 1,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R078": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-3335___DYN_REQUEST___r0",
+        "item_id": "ob-cee-3335",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeB",
+        "canonical_k": 4,
+        "early_turn": 2,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R079": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-3984___DYN_REQUEST___r2",
+        "item_id": "ob-cee-3984",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 3,
+        "early_turn": 1,
+        "rep_pri": 0,
+        "rep_sec": 1,
+        "judge_group": "single_pos"
+      },
+      "R080": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-3195___DYN_REQUEST_GUARD___r2",
+        "item_id": "ob-cee-3195",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeB",
+        "canonical_k": 3,
+        "early_turn": 1,
+        "rep_pri": 1,
+        "rep_sec": 0,
+        "judge_group": "single_pos"
+      },
+      "R081": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4029___DYN_REQUEST_GUARD___r2",
+        "item_id": "ob-cee-4029",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeA",
+        "canonical_k": 4,
+        "early_turn": 1,
+        "rep_pri": 0,
+        "rep_sec": 1,
+        "judge_group": "single_pos"
+      },
+      "R082": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-351___DYN_REQUEST_GUARD___r0",
+        "item_id": "ob-comp-351",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeA",
+        "canonical_k": 4,
+        "early_turn": 2,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R083": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-comp-298___DYN_REQUEST_GUARD___r2",
+        "item_id": "ob-comp-298",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeB",
+        "canonical_k": 4,
+        "early_turn": 2,
+        "rep_pri": 0,
+        "rep_sec": 1,
+        "judge_group": "single_pos"
+      },
+      "R084": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-3335___DYN_REQUEST___r0",
+        "item_id": "ob-cee-3335",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeB",
+        "canonical_k": 4,
+        "early_turn": 2,
+        "rep_pri": 0,
+        "rep_sec": 1,
+        "judge_group": "single_pos"
+      },
+      "R085": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-3195___DYN_REQUEST_GUARD___r2",
+        "item_id": "ob-cee-3195",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeB",
+        "canonical_k": 3,
+        "early_turn": 1,
+        "rep_pri": 1,
+        "rep_sec": 0,
+        "judge_group": "single_pos"
+      },
+      "R086": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-comp-627___DYN_REQUEST_GUARD___r1",
+        "item_id": "ob-comp-627",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeB",
+        "canonical_k": 5,
+        "early_turn": 4,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R087": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-comp-67___DYN_REQUEST_GUARD___r0",
+        "item_id": "ob-comp-67",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeB",
+        "canonical_k": 5,
+        "early_turn": 3,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R088": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-comp-413___DYN_REQUEST___r0",
+        "item_id": "ob-comp-413",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeB",
+        "canonical_k": 3,
+        "early_turn": 2,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R089": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4044___DYN_REQUEST_GUARD___r1",
+        "item_id": "ob-cee-4044",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeA",
+        "canonical_k": 5,
+        "early_turn": 3,
+        "rep_pri": 0,
+        "rep_sec": 1,
+        "judge_group": "single_pos"
+      },
+      "R090": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4752___DYN_REQUEST_GUARD___r1",
+        "item_id": "ob-cee-4752",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeA",
+        "canonical_k": 4,
+        "early_turn": 1,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R091": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-298___DYN_REQUEST___r0",
+        "item_id": "ob-comp-298",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeB",
+        "canonical_k": 4,
+        "early_turn": 2,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R092": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-3335___DYN_FREE___r1",
+        "item_id": "ob-cee-3335",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeB",
+        "canonical_k": 4,
+        "early_turn": 3,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R093": {
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-627___DYN_REQUEST_GUARD___r1",
+        "item_id": "ob-comp-627",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeB",
+        "canonical_k": 5,
+        "early_turn": 4,
+        "rep_pri": 1,
+        "rep_sec": 0,
+        "judge_group": "single_pos"
+      },
+      "R094": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4882___DYN_REQUEST___r0",
+        "item_id": "ob-cee-4882",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 3,
+        "early_turn": 2,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R095": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-3844___DYN_REQUEST_GUARD___r1",
+        "item_id": "ob-cee-3844",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeA",
+        "canonical_k": 6,
+        "early_turn": 5,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R096": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4682___DYN_REQUEST___r2",
+        "item_id": "ob-cee-4682",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeA",
+        "canonical_k": 4,
+        "early_turn": 3,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R097": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4016___DYN_FREE___r2",
+        "item_id": "ob-cee-4016",
+        "protocol": "DYN_FREE",
+        "mech_short": "TypeA",
+        "canonical_k": 4,
+        "early_turn": 3,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R098": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-comp-298___DYN_REQUEST_GUARD___r2",
+        "item_id": "ob-comp-298",
+        "protocol": "DYN_REQUEST_GUARD",
+        "mech_short": "TypeB",
+        "canonical_k": 4,
+        "early_turn": 2,
+        "rep_pri": 0,
+        "rep_sec": 0,
+        "judge_group": "dual_neg"
+      },
+      "R099": {
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-3195___DYN_REQUEST___r1",
+        "item_id": "ob-cee-3195",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeB",
+        "canonical_k": 3,
+        "early_turn": 1,
+        "rep_pri": 1,
+        "rep_sec": 0,
+        "judge_group": "single_pos"
+      },
+      "R100": {
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-3195___DYN_REQUEST___r2",
+        "item_id": "ob-cee-3195",
+        "protocol": "DYN_REQUEST",
+        "mech_short": "TypeB",
+        "canonical_k": 3,
+        "early_turn": 1,
+        "rep_pri": 1,
+        "rep_sec": 0,
+        "judge_group": "single_pos"
+      }
+    }
+  }
+}
