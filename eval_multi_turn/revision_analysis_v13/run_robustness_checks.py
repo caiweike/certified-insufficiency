@@ -475,22 +475,85 @@ def main() -> None:
             }
 
     # ---------- CHECK 4: EXPLORATORY COT AUDIT ON CHANGED TYPEA COMMITS ----------
+    t_yl_map = {(r.model, r.traj): int(r.y_L) for r in T_dyn.itertuples(index=False)}
+    for c in changed_typeA_cot_cases:
+        c["final_y_L"] = t_yl_map.get((c["model"], c["traj"]), 0)
     n_changed = len(changed_typeA_cot_cases)
     n_cot_ref = sum(1 for c in changed_typeA_cot_cases if c["cot_refs_prior"])
+    n_changed_yL = sum(1 for c in changed_typeA_cot_cases if c["final_y_L"] == 1)
     by_model_cot = {}
     for m in MODELS_SHORT:
         sub_c = [c for c in changed_typeA_cot_cases if c["model"] == m]
         by_model_cot[m] = {
             "n_changed": len(sub_c),
+            "n_final_y_L": sum(1 for c in sub_c if c["final_y_L"] == 1),
             "n_cot_refs_prior": sum(1 for c in sub_c if c["cot_refs_prior"]),
             "pct": round(100.0 * sum(1 for c in sub_c if c["cot_refs_prior"]) / len(sub_c), 1) if sub_c else 0.0,
         }
     cot_check = {
         "n_typeA_boxed_changed": n_changed,
+        "n_typeA_boxed_changed_final_yL": n_changed_yL,
+        "pct_typeA_boxed_changed_final_yL": round(100.0 * n_changed_yL / n_changed, 1) if n_changed else 0.0,
         "n_final_cot_refs_prior": n_cot_ref,
         "pct_final_cot_refs_prior": round(100.0 * n_cot_ref / n_changed, 1) if n_changed else 0.0,
         "by_model": by_model_cot,
         "sample_cases": changed_typeA_cot_cases[:15],
+    }
+
+    # ---------- CHECK 5: REQ vs FREE COMMIT+CONDITIONAL (TURN vs TRAJECTORY) ----------
+    rng_cc = np.random.default_rng(20261024)
+    items_sorted = sorted(U2["item"].unique())
+    idx_cc = rng_cc.integers(0, len(items_sorted), size=(B, len(items_sorted)))
+
+    def cc_turn_contrast(mask_fn) -> dict:
+        sf = U2[U2["protocol"] == "DYN_FREE"].copy()
+        sr = U2[U2["protocol"] == "DYN_REQUEST"].copy()
+        sf["v"] = mask_fn(sf).astype(float)
+        sr["v"] = mask_fn(sr).astype(float)
+        n_i = np.array([len(sf[sf["item"] == it]) for it in items_sorted], dtype=float)
+        vf = np.array([sf[sf["item"] == it]["v"].sum() for it in items_sorted], dtype=float)
+        vr = np.array([sr[sr["item"] == it]["v"].sum() for it in items_sorted], dtype=float)
+        rf = float(vf.sum() / n_i.sum() * 100.0)
+        rr = float(vr.sum() / n_i.sum() * 100.0)
+        boots = (vr[idx_cc].sum(axis=1) - vf[idx_cc].sum(axis=1)) / n_i[idx_cc].sum(axis=1) * 100.0
+        lo, hi = np.percentile(boots, [2.5, 97.5])
+        return {
+            "n_turns_per_proto": int(n_i.sum()),
+            "free_pct": round(rf, 2),
+            "req_pct": round(rr, 2),
+            "diff_pp": round(rr - rf, 2),
+            "ci95": [round(float(lo), 2), round(float(hi), 2)],
+        }
+
+    def cc_traj_contrast(mask_fn) -> dict:
+        u_tmp = U2[U2["protocol"].isin(["DYN_FREE", "DYN_REQUEST"])].copy()
+        u_tmp["v"] = mask_fn(u_tmp).astype(int)
+        g = u_tmp.groupby(["model", "traj", "protocol", "item"], as_index=False)["v"].max()
+        pf = g[g["protocol"] == "DYN_FREE"].groupby("item")["v"].mean()
+        pr = g[g["protocol"] == "DYN_REQUEST"].groupby("item")["v"].mean()
+        af = np.array([pf[it] for it in items_sorted], dtype=float) * 100.0
+        ar = np.array([pr[it] for it in items_sorted], dtype=float) * 100.0
+        diff = ar - af
+        boots = diff[idx_cc].mean(axis=1)
+        lo, hi = np.percentile(boots, [2.5, 97.5])
+        return {
+            "n_trajs_per_proto": int(len(g) // 2),
+            "free_pct": round(float(af.mean()), 2),
+            "req_pct": round(float(ar.mean()), 2),
+            "diff_pp": round(float(diff.mean()), 2),
+            "ci95": [round(float(lo), 2), round(float(hi), 2)],
+        }
+
+    cc_modes = {
+        "agreed_same_label_tab3_fig2c": lambda s: s["scope"].isin(["Commit", "Conditional"]),
+        "both_judges_in_commit_or_cond": lambda s: s["pri"].isin(["Commit", "Conditional"]) & s["sec"].isin(["Commit", "Conditional"]),
+        "either_judge_in_commit_or_cond": lambda s: s["pri"].isin(["Commit", "Conditional"]) | s["sec"].isin(["Commit", "Conditional"]),
+        "primary_judge_in_commit_or_cond": lambda s: s["pri"].isin(["Commit", "Conditional"]),
+        "secondary_judge_in_commit_or_cond": lambda s: s["sec"].isin(["Commit", "Conditional"]),
+    }
+    cc_recon = {
+        "turn_level_n2556": {k: cc_turn_contrast(fn) for k, fn in cc_modes.items()},
+        "trajectory_level_n900": {k: cc_traj_contrast(fn) for k, fn in cc_modes.items()},
     }
 
     out = {
@@ -500,6 +563,7 @@ def main() -> None:
         "hazard_robustness": hazard_checks,
         "token_mechanism": token_check,
         "exploratory_cot_typeA_changed": cot_check,
+        "req_vs_free_commit_cond_reconciliation": cc_recon,
     }
     out_path = RA_DIR / "robustness_checks_v13.json"
     out_path.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")

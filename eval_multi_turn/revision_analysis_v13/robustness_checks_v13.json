@@ -706,21 +706,26 @@
   },
   "exploratory_cot_typeA_changed": {
     "n_typeA_boxed_changed": 81,
+    "n_typeA_boxed_changed_final_yL": 72,
+    "pct_typeA_boxed_changed_final_yL": 88.9,
     "n_final_cot_refs_prior": 59,
     "pct_final_cot_refs_prior": 72.8,
     "by_model": {
       "Qwen3-8B": {
         "n_changed": 24,
+        "n_final_y_L": 23,
         "n_cot_refs_prior": 19,
         "pct": 79.2
       },
       "GLM-Z1-9B-0414": {
         "n_changed": 34,
+        "n_final_y_L": 28,
         "n_cot_refs_prior": 24,
         "pct": 70.6
       },
       "Qwen3-14B": {
         "n_changed": 23,
+        "n_final_y_L": 21,
         "n_cot_refs_prior": 16,
         "pct": 69.6
       }
@@ -740,7 +745,8 @@
           "之前的公式",
           "之前的推导",
           "检查之前的推导"
-        ]
+        ],
+        "final_y_L": 1
       },
       {
         "model": "GLM-Z1-9B-0414",
@@ -752,7 +758,8 @@
         "final_box": "1",
         "cot_len": 1414,
         "cot_refs_prior": false,
-        "matched_terms": []
+        "matched_terms": [],
+        "final_y_L": 1
       },
       {
         "model": "GLM-Z1-9B-0414",
@@ -766,7 +773,8 @@
         "cot_refs_prior": true,
         "matched_terms": [
           "回顾之前的推导"
-        ]
+        ],
+        "final_y_L": 1
       },
       {
         "model": "GLM-Z1-9B-0414",
@@ -783,7 +791,8 @@
           "之前的表达式",
           "之前的计算",
           "检查计算"
-        ]
+        ],
+        "final_y_L": 1
       },
       {
         "model": "GLM-Z1-9B-0414",
@@ -797,7 +806,8 @@
         "cot_refs_prior": true,
         "matched_terms": [
           "之前的推导"
-        ]
+        ],
+        "final_y_L": 1
       },
       {
         "model": "GLM-Z1-9B-0414",
@@ -809,7 +819,8 @@
         "final_box": "\\frac{15\\sqrt{7}}{4}",
         "cot_len": 1285,
         "cot_refs_prior": false,
-        "matched_terms": []
+        "matched_terms": [],
+        "final_y_L": 1
       },
       {
         "model": "GLM-Z1-9B-0414",
@@ -823,7 +834,8 @@
         "cot_refs_prior": true,
         "matched_terms": [
           "之前的结果"
-        ]
+        ],
+        "final_y_L": 1
       },
       {
         "model": "GLM-Z1-9B-0414",
@@ -838,7 +850,8 @@
         "matched_terms": [
           "之前的推导",
           "之前的结论"
-        ]
+        ],
+        "final_y_L": 1
       },
       {
         "model": "GLM-Z1-9B-0414",
@@ -852,7 +865,8 @@
         "cot_refs_prior": true,
         "matched_terms": [
           "之前已经得"
-        ]
+        ],
+        "final_y_L": 0
       },
       {
         "model": "GLM-Z1-9B-0414",
@@ -864,7 +878,8 @@
         "final_box": "2-\\sqrt{7}",
         "cot_len": 2131,
         "cot_refs_prior": false,
-        "matched_terms": []
+        "matched_terms": [],
+        "final_y_L": 1
       },
       {
         "model": "GLM-Z1-9B-0414",
@@ -880,7 +895,8 @@
           "之前的假设",
           "之前的推导",
           "之前的结论"
-        ]
+        ],
+        "final_y_L": 0
       },
       {
         "model": "GLM-Z1-9B-0414",
@@ -898,7 +914,8 @@
           "之前的结果",
           "之前的计算",
           "回顾之前的推导"
-        ]
+        ],
+        "final_y_L": 1
       },
       {
         "model": "GLM-Z1-9B-0414",
@@ -914,7 +931,8 @@
           "之前推",
           "之前的推导",
           "之前的表达式"
-        ]
+        ],
+        "final_y_L": 1
       },
       {
         "model": "GLM-Z1-9B-0414",
@@ -929,7 +947,8 @@
         "matched_terms": [
           "之前的推导",
           "回顾之前的推导"
-        ]
+        ],
+        "final_y_L": 1
       },
       {
         "model": "GLM-Z1-9B-0414",
@@ -945,8 +964,115 @@
           "之前的假设",
           "之前的推导",
           "之前的结论"
-        ]
+        ],
+        "final_y_L": 0
       }
     ]
+  },
+  "req_vs_free_commit_cond_reconciliation": {
+    "turn_level_n2556": {
+      "agreed_same_label_tab3_fig2c": {
+        "n_turns_per_proto": 2556,
+        "free_pct": 21.75,
+        "req_pct": 15.49,
+        "diff_pp": -6.26,
+        "ci95": [
+          -8.08,
+          -4.61
+        ]
+      },
+      "both_judges_in_commit_or_cond": {
+        "n_turns_per_proto": 2556,
+        "free_pct": 23.94,
+        "req_pct": 16.67,
+        "diff_pp": -7.28,
+        "ci95": [
+          -9.33,
+          -5.44
+        ]
+      },
+      "either_judge_in_commit_or_cond": {
+        "n_turns_per_proto": 2556,
+        "free_pct": 36.31,
+        "req_pct": 27.07,
+        "diff_pp": -9.23,
+        "ci95": [
+          -11.54,
+          -7.04
+        ]
+      },
+      "primary_judge_in_commit_or_cond": {
+        "n_turns_per_proto": 2556,
+        "free_pct": 36.11,
+        "req_pct": 26.8,
+        "diff_pp": -9.31,
+        "ci95": [
+          -11.61,
+          -7.13
+        ]
+      },
+      "secondary_judge_in_commit_or_cond": {
+        "n_turns_per_proto": 2556,
+        "free_pct": 24.14,
+        "req_pct": 16.94,
+        "diff_pp": -7.2,
+        "ci95": [
+          -9.23,
+          -5.38
+        ]
+      }
+    },
+    "trajectory_level_n900": {
+      "agreed_same_label_tab3_fig2c": {
+        "n_trajs_per_proto": 900,
+        "free_pct": 43.22,
+        "req_pct": 32.33,
+        "diff_pp": -10.89,
+        "ci95": [
+          -13.67,
+          -8.11
+        ]
+      },
+      "both_judges_in_commit_or_cond": {
+        "n_trajs_per_proto": 900,
+        "free_pct": 45.44,
+        "req_pct": 33.89,
+        "diff_pp": -11.56,
+        "ci95": [
+          -14.56,
+          -8.78
+        ]
+      },
+      "either_judge_in_commit_or_cond": {
+        "n_trajs_per_proto": 900,
+        "free_pct": 61.22,
+        "req_pct": 48.78,
+        "diff_pp": -12.44,
+        "ci95": [
+          -16.11,
+          -9.0
+        ]
+      },
+      "primary_judge_in_commit_or_cond": {
+        "n_trajs_per_proto": 900,
+        "free_pct": 60.78,
+        "req_pct": 48.33,
+        "diff_pp": -12.44,
+        "ci95": [
+          -16.11,
+          -9.11
+        ]
+      },
+      "secondary_judge_in_commit_or_cond": {
+        "n_trajs_per_proto": 900,
+        "free_pct": 45.89,
+        "req_pct": 34.56,
+        "diff_pp": -11.33,
+        "ci95": [
+          -14.33,
+          -8.44
+        ]
+      }
+    }
   }
 }
