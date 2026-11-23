@@ -1,0 +1,501 @@
+{
+  "seed": 2026,
+  "pop_counts": {
+    "commit_A": 266,
+    "commit_B": 273,
+    "wait_A": 4036,
+    "wait_B": 1297,
+    "cond_A": 491,
+    "cond_B": 297,
+    "disagree_commit": 149,
+    "disagree_wait_cond": 801
+  },
+  "human_vs_human": {
+    "scope4_unweighted": {
+      "n": 60,
+      "agree": 0.8,
+      "kappa": 0.7014
+    },
+    "scope4_prevalence_weighted": {
+      "n": 60,
+      "agree": 0.8082,
+      "kappa": 0.5662
+    },
+    "commit_unweighted": {
+      "n": 60,
+      "agree": 0.9167,
+      "kappa": 0.8201
+    },
+    "commit_prevalence_weighted": {
+      "n": 60,
+      "agree": 0.983,
+      "kappa": 0.8785
+    },
+    "repair_26": {
+      "n": 26,
+      "agree": 1.0,
+      "kappa": 1.0
+    }
+  },
+  "consensus_vs_v13": {
+    "judge_version": "exp2-part2-dual-llm-v1.3-input-blind",
+    "n_scored": 60,
+    "binary_commit_unweighted": {
+      "human_vs_primary": {
+        "n": 60,
+        "agree": 0.9,
+        "kappa": 0.7857
+      },
+      "human_vs_secondary": {
+        "n": 60,
+        "agree": 0.9667,
+        "kappa": 0.9268
+      },
+      "human_vs_dual_agreed": {
+        "n": 54,
+        "agree": 0.9815,
+        "kappa": 0.9599
+      },
+      "typeA_vs_primary": {
+        "n": 35,
+        "agree": 0.9429,
+        "kappa": 0.8674
+      },
+      "typeA_vs_secondary": {
+        "n": 35,
+        "agree": 1.0,
+        "kappa": 1.0
+      },
+      "typeB_vs_primary": {
+        "n": 25,
+        "agree": 0.84,
+        "kappa": 0.6835
+      },
+      "typeB_vs_secondary": {
+        "n": 25,
+        "agree": 0.92,
+        "kappa": 0.8344
+      }
+    },
+    "binary_commit_prevalence_weighted": {
+      "human_vs_primary": {
+        "n": 60,
+        "agree": 0.9801,
+        "kappa": 0.8604
+      },
+      "human_vs_secondary": {
+        "n": 60,
+        "agree": 0.9931,
+        "kappa": 0.95
+      },
+      "typeA_vs_primary": {
+        "n": 35,
+        "agree": 0.991,
+        "kappa": 0.9099
+      },
+      "typeB_vs_primary": {
+        "n": 25,
+        "agree": 0.9515,
+        "kappa": 0.8011
+      }
+    },
+    "scope_4class_unweighted": {
+      "human_vs_primary": {
+        "n": 60,
+        "agree": 0.7667,
+        "kappa": 0.6506
+      },
+      "human_vs_secondary": {
+        "n": 60,
+        "agree": 0.8333,
+        "kappa": 0.7492
+      },
+      "human_vs_dual_agreed": {
+        "n": 48,
+        "agree": 0.875,
+        "kappa": 0.809
+      }
+    },
+    "scope_4class_prevalence_weighted": {
+      "human_vs_primary": {
+        "n": 60,
+        "agree": 0.7955,
+        "kappa": 0.5607
+      },
+      "human_vs_secondary": {
+        "n": 60,
+        "agree": 0.8086,
+        "kappa": 0.5424
+      }
+    },
+    "by_stratum": {
+      "commit_A": {
+        "n_sample": 10,
+        "n_pop": 266,
+        "commit_agree_primary": 1.0,
+        "commit_agree_secondary": 1.0,
+        "scope4_agree_primary": 1.0,
+        "scope4_agree_secondary": 1.0
+      },
+      "commit_B": {
+        "n_sample": 10,
+        "n_pop": 273,
+        "commit_agree_primary": 0.9,
+        "commit_agree_secondary": 0.9,
+        "scope4_agree_primary": 0.9,
+        "scope4_agree_secondary": 0.9
+      },
+      "cond_A": {
+        "n_sample": 8,
+        "n_pop": 491,
+        "commit_agree_primary": 1.0,
+        "commit_agree_secondary": 1.0,
+        "scope4_agree_primary": 0.75,
+        "scope4_agree_secondary": 0.75
+      },
+      "cond_B": {
+        "n_sample": 4,
+        "n_pop": 297,
+        "commit_agree_primary": 1.0,
+        "commit_agree_secondary": 1.0,
+        "scope4_agree_primary": 0.75,
+        "scope4_agree_secondary": 0.75
+      },
+      "disagree_commit": {
+        "n_sample": 6,
+        "n_pop": 149,
+        "commit_agree_primary": 0.1667,
+        "commit_agree_secondary": 0.8333,
+        "scope4_agree_primary": 0.1667,
+        "scope4_agree_secondary": 0.8333
+      },
+      "disagree_wait_cond": {
+        "n_sample": 6,
+        "n_pop": 801,
+        "commit_agree_primary": 1.0,
+        "commit_agree_secondary": 1.0,
+        "scope4_agree_primary": 0.5,
+        "scope4_agree_secondary": 0.5
+      },
+      "wait_A": {
+        "n_sample": 10,
+        "n_pop": 4036,
+        "commit_agree_primary": 1.0,
+        "commit_agree_secondary": 1.0,
+        "scope4_agree_primary": 0.8,
+        "scope4_agree_secondary": 0.8
+      },
+      "wait_B": {
+        "n_sample": 6,
+        "n_pop": 1297,
+        "commit_agree_primary": 1.0,
+        "commit_agree_secondary": 1.0,
+        "scope4_agree_primary": 1.0,
+        "scope4_agree_secondary": 1.0
+      }
+    }
+  },
+  "consensus_vs_bounds": {
+    "human_vs_eL_unweighted": {
+      "n": 60,
+      "agree": 0.9667,
+      "kappa": 0.925
+    },
+    "human_vs_eL_weighted": {
+      "n": 60,
+      "agree": 0.9931,
+      "kappa": 0.9478
+    },
+    "human_vs_eU_unweighted": {
+      "n": 60,
+      "agree": 0.9,
+      "kappa": 0.7907
+    },
+    "human_vs_eU_weighted": {
+      "n": 60,
+      "agree": 0.9801,
+      "kappa": 0.8657
+    }
+  },
+  "prevalence_estimates": {
+    "pop_total_turns_in_strata": 7610,
+    "human_weighted_commit_rate": 0.0705,
+    "primary_weighted_commit_rate": 0.0839,
+    "secondary_weighted_commit_rate": 0.0774,
+    "eL_weighted_commit_rate": 0.0708,
+    "eU_weighted_commit_rate": 0.0904
+  },
+  "by_mechanism": {
+    "TypeA": {
+      "n": 35,
+      "human_vs_eL_unw": {
+        "n": 35,
+        "agree": 0.9714,
+        "kappa": 0.932
+      },
+      "human_vs_eU_unw": {
+        "n": 35,
+        "agree": 0.9714,
+        "kappa": 0.9353
+      },
+      "human_vs_pri_w": {
+        "n": 35,
+        "agree": 0.991,
+        "kappa": 0.9099
+      },
+      "human_vs_sec_w": {
+        "n": 35,
+        "agree": 1.0,
+        "kappa": 1.0
+      }
+    },
+    "TypeB": {
+      "n": 25,
+      "human_vs_eL_unw": {
+        "n": 25,
+        "agree": 0.96,
+        "kappa": 0.9153
+      },
+      "human_vs_eU_unw": {
+        "n": 25,
+        "agree": 0.8,
+        "kappa": 0.613
+      },
+      "human_vs_pri_w": {
+        "n": 25,
+        "agree": 0.9515,
+        "kappa": 0.8011
+      },
+      "human_vs_sec_w": {
+        "n": 25,
+        "agree": 0.9752,
+        "kappa": 0.89
+      }
+    }
+  },
+  "cm_human_vs_primary_bin": {
+    "(0, 0)": 35,
+    "(0, 1)": 5,
+    "(1, 0)": 1,
+    "(1, 1)": 19
+  },
+  "cm_human_vs_secondary_bin": {
+    "(0, 0)": 38,
+    "(0, 1)": 2,
+    "(1, 1)": 20
+  },
+  "cm_human_vs_eL_bin": {
+    "(0, 0)": 39,
+    "(0, 1)": 1,
+    "(1, 0)": 1,
+    "(1, 1)": 19
+  },
+  "cm_human_vs_eU_bin": {
+    "(0, 0)": 34,
+    "(0, 1)": 6,
+    "(1, 1)": 20
+  },
+  "annotator_cai_vs_v13": {
+    "bin_w": {
+      "human_vs_primary": {
+        "n": 60,
+        "agree": 0.9765,
+        "kappa": 0.8317
+      },
+      "human_vs_secondary": {
+        "n": 60,
+        "agree": 0.9896,
+        "kappa": 0.9221
+      },
+      "typeA_vs_primary": {
+        "n": 35,
+        "agree": 0.991,
+        "kappa": 0.9099
+      },
+      "typeB_vs_primary": {
+        "n": 25,
+        "agree": 0.9385,
+        "kappa": 0.7385
+      }
+    },
+    "bin_u": {
+      "human_vs_primary": {
+        "n": 60,
+        "agree": 0.8833,
+        "kappa": 0.7482
+      },
+      "human_vs_secondary": {
+        "n": 60,
+        "agree": 0.95,
+        "kappa": 0.8892
+      },
+      "human_vs_dual_agreed": {
+        "n": 54,
+        "agree": 0.963,
+        "kappa": 0.9189
+      },
+      "typeA_vs_primary": {
+        "n": 35,
+        "agree": 0.9429,
+        "kappa": 0.8674
+      },
+      "typeA_vs_secondary": {
+        "n": 35,
+        "agree": 1.0,
+        "kappa": 1.0
+      },
+      "typeB_vs_primary": {
+        "n": 25,
+        "agree": 0.8,
+        "kappa": 0.6057
+      },
+      "typeB_vs_secondary": {
+        "n": 25,
+        "agree": 0.88,
+        "kappa": 0.7492
+      }
+    },
+    "s4_w": {
+      "human_vs_primary": {
+        "n": 60,
+        "agree": 0.8095,
+        "kappa": 0.5977
+      },
+      "human_vs_secondary": {
+        "n": 60,
+        "agree": 0.7874,
+        "kappa": 0.5062
+      }
+    },
+    "s4_u": {
+      "human_vs_primary": {
+        "n": 60,
+        "agree": 0.7667,
+        "kappa": 0.6506
+      },
+      "human_vs_secondary": {
+        "n": 60,
+        "agree": 0.8,
+        "kappa": 0.7009
+      },
+      "human_vs_dual_agreed": {
+        "n": 48,
+        "agree": 0.8542,
+        "kappa": 0.7784
+      }
+    }
+  },
+  "annotator_tang_vs_v13": {
+    "bin_w": {
+      "human_vs_primary": {
+        "n": 60,
+        "agree": 0.9869,
+        "kappa": 0.9151
+      },
+      "human_vs_secondary": {
+        "n": 60,
+        "agree": 0.9935,
+        "kappa": 0.956
+      },
+      "typeA_vs_primary": {
+        "n": 35,
+        "agree": 0.9955,
+        "kappa": 0.9567
+      },
+      "typeB_vs_primary": {
+        "n": 25,
+        "agree": 0.9645,
+        "kappa": 0.8678
+      }
+    },
+    "bin_u": {
+      "human_vs_primary": {
+        "n": 60,
+        "agree": 0.9333,
+        "kappa": 0.8611
+      },
+      "human_vs_secondary": {
+        "n": 60,
+        "agree": 0.9667,
+        "kappa": 0.9296
+      },
+      "human_vs_dual_agreed": {
+        "n": 54,
+        "agree": 1.0,
+        "kappa": 1.0
+      },
+      "typeA_vs_primary": {
+        "n": 35,
+        "agree": 0.9714,
+        "kappa": 0.9353
+      },
+      "typeA_vs_secondary": {
+        "n": 35,
+        "agree": 0.9714,
+        "kappa": 0.9353
+      },
+      "typeB_vs_primary": {
+        "n": 25,
+        "agree": 0.88,
+        "kappa": 0.7604
+      },
+      "typeB_vs_secondary": {
+        "n": 25,
+        "agree": 0.96,
+        "kappa": 0.9196
+      }
+    },
+    "s4_w": {
+      "human_vs_primary": {
+        "n": 60,
+        "agree": 0.9084,
+        "kappa": 0.7798
+      },
+      "human_vs_secondary": {
+        "n": 60,
+        "agree": 0.915,
+        "kappa": 0.7535
+      }
+    },
+    "s4_u": {
+      "human_vs_primary": {
+        "n": 60,
+        "agree": 0.8333,
+        "kappa": 0.7496
+      },
+      "human_vs_secondary": {
+        "n": 60,
+        "agree": 0.8667,
+        "kappa": 0.7956
+      },
+      "human_vs_dual_agreed": {
+        "n": 48,
+        "agree": 0.9375,
+        "kappa": 0.9035
+      }
+    }
+  },
+  "repair_consensus_vs_v13": {
+    "judge_version": "exp2-part2-dual-llm-v1.3-input-blind",
+    "n_matched": 26,
+    "human_positive_total": 1,
+    "on_unanimous_pos": {
+      "n": 4,
+      "human_confirmed": 1
+    },
+    "on_single_judge_pos": {
+      "n": 22,
+      "human_confirmed": 0
+    },
+    "human_vs_primary": {
+      "n": 26,
+      "agree": 0.3846,
+      "kappa": 0.0415
+    },
+    "human_vs_secondary": {
+      "n": 26,
+      "agree": 0.5385,
+      "kappa": 0.0769
+    }
+  }
+}

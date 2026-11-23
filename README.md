@@ -19,6 +19,7 @@ Code, benchmark, and judged trajectories for the IEEE CSCWD paper
 | `eval_multi_turn/runs/` | All judged trajectories (see *Data*) |
 | `eval_multi_turn/analyze_experiments.py`, `revision_analysis_v13/` | Statistics; `extract_tables.py` builds the flat tables the tables and figures are computed from |
 | `eval_multi_turn/verify_cached_judgments.py` | Offline check of every judge label against the recorded judge responses |
+| `eval_multi_turn/human_audit/` | Blind human audit (`SEED=2026`): 60 stratified non-final turns + all 26 repair candidates, independent & consensus CSVs, scoring script |
 | `eval_multi_turn/paper_revised/` | Paper source, tables, figures, and `regenerate_v13_assets.py` |
 | `MANIFEST.sha256` | SHA-256 checksums for every tracked file in this repository |
 
@@ -81,16 +82,27 @@ Run every command from the repository root, after `python unpack_data.py`; use `
    ```
 5. Regenerate all tables, figures, and reported numbers:
    `python eval_multi_turn/paper_revised/regenerate_v13_assets.py`
+6. Reproduce the blind human audit statistics (pre-adjudication human–human agreement and blind-adjudicated consensus vs. dual LLM judges):
+   ```bash
+   python eval_multi_turn/human_audit/score_human_audit.py \
+     --scope-a eval_multi_turn/human_audit/scope_cai.csv \
+     --scope-b eval_multi_turn/human_audit/scope_tang.csv \
+     --repair-a eval_multi_turn/human_audit/repair_cai.csv \
+     --repair-b eval_multi_turn/human_audit/repair_tang.csv
+   python eval_multi_turn/human_audit/score_human_audit.py \
+     --scope-a eval_multi_turn/human_audit/scope_consensus_seed2026.csv \
+     --repair-a eval_multi_turn/human_audit/repair_consensus_seed2026.csv
+   ```
 
 Steps 4–5 reproduce `test100_exp2_4_full_summary_16384_v13_blind.json`, `revision_analysis_v13/*.csv`, `v13_paper_numbers.json`, and the four `table*_rev.tex` files exactly (up to JSON key order / line endings); PDF figures may differ in embedded metadata/fonts across platforms.
 
 **Full re-run (GPU + judge API):**
 
-6. Rollouts, per model and protocol set:
+7. Rollouts, per model and protocol set:
    `python eval_multi_turn/rollout_vllm.py --split TEST --plan eval_multi_turn/disclosure_plan_test100.jsonl --model Qwen/Qwen3-8B --revision b968826d9c46dd6066d109eabc6255188de91218 --max-tokens 16384 --max-model-len 32768 --temperature 0.6 --top-p 0.95 --output <rollouts.jsonl> --meta-output <meta.json>`
-7. Final-answer judging (Y; non-final scope labels written by this step are replaced in step 8):
+8. Final-answer judging (Y; non-final scope labels written by this step are replaced in step 9):
    `OPENAI_API_KEY=<KEY> python eval_multi_turn/judge_trajectories.py --rollouts <rollouts.jsonl> --split TEST --output <judged.jsonl> --secondary-model workbuddy/deepseek-v4.1-flash --secondary-base-url <URL> --resume`
-8. Input-blind scope / repair judging (input = output of step 7):
+9. Input-blind scope / repair judging (input = output of step 8):
    `OPENAI_API_KEY=<KEY> python eval_multi_turn/judge_v13_input_blind.py --input-judged <judged.jsonl> --split TEST --output <judged_v13.jsonl> --secondary-model workbuddy/deepseek-v4.1-flash --secondary-base-url <URL> --resume`
    Passing a *copy* of a released `*_judge_cache.jsonl` via `--cache-path` with `--resume` replays the recorded responses offline without calling the API (without `--resume`, an existing cache file is overwritten).
 
