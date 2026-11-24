@@ -38,6 +38,12 @@ For the `Traj-60` criterion-sensitivity analysis (both `E` and `Y - J` under ori
 
 This reproduces `traj60_sensitivity.json`; verbatim excerpts and reclassification rationales for all 8 disputed `agree_NonCommit` cases appear in `TRAJ60_DISPUTED_CASES.md`.
 
+For the item-clustered bootstrap 95% CIs (`TypeA FREE/REQ` $E$ and $Y - J$, $B = 10{,}000$), top-5 exclusion & random-intercept GLMM hazard checks ($\mathrm{ICC} = 0.57$), and SymPy conflicting-vs-equivalent boxed early-commit decomposition:
+
+    python recompute_v7_analyses.py
+
+This reproduces `v7_analyses.json`.
+
 ## 4. Build the Paper
 
 Run `pdflatex` twice on `paper_revised.tex` from this directory with `IEEEtran` and the standard LaTeX packages installed.

@@ -14,7 +14,7 @@
 
 ## 2. Stratified `E` and `Y - J` Across All Three Codings (`N = 1,224`)
 
-Per-trajectory products $E_i \times Y_i$ are computed before applying exact finite-population SRSWOR stratum weights ($W_1 = 152/1224$, $W_2 = 45/1224$, $W_3 = 1027/1224$). Verified via `recompute_traj60_sensitivity.py` → `traj60_sensitivity.json`:
+Per-trajectory products $E_i \times Y_i$ are computed before applying exact finite-population SRSWOR stratum weights ($W_1 = 152/1224$, $W_2 = 45/1224$, $W_3 = 1027/1224$). Because the 60 sampled trajectories span 40 unique items (with `ob-cee-4656` contributing 4 trajectories, including 3 of the 8 `agree_NonCommit` flags), trajectory-level SRSWOR SEs below quantify finite-population trajectory sampling variance only (not item-clustered super-population variance) and are omitted from the main text, which reports point estimates alongside dual-LLM bounds. Verified via `recompute_traj60_sensitivity.py` → `traj60_sensitivity.json`:
 
 | Coding | Stratum hits (`agree_C` / `disagree_C` / `agree_NC`) | Stratified $E$ (SE; 95% CI) | Stratified $Y - J$ (SE; 95% CI) |
 |---|---:|---:|---:|

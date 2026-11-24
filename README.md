@@ -22,7 +22,7 @@ Code, benchmark, and judged trajectories for the IEEE CSCWD paper
 | `eval_multi_turn/human_audit_unified_v2/` | **Primary paper human audit (`SEED=2026`, no adjudication)**: 3-rater blind audit (2 authors `cai`/`tang` + 1 independent non-author `yu`) on a strictly neutral UI covering `Cert-100` (100/100 TEST census, 852 prefixes), `Scope-120` (exhaustive 9-stratum sample of all 7,668 non-final turns), and `Repair-100` (blind mixed pool: 26 flagged + 74/457 non-empty dual-negatives) |
 | `eval_multi_turn/human_audit_followup_seed2027/` | **External follow-up blind audits (`SEED=2027`, independent external rater `yu`)**: `Traj-60` (pure within-stratum SRSWOR sample of 60 `TypeA FREE/REQ` trajectories / 177 non-final turns across 3 exhaustive strata, yielding exact finite-population stratified $E=31.5\%$, $Y-J=31.0\%$) and `Repair-50-TypeA` (complete 50/50 denominator breakdown of audited `TypeA` pairs: `37` confirmed unconditional claims, `12` conflicting with turn $k$, `9` still pending before turn $k$, `0/9` retracted) |
 | `eval_multi_turn/human_audit/` | Archived preliminary author audits (`SEED=2026`: Scope-60 + Repair-26 consensus, 30-item certificate audit, 20-item negative-control Repair audit), superseded in the paper by `human_audit_unified_v2/` |
-| `eval_multi_turn/paper_revised/` | Paper source (`paper_revised.tex`, `paper_revised.pdf`), tables, figures, `regenerate_v13_assets.py`, verification scripts (`recompute_rq3.py`, `recompute_fidelity.py`, `recompute_traj60_sensitivity.py`), and `TRAJ60_DISPUTED_CASES.md` (verbatim excerpts & Sec. IV-C reclassification rationale for all 8 disputed `Traj-60` cases) |
+| `eval_multi_turn/paper_revised/` | Paper source (`paper_revised.tex`, `paper_revised.pdf`), tables, figures, `regenerate_v13_assets.py`, verification scripts (`recompute_rq3.py`, `recompute_fidelity.py`, `recompute_traj60_sensitivity.py`, `recompute_v7_analyses.py`), and `TRAJ60_DISPUTED_CASES.md` (verbatim excerpts & Sec. IV-C reclassification rationale for all 8 disputed `Traj-60` cases) |
 | `MANIFEST.sha256` | SHA-256 checksums for every tracked file in this repository |
 
 ## Setup
@@ -97,6 +97,7 @@ Run every command from the repository root, after `python unpack_data.py`; use `
    python eval_multi_turn/paper_revised/recompute_rq3.py
    python eval_multi_turn/paper_revised/recompute_fidelity.py
    python eval_multi_turn/paper_revised/recompute_traj60_sensitivity.py
+   python eval_multi_turn/paper_revised/recompute_v7_analyses.py
    ```
    *(To regenerate the single-file offline neutral HTML interfaces from scratch directly from the released `.jsonl.gz` trajectories: `build_unified_audit_seed2026.py` and `build_followup_audit_seed2027.py`. Archived preliminary audits in `eval_multi_turn/human_audit/` remain reproducible via `score_human_audit.py` and `score_cert_and_neg_repair_audit.py`.)*
 
