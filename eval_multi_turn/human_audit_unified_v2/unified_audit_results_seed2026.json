@@ -1341,7 +1341,7 @@
       0.2
     ],
     "heuristic_adversarial_stress_test_nonempty_457": {
-      "caveat": "Heuristic adversarial stress-test ONLY (greedy + 1-swap + item-cluster placement over M replays). Does NOT certify global optimality over all C(457, K) subsets and therefore provides a heuristic lower bound on the worst-case alpha=0.05 threshold rather than a proven 95% confidence upper bound.",
+      "caveat": "Uncertified heuristic stress-test result ONLY (greedy + 1-swap + item-cluster placement over M replays). Does NOT certify global optimality over all C(457, K) subsets and cannot substitute for a valid design-based 95% confidence upper bound.",
       "mc_draws_per_model": 50000,
       "mc_seed": 20260505,
       "model_inclusion_probs": {

@@ -837,9 +837,9 @@ def score_repair(raters: list[str], key: dict, design_bound: dict) -> dict:
 
     design_bound_documented = {
         "caveat": (
-            "Heuristic adversarial stress-test ONLY (greedy + 1-swap + item-cluster placement over M replays). "
-            "Does NOT certify global optimality over all C(457, K) subsets and therefore provides a heuristic "
-            "lower bound on the worst-case alpha=0.05 threshold rather than a proven 95% confidence upper bound."
+            "Uncertified heuristic stress-test result ONLY (greedy + 1-swap + item-cluster placement over M replays). "
+            "Does NOT certify global optimality over all C(457, K) subsets and cannot substitute for a valid design-based "
+            "95% confidence upper bound."
         ),
         **design_bound,
     }
