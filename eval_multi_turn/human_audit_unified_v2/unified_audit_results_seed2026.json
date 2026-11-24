@@ -1164,7 +1164,41 @@
       "nonempty_controls_74": [
         0,
         0
-      ]
+      ],
+      "audited_TypeA_sample_only": {
+        "n_flagged": 7,
+        "n_controls": 43,
+        "n_audited_total": 50,
+        "flagged_bounds": [
+          0,
+          0
+        ],
+        "controls_bounds": [
+          0,
+          0
+        ],
+        "all_audited_bounds": [
+          0,
+          0
+        ]
+      },
+      "audited_TypeB_sample_only": {
+        "n_flagged": 19,
+        "n_controls": 31,
+        "n_audited_total": 50,
+        "flagged_bounds": [
+          0,
+          1
+        ],
+        "controls_bounds": [
+          0,
+          0
+        ],
+        "all_audited_bounds": [
+          0,
+          1
+        ]
+      }
     },
     "majority_vote": {
       "dual_pos_4": 1,
@@ -1211,6 +1245,7 @@
       "heuristic_alpha005_K": 29,
       "heuristic_alpha005_rate": 0.0635,
       "heuristic_alpha005_P_at_K": 0.0518,
+      "heuristic_alpha005_P_at_K_plus_1": 0.0458,
       "heuristic_alpha005_split": [
         11,
         10,
@@ -1219,6 +1254,7 @@
       "heuristic_alpha025_K": 34,
       "heuristic_alpha025_rate": 0.0744,
       "heuristic_alpha025_P_at_K": 0.0274,
+      "heuristic_alpha025_P_at_K_plus_1": 0.0241,
       "heuristic_alpha025_split": [
         11,
         12,

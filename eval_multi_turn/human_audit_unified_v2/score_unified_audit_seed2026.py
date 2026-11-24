@@ -434,10 +434,12 @@ def simulate_repair_design_bound(
         "heuristic_alpha005_K": k_a05,
         "heuristic_alpha005_rate": round(k_a05 / 457.0, 4),
         "heuristic_alpha005_P_at_K": round(p_comb[k_a05], 4),
+        "heuristic_alpha005_P_at_K_plus_1": round(p_comb[k_a05 + 1], 4),
         "heuristic_alpha005_split": list(best_split[k_a05]),
         "heuristic_alpha025_K": k_a025,
         "heuristic_alpha025_rate": round(k_a025 / 457.0, 4),
         "heuristic_alpha025_P_at_K": round(p_comb[k_a025], 4),
+        "heuristic_alpha025_P_at_K_plus_1": round(p_comb[k_a025 + 1], 4),
         "heuristic_alpha025_split": list(best_split[k_a025]),
     }
 
@@ -780,6 +782,11 @@ def score_repair(raters: list[str], key: dict, design_bound: dict) -> dict:
     pos_L, pos_U = bounds_on(pos_ids)
     neg_L, neg_U = bounds_on(neg_ids)
 
+    pos_A_ids = [i for i in pos_ids if r_key[i]["mech_short"] == "TypeA"]
+    neg_A_ids = [i for i in neg_ids if r_key[i]["mech_short"] == "TypeA"]
+    pos_B_ids = [i for i in pos_ids if r_key[i]["mech_short"] == "TypeB"]
+    neg_B_ids = [i for i in neg_ids if r_key[i]["mech_short"] == "TypeB"]
+
     # Design-unbiased Horvitz-Thompson point estimate + heuristic adversarial stress-test (NOT a proven 95% bound)
     assert neg_U == 0, "Heuristic 0-observed stress-test requires neg_U == 0."
     ht_pt_lo = pos_L / N_tot  # since neg_L == 0 => sum(y_j / pi_j) == 0
@@ -834,6 +841,22 @@ def score_repair(raters: list[str], key: dict, design_bound: dict) -> dict:
             "single_pos_22": [sp_L, sp_U],
             "all_flagged_26": [pos_L, pos_U],
             "nonempty_controls_74": [neg_L, neg_U],
+            "audited_TypeA_sample_only": {
+                "n_flagged": len(pos_A_ids),
+                "n_controls": len(neg_A_ids),
+                "n_audited_total": len(pos_A_ids) + len(neg_A_ids),
+                "flagged_bounds": list(bounds_on(pos_A_ids)),
+                "controls_bounds": list(bounds_on(neg_A_ids)),
+                "all_audited_bounds": list(bounds_on(pos_A_ids + neg_A_ids)),
+            },
+            "audited_TypeB_sample_only": {
+                "n_flagged": len(pos_B_ids),
+                "n_controls": len(neg_B_ids),
+                "n_audited_total": len(pos_B_ids) + len(neg_B_ids),
+                "flagged_bounds": list(bounds_on(pos_B_ids)),
+                "controls_bounds": list(bounds_on(neg_B_ids)),
+                "all_audited_bounds": list(bounds_on(pos_B_ids + neg_B_ids)),
+            },
         },
         "majority_vote": maj_rep,
         "horvitz_thompson_design_unbiased_point_rate_over_489_pct": [round(ht_pt_lo * 100, 2), round(ht_pt_hi * 100, 2)],
