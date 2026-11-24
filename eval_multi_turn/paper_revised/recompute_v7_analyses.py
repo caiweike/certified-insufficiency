@@ -22,6 +22,7 @@ import numpy as np
 import sympy as sp
 from numpy.polynomial.hermite import hermgauss
 from scipy.optimize import minimize
+from scipy.sparse import csr_matrix
 from scipy.special import expit
 
 HERE = Path(__file__).resolve().parent
@@ -197,58 +198,139 @@ def analysis_10_hazard_robustness(tracks: list[dict], B: int = 2000, seed: int =
             "OR_t_plus_k_ci95": [round(math.exp(float(np.percentile(btk_a, 2.5))), 2), round(math.exp(float(np.percentile(btk_a, 97.5))), 2)],
         }
 
-    def fit_glmm(rows):
+    def fit_glmm(rows, B_cluster_boot: int = 0):
         X, y, iids = _build_X_y(rows)
         by_it = defaultdict(list)
         for idx, iid in enumerate(iids):
             by_it[iid].append(idx)
-        groups = [(X[idxs], y[idxs]) for idxs in by_it.values()]
+        item_keys = sorted(by_it.keys())
+        M = len(item_keys)
+        X_list, y_list, row_idx, col_idx = [], [], [], []
+        offset = 0
+        for idx_g, k in enumerate(item_keys):
+            idxs = by_it[k]
+            n_g = len(idxs)
+            X_list.append(X[idxs]); y_list.append(y[idxs])
+            row_idx.extend([idx_g] * n_g)
+            col_idx.extend(range(offset, offset + n_g))
+            offset += n_g
+        X_all = np.vstack(X_list)
+        y_all = np.concatenate(y_list)
+        item_of_row = np.array(row_idx, dtype=np.int64)
         gh_x, gh_w = hermgauss(21)
         gh_z = math.sqrt(2.0) * gh_x
         gh_logw = np.log(gh_w / math.sqrt(math.pi))
 
-        def nll_grad(params):
-            beta = params[:-1]; sig = math.exp(params[-1])
-            nll = 0.0; gb = np.zeros_like(beta); gls = 0.0
-            for Xg, yg in groups:
-                z = (Xg @ beta)[:, None] + sig * gh_z[None, :]
-                ll_q = np.sum(yg[:, None] * z - np.logaddexp(0.0, z), axis=0) + gh_logw
-                m = np.max(ll_q); w_q = np.exp(ll_q - m); Zg = np.sum(w_q); post = w_q / Zg
-                nll -= (m + math.log(Zg))
-                resid = yg[:, None] - expit(z)
-                gb -= Xg.T @ (resid @ post)
-                gls -= sig * np.sum((resid.sum(axis=0) * gh_z) * post)
-            return nll, np.append(gb, gls)
+        def make_nll_grad(w_item):
+            act_mask = w_item[item_of_row] > 0
+            Xa = X_all[act_mask]; ya = y_all[act_mask]
+            act_items = np.nonzero(w_item)[0]
+            wa = w_item[act_items]
+            remap = np.full(M, -1, dtype=np.int64)
+            remap[act_items] = np.arange(len(act_items))
+            ior = remap[item_of_row[act_mask]]
+            w_row = wa[ior]
+            Ma = len(act_items); Na = len(ya)
+            Ga = csr_matrix((np.ones(Na, dtype=np.float64), (ior, np.arange(Na))), shape=(Ma, Na))
 
+            def nll_grad(params):
+                beta = params[:-1]
+                sig = math.exp(np.clip(params[-1], -6.0, 4.0))
+                eta = Xa @ beta
+                z = eta[:, None] + sig * gh_z[None, :]
+                rll = ya[:, None] * z - np.logaddexp(0.0, z)
+                gll = (Ga @ rll) + gh_logw[None, :]
+                m = gll.max(axis=1, keepdims=True)
+                wq = np.exp(gll - m)
+                Zg = wq.sum(axis=1, keepdims=True)
+                post = wq / Zg
+                nll = -np.sum(wa * (m[:, 0] + np.log(Zg[:, 0])))
+                resid = ya[:, None] - expit(z)
+                exp_resid = np.einsum("nq,nq->n", resid, post[ior])
+                gb = -(Xa.T @ (w_row * exp_resid))
+                gres = Ga @ resid
+                gls = -sig * np.sum(wa * np.einsum("mq,mq,q->m", gres, post, gh_z))
+                return nll, np.append(gb, gls)
+
+            return nll_grad
+
+        f0 = make_nll_grad(np.ones(M, dtype=np.float64))
         b0 = _fit_logit_nr(X, y)
-        res = minimize(nll_grad, np.append(b0, math.log(1.5)), jac=True, method="BFGS")
+        res = minimize(f0, np.append(b0, math.log(1.5)), jac=True, method="BFGS", options={"gtol": 1e-5})
         bg = res.x[:-1]; sig = math.exp(res.x[-1])
         icc = (sig ** 2) / (sig ** 2 + math.pi ** 2 / 3.0)
         eps = 1e-5; P = len(res.x); H = np.zeros((P, P))
         for k in range(P):
             e = np.zeros(P); e[k] = eps
-            _, gp = nll_grad(res.x + e); _, gm = nll_grad(res.x - e)
+            _, gp = f0(res.x + e); _, gm = f0(res.x - e)
             H[:, k] = (gp - gm) / (2 * eps)
         cov = np.linalg.inv(0.5 * (H + H.T))
         se_bt = math.sqrt(cov[1, 1])
         se_btk = math.sqrt(cov[1, 1] + cov[2, 2] + 2 * cov[1, 2])
-        return {
-            "n_risk_turns": len(rows), "n_items": len(groups), "converged": bool(res.success),
-            "beta_t": round(float(bg[1]), 3), "se_beta_t": round(se_bt, 3),
+        out = {
+            "n_risk_turns": len(rows), "n_items": M, "converged": bool(res.success),
+            "beta_t": round(float(bg[1]), 3), "se_beta_t_model": round(se_bt, 3),
             "OR_t": round(math.exp(float(bg[1])), 2),
-            "OR_t_ci95": [round(math.exp(float(bg[1] - 1.96 * se_bt)), 2), round(math.exp(float(bg[1] + 1.96 * se_bt)), 2)],
-            "beta_t_plus_k": round(float(bg[1] + bg[2]), 3), "se_beta_t_plus_k": round(se_btk, 3),
+            "OR_t_model_ci95": [round(math.exp(float(bg[1] - 1.96 * se_bt)), 2), round(math.exp(float(bg[1] + 1.96 * se_bt)), 2)],
+            "beta_t_plus_k": round(float(bg[1] + bg[2]), 3), "se_beta_t_plus_k_model": round(se_btk, 3),
             "OR_t_plus_k": round(math.exp(float(bg[1] + bg[2])), 2),
-            "OR_t_plus_k_ci95": [round(math.exp(float(bg[1] + bg[2] - 1.96 * se_btk)), 2), round(math.exp(float(bg[1] + bg[2] + 1.96 * se_btk)), 2)],
+            "OR_t_plus_k_model_ci95": [round(math.exp(float(bg[1] + bg[2] - 1.96 * se_btk)), 2), round(math.exp(float(bg[1] + bg[2] + 1.96 * se_btk)), 2)],
             "sigma_u": round(sig, 3), "ICC": round(icc, 3),
         }
+        if B_cluster_boot > 0:
+            p0 = res.x; H0_inv = res.hess_inv
+
+            def fast_bfgs(fn, x0, H_inv0, gtol=1e-4, maxiter=25):
+                x = x0.copy(); H_i = H_inv0.copy()
+                f, g = fn(x)
+                for _ in range(maxiter):
+                    if np.max(np.abs(g)) < gtol:
+                        return x, True
+                    d = -H_i @ g
+                    dg = float(np.dot(d, g))
+                    if dg >= 0:
+                        d = -g; dg = float(np.dot(d, g)); H_i = np.eye(len(x))
+                    alpha = 1.0
+                    for _ in range(12):
+                        xn = x + alpha * d
+                        fn_val, gn = fn(xn)
+                        if fn_val <= f + 1e-4 * alpha * dg:
+                            break
+                        alpha *= 0.5
+                    s = xn - x; yv = gn - g; sy = float(np.dot(s, yv))
+                    if sy > 1e-12:
+                        rho = 1.0 / sy; Hy = H_i @ yv
+                        H_i = H_i + (sy + float(np.dot(yv, Hy))) * (rho * rho) * np.outer(s, s) - rho * (np.outer(Hy, s) + np.outer(s, Hy))
+                    x, f, g = xn, fn_val, gn
+                return x, (np.max(np.abs(g)) < 1e-3)
+
+            rng = np.random.default_rng(seed)
+            bt_b = np.empty(B_cluster_boot); bsum_b = np.empty(B_cluster_boot); icc_b = np.empty(B_cluster_boot)
+            n_conv = 0
+            for bi in range(B_cluster_boot):
+                w = np.bincount(rng.integers(0, M, size=M), minlength=M).astype(np.float64)
+                fb = make_nll_grad(w)
+                pb, ok = fast_bfgs(fb, p0, H0_inv)
+                if not ok:
+                    rb = minimize(fb, pb, jac=True, method="BFGS", options={"gtol": 1e-4})
+                    pb, ok = rb.x, rb.success
+                bt_b[bi] = pb[1]; bsum_b[bi] = pb[1] + pb[2]
+                sb = math.exp(pb[-1]); icc_b[bi] = sb ** 2 / (sb ** 2 + math.pi ** 2 / 3.0)
+                n_conv += int(ok)
+            out["cluster_boot_B"] = B_cluster_boot
+            out["cluster_boot_seed"] = seed
+            out["cluster_boot_converged"] = n_conv
+            out["OR_t_cluster_boot_ci95"] = [round(math.exp(float(np.percentile(bt_b, 2.5))), 2), round(math.exp(float(np.percentile(bt_b, 97.5))), 2)]
+            out["OR_t_plus_k_cluster_boot_ci95"] = [round(math.exp(float(np.percentile(bsum_b, 2.5))), 2), round(math.exp(float(np.percentile(bsum_b, 97.5))), 2)]
+            out["ICC_cluster_boot_ci95"] = [round(float(np.percentile(icc_b, 2.5)), 3), round(float(np.percentile(icc_b, 97.5)), 3)]
+        return out
 
     return {
         "drop_top5_TypeA_all100": boot_logit([r for r in risk_rows if r[0] not in top5_ta]),
         "drop_top5_all_dynamic": boot_logit([r for r in risk_rows if r[0] not in top5_all]),
         "TypeA_drop_top5_TypeA": boot_logit([r for r in risk_rows if r[1] == "TypeA_UniqueValue" and r[0] not in top5_ta]),
-        "glmm_random_intercept_all100": fit_glmm(risk_rows),
-        "glmm_random_intercept_TypeA68": fit_glmm([r for r in risk_rows if r[1] == "TypeA_UniqueValue"]),
+        "glmm_random_intercept_all100": fit_glmm(risk_rows, B_cluster_boot=1000),
+        "glmm_random_intercept_TypeA68": fit_glmm([r for r in risk_rows if r[1] == "TypeA_UniqueValue"], B_cluster_boot=1000),
     }
 
 
