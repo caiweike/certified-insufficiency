@@ -506,14 +506,23 @@ def score_cert(raters: list[str], key: dict, T_dyn: pd.DataFrame) -> dict:
 
         sub_iids = {c_key[i]["item_id"] for i in sub_ids}
         flagged_iids = {x["item_id"] for x in flagged_items}
+        any_unfaith_iids = {
+            c_key[i]["item_id"]
+            for i in sub_ids
+            if any(data[r][i]["human_verdict"].strip() == "Unfaithful" for r in raters)
+        }
         T_sub = T_dyn[T_dyn["item"].isin(sub_iids)]
         T_clean = T_sub[~T_sub["item"].isin(flagged_iids)]
+        T_clean_unf = T_sub[~T_sub["item"].isin(any_unfaith_iids)]
         eL0, eU0 = 100.0 * T_sub["e_L"].mean(), 100.0 * T_sub["e_U"].mean()
         gapL0 = 100.0 * (T_sub["y_L"].mean() - T_sub["j_L"].mean())
         gapU0 = 100.0 * (T_sub["y_L"].mean() - T_sub["j_U"].mean())
         eL1, eU1 = 100.0 * T_clean["e_L"].mean(), 100.0 * T_clean["e_U"].mean()
         gapL1 = 100.0 * (T_clean["y_L"].mean() - T_clean["j_L"].mean())
         gapU1 = 100.0 * (T_clean["y_L"].mean() - T_clean["j_U"].mean())
+        eL2, eU2 = 100.0 * T_clean_unf["e_L"].mean(), 100.0 * T_clean_unf["e_U"].mean()
+        gapL2 = 100.0 * (T_clean_unf["y_L"].mean() - T_clean_unf["j_L"].mean())
+        gapU2 = 100.0 * (T_clean_unf["y_L"].mean() - T_clean_unf["j_U"].mean())
 
         maj_block = None
         if len(raters) >= 3 and len(raters) % 2 == 1:
@@ -556,6 +565,14 @@ def score_cert(raters: list[str], key: dict, T_dyn: pd.DataFrame) -> dict:
                     "delta_E_U_pp": round(eU1 - eU0, 2),
                     "delta_Y_minus_J_L_pp": round(gapL1 - gapL0, 2),
                     "delta_Y_minus_J_U_pp": round(gapU1 - gapU0, 2),
+                },
+                "worst_case_excl_any_unfaithful_items_delta_pp": {
+                    "n_any_unfaithful_items": len(any_unfaith_iids),
+                    "any_unfaithful_item_ids": sorted(any_unfaith_iids),
+                    "delta_E_L_pp": round(eL2 - eL0, 2),
+                    "delta_E_U_pp": round(eU2 - eU0, 2),
+                    "delta_Y_minus_J_L_pp": round(gapL2 - gapL0, 2),
+                    "delta_Y_minus_J_U_pp": round(gapU2 - gapU0, 2),
                 },
             },
             "majority_vote": maj_block,
@@ -664,6 +681,10 @@ def score_scope(
             "vs_eU_design_hajek": pairwise_metrics(bin_map[r], e_U, [0, 1], hajek_w),
             "vs_pri_design_hajek": pairwise_metrics(bin_map[r], j_pri, [0, 1], hajek_w),
             "vs_sec_design_hajek": pairwise_metrics(bin_map[r], j_sec, [0, 1], hajek_w),
+            "vs_eL_unweighted": pairwise_metrics(bin_map[r], e_L, [0, 1]),
+            "vs_eU_unweighted": pairwise_metrics(bin_map[r], e_U, [0, 1]),
+            "vs_pri_unweighted": pairwise_metrics(bin_map[r], j_pri, [0, 1]),
+            "vs_sec_unweighted": pairwise_metrics(bin_map[r], j_sec, [0, 1]),
             "design_hajek_commit_rate": hajek_linearized_se(bin_map[r]),
         }
 

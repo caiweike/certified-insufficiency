@@ -19,7 +19,7 @@ Code, benchmark, and judged trajectories for the IEEE CSCWD paper
 | `eval_multi_turn/runs/` | All judged trajectories (see *Data*) |
 | `eval_multi_turn/analyze_experiments.py`, `revision_analysis_v13/` | Statistics; `extract_tables.py` builds flat tables; `run_robustness_checks.py` runs `B=10,000` offline sensitivity, covariate hazard, token-mechanism, and CoT trace checks |
 | `eval_multi_turn/verify_cached_judgments.py` | Offline check of every judge label against the recorded judge responses |
-| `eval_multi_turn/human_audit_unified_v2/` | **Primary paper human audit (`SEED=2026`, no adjudication)**: pre-registered 3-rater blind audit (2 authors `cai`/`tang` + 1 independent non-author `yu`) on a strictly neutral UI covering `Cert-100` (100/100 TEST census, 852 prefixes), `Scope-120` (exhaustive 9-stratum sample of all 7,668 non-final turns), and `Repair-100` (blind mixed pool: 26 flagged + 74/457 non-empty dual-negatives) |
+| `eval_multi_turn/human_audit_unified_v2/` | **Primary paper human audit (`SEED=2026`, no adjudication)**: 3-rater blind audit (2 authors `cai`/`tang` + 1 independent non-author `yu`) on a strictly neutral UI covering `Cert-100` (100/100 TEST census, 852 prefixes), `Scope-120` (exhaustive 9-stratum sample of all 7,668 non-final turns), and `Repair-100` (blind mixed pool: 26 flagged + 74/457 non-empty dual-negatives) |
 | `eval_multi_turn/human_audit/` | Archived preliminary author audits (`SEED=2026`: Scope-60 + Repair-26 consensus, 30-item certificate audit, 20-item negative-control Repair audit), superseded in the paper by `human_audit_unified_v2/` |
 | `eval_multi_turn/paper_revised/` | Paper source, tables, figures, and `regenerate_v13_assets.py` |
 | `MANIFEST.sha256` | SHA-256 checksums for every tracked file in this repository |
@@ -86,7 +86,7 @@ Run every command from the repository root, after `python unpack_data.py`; use `
    python eval_multi_turn/paper_revised/regenerate_v13_assets.py
    python eval_multi_turn/revision_analysis_v13/run_robustness_checks.py
    ```
-6. Reproduce the paper's pre-registered 3-rater neutral blind no-adjudication human audit (`Cert-100`, `Scope-120`, `Repair-100`, `SEED=2026`; `cai`/`tang` authors + `yu` independent non-author):
+6. Reproduce the paper's 3-rater neutral blind no-adjudication human audit (`Cert-100`, `Scope-120`, `Repair-100`, `SEED=2026`; `cai`/`tang` authors + `yu` independent non-author):
    ```bash
    python eval_multi_turn/human_audit_unified_v2/score_unified_audit_seed2026.py \
      --raters cai tang yu --external yu

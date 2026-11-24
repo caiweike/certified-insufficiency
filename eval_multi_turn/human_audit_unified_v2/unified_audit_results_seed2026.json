@@ -193,6 +193,24 @@
           "delta_E_U_pp": -0.16,
           "delta_Y_minus_J_L_pp": -0.26,
           "delta_Y_minus_J_U_pp": -0.28
+        },
+        "worst_case_excl_any_unfaithful_items_delta_pp": {
+          "n_any_unfaithful_items": 9,
+          "any_unfaithful_item_ids": [
+            "ob-cee-3282",
+            "ob-cee-3336",
+            "ob-cee-3849",
+            "ob-cee-3919",
+            "ob-cee-3948",
+            "ob-cee-4112",
+            "ob-cee-4147",
+            "ob-cee-4352",
+            "ob-comp-627"
+          ],
+          "delta_E_L_pp": -1.35,
+          "delta_E_U_pp": -1.42,
+          "delta_Y_minus_J_L_pp": -0.09,
+          "delta_Y_minus_J_U_pp": -0.06
         }
       },
       "majority_vote": {
@@ -423,6 +441,20 @@
           "delta_E_U_pp": -0.35,
           "delta_Y_minus_J_L_pp": -0.39,
           "delta_Y_minus_J_U_pp": -0.43
+        },
+        "worst_case_excl_any_unfaithful_items_delta_pp": {
+          "n_any_unfaithful_items": 5,
+          "any_unfaithful_item_ids": [
+            "ob-cee-3282",
+            "ob-cee-3336",
+            "ob-cee-3948",
+            "ob-cee-4147",
+            "ob-cee-4352"
+          ],
+          "delta_E_L_pp": -0.92,
+          "delta_E_U_pp": -1.03,
+          "delta_Y_minus_J_L_pp": -0.72,
+          "delta_Y_minus_J_U_pp": -0.56
         }
       },
       "majority_vote": {
@@ -652,6 +684,19 @@
           "delta_E_U_pp": 0.0,
           "delta_Y_minus_J_L_pp": 0.0,
           "delta_Y_minus_J_U_pp": 0.0
+        },
+        "worst_case_excl_any_unfaithful_items_delta_pp": {
+          "n_any_unfaithful_items": 4,
+          "any_unfaithful_item_ids": [
+            "ob-cee-3849",
+            "ob-cee-3919",
+            "ob-cee-4112",
+            "ob-comp-627"
+          ],
+          "delta_E_L_pp": -1.88,
+          "delta_E_U_pp": -1.87,
+          "delta_Y_minus_J_L_pp": 1.32,
+          "delta_Y_minus_J_U_pp": 1.07
         }
       },
       "majority_vote": {
@@ -1011,6 +1056,34 @@
           "gwet_ac1": 0.965,
           "pabak": 0.9408
         },
+        "vs_eL_unweighted": {
+          "n": 120,
+          "agree": 0.8917,
+          "kappa": 0.7503,
+          "gwet_ac1": 0.81,
+          "pabak": 0.7833
+        },
+        "vs_eU_unweighted": {
+          "n": 120,
+          "agree": 0.875,
+          "kappa": 0.735,
+          "gwet_ac1": 0.7638,
+          "pabak": 0.75
+        },
+        "vs_pri_unweighted": {
+          "n": 120,
+          "agree": 0.925,
+          "kappa": 0.8361,
+          "gwet_ac1": 0.8618,
+          "pabak": 0.85
+        },
+        "vs_sec_unweighted": {
+          "n": 120,
+          "agree": 0.8417,
+          "kappa": 0.6466,
+          "gwet_ac1": 0.7136,
+          "pabak": 0.6833
+        },
         "design_hajek_commit_rate": {
           "pct": 9.18,
           "approx_wr_se_pct": 0.69,
@@ -1049,6 +1122,34 @@
           "gwet_ac1": 0.9694,
           "pabak": 0.9481
         },
+        "vs_eL_unweighted": {
+          "n": 120,
+          "agree": 0.9167,
+          "kappa": 0.8026,
+          "gwet_ac1": 0.8563,
+          "pabak": 0.8333
+        },
+        "vs_eU_unweighted": {
+          "n": 120,
+          "agree": 0.8667,
+          "kappa": 0.7143,
+          "gwet_ac1": 0.751,
+          "pabak": 0.7333
+        },
+        "vs_pri_unweighted": {
+          "n": 120,
+          "agree": 0.9,
+          "kappa": 0.7778,
+          "gwet_ac1": 0.8182,
+          "pabak": 0.8
+        },
+        "vs_sec_unweighted": {
+          "n": 120,
+          "agree": 0.8833,
+          "kappa": 0.7342,
+          "gwet_ac1": 0.7921,
+          "pabak": 0.7667
+        },
         "design_hajek_commit_rate": {
           "pct": 8.89,
           "approx_wr_se_pct": 0.87,
@@ -1086,6 +1187,34 @@
           "kappa": 0.5958,
           "gwet_ac1": 0.9015,
           "pabak": 0.8412
+        },
+        "vs_eL_unweighted": {
+          "n": 120,
+          "agree": 0.8417,
+          "kappa": 0.6537,
+          "gwet_ac1": 0.7136,
+          "pabak": 0.6833
+        },
+        "vs_eU_unweighted": {
+          "n": 120,
+          "agree": 0.8417,
+          "kappa": 0.6713,
+          "gwet_ac1": 0.6946,
+          "pabak": 0.6833
+        },
+        "vs_pri_unweighted": {
+          "n": 120,
+          "agree": 0.875,
+          "kappa": 0.7354,
+          "gwet_ac1": 0.7638,
+          "pabak": 0.75
+        },
+        "vs_sec_unweighted": {
+          "n": 120,
+          "agree": 0.8083,
+          "kappa": 0.589,
+          "gwet_ac1": 0.6436,
+          "pabak": 0.6167
         },
         "design_hajek_commit_rate": {
           "pct": 14.23,
