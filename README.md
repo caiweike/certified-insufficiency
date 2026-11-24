@@ -20,8 +20,9 @@ Code, benchmark, and judged trajectories for the IEEE CSCWD paper
 | `eval_multi_turn/analyze_experiments.py`, `revision_analysis_v13/` | Statistics; `extract_tables.py` builds flat tables; `run_robustness_checks.py` runs `B=10,000` offline sensitivity, covariate hazard, token-mechanism, and CoT trace checks |
 | `eval_multi_turn/verify_cached_judgments.py` | Offline check of every judge label against the recorded judge responses |
 | `eval_multi_turn/human_audit_unified_v2/` | **Primary paper human audit (`SEED=2026`, no adjudication)**: 3-rater blind audit (2 authors `cai`/`tang` + 1 independent non-author `yu`) on a strictly neutral UI covering `Cert-100` (100/100 TEST census, 852 prefixes), `Scope-120` (exhaustive 9-stratum sample of all 7,668 non-final turns), and `Repair-100` (blind mixed pool: 26 flagged + 74/457 non-empty dual-negatives) |
+| `eval_multi_turn/human_audit_followup_seed2027/` | **External follow-up blind audits (`SEED=2027`, independent external rater `yu`)**: `Traj-60` (pure within-stratum SRSWOR sample of 60 `TypeA FREE/REQ` trajectories / 177 non-final turns across 3 exhaustive strata, yielding exact finite-population stratified $E=31.5\%$, $Y-J=31.0\%$) and `Repair-50-TypeA` (complete 50/50 denominator breakdown of audited `TypeA` pairs: `37` confirmed unconditional claims, `12` conflicting with turn $k$, `9` still pending before turn $k$, `0/9` retracted) |
 | `eval_multi_turn/human_audit/` | Archived preliminary author audits (`SEED=2026`: Scope-60 + Repair-26 consensus, 30-item certificate audit, 20-item negative-control Repair audit), superseded in the paper by `human_audit_unified_v2/` |
-| `eval_multi_turn/paper_revised/` | Paper source, tables, figures, and `regenerate_v13_assets.py` |
+| `eval_multi_turn/paper_revised/` | Paper source (`paper_revised.tex`, `paper_revised.pdf`), tables, figures, `regenerate_v13_assets.py`, and verification scripts (`recompute_rq3.py`, `recompute_fidelity.py`, `RQ3_RECOMPUTATION.md`) |
 | `MANIFEST.sha256` | SHA-256 checksums for every tracked file in this repository |
 
 ## Setup
@@ -86,12 +87,17 @@ Run every command from the repository root, after `python unpack_data.py`; use `
    python eval_multi_turn/paper_revised/regenerate_v13_assets.py
    python eval_multi_turn/revision_analysis_v13/run_robustness_checks.py
    ```
-6. Reproduce the paper's 3-rater neutral blind no-adjudication human audit (`Cert-100`, `Scope-120`, `Repair-100`, `SEED=2026`; `cai`/`tang` authors + `yu` independent non-author):
+6. Reproduce the paper's 3-rater neutral blind no-adjudication human audit (`Cert-100`, `Scope-120`, `Repair-100`, `SEED=2026`; `cai`/`tang` authors + `yu` independent non-author) and `SEED=2027` external follow-up audits (`Traj-60`, `Repair-50-TypeA`) + `TypeA` strict-fidelity sensitivity:
    ```bash
    python eval_multi_turn/human_audit_unified_v2/score_unified_audit_seed2026.py \
      --raters cai tang yu --external yu
+   python eval_multi_turn/human_audit_followup_seed2027/score_followup_audit_seed2027.py \
+     --traj eval_multi_turn/human_audit_followup_seed2027/traj_60_yu.csv \
+     --denom eval_multi_turn/human_audit_followup_seed2027/repair50_denom_yu.csv
+   python eval_multi_turn/paper_revised/recompute_rq3.py
+   python eval_multi_turn/paper_revised/recompute_fidelity.py
    ```
-   *(To regenerate the single-file offline neutral HTML interface `unified_audit_tool_seed2026.html` and sampling key from scratch directly from the released `.jsonl.gz` trajectories: `python eval_multi_turn/human_audit_unified_v2/build_unified_audit_seed2026.py`. Archived preliminary audits in `eval_multi_turn/human_audit/` remain reproducible via `score_human_audit.py` and `score_cert_and_neg_repair_audit.py`.)*
+   *(To regenerate the single-file offline neutral HTML interfaces from scratch directly from the released `.jsonl.gz` trajectories: `build_unified_audit_seed2026.py` and `build_followup_audit_seed2027.py`. Archived preliminary audits in `eval_multi_turn/human_audit/` remain reproducible via `score_human_audit.py` and `score_cert_and_neg_repair_audit.py`.)*
 
 Steps 4–5 reproduce `test100_exp2_4_full_summary_16384_v13_blind.json`, `revision_analysis_v13/*.csv`, `v13_paper_numbers.json`, and the four `table*_rev.tex` files exactly (up to JSON key order / line endings); PDF figures may differ in embedded metadata/fonts across platforms.
 

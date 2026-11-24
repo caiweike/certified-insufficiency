@@ -1,0 +1,118 @@
+{
+  "unanimous_faithful_test_items_by_regime": {
+    "TypeA": 53,
+    "TypeB": 22
+  },
+  "full_TypeA": {
+    "range_across_cell_endpoints_percent": {
+      "E": [
+        10.3,
+        18.6
+      ],
+      "gap": [
+        9.3,
+        17.2
+      ]
+    },
+    "cells": {
+      "Qwen/Qwen3-14B:DYN_FREE": {
+        "n": 204,
+        "E_L": 22,
+        "gap_L": 19,
+        "E_U": 34,
+        "gap_U": 31
+      },
+      "Qwen/Qwen3-14B:DYN_REQUEST": {
+        "n": 204,
+        "E_L": 24,
+        "gap_L": 23,
+        "E_U": 27,
+        "gap_U": 26
+      },
+      "Qwen/Qwen3-8B:DYN_FREE": {
+        "n": 204,
+        "E_L": 27,
+        "gap_L": 25,
+        "E_U": 38,
+        "gap_U": 34
+      },
+      "Qwen/Qwen3-8B:DYN_REQUEST": {
+        "n": 204,
+        "E_L": 21,
+        "gap_L": 20,
+        "E_U": 28,
+        "gap_U": 27
+      },
+      "zai-org/GLM-Z1-9B-0414:DYN_FREE": {
+        "n": 204,
+        "E_L": 31,
+        "gap_L": 28,
+        "E_U": 38,
+        "gap_U": 35
+      },
+      "zai-org/GLM-Z1-9B-0414:DYN_REQUEST": {
+        "n": 204,
+        "E_L": 27,
+        "gap_L": 25,
+        "E_U": 32,
+        "gap_U": 29
+      }
+    }
+  },
+  "unanimous_faithful_TypeA": {
+    "range_across_cell_endpoints_percent": {
+      "E": [
+        5.7,
+        14.5
+      ],
+      "gap": [
+        5.7,
+        13.2
+      ]
+    },
+    "cells": {
+      "Qwen/Qwen3-14B:DYN_FREE": {
+        "n": 159,
+        "E_L": 9,
+        "gap_L": 9,
+        "E_U": 18,
+        "gap_U": 18
+      },
+      "Qwen/Qwen3-14B:DYN_REQUEST": {
+        "n": 159,
+        "E_L": 9,
+        "gap_L": 9,
+        "E_U": 11,
+        "gap_U": 11
+      },
+      "Qwen/Qwen3-8B:DYN_FREE": {
+        "n": 159,
+        "E_L": 13,
+        "gap_L": 13,
+        "E_U": 20,
+        "gap_U": 18
+      },
+      "Qwen/Qwen3-8B:DYN_REQUEST": {
+        "n": 159,
+        "E_L": 12,
+        "gap_L": 11,
+        "E_U": 16,
+        "gap_U": 15
+      },
+      "zai-org/GLM-Z1-9B-0414:DYN_FREE": {
+        "n": 159,
+        "E_L": 16,
+        "gap_L": 15,
+        "E_U": 23,
+        "gap_U": 21
+      },
+      "zai-org/GLM-Z1-9B-0414:DYN_REQUEST": {
+        "n": 159,
+        "E_L": 15,
+        "gap_L": 15,
+        "E_U": 20,
+        "gap_U": 18
+      }
+    }
+  }
+}

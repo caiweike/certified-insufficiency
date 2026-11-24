@@ -328,14 +328,14 @@ def main() -> None:
     t3_lines = [
         r"\begin{table*}[!t]",
         r"\centering",
-        rf"\caption{{Non-final scope (852 turns/cell; Dis./Oth.\ = non-commit disagreements, Partial/Other, Unresolved, $<0.3\%$ empty), regime-stratified $E$ and $Y{{-}}J$ ($[L,U]$, \%), and judge-flagged retraction on $E_U{{=}}1$ trajectories (both/either/$n$; pooled ${tot_both}/{tot_any}/{tot_n}$, ${tot_both/tot_n*100:.1f}\%$--${tot_any/tot_n*100:.1f}\%$; human confirms $1/26$).}}",
+        r"\caption{Non-final scope (852 turns/cell; Dis./Oth.\ includes non-commit disagreements, Partial/Other, Unresolved, and $<0.3\%$ empty turns), and regime-stratified $E$ and $Y{-}J$ ($[L,U]$, \%).}",
         r"\label{tab:exp3_mechanism}",
         r"\footnotesize",
         r"\setlength{\tabcolsep}{3.6pt}",
         r"\renewcommand{\arraystretch}{0.96}",
-        r"\begin{tabular}{@{}llcccccccc@{}}",
+        r"\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}llccccccc@{}}",
         r"\toprule",
-        r"Model & Protocol & Wait & Cond. & Commit & Dis./Oth. & \TA{} $E$ & \TA{} $Y{-}J$ & \TB{} $E$ & Retraction (both/any/$n$) \\",
+        r"Model & Protocol & Wait & Cond. & Commit & Dis./Oth. & \TA{} $E$ & \TA{} $Y{-}J$ & \TB{} $E$ \\",
     ]
     t3_stats = {}
     for m_short, m_disp in zip(MODELS_SHORT, MODELS_DISP):
@@ -350,10 +350,6 @@ def main() -> None:
             ta_eL, ta_eU = ta.e_L.mean() * 100, ta.e_U.mean() * 100
             ta_yjL, ta_yjU = (ta.y_L * ta.e_L).mean() * 100, (ta.y_U * ta.e_U).mean() * 100
             tb_eL, tb_eU = tb.e_L.mean() * 100, tb.e_U.mean() * 100
-            rg = d_rep_all[(d_rep_all.model == m_short) & (d_rep_all.protocol == pr)]
-            rboth = int(((rg.rp == 1) & (rg.rs == 1)).sum())
-            rany = int(((rg.rp == 1) | (rg.rs == 1)).sum())
-            rn = len(rg)
             t3_stats[(m_short, pr)] = {
                 "ta_e": (ta_eL, ta_eU), "ta_yj": (ta_yjL, ta_yjU), "tb_e": (tb_eL, tb_eU),
                 "ta_y": (ta.y_L.mean() * 100, ta.y_U.mean() * 100),
@@ -361,9 +357,9 @@ def main() -> None:
             prefix = rf"\multirow{{3}}{{*}}{{{m_disp}}}" if i == 0 else ""
             t3_lines.append(
                 f"{prefix} & {PROTO_MACRO[pr]} & {w_s:.1f} & {c_s:.1f} & {cm_s:.1f} & {do_s:.1f} & "
-                f"{fmt_lu(ta_eL, ta_eU)} & {fmt_lu(ta_yjL, ta_yjU)} & {fmt_lu(tb_eL, tb_eU)} & {rboth} / {rany} / {rn} \\\\"
+                f"{fmt_lu(ta_eL, ta_eU)} & {fmt_lu(ta_yjL, ta_yjU)} & {fmt_lu(tb_eL, tb_eU)} \\\\"
             )
-    t3_lines.extend([r"\bottomrule", r"\end{tabular}", r"\end{table*}"])
+    t3_lines.extend([r"\bottomrule", r"\end{tabular*}", r"\end{table*}"])
     (REV_DIR / "table3_exp3_mechanism_repair_rev.tex").write_text("\n".join(t3_lines) + "\n", encoding="utf-8")
 
     # ---------------- TABLE IV (DEV 20 v1.3 + TEST 100 v1.3) ----------------
@@ -446,26 +442,26 @@ def main() -> None:
         kp_str = f"$-${abs(r_kp):.3f}" if r_kp < 0 else f"{r_kp:.3f}"
         t4_rows.append(
             f"{m_disp} & {y_ag*100:.2f}\\% & {y_kp:.3f} & {e_ag*100:.2f}\\% & {e_kp:.3f} & "
-            f"{c_ag*100:.1f}\\% & {c_kp:.3f} & {r_ag*100:.1f}\\% & {kp_str} & {pa:.2f} & {pp}/{pm}/{mp}/{mm} \\\\"
+            f"{c_ag*100:.1f}\\% & {c_kp:.3f} \\\\"
         )
 
     t4_lines = [
         r"\begin{table*}[!t]",
         r"\centering",
-        rf"\caption{{Dual-LLM judge agreement (primary \texttt{{gpt-6.1-sol}} vs.\ secondary \texttt{{deepseek-v4.1-flash}}; 0 parse failures on all 5,400 \textsc{{Test}} trajectories; on \textsc{{Dev}}~20, $\kappa_Y{{=}}1.000$, pooled $\kappa_E{{=}}{dev_e_traj_pooled:.3f}$ trajectory / ${dev_e_turn_pooled:.3f}$ turn, scope $\kappa{{=}}{min(dev_kappas['scope']):.3f}$--${max(dev_kappas['scope']):.3f}$). Commit $E$ is evaluated per dynamic trajectory ($n{{=}}900$/model; turn-level $\kappa_E{{=}}{min(v['te_kp'] for v in t4_stats.values()):.3f}$--${max(v['te_kp'] for v in t4_stats.values()):.3f}$). For explicit repair, raw agreement is inflated by the ${{\le}}5\%$ positive base rate; positive agreement $\mathrm{{PA}}{{=}}2n_{{++}}/(2n_{{++}}{{+}}n_{{+-}}{{+}}n_{{-+}})$ shows that the judges rarely agree on which trajectories retract.}}",
+        rf"\caption{{Dual-LLM agreement on final correctness and scope (\texttt{{gpt-6.1-sol}} vs.\ \texttt{{deepseek-v4.1-flash}}; 0 parse failures). Commit $E$ is evaluated per dynamic trajectory ($n{{=}}900$/model; turn-level $\kappa_E{{=}}{min(v['te_kp'] for v in t4_stats.values()):.3f}$--${max(v['te_kp'] for v in t4_stats.values()):.3f}$). On \textsc{{Dev}}~20, pooled $\kappa_Y{{=}}1.000$, $\kappa_E{{=}}{dev_e_traj_pooled:.3f}$ per trajectory / ${dev_e_turn_pooled:.3f}$ per turn, and scope $\kappa{{=}}{min(dev_kappas['scope']):.3f}$--${max(dev_kappas['scope']):.3f}$.}}",
         r"\label{tab:exp4a_calibration}",
         r"\footnotesize",
         r"\setlength{\tabcolsep}{3.8pt}",
         r"\renewcommand{\arraystretch}{0.96}",
-        r"\begin{tabular}{@{}lcccccccccc@{}}",
+        r"\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcccccc@{}}",
         r"\toprule",
-        r" & \multicolumn{2}{c}{Final $Y$} & \multicolumn{2}{c}{Commit $E$} & \multicolumn{2}{c}{4-class scope $C$} & \multicolumn{4}{c}{Explicit repair} \\",
-        r"\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}\cmidrule(lr){8-11}",
-        r"Model & Agree & $\kappa$ & Agree & $\kappa$ & Agree & $\kappa$ & Agree & $\kappa$ & PA & $++/+-/-+/--$ \\",
+        r" & \multicolumn{2}{c}{Final $Y$} & \multicolumn{2}{c}{Commit $E$} & \multicolumn{2}{c}{4-class scope $C$} \\",
+        r"\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}",
+        r"Model & Agree & $\kappa$ & Agree & $\kappa$ & Agree & $\kappa$ \\",
         r"\midrule",
         *t4_rows,
         r"\bottomrule",
-        r"\end{tabular}",
+        r"\end{tabular*}",
         r"\end{table*}",
     ]
     (REV_DIR / "table4_exp4a_judge_audit_rev.tex").write_text("\n".join(t4_lines) + "\n", encoding="utf-8")

@@ -1,0 +1,3320 @@
+{
+  "seed": 2027,
+  "protocol_version": "followup_blind_srswor_seed2027_v1",
+  "traj_60": {
+    "target_population": "TypeA_UniqueValue in {DYN_FREE, DYN_REQUEST}",
+    "sampling_design": "Pure independent SRSWOR within each of 3 exhaustive strata",
+    "N_total": 1224,
+    "n_total": 60,
+    "total_sampled_nonfinal_turns": 177,
+    "stratum_population_counts": {
+      "agree_Commit": 152,
+      "disagree_Commit": 45,
+      "agree_NonCommit": 1027
+    },
+    "stratum_sample_sizes": {
+      "agree_Commit": 12,
+      "disagree_Commit": 8,
+      "agree_NonCommit": 40
+    },
+    "unique_items_sampled": 40,
+    "model_distribution": {
+      "Qwen/Qwen3-14B": 19,
+      "Qwen/Qwen3-8B": 21,
+      "zai-org/GLM-Z1-9B-0414": 20
+    },
+    "protocol_distribution": {
+      "DYN_REQUEST": 30,
+      "DYN_FREE": 30
+    },
+    "trajectories": {
+      "T01": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4964___DYN_REQUEST___r2",
+        "item_id": "ob-cee-4964",
+        "protocol": "DYN_REQUEST",
+        "rep": 2,
+        "canonical_k": 4,
+        "n_nonfinal_turns": 3,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 3,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          }
+        ],
+        "content_sha256": "34455ed3e923699b722edbea646b53837f175167b79153d37c2b339760bd6b39"
+      },
+      "T02": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4654___DYN_FREE___r1",
+        "item_id": "ob-cee-4654",
+        "protocol": "DYN_FREE",
+        "rep": 1,
+        "canonical_k": 3,
+        "n_nonfinal_turns": 2,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Conditional",
+            "secondary_scope": "Conditional"
+          }
+        ],
+        "content_sha256": "4b9cea6bb26857c572d07fe39abf5fab39127b6dd875a2bfcf64d06984e21401"
+      },
+      "T03": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-comp-107___DYN_FREE___r2",
+        "item_id": "ob-comp-107",
+        "protocol": "DYN_FREE",
+        "rep": 2,
+        "canonical_k": 4,
+        "n_nonfinal_turns": 3,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 3,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          }
+        ],
+        "content_sha256": "e74ae3802bc10607e43fcb3e1d1ae3152377ceff472234cf1ae9fd273e3f6461"
+      },
+      "T04": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4070___DYN_REQUEST___r0",
+        "item_id": "ob-cee-4070",
+        "protocol": "DYN_REQUEST",
+        "rep": 0,
+        "canonical_k": 5,
+        "n_nonfinal_turns": 4,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 3,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 4,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          }
+        ],
+        "content_sha256": "008785cdd02cb2fee256f23e95241ba509d3bdf6531a17d9aa83c86fc44b3e8d"
+      },
+      "T05": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4060___DYN_REQUEST___r2",
+        "item_id": "ob-cee-4060",
+        "protocol": "DYN_REQUEST",
+        "rep": 2,
+        "canonical_k": 4,
+        "n_nonfinal_turns": 3,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 3,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          }
+        ],
+        "content_sha256": "350197e3a63d9f851f7c1f220374628a33f13fea263e5b6d4d61918a8561a974"
+      },
+      "T06": {
+        "stratum": "agree_Commit",
+        "N_h": 152,
+        "n_h": 12,
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4736___DYN_FREE___r0",
+        "item_id": "ob-cee-4736",
+        "protocol": "DYN_FREE",
+        "rep": 0,
+        "canonical_k": 4,
+        "n_nonfinal_turns": 3,
+        "e_L": 1,
+        "e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 1,
+            "e_U": 1,
+            "primary_scope": "Commit",
+            "secondary_scope": "Commit"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 1,
+            "primary_scope": "Conditional",
+            "secondary_scope": "Commit"
+          },
+          {
+            "turn_idx": 3,
+            "e_L": 0,
+            "e_U": 1,
+            "primary_scope": "Conditional",
+            "secondary_scope": "Commit"
+          }
+        ],
+        "content_sha256": "72a80bdbf39b9d09c81900a6d328a818114688286a26f5ca07031b46a3e6393b"
+      },
+      "T07": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-3283___DYN_FREE___r1",
+        "item_id": "ob-cee-3283",
+        "protocol": "DYN_FREE",
+        "rep": 1,
+        "canonical_k": 3,
+        "n_nonfinal_turns": 2,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          }
+        ],
+        "content_sha256": "2761e4ee418204226878cfb469bd7908697d8d50d1cdcb7b6efbc9cf5ebd093e"
+      },
+      "T08": {
+        "stratum": "disagree_Commit",
+        "N_h": 45,
+        "n_h": 8,
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-631___DYN_FREE___r2",
+        "item_id": "ob-comp-631",
+        "protocol": "DYN_FREE",
+        "rep": 2,
+        "canonical_k": 3,
+        "n_nonfinal_turns": 2,
+        "e_L": 0,
+        "e_U": 1,
+        "y_L": 0,
+        "y_U": 0,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 1,
+            "primary_scope": "Conditional",
+            "secondary_scope": "Commit"
+          }
+        ],
+        "content_sha256": "6460ac867a87402dc1c60b804dd0da7fd2f24c54aea5984e098036245a58c01c"
+      },
+      "T09": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4026___DYN_REQUEST___r0",
+        "item_id": "ob-cee-4026",
+        "protocol": "DYN_REQUEST",
+        "rep": 0,
+        "canonical_k": 5,
+        "n_nonfinal_turns": 4,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 3,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 4,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          }
+        ],
+        "content_sha256": "06f4101df53430a6503f469e1b0bd349fed792bc0f968b7ffb36b54e8212a8c1"
+      },
+      "T10": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4580___DYN_REQUEST___r2",
+        "item_id": "ob-cee-4580",
+        "protocol": "DYN_REQUEST",
+        "rep": 2,
+        "canonical_k": 6,
+        "n_nonfinal_turns": 5,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 3,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 4,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 5,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Conditional",
+            "secondary_scope": "Conditional"
+          }
+        ],
+        "content_sha256": "10bbf7b759c42b9aae4abbaa8102945823b56e13f8b890b8e00253872682e19d"
+      },
+      "T11": {
+        "stratum": "agree_Commit",
+        "N_h": 152,
+        "n_h": 12,
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4070___DYN_REQUEST___r2",
+        "item_id": "ob-cee-4070",
+        "protocol": "DYN_REQUEST",
+        "rep": 2,
+        "canonical_k": 5,
+        "n_nonfinal_turns": 4,
+        "e_L": 1,
+        "e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 1,
+            "e_U": 1,
+            "primary_scope": "Commit",
+            "secondary_scope": "Commit"
+          },
+          {
+            "turn_idx": 3,
+            "e_L": 1,
+            "e_U": 1,
+            "primary_scope": "Commit",
+            "secondary_scope": "Commit"
+          },
+          {
+            "turn_idx": 4,
+            "e_L": 1,
+            "e_U": 1,
+            "primary_scope": "Commit",
+            "secondary_scope": "Commit"
+          }
+        ],
+        "content_sha256": "7ad08fd97b8eb7d2bbab5a685c51c11a9af0ca05fb69ec1393021c77c1e6f704"
+      },
+      "T12": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-3282___DYN_REQUEST___r1",
+        "item_id": "ob-cee-3282",
+        "protocol": "DYN_REQUEST",
+        "rep": 1,
+        "canonical_k": 3,
+        "n_nonfinal_turns": 2,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Conditional",
+            "secondary_scope": "Conditional"
+          }
+        ],
+        "content_sha256": "ab6fb06ed6f89c00167e716b901da669aeb736f3bbbe8c4bd33eca0a57cccd5a"
+      },
+      "T13": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-comp-351___DYN_REQUEST___r0",
+        "item_id": "ob-comp-351",
+        "protocol": "DYN_REQUEST",
+        "rep": 0,
+        "canonical_k": 4,
+        "n_nonfinal_turns": 3,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Conditional",
+            "secondary_scope": "Conditional"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Conditional",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 3,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Conditional",
+            "secondary_scope": "Wait"
+          }
+        ],
+        "content_sha256": "4d8398a326b7cd20285b2d215a5164b5cfdc89ca5ffc919b379cea9b95a294a5"
+      },
+      "T14": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4060___DYN_REQUEST___r2",
+        "item_id": "ob-cee-4060",
+        "protocol": "DYN_REQUEST",
+        "rep": 2,
+        "canonical_k": 4,
+        "n_nonfinal_turns": 3,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 3,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          }
+        ],
+        "content_sha256": "e20c51dd3268dee91476f6baad0cb827e22947dfd4e4b7fa330d2ee90c06d698"
+      },
+      "T15": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4957___DYN_REQUEST___r0",
+        "item_id": "ob-cee-4957",
+        "protocol": "DYN_REQUEST",
+        "rep": 0,
+        "canonical_k": 4,
+        "n_nonfinal_turns": 3,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Conditional",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 3,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Conditional",
+            "secondary_scope": "Wait"
+          }
+        ],
+        "content_sha256": "564d47a9e0e14a886af7b1785c5cf2e0e7e34dbd56153cc022a36a10879c6cd0"
+      },
+      "T16": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4696___DYN_FREE___r2",
+        "item_id": "ob-cee-4696",
+        "protocol": "DYN_FREE",
+        "rep": 2,
+        "canonical_k": 4,
+        "n_nonfinal_turns": 3,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 3,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Conditional",
+            "secondary_scope": "Conditional"
+          }
+        ],
+        "content_sha256": "d276a5e25cda901bbc56abfc9167b6dba53eea8205b2d78fcb3189a7ee76695b"
+      },
+      "T17": {
+        "stratum": "disagree_Commit",
+        "N_h": 45,
+        "n_h": 8,
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-3889___DYN_FREE___r0",
+        "item_id": "ob-cee-3889",
+        "protocol": "DYN_FREE",
+        "rep": 0,
+        "canonical_k": 3,
+        "n_nonfinal_turns": 2,
+        "e_L": 0,
+        "e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Conditional",
+            "secondary_scope": "Conditional"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 1,
+            "primary_scope": "Conditional",
+            "secondary_scope": "Commit"
+          }
+        ],
+        "content_sha256": "509fce1d038dfc258e9b9cc8bb7642b22300e9d8d4ae62bb3c83a8aa1dc6533f"
+      },
+      "T18": {
+        "stratum": "disagree_Commit",
+        "N_h": 45,
+        "n_h": 8,
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4339___DYN_FREE___r1",
+        "item_id": "ob-cee-4339",
+        "protocol": "DYN_FREE",
+        "rep": 1,
+        "canonical_k": 4,
+        "n_nonfinal_turns": 3,
+        "e_L": 0,
+        "e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 3,
+            "e_L": 0,
+            "e_U": 1,
+            "primary_scope": "Commit",
+            "secondary_scope": "Conditional"
+          }
+        ],
+        "content_sha256": "11dcf523407d941bd4fcd5d31e70f2598b000193b646806da0de2babe9fce412"
+      },
+      "T19": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-3921___DYN_REQUEST___r1",
+        "item_id": "ob-cee-3921",
+        "protocol": "DYN_REQUEST",
+        "rep": 1,
+        "canonical_k": 3,
+        "n_nonfinal_turns": 2,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          }
+        ],
+        "content_sha256": "37c4ca8a41ca4ba15d4aaffb29f9c16dfae94b62e4a45b0c99bde6aa85a65ba1"
+      },
+      "T20": {
+        "stratum": "agree_Commit",
+        "N_h": 152,
+        "n_h": 12,
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-comp-370___DYN_FREE___r2",
+        "item_id": "ob-comp-370",
+        "protocol": "DYN_FREE",
+        "rep": 2,
+        "canonical_k": 6,
+        "n_nonfinal_turns": 5,
+        "e_L": 1,
+        "e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 3,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Conditional",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 4,
+            "e_L": 1,
+            "e_U": 1,
+            "primary_scope": "Commit",
+            "secondary_scope": "Commit"
+          },
+          {
+            "turn_idx": 5,
+            "e_L": 1,
+            "e_U": 1,
+            "primary_scope": "Commit",
+            "secondary_scope": "Commit"
+          }
+        ],
+        "content_sha256": "c7cb5bfd975c90124c9c8b51e4b74935986f0074c48ceec0a52b0ff192862b48"
+      },
+      "T21": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4696___DYN_REQUEST___r1",
+        "item_id": "ob-cee-4696",
+        "protocol": "DYN_REQUEST",
+        "rep": 1,
+        "canonical_k": 4,
+        "n_nonfinal_turns": 3,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 3,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Conditional",
+            "secondary_scope": "Conditional"
+          }
+        ],
+        "content_sha256": "c3da5cbf75b831dbaae7db2f6a10074268c36518288edad8c7b5d835f94f97df"
+      },
+      "T22": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-3333___DYN_REQUEST___r0",
+        "item_id": "ob-cee-3333",
+        "protocol": "DYN_REQUEST",
+        "rep": 0,
+        "canonical_k": 3,
+        "n_nonfinal_turns": 2,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          }
+        ],
+        "content_sha256": "0e0d73209be2e1ac4a1b5595c1152cdf658c1f3656e8eb599fe0a0fca9feef25"
+      },
+      "T23": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-107___DYN_FREE___r2",
+        "item_id": "ob-comp-107",
+        "protocol": "DYN_FREE",
+        "rep": 2,
+        "canonical_k": 4,
+        "n_nonfinal_turns": 3,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Conditional",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 3,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Conditional",
+            "secondary_scope": "Wait"
+          }
+        ],
+        "content_sha256": "8ca77c3d237a271d847362725c0fd3c651d080ea14c58cae6b99bf984332a491"
+      },
+      "T24": {
+        "stratum": "agree_Commit",
+        "N_h": 152,
+        "n_h": 12,
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4352___DYN_FREE___r0",
+        "item_id": "ob-cee-4352",
+        "protocol": "DYN_FREE",
+        "rep": 0,
+        "canonical_k": 4,
+        "n_nonfinal_turns": 3,
+        "e_L": 1,
+        "e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 1,
+            "e_U": 1,
+            "primary_scope": "Commit",
+            "secondary_scope": "Commit"
+          },
+          {
+            "turn_idx": 3,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Conditional",
+            "secondary_scope": "Conditional"
+          }
+        ],
+        "content_sha256": "14982ef9be1462ad75384be45499642fc16d1e31c490dcee0c1fa09e75738589"
+      },
+      "T25": {
+        "stratum": "agree_Commit",
+        "N_h": 152,
+        "n_h": 12,
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-3889___DYN_REQUEST___r0",
+        "item_id": "ob-cee-3889",
+        "protocol": "DYN_REQUEST",
+        "rep": 0,
+        "canonical_k": 3,
+        "n_nonfinal_turns": 2,
+        "e_L": 1,
+        "e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Conditional",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 1,
+            "e_U": 1,
+            "primary_scope": "Commit",
+            "secondary_scope": "Commit"
+          }
+        ],
+        "content_sha256": "ee60c242a2ff2fb8469d2b300be95d03186991b1ced15badd3db2fa687dafdad"
+      },
+      "T26": {
+        "stratum": "agree_Commit",
+        "N_h": 152,
+        "n_h": 12,
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4070___DYN_FREE___r2",
+        "item_id": "ob-cee-4070",
+        "protocol": "DYN_FREE",
+        "rep": 2,
+        "canonical_k": 5,
+        "n_nonfinal_turns": 4,
+        "e_L": 1,
+        "e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 1,
+            "e_U": 1,
+            "primary_scope": "Commit",
+            "secondary_scope": "Commit"
+          },
+          {
+            "turn_idx": 3,
+            "e_L": 1,
+            "e_U": 1,
+            "primary_scope": "Commit",
+            "secondary_scope": "Commit"
+          },
+          {
+            "turn_idx": 4,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Conditional",
+            "secondary_scope": "Conditional"
+          }
+        ],
+        "content_sha256": "e7fbab7e1b628d076bbc33602e30bc92d289b93ac8dbb34b2ddc1c1e11ffbca8"
+      },
+      "T27": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4060___DYN_REQUEST___r2",
+        "item_id": "ob-cee-4060",
+        "protocol": "DYN_REQUEST",
+        "rep": 2,
+        "canonical_k": 4,
+        "n_nonfinal_turns": 3,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 3,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          }
+        ],
+        "content_sha256": "abf08dd8e9c3d10a4cc61608c77871caac88c6cdd8784b4fad217a40a88a67d7"
+      },
+      "T28": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4187___DYN_REQUEST___r0",
+        "item_id": "ob-cee-4187",
+        "protocol": "DYN_REQUEST",
+        "rep": 0,
+        "canonical_k": 5,
+        "n_nonfinal_turns": 4,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 3,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 4,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Conditional"
+          }
+        ],
+        "content_sha256": "848ba3d6ffd6f169714a23e5f7aa441819fd185c142d3fe69344db3ebcfcfabe"
+      },
+      "T29": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4566___DYN_REQUEST___r1",
+        "item_id": "ob-cee-4566",
+        "protocol": "DYN_REQUEST",
+        "rep": 1,
+        "canonical_k": 4,
+        "n_nonfinal_turns": 3,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 3,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          }
+        ],
+        "content_sha256": "d2b57755b5aab5ec3d558a6f437ad84b0fd2271ebaaabd78a74b167ca0bd5c3d"
+      },
+      "T30": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-268___DYN_FREE___r1",
+        "item_id": "ob-comp-268",
+        "protocol": "DYN_FREE",
+        "rep": 1,
+        "canonical_k": 3,
+        "n_nonfinal_turns": 2,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          }
+        ],
+        "content_sha256": "b50029df8f32ed9842fe9950455a9869710aa4d2abccce0616303ee1fdd13870"
+      },
+      "T31": {
+        "stratum": "agree_Commit",
+        "N_h": 152,
+        "n_h": 12,
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-3844___DYN_REQUEST___r1",
+        "item_id": "ob-cee-3844",
+        "protocol": "DYN_REQUEST",
+        "rep": 1,
+        "canonical_k": 6,
+        "n_nonfinal_turns": 5,
+        "e_L": 1,
+        "e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 3,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 4,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 5,
+            "e_L": 1,
+            "e_U": 1,
+            "primary_scope": "Commit",
+            "secondary_scope": "Commit"
+          }
+        ],
+        "content_sha256": "f8a08c6b486d97e0172217a7d0901014889f9adfd7f87c2808d4a2a4ae542835"
+      },
+      "T32": {
+        "stratum": "agree_Commit",
+        "N_h": 152,
+        "n_h": 12,
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-comp-779___DYN_REQUEST___r2",
+        "item_id": "ob-comp-779",
+        "protocol": "DYN_REQUEST",
+        "rep": 2,
+        "canonical_k": 5,
+        "n_nonfinal_turns": 4,
+        "e_L": 1,
+        "e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 3,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 4,
+            "e_L": 1,
+            "e_U": 1,
+            "primary_scope": "Commit",
+            "secondary_scope": "Commit"
+          }
+        ],
+        "content_sha256": "26a52e309eb65f104c774c55dae862d4ff4b01c1bedd285b5103767b4fc154f1"
+      },
+      "T33": {
+        "stratum": "disagree_Commit",
+        "N_h": 45,
+        "n_h": 8,
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4438___DYN_REQUEST___r1",
+        "item_id": "ob-cee-4438",
+        "protocol": "DYN_REQUEST",
+        "rep": 1,
+        "canonical_k": 6,
+        "n_nonfinal_turns": 5,
+        "e_L": 0,
+        "e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 3,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 4,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 5,
+            "e_L": 0,
+            "e_U": 1,
+            "primary_scope": "Commit",
+            "secondary_scope": "Conditional"
+          }
+        ],
+        "content_sha256": "cb9ed5a0452a69355e85629ddb54faf0c49e862699d9c7e199ea176e93674e22"
+      },
+      "T34": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-comp-624___DYN_FREE___r1",
+        "item_id": "ob-comp-624",
+        "protocol": "DYN_FREE",
+        "rep": 1,
+        "canonical_k": 3,
+        "n_nonfinal_turns": 2,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          }
+        ],
+        "content_sha256": "d7c966b7e3489a18004cd6b36cc179bd3109dfe652be9cc45ae74423ae3f4950"
+      },
+      "T35": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4021___DYN_REQUEST___r2",
+        "item_id": "ob-cee-4021",
+        "protocol": "DYN_REQUEST",
+        "rep": 2,
+        "canonical_k": 4,
+        "n_nonfinal_turns": 3,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 3,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          }
+        ],
+        "content_sha256": "cb5570ab8e507c0dc92fc4180550bdbd507967651f755ddea0d67779bdf731f2"
+      },
+      "T36": {
+        "stratum": "disagree_Commit",
+        "N_h": 45,
+        "n_h": 8,
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4752___DYN_REQUEST___r0",
+        "item_id": "ob-cee-4752",
+        "protocol": "DYN_REQUEST",
+        "rep": 0,
+        "canonical_k": 4,
+        "n_nonfinal_turns": 3,
+        "e_L": 0,
+        "e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 1,
+            "primary_scope": "Commit",
+            "secondary_scope": "Conditional"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 1,
+            "primary_scope": "Commit",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 3,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Conditional",
+            "secondary_scope": "Conditional"
+          }
+        ],
+        "content_sha256": "698f2ec0d61710b7567f30abf9169035a8173bc60690db4a1b990c9bd4c84130"
+      },
+      "T37": {
+        "stratum": "disagree_Commit",
+        "N_h": 45,
+        "n_h": 8,
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-3948___DYN_REQUEST___r2",
+        "item_id": "ob-cee-3948",
+        "protocol": "DYN_REQUEST",
+        "rep": 2,
+        "canonical_k": 6,
+        "n_nonfinal_turns": 5,
+        "e_L": 0,
+        "e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 3,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 4,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 5,
+            "e_L": 0,
+            "e_U": 1,
+            "primary_scope": "Commit",
+            "secondary_scope": "Conditional"
+          }
+        ],
+        "content_sha256": "33b282d255abd8febaaf1e2798c1917626f3d7199fd8931b50f8b4fbf4bbbc12"
+      },
+      "T38": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4021___DYN_REQUEST___r0",
+        "item_id": "ob-cee-4021",
+        "protocol": "DYN_REQUEST",
+        "rep": 0,
+        "canonical_k": 4,
+        "n_nonfinal_turns": 3,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 3,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          }
+        ],
+        "content_sha256": "e754876f3eb7ade629e76f59b84c18aa5ebdd74feeb17de1cb53185b1d117746"
+      },
+      "T39": {
+        "stratum": "agree_Commit",
+        "N_h": 152,
+        "n_h": 12,
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4736___DYN_REQUEST___r0",
+        "item_id": "ob-cee-4736",
+        "protocol": "DYN_REQUEST",
+        "rep": 0,
+        "canonical_k": 4,
+        "n_nonfinal_turns": 3,
+        "e_L": 1,
+        "e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Conditional",
+            "secondary_scope": "Conditional"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 1,
+            "e_U": 1,
+            "primary_scope": "Commit",
+            "secondary_scope": "Commit"
+          },
+          {
+            "turn_idx": 3,
+            "e_L": 1,
+            "e_U": 1,
+            "primary_scope": "Commit",
+            "secondary_scope": "Commit"
+          }
+        ],
+        "content_sha256": "e8c3863cbf083ed18a623150bdaf1f2556a8d00d6330e2ae595e2b8a04d43cd2"
+      },
+      "T40": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4566___DYN_FREE___r2",
+        "item_id": "ob-cee-4566",
+        "protocol": "DYN_FREE",
+        "rep": 2,
+        "canonical_k": 4,
+        "n_nonfinal_turns": 3,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Conditional",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 3,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Conditional",
+            "secondary_scope": "Wait"
+          }
+        ],
+        "content_sha256": "e974e17311af0e9e10ffc8a57b13618098fae7c55da5f6767a320c717404082f"
+      },
+      "T41": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4656___DYN_REQUEST___r2",
+        "item_id": "ob-cee-4656",
+        "protocol": "DYN_REQUEST",
+        "rep": 2,
+        "canonical_k": 3,
+        "n_nonfinal_turns": 2,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Conditional",
+            "secondary_scope": "Conditional"
+          }
+        ],
+        "content_sha256": "1027ffae744f49a75b77a52e898632b2a0da1c59f3b6a41840b08c99ad061c9d"
+      },
+      "T42": {
+        "stratum": "disagree_Commit",
+        "N_h": 45,
+        "n_h": 8,
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4685___DYN_FREE___r1",
+        "item_id": "ob-cee-4685",
+        "protocol": "DYN_FREE",
+        "rep": 1,
+        "canonical_k": 3,
+        "n_nonfinal_turns": 2,
+        "e_L": 0,
+        "e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 1,
+            "primary_scope": "Commit",
+            "secondary_scope": "Partial/Other"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Conditional",
+            "secondary_scope": "Conditional"
+          }
+        ],
+        "content_sha256": "f53616ba6ef3b722efa9eb5cd771ed447109bc0dd1a70af1b42be5303574926c"
+      },
+      "T43": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4016___DYN_FREE___r0",
+        "item_id": "ob-cee-4016",
+        "protocol": "DYN_FREE",
+        "rep": 0,
+        "canonical_k": 4,
+        "n_nonfinal_turns": 3,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 3,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Conditional",
+            "secondary_scope": "Wait"
+          }
+        ],
+        "content_sha256": "1de601f7cfb121a2170b0b6cd13c467224da0fdc017c0c5d07c50295dae4a4fd"
+      },
+      "T44": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-comp-710___DYN_FREE___r2",
+        "item_id": "ob-comp-710",
+        "protocol": "DYN_FREE",
+        "rep": 2,
+        "canonical_k": 4,
+        "n_nonfinal_turns": 3,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 0,
+        "y_U": 0,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 3,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          }
+        ],
+        "content_sha256": "ea89a9c3c32e1b63576828507ea86774788c320b9f42f86598eac27faecc9b71"
+      },
+      "T45": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-3245___DYN_FREE___r2",
+        "item_id": "ob-cee-3245",
+        "protocol": "DYN_FREE",
+        "rep": 2,
+        "canonical_k": 3,
+        "n_nonfinal_turns": 2,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          }
+        ],
+        "content_sha256": "f25748533614939c1434542ecf416f91d90c142ca69c85317b6b3ab9dfab897c"
+      },
+      "T46": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4339___DYN_REQUEST___r2",
+        "item_id": "ob-cee-4339",
+        "protocol": "DYN_REQUEST",
+        "rep": 2,
+        "canonical_k": 4,
+        "n_nonfinal_turns": 3,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Conditional",
+            "secondary_scope": "Conditional"
+          },
+          {
+            "turn_idx": 3,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          }
+        ],
+        "content_sha256": "5c534a1c7d846dc14d1bf82b8390052cc0aecc1cda48cfd545a181a60f0648b2"
+      },
+      "T47": {
+        "stratum": "disagree_Commit",
+        "N_h": 45,
+        "n_h": 8,
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-474___DYN_FREE___r0",
+        "item_id": "ob-comp-474",
+        "protocol": "DYN_FREE",
+        "rep": 0,
+        "canonical_k": 3,
+        "n_nonfinal_turns": 2,
+        "e_L": 0,
+        "e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 1,
+            "primary_scope": "Wait",
+            "secondary_scope": "Commit"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Conditional",
+            "secondary_scope": "Conditional"
+          }
+        ],
+        "content_sha256": "9396d86de4433c44d8894da6396c86fd760bd95b7eb0f527fb88d71a3101b71c"
+      },
+      "T48": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-3948___DYN_FREE___r2",
+        "item_id": "ob-cee-3948",
+        "protocol": "DYN_FREE",
+        "rep": 2,
+        "canonical_k": 6,
+        "n_nonfinal_turns": 5,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 3,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 4,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 5,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Conditional",
+            "secondary_scope": "Wait"
+          }
+        ],
+        "content_sha256": "e932e5c12006d9075e97f1507b1efd0ff323399214daa3f6f77ad2a170294823"
+      },
+      "T49": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-comp-490___DYN_REQUEST___r1",
+        "item_id": "ob-comp-490",
+        "protocol": "DYN_REQUEST",
+        "rep": 1,
+        "canonical_k": 3,
+        "n_nonfinal_turns": 2,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          }
+        ],
+        "content_sha256": "4345617f6108a2356fd411589b47974f0b6b27b194af6785b18a283dda784ac4"
+      },
+      "T50": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-624___DYN_FREE___r2",
+        "item_id": "ob-comp-624",
+        "protocol": "DYN_FREE",
+        "rep": 2,
+        "canonical_k": 3,
+        "n_nonfinal_turns": 2,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": null,
+            "secondary_scope": null
+          }
+        ],
+        "content_sha256": "57e37265f374848c4c9a491a5debd8e2a04ee3aa0fe539d76d398c9983e9986f"
+      },
+      "T51": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4667___DYN_FREE___r0",
+        "item_id": "ob-cee-4667",
+        "protocol": "DYN_FREE",
+        "rep": 0,
+        "canonical_k": 3,
+        "n_nonfinal_turns": 2,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Conditional",
+            "secondary_scope": "Wait"
+          }
+        ],
+        "content_sha256": "b916a19d2eabad6bde54694f812eca0fd179a8429342b934f80c198a40236a80"
+      },
+      "T52": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4687___DYN_FREE___r1",
+        "item_id": "ob-cee-4687",
+        "protocol": "DYN_FREE",
+        "rep": 1,
+        "canonical_k": 3,
+        "n_nonfinal_turns": 2,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Conditional",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          }
+        ],
+        "content_sha256": "21219b070692514f0cdf995a22e51f7da95de4ead878c12371e87834b198e34e"
+      },
+      "T53": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4845___DYN_FREE___r2",
+        "item_id": "ob-cee-4845",
+        "protocol": "DYN_FREE",
+        "rep": 2,
+        "canonical_k": 3,
+        "n_nonfinal_turns": 2,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Conditional",
+            "secondary_scope": "Conditional"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Conditional",
+            "secondary_scope": "Wait"
+          }
+        ],
+        "content_sha256": "b4911a77dba96f2730520abea27b938ecc2b67eb91b7f881b89c61046037ae16"
+      },
+      "T54": {
+        "stratum": "agree_Commit",
+        "N_h": 152,
+        "n_h": 12,
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4656___DYN_FREE___r1",
+        "item_id": "ob-cee-4656",
+        "protocol": "DYN_FREE",
+        "rep": 1,
+        "canonical_k": 3,
+        "n_nonfinal_turns": 2,
+        "e_L": 1,
+        "e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 1,
+            "e_U": 1,
+            "primary_scope": "Commit",
+            "secondary_scope": "Commit"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Conditional",
+            "secondary_scope": "Conditional"
+          }
+        ],
+        "content_sha256": "f6bc1b3282eac1c035de74f6eb55df7e19e9d4a93e051a345272673581d08b5b"
+      },
+      "T55": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-3844___DYN_REQUEST___r2",
+        "item_id": "ob-cee-3844",
+        "protocol": "DYN_REQUEST",
+        "rep": 2,
+        "canonical_k": 6,
+        "n_nonfinal_turns": 5,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 3,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 4,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 5,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Conditional",
+            "secondary_scope": "Conditional"
+          }
+        ],
+        "content_sha256": "a1b229a3abe19fd7922d925bf9a0ba524dd3f4f6151b8ac7c5084d486b0d0f04"
+      },
+      "T56": {
+        "stratum": "agree_Commit",
+        "N_h": 152,
+        "n_h": 12,
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4736___DYN_FREE___r0",
+        "item_id": "ob-cee-4736",
+        "protocol": "DYN_FREE",
+        "rep": 0,
+        "canonical_k": 4,
+        "n_nonfinal_turns": 3,
+        "e_L": 1,
+        "e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 1,
+            "e_U": 1,
+            "primary_scope": "Commit",
+            "secondary_scope": "Commit"
+          },
+          {
+            "turn_idx": 3,
+            "e_L": 1,
+            "e_U": 1,
+            "primary_scope": "Commit",
+            "secondary_scope": "Commit"
+          }
+        ],
+        "content_sha256": "15dfb66b22a94d798ba489cd5850a39ee9c1819e2eaacc1e68b2af33cefd1d30"
+      },
+      "T57": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4957___DYN_FREE___r0",
+        "item_id": "ob-cee-4957",
+        "protocol": "DYN_FREE",
+        "rep": 0,
+        "canonical_k": 4,
+        "n_nonfinal_turns": 3,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 3,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          }
+        ],
+        "content_sha256": "8342aae631542798c6309719f7a78763d894f8b8a51fee40990adbc08798a513"
+      },
+      "T58": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4656___DYN_FREE___r2",
+        "item_id": "ob-cee-4656",
+        "protocol": "DYN_FREE",
+        "rep": 2,
+        "canonical_k": 3,
+        "n_nonfinal_turns": 2,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Conditional",
+            "secondary_scope": "Conditional"
+          }
+        ],
+        "content_sha256": "dca474799afe156e8f3d78607498545a0d49b8ccf5a1b0a62fc1b8d21fc9fb23"
+      },
+      "T59": {
+        "stratum": "agree_Commit",
+        "N_h": 152,
+        "n_h": 12,
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-comp-490___DYN_REQUEST___r2",
+        "item_id": "ob-comp-490",
+        "protocol": "DYN_REQUEST",
+        "rep": 2,
+        "canonical_k": 3,
+        "n_nonfinal_turns": 2,
+        "e_L": 1,
+        "e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 1,
+            "e_U": 1,
+            "primary_scope": "Commit",
+            "secondary_scope": "Commit"
+          }
+        ],
+        "content_sha256": "c4b59cbc601ee0901acd4e56a4ed1e1de56f14271cb0ef514748ba9a1b4c4ae9"
+      },
+      "T60": {
+        "stratum": "agree_NonCommit",
+        "N_h": 1027,
+        "n_h": 40,
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4656___DYN_FREE___r1",
+        "item_id": "ob-cee-4656",
+        "protocol": "DYN_FREE",
+        "rep": 1,
+        "canonical_k": 3,
+        "n_nonfinal_turns": 2,
+        "e_L": 0,
+        "e_U": 0,
+        "y_L": 1,
+        "y_U": 1,
+        "turns": [
+          {
+            "turn_idx": 1,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Wait",
+            "secondary_scope": "Wait"
+          },
+          {
+            "turn_idx": 2,
+            "e_L": 0,
+            "e_U": 0,
+            "primary_scope": "Conditional",
+            "secondary_scope": "Conditional"
+          }
+        ],
+        "content_sha256": "4f3311e11c4d49d0efffea8a13a6560e933f4b7a3b3e898e8485e1befddb06f0"
+      }
+    }
+  },
+  "repair_50_typea": {
+    "target_population": "Complete 50/50 census of TypeA trajectories in Repair-100",
+    "n_total": 50,
+    "n_with_intervening_turns": 21,
+    "n_no_intervening_turns": 29,
+    "items": {
+      "D01": {
+        "orig_repair_audit_id": "R015",
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4147___DYN_FREE___r2",
+        "item_id": "ob-cee-4147",
+        "protocol": "DYN_FREE",
+        "rep": 2,
+        "t0": 3,
+        "k": 5,
+        "has_intervening": true,
+        "n_intervening": 1,
+        "anchor_e_L": 1,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "d759816102baa82c97d30801bcd03eada1a132b9ccd1182480fbbe4752e39104"
+      },
+      "D02": {
+        "orig_repair_audit_id": "R047",
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4044___DYN_REQUEST_GUARD___r1",
+        "item_id": "ob-cee-4044",
+        "protocol": "DYN_REQUEST_GUARD",
+        "rep": 1,
+        "t0": 4,
+        "k": 5,
+        "has_intervening": false,
+        "n_intervening": 0,
+        "anchor_e_L": 0,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "02e9788bb5042a4cc7dadd7fe8c193e998e9555232e2b40b318db9906080a7f7"
+      },
+      "D03": {
+        "orig_repair_audit_id": "R049",
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4736___DYN_FREE___r2",
+        "item_id": "ob-cee-4736",
+        "protocol": "DYN_FREE",
+        "rep": 2,
+        "t0": 3,
+        "k": 4,
+        "has_intervening": false,
+        "n_intervening": 0,
+        "anchor_e_L": 1,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "b475d52d27c0ad61f5136c347607c0f9f21c50e1f980b14f2b95ce6f3ff27473"
+      },
+      "D04": {
+        "orig_repair_audit_id": "R056",
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-370___DYN_FREE___r0",
+        "item_id": "ob-comp-370",
+        "protocol": "DYN_FREE",
+        "rep": 0,
+        "t0": 4,
+        "k": 6,
+        "has_intervening": true,
+        "n_intervening": 1,
+        "anchor_e_L": 1,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "89e56fe410a863b56a4b591f1bc32f85057f6b38e3edd5580b0c349cc4195d69"
+      },
+      "D05": {
+        "orig_repair_audit_id": "R037",
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-3844___DYN_REQUEST_GUARD___r1",
+        "item_id": "ob-cee-3844",
+        "protocol": "DYN_REQUEST_GUARD",
+        "rep": 1,
+        "t0": 5,
+        "k": 6,
+        "has_intervening": false,
+        "n_intervening": 0,
+        "anchor_e_L": 1,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "490df0092e98db6101f2b8d52e06213065cfb892d4493192a554c412d9166f13"
+      },
+      "D06": {
+        "orig_repair_audit_id": "R094",
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4882___DYN_REQUEST___r0",
+        "item_id": "ob-cee-4882",
+        "protocol": "DYN_REQUEST",
+        "rep": 0,
+        "t0": 2,
+        "k": 3,
+        "has_intervening": false,
+        "n_intervening": 0,
+        "anchor_e_L": 0,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "9177fbee736c19fed5ff0195461303cd3c975f582a78bafd2ca6e872651a9cf5"
+      },
+      "D07": {
+        "orig_repair_audit_id": "R044",
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-416___DYN_REQUEST_GUARD___r2",
+        "item_id": "ob-comp-416",
+        "protocol": "DYN_REQUEST_GUARD",
+        "rep": 2,
+        "t0": 5,
+        "k": 6,
+        "has_intervening": false,
+        "n_intervening": 0,
+        "anchor_e_L": 0,
+        "anchor_e_U": 1,
+        "y_L": 0,
+        "y_U": 0,
+        "judge_group": "dual_neg",
+        "content_sha256": "d6623957cda1f46b5a20b4a7f930ac3a8708e646f1556142838563eedb60b036"
+      },
+      "D08": {
+        "orig_repair_audit_id": "R051",
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-779___DYN_REQUEST___r2",
+        "item_id": "ob-comp-779",
+        "protocol": "DYN_REQUEST",
+        "rep": 2,
+        "t0": 4,
+        "k": 5,
+        "has_intervening": false,
+        "n_intervening": 0,
+        "anchor_e_L": 1,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "6c594e47c445e410ac0e325b7b84d03c4cc4534994f292536fcf20700fd8d54d"
+      },
+      "D09": {
+        "orig_repair_audit_id": "R096",
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4682___DYN_REQUEST___r2",
+        "item_id": "ob-cee-4682",
+        "protocol": "DYN_REQUEST",
+        "rep": 2,
+        "t0": 3,
+        "k": 4,
+        "has_intervening": false,
+        "n_intervening": 0,
+        "anchor_e_L": 1,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "132dffad27527188c30382857d7168bf626251f0b5293a2baeb99507647d07c7"
+      },
+      "D10": {
+        "orig_repair_audit_id": "R031",
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4187___DYN_REQUEST___r2",
+        "item_id": "ob-cee-4187",
+        "protocol": "DYN_REQUEST",
+        "rep": 2,
+        "t0": 4,
+        "k": 5,
+        "has_intervening": false,
+        "n_intervening": 0,
+        "anchor_e_L": 1,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "single_pos",
+        "content_sha256": "4126084e5459a33e55dad8ec26e0614a5bd78d49f7d18849182de16242bffd18"
+      },
+      "D11": {
+        "orig_repair_audit_id": "R066",
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-comp-370___DYN_FREE___r0",
+        "item_id": "ob-comp-370",
+        "protocol": "DYN_FREE",
+        "rep": 0,
+        "t0": 5,
+        "k": 6,
+        "has_intervening": false,
+        "n_intervening": 0,
+        "anchor_e_L": 1,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "49817af3a8bafd43e42edb33a814066406a5f5c1a49b0da97a0a861a3c58b10b"
+      },
+      "D12": {
+        "orig_repair_audit_id": "R081",
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4029___DYN_REQUEST_GUARD___r2",
+        "item_id": "ob-cee-4029",
+        "protocol": "DYN_REQUEST_GUARD",
+        "rep": 2,
+        "t0": 1,
+        "k": 4,
+        "has_intervening": true,
+        "n_intervening": 2,
+        "anchor_e_L": 1,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "single_pos",
+        "content_sha256": "a6187f047e24783ef086d6c7938b2b670bfd59fdb5995e99e3948d57b9b7886b"
+      },
+      "D13": {
+        "orig_repair_audit_id": "R067",
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-474___DYN_REQUEST___r1",
+        "item_id": "ob-comp-474",
+        "protocol": "DYN_REQUEST",
+        "rep": 1,
+        "t0": 1,
+        "k": 3,
+        "has_intervening": true,
+        "n_intervening": 1,
+        "anchor_e_L": 1,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "single_pos",
+        "content_sha256": "a15939bfcfe02415bda6340cf2951df377c04286ff3956945f202484422626c2"
+      },
+      "D14": {
+        "orig_repair_audit_id": "R072",
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-631___DYN_REQUEST___r2",
+        "item_id": "ob-comp-631",
+        "protocol": "DYN_REQUEST",
+        "rep": 2,
+        "t0": 2,
+        "k": 3,
+        "has_intervening": false,
+        "n_intervening": 0,
+        "anchor_e_L": 0,
+        "anchor_e_U": 1,
+        "y_L": 0,
+        "y_U": 0,
+        "judge_group": "dual_neg",
+        "content_sha256": "72e58c8de18580bf035616bc9ab400eefe476ce5804d51d33b719c484bdec46a"
+      },
+      "D15": {
+        "orig_repair_audit_id": "R009",
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-comp-474___DYN_FREE___r0",
+        "item_id": "ob-comp-474",
+        "protocol": "DYN_FREE",
+        "rep": 0,
+        "t0": 1,
+        "k": 3,
+        "has_intervening": true,
+        "n_intervening": 1,
+        "anchor_e_L": 1,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "1571bfa09552232171600c371645318b2fddddee77fd42baf7c33ae81b44ba2a"
+      },
+      "D16": {
+        "orig_repair_audit_id": "R089",
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4044___DYN_REQUEST_GUARD___r1",
+        "item_id": "ob-cee-4044",
+        "protocol": "DYN_REQUEST_GUARD",
+        "rep": 1,
+        "t0": 3,
+        "k": 5,
+        "has_intervening": true,
+        "n_intervening": 1,
+        "anchor_e_L": 0,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "single_pos",
+        "content_sha256": "9a58d090be3b31f7d77335448c2b9988c8c033936314020faf34b65509ac203b"
+      },
+      "D17": {
+        "orig_repair_audit_id": "R008",
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-107___DYN_REQUEST___r1",
+        "item_id": "ob-comp-107",
+        "protocol": "DYN_REQUEST",
+        "rep": 1,
+        "t0": 3,
+        "k": 4,
+        "has_intervening": false,
+        "n_intervening": 0,
+        "anchor_e_L": 1,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "766c66781b97d6ac312acc0f3dcffd6dfb02aa3f7365080d8e9a55c57779591c"
+      },
+      "D18": {
+        "orig_repair_audit_id": "R053",
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4957___DYN_FREE___r1",
+        "item_id": "ob-cee-4957",
+        "protocol": "DYN_FREE",
+        "rep": 1,
+        "t0": 3,
+        "k": 4,
+        "has_intervening": false,
+        "n_intervening": 0,
+        "anchor_e_L": 1,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "fefe4c1884a63165348051a58a0d82f83b566d7c19a8eff1de46094ec1780220"
+      },
+      "D19": {
+        "orig_repair_audit_id": "R004",
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4957___DYN_REQUEST_GUARD___r1",
+        "item_id": "ob-cee-4957",
+        "protocol": "DYN_REQUEST_GUARD",
+        "rep": 1,
+        "t0": 3,
+        "k": 4,
+        "has_intervening": false,
+        "n_intervening": 0,
+        "anchor_e_L": 1,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "b8c51d475226412c316854800985df92ce9e299a0e4ae57efcf5265425906427"
+      },
+      "D20": {
+        "orig_repair_audit_id": "R027",
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4580___DYN_REQUEST___r1",
+        "item_id": "ob-cee-4580",
+        "protocol": "DYN_REQUEST",
+        "rep": 1,
+        "t0": 3,
+        "k": 6,
+        "has_intervening": true,
+        "n_intervening": 2,
+        "anchor_e_L": 1,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "fdb861daffee3bb20eb52d3b13e127b9a3b1261ea46018d2579e3223198fe3c1"
+      },
+      "D21": {
+        "orig_repair_audit_id": "R074",
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4682___DYN_REQUEST___r2",
+        "item_id": "ob-cee-4682",
+        "protocol": "DYN_REQUEST",
+        "rep": 2,
+        "t0": 3,
+        "k": 4,
+        "has_intervening": false,
+        "n_intervening": 0,
+        "anchor_e_L": 1,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "664fa47c794023e1ca23846dc5d7f3c8bef13d5fa56cf7abad919a4117f7d133"
+      },
+      "D22": {
+        "orig_repair_audit_id": "R046",
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-3889___DYN_REQUEST_GUARD___r0",
+        "item_id": "ob-cee-3889",
+        "protocol": "DYN_REQUEST_GUARD",
+        "rep": 0,
+        "t0": 2,
+        "k": 3,
+        "has_intervening": false,
+        "n_intervening": 0,
+        "anchor_e_L": 0,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "afe9bfeb97e6053d6a1dae1406a452d68325352d6d6c7965ff8f539c5226d0d0"
+      },
+      "D23": {
+        "orig_repair_audit_id": "R082",
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-351___DYN_REQUEST_GUARD___r0",
+        "item_id": "ob-comp-351",
+        "protocol": "DYN_REQUEST_GUARD",
+        "rep": 0,
+        "t0": 2,
+        "k": 4,
+        "has_intervening": true,
+        "n_intervening": 1,
+        "anchor_e_L": 1,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "92c2a7afcd48137b34034088b4a9055bfd25e5501599c4d7a64af208fcce9edd"
+      },
+      "D24": {
+        "orig_repair_audit_id": "R026",
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4070___DYN_REQUEST_GUARD___r2",
+        "item_id": "ob-cee-4070",
+        "protocol": "DYN_REQUEST_GUARD",
+        "rep": 2,
+        "t0": 2,
+        "k": 5,
+        "has_intervening": true,
+        "n_intervening": 2,
+        "anchor_e_L": 1,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "c5383af34370d2e0aef7e45a8f88ecf34d7fab499ea7c8916c098fd067f29867"
+      },
+      "D25": {
+        "orig_repair_audit_id": "R012",
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4438___DYN_REQUEST___r1",
+        "item_id": "ob-cee-4438",
+        "protocol": "DYN_REQUEST",
+        "rep": 1,
+        "t0": 5,
+        "k": 6,
+        "has_intervening": false,
+        "n_intervening": 0,
+        "anchor_e_L": 0,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "feab2a2d53f7f691ebba7dfd80df216a98316952567b77307bd0189378e5c966"
+      },
+      "D26": {
+        "orig_repair_audit_id": "R038",
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-418___DYN_FREE___r2",
+        "item_id": "ob-comp-418",
+        "protocol": "DYN_FREE",
+        "rep": 2,
+        "t0": 2,
+        "k": 3,
+        "has_intervening": false,
+        "n_intervening": 0,
+        "anchor_e_L": 0,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "07b2dd20bb53d2afa17bb9c7384167077b626296064068dd662df2294d2e7506"
+      },
+      "D27": {
+        "orig_repair_audit_id": "R055",
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4752___DYN_REQUEST___r2",
+        "item_id": "ob-cee-4752",
+        "protocol": "DYN_REQUEST",
+        "rep": 2,
+        "t0": 3,
+        "k": 4,
+        "has_intervening": false,
+        "n_intervening": 0,
+        "anchor_e_L": 1,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "ca97dbec5d781ab74c01ece92ae5daaeb36b643ecf7ef60da422d4e9ebfe43c4"
+      },
+      "D28": {
+        "orig_repair_audit_id": "R007",
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-3948___DYN_REQUEST___r2",
+        "item_id": "ob-cee-3948",
+        "protocol": "DYN_REQUEST",
+        "rep": 2,
+        "t0": 5,
+        "k": 6,
+        "has_intervening": false,
+        "n_intervening": 0,
+        "anchor_e_L": 0,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "ac27f2b7ba35a36f195e4c2cfef08e259e45e771d13de87d7e81f7d5363dd7b2"
+      },
+      "D29": {
+        "orig_repair_audit_id": "R032",
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-comp-416___DYN_REQUEST___r0",
+        "item_id": "ob-comp-416",
+        "protocol": "DYN_REQUEST",
+        "rep": 0,
+        "t0": 5,
+        "k": 6,
+        "has_intervening": false,
+        "n_intervening": 0,
+        "anchor_e_L": 1,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "ca32a83096ae697c13ca204f5269ecf3e7760e36f3fe977a1a5075cfcef1075b"
+      },
+      "D30": {
+        "orig_repair_audit_id": "R028",
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4438___DYN_REQUEST___r1",
+        "item_id": "ob-cee-4438",
+        "protocol": "DYN_REQUEST",
+        "rep": 1,
+        "t0": 5,
+        "k": 6,
+        "has_intervening": false,
+        "n_intervening": 0,
+        "anchor_e_L": 0,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "3cda9d26080e46a6a9842317a51793351716e2b0441c44bf6ce6d9526c7aae6e"
+      },
+      "D31": {
+        "orig_repair_audit_id": "R018",
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4187___DYN_REQUEST___r2",
+        "item_id": "ob-cee-4187",
+        "protocol": "DYN_REQUEST",
+        "rep": 2,
+        "t0": 4,
+        "k": 5,
+        "has_intervening": false,
+        "n_intervening": 0,
+        "anchor_e_L": 1,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "988c394ba5566ef4271ace5bc7d38eb763f4ee61bfb42904b4863c94a76fc081"
+      },
+      "D32": {
+        "orig_repair_audit_id": "R058",
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-3948___DYN_REQUEST___r0",
+        "item_id": "ob-cee-3948",
+        "protocol": "DYN_REQUEST",
+        "rep": 0,
+        "t0": 4,
+        "k": 6,
+        "has_intervening": true,
+        "n_intervening": 1,
+        "anchor_e_L": 1,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "b6067653d21145d1e8c141c9b99bf5e838e65bc20415b49555ee4e91343b0476"
+      },
+      "D33": {
+        "orig_repair_audit_id": "R070",
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4295___DYN_REQUEST___r2",
+        "item_id": "ob-cee-4295",
+        "protocol": "DYN_REQUEST",
+        "rep": 2,
+        "t0": 1,
+        "k": 3,
+        "has_intervening": true,
+        "n_intervening": 1,
+        "anchor_e_L": 1,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "4213df21ea9fa8034edf0c89c61d783a47b8000f4d197daa993e0457587f604a"
+      },
+      "D34": {
+        "orig_repair_audit_id": "R076",
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-3984___DYN_FREE___r2",
+        "item_id": "ob-cee-3984",
+        "protocol": "DYN_FREE",
+        "rep": 2,
+        "t0": 1,
+        "k": 3,
+        "has_intervening": true,
+        "n_intervening": 1,
+        "anchor_e_L": 1,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "bb1dc4455041e2eb7b9788f27b853c689ed54674b2ff306f43b5bf0a41b6279e"
+      },
+      "D35": {
+        "orig_repair_audit_id": "R006",
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-comp-211___DYN_REQUEST_GUARD___r1",
+        "item_id": "ob-comp-211",
+        "protocol": "DYN_REQUEST_GUARD",
+        "rep": 1,
+        "t0": 3,
+        "k": 4,
+        "has_intervening": false,
+        "n_intervening": 0,
+        "anchor_e_L": 1,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "1fa36703588e76cd68d471033056e84d121940c24f663841f171da92d52cb93f"
+      },
+      "D36": {
+        "orig_repair_audit_id": "R071",
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4352___DYN_REQUEST___r0",
+        "item_id": "ob-cee-4352",
+        "protocol": "DYN_REQUEST",
+        "rep": 0,
+        "t0": 2,
+        "k": 4,
+        "has_intervening": true,
+        "n_intervening": 1,
+        "anchor_e_L": 0,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "add2a432ad0729af2d307734d6b2918830558a699bb74441a82133f4e2513b5c"
+      },
+      "D37": {
+        "orig_repair_audit_id": "R079",
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-3984___DYN_REQUEST___r2",
+        "item_id": "ob-cee-3984",
+        "protocol": "DYN_REQUEST",
+        "rep": 2,
+        "t0": 1,
+        "k": 3,
+        "has_intervening": true,
+        "n_intervening": 1,
+        "anchor_e_L": 1,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "single_pos",
+        "content_sha256": "f96da6f071442f22a9211646bb807e51e095dc2eb56ad8220de9bc863d90fa75"
+      },
+      "D38": {
+        "orig_repair_audit_id": "R064",
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4070___DYN_FREE___r2",
+        "item_id": "ob-cee-4070",
+        "protocol": "DYN_FREE",
+        "rep": 2,
+        "t0": 2,
+        "k": 5,
+        "has_intervening": true,
+        "n_intervening": 2,
+        "anchor_e_L": 1,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "a5cca311de272d3c743a930b150cc020910ba383c894a4b7b9c3e81a3e54cda6"
+      },
+      "D39": {
+        "orig_repair_audit_id": "R097",
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4016___DYN_FREE___r2",
+        "item_id": "ob-cee-4016",
+        "protocol": "DYN_FREE",
+        "rep": 2,
+        "t0": 3,
+        "k": 4,
+        "has_intervening": false,
+        "n_intervening": 0,
+        "anchor_e_L": 1,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "f66cb8fd785e197266bfc2d7fa920c6d43ed480ab39cef4d818375c6119db152"
+      },
+      "D40": {
+        "orig_repair_audit_id": "R034",
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4682___DYN_REQUEST_GUARD___r1",
+        "item_id": "ob-cee-4682",
+        "protocol": "DYN_REQUEST_GUARD",
+        "rep": 1,
+        "t0": 1,
+        "k": 4,
+        "has_intervening": true,
+        "n_intervening": 2,
+        "anchor_e_L": 1,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "single_pos",
+        "content_sha256": "07d000c28ff9505e8d3b27f9ebd1c9e0fe295b4e6b5f05c052652f4ebf3664f4"
+      },
+      "D41": {
+        "orig_repair_audit_id": "R025",
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4845___DYN_REQUEST_GUARD___r0",
+        "item_id": "ob-cee-4845",
+        "protocol": "DYN_REQUEST_GUARD",
+        "rep": 0,
+        "t0": 2,
+        "k": 3,
+        "has_intervening": false,
+        "n_intervening": 0,
+        "anchor_e_L": 1,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "6c11a5b66636472ddcd4eb1ef6d56e7c62821b3a9cfb49b78b4b73b689150389"
+      },
+      "D42": {
+        "orig_repair_audit_id": "R001",
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4147___DYN_FREE___r0",
+        "item_id": "ob-cee-4147",
+        "protocol": "DYN_FREE",
+        "rep": 0,
+        "t0": 4,
+        "k": 5,
+        "has_intervening": false,
+        "n_intervening": 0,
+        "anchor_e_L": 1,
+        "anchor_e_U": 1,
+        "y_L": 0,
+        "y_U": 0,
+        "judge_group": "dual_neg",
+        "content_sha256": "119f656423cbcab90b1b6f8a73324f42fe1d007ca0239aa8f27ba4e907b3e7d1"
+      },
+      "D43": {
+        "orig_repair_audit_id": "R020",
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-4736___DYN_REQUEST_GUARD___r2",
+        "item_id": "ob-cee-4736",
+        "protocol": "DYN_REQUEST_GUARD",
+        "rep": 2,
+        "t0": 1,
+        "k": 4,
+        "has_intervening": true,
+        "n_intervening": 2,
+        "anchor_e_L": 1,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "9332f68cc35b8c178d06c47a79d91d3e992065c84eaa8ead64b92874bb49a2e3"
+      },
+      "D44": {
+        "orig_repair_audit_id": "R030",
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4106___DYN_FREE___r2",
+        "item_id": "ob-cee-4106",
+        "protocol": "DYN_FREE",
+        "rep": 2,
+        "t0": 3,
+        "k": 5,
+        "has_intervening": true,
+        "n_intervening": 1,
+        "anchor_e_L": 1,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "single_pos",
+        "content_sha256": "2294bead3ecb8f8dd81a7cdbf4b21a4404ab7aa747ffcad7c0a499f1168595d7"
+      },
+      "D45": {
+        "orig_repair_audit_id": "R095",
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-3844___DYN_REQUEST_GUARD___r1",
+        "item_id": "ob-cee-3844",
+        "protocol": "DYN_REQUEST_GUARD",
+        "rep": 1,
+        "t0": 5,
+        "k": 6,
+        "has_intervening": false,
+        "n_intervening": 0,
+        "anchor_e_L": 1,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "44c719b3adb945911e72292cb223a67be6399f7bca8b7020fc1f95325359f501"
+      },
+      "D46": {
+        "orig_repair_audit_id": "R040",
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-3984___DYN_REQUEST___r1",
+        "item_id": "ob-cee-3984",
+        "protocol": "DYN_REQUEST",
+        "rep": 1,
+        "t0": 1,
+        "k": 3,
+        "has_intervening": true,
+        "n_intervening": 1,
+        "anchor_e_L": 0,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "0c4ba1b8507b9cce61c45f7a389f9ccaae0b71467a077cd1f22e754f21464f8f"
+      },
+      "D47": {
+        "orig_repair_audit_id": "R003",
+        "model_id": "Qwen/Qwen3-8B",
+        "trajectory_id": "ob-cee-4147___DYN_FREE___r0",
+        "item_id": "ob-cee-4147",
+        "protocol": "DYN_FREE",
+        "rep": 0,
+        "t0": 4,
+        "k": 5,
+        "has_intervening": false,
+        "n_intervening": 0,
+        "anchor_e_L": 0,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "0e65a62eba73a3f7c04fbed5290edac9c1573395752309d14d262e1f3b957701"
+      },
+      "D48": {
+        "orig_repair_audit_id": "R090",
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4752___DYN_REQUEST_GUARD___r1",
+        "item_id": "ob-cee-4752",
+        "protocol": "DYN_REQUEST_GUARD",
+        "rep": 1,
+        "t0": 1,
+        "k": 4,
+        "has_intervening": true,
+        "n_intervening": 2,
+        "anchor_e_L": 1,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "e802a06be4af7b133d7c6354403b7e16cfb13394bd5150e4f18bf9bb559b9690"
+      },
+      "D49": {
+        "orig_repair_audit_id": "R024",
+        "model_id": "Qwen/Qwen3-14B",
+        "trajectory_id": "ob-cee-3984___DYN_FREE___r1",
+        "item_id": "ob-cee-3984",
+        "protocol": "DYN_FREE",
+        "rep": 1,
+        "t0": 1,
+        "k": 3,
+        "has_intervening": true,
+        "n_intervening": 1,
+        "anchor_e_L": 0,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "d1eff1e33d624cd124e97f2abb031365dd8df36a9657ce028f1f6b0bf3d5bb98"
+      },
+      "D50": {
+        "orig_repair_audit_id": "R039",
+        "model_id": "zai-org/GLM-Z1-9B-0414",
+        "trajectory_id": "ob-cee-4352___DYN_FREE___r2",
+        "item_id": "ob-cee-4352",
+        "protocol": "DYN_FREE",
+        "rep": 2,
+        "t0": 3,
+        "k": 4,
+        "has_intervening": false,
+        "n_intervening": 0,
+        "anchor_e_L": 1,
+        "anchor_e_U": 1,
+        "y_L": 1,
+        "y_U": 1,
+        "judge_group": "dual_neg",
+        "content_sha256": "ca1c93ef56edc2e43392dddbb1d182900aa10ed6b4bf3b49811f3055f0768961"
+      }
+    }
+  }
+}

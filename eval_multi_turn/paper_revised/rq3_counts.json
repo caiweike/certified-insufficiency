@@ -1,0 +1,56 @@
+{
+  "eligible_trajectories": 489,
+  "empty_final_replies_outside_audit": 6,
+  "historical_full_dialogue_screen": {
+    "flagged_anywhere": 26,
+    "terminal_either": 9,
+    "terminal_both": 3,
+    "nonterminal_only": 17
+  },
+  "human_audit": {
+    "all_audited": {
+      "n": 100,
+      "human_unanimous_yes": 0,
+      "human_any_yes": 1,
+      "human_majority_yes": 1
+    },
+    "sampled_screen_negative": {
+      "n": 74,
+      "human_unanimous_yes": 0,
+      "human_any_yes": 0,
+      "human_majority_yes": 0
+    },
+    "TypeA": {
+      "n": 50,
+      "human_unanimous_yes": 0,
+      "human_any_yes": 0,
+      "human_majority_yes": 0
+    },
+    "TypeB": {
+      "n": 50,
+      "human_unanimous_yes": 0,
+      "human_any_yes": 1,
+      "human_majority_yes": 1
+    },
+    "legacy_screen_positive": {
+      "n": 26,
+      "human_unanimous_yes": 0,
+      "human_any_yes": 1,
+      "human_majority_yes": 1
+    },
+    "legacy_nonterminal_only": {
+      "n": 17,
+      "human_unanimous_yes": 0,
+      "human_any_yes": 0,
+      "human_majority_yes": 0
+    }
+  },
+  "human_positive_cases": [
+    {
+      "audit_id": "R075",
+      "regime": "TypeB",
+      "sampling_stratum": "legacy_screen_positive",
+      "human_yes": 2
+    }
+  ]
+}
