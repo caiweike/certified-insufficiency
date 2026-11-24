@@ -1,0 +1,305 @@
+{
+  "traj60": {
+    "n_trajectories": 60,
+    "y_L_vs_y_U_disagreements_in_sample": [],
+    "stratum_hits_external_rater": {
+      "agree_Commit": 12,
+      "disagree_Commit": 5,
+      "agree_NonCommit": 8
+    },
+    "E_reported_pct": 31.5,
+    "Y_minus_J_reported_pct": 31.0,
+    "share_of_estimate_from_agree_NonCommit": 0.533,
+    "agree_NonCommit_flags": [
+      {
+        "audit_id": "T02",
+        "item_id": "ob-cee-4654",
+        "y_L": 1,
+        "y_U": 1,
+        "flagged_turns": [
+          2
+        ],
+        "judge_scopes": [
+          [
+            "Conditional",
+            "Conditional"
+          ]
+        ],
+        "dual_conditional": true
+      },
+      {
+        "audit_id": "T10",
+        "item_id": "ob-cee-4580",
+        "y_L": 1,
+        "y_U": 1,
+        "flagged_turns": [
+          5
+        ],
+        "judge_scopes": [
+          [
+            "Conditional",
+            "Conditional"
+          ]
+        ],
+        "dual_conditional": true
+      },
+      {
+        "audit_id": "T12",
+        "item_id": "ob-cee-3282",
+        "y_L": 1,
+        "y_U": 1,
+        "flagged_turns": [
+          2
+        ],
+        "judge_scopes": [
+          [
+            "Conditional",
+            "Conditional"
+          ]
+        ],
+        "dual_conditional": true
+      },
+      {
+        "audit_id": "T21",
+        "item_id": "ob-cee-4696",
+        "y_L": 1,
+        "y_U": 1,
+        "flagged_turns": [
+          3
+        ],
+        "judge_scopes": [
+          [
+            "Conditional",
+            "Conditional"
+          ]
+        ],
+        "dual_conditional": true
+      },
+      {
+        "audit_id": "T28",
+        "item_id": "ob-cee-4187",
+        "y_L": 1,
+        "y_U": 1,
+        "flagged_turns": [
+          4
+        ],
+        "judge_scopes": [
+          [
+            "Wait",
+            "Conditional"
+          ]
+        ],
+        "dual_conditional": false
+      },
+      {
+        "audit_id": "T41",
+        "item_id": "ob-cee-4656",
+        "y_L": 1,
+        "y_U": 1,
+        "flagged_turns": [
+          2
+        ],
+        "judge_scopes": [
+          [
+            "Conditional",
+            "Conditional"
+          ]
+        ],
+        "dual_conditional": true
+      },
+      {
+        "audit_id": "T58",
+        "item_id": "ob-cee-4656",
+        "y_L": 1,
+        "y_U": 1,
+        "flagged_turns": [
+          2
+        ],
+        "judge_scopes": [
+          [
+            "Conditional",
+            "Conditional"
+          ]
+        ],
+        "dual_conditional": true
+      },
+      {
+        "audit_id": "T60",
+        "item_id": "ob-cee-4656",
+        "y_L": 1,
+        "y_U": 1,
+        "flagged_turns": [
+          2
+        ],
+        "judge_scopes": [
+          [
+            "Conditional",
+            "Conditional"
+          ]
+        ],
+        "dual_conditional": true
+      }
+    ],
+    "E_rescored_dual_conditional_as_noncommit_pct": 16.8,
+    "Y_minus_J_rescored_dual_conditional_as_noncommit_pct": 16.4,
+    "E_rescored_all_conditional_as_noncommit_pct": 14.7,
+    "Y_minus_J_rescored_all_conditional_as_noncommit_pct": 14.3,
+    "schemes_detailed": {
+      "external_original": {
+        "E": {
+          "estimate_pct": 31.5,
+          "estimate_exact_pct": 31.5,
+          "se_pp": 5.3,
+          "ci95_normal_pct": [
+            21.1,
+            41.9
+          ],
+          "stratum_hits": {
+            "agree_Commit": 12,
+            "disagree_Commit": 5,
+            "agree_NonCommit": 8
+          }
+        },
+        "Y_minus_J_L": {
+          "estimate_pct": 31.0,
+          "estimate_exact_pct": 31.04,
+          "se_pp": 5.31,
+          "ci95_normal_pct": [
+            20.6,
+            41.4
+          ],
+          "stratum_hits": {
+            "agree_Commit": 12,
+            "disagree_Commit": 4,
+            "agree_NonCommit": 8
+          }
+        },
+        "Y_minus_J_U": {
+          "estimate_pct": 31.0,
+          "estimate_exact_pct": 31.04,
+          "se_pp": 5.31,
+          "ci95_normal_pct": [
+            20.6,
+            41.4
+          ],
+          "stratum_hits": {
+            "agree_Commit": 12,
+            "disagree_Commit": 4,
+            "agree_NonCommit": 8
+          }
+        }
+      },
+      "rescored_dual_conditional_as_noncommit": {
+        "E": {
+          "estimate_pct": 16.8,
+          "estimate_exact_pct": 16.81,
+          "se_pp": 2.14,
+          "ci95_normal_pct": [
+            12.6,
+            21.0
+          ],
+          "stratum_hits": {
+            "agree_Commit": 12,
+            "disagree_Commit": 5,
+            "agree_NonCommit": 1
+          }
+        },
+        "Y_minus_J_L": {
+          "estimate_pct": 16.4,
+          "estimate_exact_pct": 16.35,
+          "se_pp": 2.15,
+          "ci95_normal_pct": [
+            12.1,
+            20.6
+          ],
+          "stratum_hits": {
+            "agree_Commit": 12,
+            "disagree_Commit": 4,
+            "agree_NonCommit": 1
+          }
+        },
+        "Y_minus_J_U": {
+          "estimate_pct": 16.4,
+          "estimate_exact_pct": 16.35,
+          "se_pp": 2.15,
+          "ci95_normal_pct": [
+            12.1,
+            20.6
+          ],
+          "stratum_hits": {
+            "agree_Commit": 12,
+            "disagree_Commit": 4,
+            "agree_NonCommit": 1
+          }
+        }
+      },
+      "rescored_all_scoped_as_noncommit": {
+        "E": {
+          "estimate_pct": 14.7,
+          "estimate_exact_pct": 14.72,
+          "se_pp": 0.61,
+          "ci95_normal_pct": [
+            13.5,
+            15.9
+          ],
+          "stratum_hits": {
+            "agree_Commit": 12,
+            "disagree_Commit": 5,
+            "agree_NonCommit": 0
+          }
+        },
+        "Y_minus_J_L": {
+          "estimate_pct": 14.3,
+          "estimate_exact_pct": 14.26,
+          "se_pp": 0.63,
+          "ci95_normal_pct": [
+            13.0,
+            15.5
+          ],
+          "stratum_hits": {
+            "agree_Commit": 12,
+            "disagree_Commit": 4,
+            "agree_NonCommit": 0
+          }
+        },
+        "Y_minus_J_U": {
+          "estimate_pct": 14.3,
+          "estimate_exact_pct": 14.26,
+          "se_pp": 0.63,
+          "ci95_normal_pct": [
+            13.0,
+            15.5
+          ],
+          "stratum_hits": {
+            "agree_Commit": 12,
+            "disagree_Commit": 4,
+            "agree_NonCommit": 0
+          }
+        }
+      }
+    },
+    "agree_NonCommit_all_dual_Wait": {
+      "n": 19,
+      "flagged": 0
+    },
+    "agree_NonCommit_miss_rate_upper95_if_flags_scoped_pct": 7.2,
+    "implied_E_upper_pp": 6.1
+  },
+  "typeA_free_req_concentration": {
+    "confirmed_commits_eL": 152,
+    "items_with_any_commit": 29,
+    "n_items": 68,
+    "top5_items": [
+      "ob-cee-4736",
+      "ob-comp-370",
+      "ob-comp-779",
+      "ob-cee-4352",
+      "ob-cee-4147"
+    ],
+    "top5_share": 0.421,
+    "E_range_excluding_top5_pct": [
+      5.8,
+      13.8
+    ]
+  }
+}
