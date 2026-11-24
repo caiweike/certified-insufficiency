@@ -668,6 +668,7 @@
     "n_turns": 120,
     "total_population_turns": 7668,
     "weighting_method": "stratum_calibrated_hajek_from_balanced_pick_mc (M=50000)",
+    "variance_caveat": "Approximate with-replacement linearized Hansen-Hurwitz SEs only: within-bucket sampling without replacement and Pass-1 item deduplication reduce within-bucket co-inclusion (pi_ij=0 on same-item pairs), but cross-bucket item blocking couples buckets and small stratum quotas (n_h=6..18) suffer Wald zero-variance collapse on rare boundary flags, so nominal 95% Wald coverage is NOT guaranteed.",
     "design_inclusion_prob_diagnostics": {
       "agree_Commit_TypeA": {
         "N": 266,
@@ -880,10 +881,7 @@
     "human_bounds_vs_llm_bounds": {
       "interval_compatibility_unweighted": 0.975,
       "interval_compatibility_design_hajek": 0.9931,
-      "interval_compatibility_design_hajek_ci95_pct": [
-        98.41,
-        100.0
-      ],
+      "interval_compatibility_approx_wr_se_pct": 0.46,
       "hL_vs_eL_design_hajek": {
         "n": 120,
         "agree": 0.9855,
@@ -905,25 +903,17 @@
       },
       "design_hajek_commit_prevalence_pct": {
         "human_L": 7.85,
-        "human_L_se": 0.57,
-        "human_L_ci95": [
-          6.73,
-          8.97
-        ],
+        "human_L_approx_wr_se": 0.57,
         "human_U": 15.52,
-        "human_U_se": 2.83,
-        "human_U_ci95": [
-          9.97,
-          21.07
-        ],
+        "human_U_approx_wr_se": 2.83,
         "llm_eL_exact_population": 7.03,
         "llm_eU_exact_population": 8.97
       }
     },
     "majority_vote": {
       "design_hajek_commit_prevalence_pct": 8.93,
-      "design_hajek_commit_prevalence_se_pct": 0.66,
-      "design_hajek_commit_prevalence_ci95": [
+      "approx_wr_se_pct": 0.66,
+      "approx_wr_wald95_not_guaranteed": [
         7.63,
         10.22
       ],
@@ -957,10 +947,7 @@
       },
       "within_llm_bounds_unweighted": 0.9583,
       "within_llm_bounds_design_hajek": 0.9878,
-      "within_llm_bounds_design_hajek_ci95": [
-        97.59,
-        99.96
-      ]
+      "within_llm_bounds_approx_wr_se_pct": 0.61
     },
     "weight_sensitivity_comparison": {
       "design_calibrated_hajek": {
@@ -1026,8 +1013,8 @@
         },
         "design_hajek_commit_rate": {
           "pct": 9.18,
-          "se_pct": 0.69,
-          "ci95": [
+          "approx_wr_se_pct": 0.69,
+          "approx_wr_wald95_not_guaranteed": [
             7.82,
             10.54
           ]
@@ -1064,8 +1051,8 @@
         },
         "design_hajek_commit_rate": {
           "pct": 8.89,
-          "se_pct": 0.87,
-          "ci95": [
+          "approx_wr_se_pct": 0.87,
+          "approx_wr_wald95_not_guaranteed": [
             7.18,
             10.59
           ]
@@ -1102,8 +1089,8 @@
         },
         "design_hajek_commit_rate": {
           "pct": 14.23,
-          "se_pct": 2.76,
-          "ci95": [
+          "approx_wr_se_pct": 2.76,
+          "approx_wr_wald95_not_guaranteed": [
             8.83,
             19.63
           ]
@@ -1184,9 +1171,14 @@
       "single_pos_22": 0,
       "all_flagged_26": 1,
       "nonempty_controls_74": 0,
-      "point_rate_over_489_pct": 0.2
+      "ht_design_unbiased_point_rate_over_489_pct": 0.2
     },
-    "design_calibrated_mc_adversarial_nonempty_457": {
+    "horvitz_thompson_design_unbiased_point_rate_over_489_pct": [
+      0.0,
+      0.2
+    ],
+    "heuristic_adversarial_stress_test_nonempty_457": {
+      "caveat": "Heuristic adversarial stress-test ONLY (greedy + 1-swap + item-cluster placement over M replays). Does NOT certify global optimality over all C(457, K) subsets and therefore provides a heuristic lower bound on the worst-case alpha=0.05 threshold rather than a proven 95% confidence upper bound.",
       "mc_draws_per_model": 50000,
       "mc_seed": 20260505,
       "model_inclusion_probs": {
@@ -1215,36 +1207,36 @@
           "design_pi_max": 0.3032
         }
       },
-      "worst_case_P_zero_obs_at_K16_srswor_cutoff": 0.2262,
-      "one_sided_95_upper_K": 29,
-      "one_sided_95_upper_rate": 0.0635,
-      "one_sided_95_P_at_K": 0.0518,
-      "one_sided_95_split": [
+      "heuristic_P_zero_obs_at_K16_srswor_cutoff": 0.2262,
+      "heuristic_alpha005_K": 29,
+      "heuristic_alpha005_rate": 0.0635,
+      "heuristic_alpha005_P_at_K": 0.0518,
+      "heuristic_alpha005_split": [
         11,
         10,
         8
       ],
-      "two_sided_95_upper_K": 34,
-      "two_sided_95_upper_rate": 0.0744,
-      "two_sided_95_P_at_K": 0.0274,
-      "two_sided_95_split": [
+      "heuristic_alpha025_K": 34,
+      "heuristic_alpha025_rate": 0.0744,
+      "heuristic_alpha025_P_at_K": 0.0274,
+      "heuristic_alpha025_split": [
         11,
         12,
         11
       ]
     },
-    "total_489_retraction_rate_pct": {
-      "design_calibrated_95_one_sided_envelope": [
+    "total_489_heuristic_stress_test_pct_not_guaranteed_bound": {
+      "alpha_005_one_sided_heuristic": [
         0.0,
         6.13
       ],
-      "design_calibrated_95_two_sided_envelope": [
+      "alpha_0025_two_sided_heuristic": [
         0.0,
         7.16
       ]
     },
     "srswor_reference_invalid_for_balanced_pick": {
-      "note": "Documented diagnostic only: assumes SRSWOR rather than balanced_pick; actual P_design(0 obs | K=16) is ~0.226, not 0.05.",
+      "note": "Documented diagnostic only: assumes SRSWOR rather than balanced_pick; actual P_design(0 obs | K=16) >= 0.226, not 0.05.",
       "nonempty_457_hypergeom": {
         "N": 457,
         "n": 74,

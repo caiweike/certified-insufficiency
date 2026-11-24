@@ -4,18 +4,19 @@
 Supports ANY number of independent raters M >= 2 with zero post-hoc self-adjudication:
   python score_unified_audit_seed2026.py --raters cai tang yu --external yu
 
-Design-based inference correcting for balanced_pick() unequal inclusion probabilities:
-  - Scope-120 : Estimates exact unit inclusion probabilities pi_i via M=50,000 Monte Carlo
-                replays of balanced_pick() (exact lazy Fisher-Yates equivalent), then
-                computes stratum-calibrated Hajek estimates with conservative linearized
-                Hansen-Hurwitz unequal-probability 95% CIs (also reporting raw HT and
-                naive N_h/n_h for sensitivity comparison).
-  - Repair-100: Computes exact unit inclusion probabilities pi_j across all 457 non-empty
-                dual-negative controls via M=50,000 replays of balanced_pick() per model,
-                and computes a Monte Carlo design-calibrated adversarial 95% upper bound
-                (max_{|S|=K} P_design(S cap A = empty) >= alpha via greedy + 1-swap search
-                and item-cluster packing). Naive SRSWOR hypergeometric is retained ONLY as
-                a documented diagnostic contrast showing why SRSWOR understates miss risk.
+Design-based inference accounting for balanced_pick() unequal inclusion probabilities:
+  - Scope-120 : Estimates unit inclusion probabilities pi_i via M=50,000 Monte Carlo replays
+                of balanced_pick() (exact lazy Fisher-Yates equivalent), then computes
+                stratum-calibrated Hajek point estimates alongside approximate with-replacement
+                linearized Hansen-Hurwitz SEs (noting that cross-bucket item blocking and
+                small stratum quotas n_h=6..18 preclude guaranteed conservative 95% CI coverage).
+  - Repair-100: Reports exact audited counts ([0,1]/26 flagged, 0/74 controls, 0/6 empty),
+                design-unbiased Horvitz-Thompson point bounds ([0.0%, 0.2%]), and a heuristic
+                adversarial stress-test over M=50,000 replays of balanced_pick() per model
+                (greedy + 1-swap + item-cluster placement). Because local search does NOT
+                certify global optimality, 29/457 (6.1% of 489) is explicitly documented as a
+                heuristic lower bound on the worst-case alpha=0.05 threshold rather than a
+                proven 95% confidence upper bound.
 
 Expects for each rater <r> in this directory:
   - cert_100_<r>.csv
@@ -317,7 +318,7 @@ def simulate_repair_design_bound(
     mc_draws: int,
     seed: int = 20260505,
 ) -> dict:
-    """Monte Carlo design-calibrated adversarial 95% upper bound under balanced_pick for Repair-100 controls (N=457, n=74)."""
+    """Monte Carlo heuristic adversarial stress-test (greedy + 1-swap + item-cluster; NOT a certified 95% bound) for Repair-100 controls (N=457, n=74)."""
     rng = random.Random(seed)
     mids = list(bmod.REPAIR_NEG_MODEL_QUOTAS.keys())
     model_diag: dict[str, dict] = {}
@@ -423,21 +424,21 @@ def simulate_repair_design_bound(
         p_comb[K] = best
         best_split[K] = sp
 
-    k95_1s = max(K for K, v in p_comb.items() if v >= 0.05)
-    k95_2s = max(K for K, v in p_comb.items() if v >= 0.025)
+    k_a05 = max(K for K, v in p_comb.items() if v >= 0.05)
+    k_a025 = max(K for K, v in p_comb.items() if v >= 0.025)
     return {
         "mc_draws_per_model": mc_draws,
         "mc_seed": seed,
         "model_inclusion_probs": model_diag,
-        "worst_case_P_zero_obs_at_K16_srswor_cutoff": round(p_comb[16], 4),
-        "one_sided_95_upper_K": k95_1s,
-        "one_sided_95_upper_rate": round(k95_1s / 457.0, 4),
-        "one_sided_95_P_at_K": round(p_comb[k95_1s], 4),
-        "one_sided_95_split": list(best_split[k95_1s]),
-        "two_sided_95_upper_K": k95_2s,
-        "two_sided_95_upper_rate": round(k95_2s / 457.0, 4),
-        "two_sided_95_P_at_K": round(p_comb[k95_2s], 4),
-        "two_sided_95_split": list(best_split[k95_2s]),
+        "heuristic_P_zero_obs_at_K16_srswor_cutoff": round(p_comb[16], 4),
+        "heuristic_alpha005_K": k_a05,
+        "heuristic_alpha005_rate": round(k_a05 / 457.0, 4),
+        "heuristic_alpha005_P_at_K": round(p_comb[k_a05], 4),
+        "heuristic_alpha005_split": list(best_split[k_a05]),
+        "heuristic_alpha025_K": k_a025,
+        "heuristic_alpha025_rate": round(k_a025 / 457.0, 4),
+        "heuristic_alpha025_P_at_K": round(p_comb[k_a025], 4),
+        "heuristic_alpha025_split": list(best_split[k_a025]),
     }
 
 
@@ -614,8 +615,14 @@ def score_scope(
     def w_mean(arr: list[int], w: list[float]) -> float:
         return sum(a * wi for a, wi in zip(arr, w)) / sum(w)
 
-    def hajek_linearized_ci(arr: list[int]) -> dict:
-        """Stratum-calibrated Hajek ratio estimator with conservative linearized Hansen-Hurwitz 95% CI."""
+    def hajek_linearized_se(arr: list[int]) -> dict:
+        """Stratum-calibrated Hajek ratio point estimator with approximate with-replacement linearized Hansen-Hurwitz SE.
+
+        Caveat: Within-bucket sampling without replacement and Pass-1 item deduplication reduce
+        within-bucket co-inclusion (pi_ij = 0 on same-item pairs), but cross-bucket item blocking
+        couples buckets and small quotas (n_h = 6..18) suffer Wald zero-variance collapse on rare
+        events, so nominal 95% Wald intervals do NOT carry a conservative coverage guarantee.
+        """
         est = 0.0
         var = 0.0
         for st, idxs in st_indices.items():
@@ -633,8 +640,8 @@ def score_scope(
         hi = min(1.0, est + 1.96 * se)
         return {
             "pct": round(est * 100.0, 2),
-            "se_pct": round(se * 100.0, 2),
-            "ci95": [round(lo * 100.0, 2), round(hi * 100.0, 2)],
+            "approx_wr_se_pct": round(se * 100.0, 2),
+            "approx_wr_wald95_not_guaranteed": [round(lo * 100.0, 2), round(hi * 100.0, 2)],
         }
 
     h_L = [int(all(bin_map[r][idx] == 1 for r in raters)) for idx in range(len(ids))]
@@ -646,7 +653,7 @@ def score_scope(
 
     compat = [int(h_L[k] <= e_U[k] and e_L[k] <= h_U[k]) for k in range(len(ids))]
     compat_unw = sum(compat) / len(ids)
-    compat_hajek = hajek_linearized_ci(compat)
+    compat_hajek = hajek_linearized_se(compat)
 
     per_rater_vs_judges = {}
     for r in raters:
@@ -655,7 +662,7 @@ def score_scope(
             "vs_eU_design_hajek": pairwise_metrics(bin_map[r], e_U, [0, 1], hajek_w),
             "vs_pri_design_hajek": pairwise_metrics(bin_map[r], j_pri, [0, 1], hajek_w),
             "vs_sec_design_hajek": pairwise_metrics(bin_map[r], j_sec, [0, 1], hajek_w),
-            "design_hajek_commit_rate": hajek_linearized_ci(bin_map[r]),
+            "design_hajek_commit_rate": hajek_linearized_se(bin_map[r]),
         }
 
     both_agreed_idx = [k for k in range(len(ids)) if e_L[k] == e_U[k] and h_L[k] == h_U[k]]
@@ -667,22 +674,23 @@ def score_scope(
         thr = len(raters) // 2 + 1
         h_maj = [int(sum(bin_map[r][k] for r in raters) >= thr) for k in range(len(ids))]
         maj_in_llm = [int(e_L[k] <= h_maj[k] <= e_U[k]) for k in range(len(ids))]
-        maj_prev = hajek_linearized_ci(h_maj)
+        maj_prev = hajek_linearized_se(h_maj)
+        maj_in_se = hajek_linearized_se(maj_in_llm)
         maj_scope = {
             "design_hajek_commit_prevalence_pct": maj_prev["pct"],
-            "design_hajek_commit_prevalence_se_pct": maj_prev["se_pct"],
-            "design_hajek_commit_prevalence_ci95": maj_prev["ci95"],
+            "approx_wr_se_pct": maj_prev["approx_wr_se_pct"],
+            "approx_wr_wald95_not_guaranteed": maj_prev["approx_wr_wald95_not_guaranteed"],
             "vs_eL_design_hajek": pairwise_metrics(h_maj, e_L, [0, 1], hajek_w),
             "vs_eU_design_hajek": pairwise_metrics(h_maj, e_U, [0, 1], hajek_w),
-            "vs_pri_design_hajek": pairwise_metrics(h_maj, j_pri, [0, 1], hajek_w),
-            "vs_sec_design_hajek": pairwise_metrics(h_maj, j_sec, [0, 1], hajek_w),
+            "vs_pri_design_hajek": pairwise_metrics(h_maj, j_pri, [0, 1], weights=hajek_w),
+            "vs_sec_design_hajek": pairwise_metrics(h_maj, j_sec, [0, 1], weights=hajek_w),
             "within_llm_bounds_unweighted": round(sum(maj_in_llm) / len(ids), 4),
             "within_llm_bounds_design_hajek": round(w_mean(maj_in_llm, hajek_w), 4),
-            "within_llm_bounds_design_hajek_ci95": hajek_linearized_ci(maj_in_llm)["ci95"],
+            "within_llm_bounds_approx_wr_se_pct": maj_in_se["approx_wr_se_pct"],
         }
 
-    hL_prev = hajek_linearized_ci(h_L)
-    hU_prev = hajek_linearized_ci(h_U)
+    hL_prev = hajek_linearized_se(h_L)
+    hU_prev = hajek_linearized_se(h_U)
 
     # Sensitivity table comparing calibrated Hajek vs raw HT vs naive N_h/n_h
     weight_sensitivity = {}
@@ -704,6 +712,12 @@ def score_scope(
         "n_turns": len(ids),
         "total_population_turns": int(round(N_tot)),
         "weighting_method": f"stratum_calibrated_hajek_from_balanced_pick_mc (M={mc_draws})",
+        "variance_caveat": (
+            "Approximate with-replacement linearized Hansen-Hurwitz SEs only: within-bucket sampling without "
+            "replacement and Pass-1 item deduplication reduce within-bucket co-inclusion (pi_ij=0 on same-item pairs), "
+            "but cross-bucket item blocking couples buckets and small stratum quotas (n_h=6..18) suffer Wald "
+            "zero-variance collapse on rare boundary flags, so nominal 95% Wald coverage is NOT guaranteed."
+        ),
         "design_inclusion_prob_diagnostics": stratum_diag,
         "inter_rater": {
             "binary_commit_unweighted": multi_rater_agreement(bin_map, [0, 1]),
@@ -714,7 +728,7 @@ def score_scope(
         "human_bounds_vs_llm_bounds": {
             "interval_compatibility_unweighted": round(compat_unw, 4),
             "interval_compatibility_design_hajek": round(compat_hajek["pct"] / 100.0, 4),
-            "interval_compatibility_design_hajek_ci95_pct": compat_hajek["ci95"],
+            "interval_compatibility_approx_wr_se_pct": compat_hajek["approx_wr_se_pct"],
             "hL_vs_eL_design_hajek": pairwise_metrics(h_L, e_L, [0, 1], hajek_w),
             "hU_vs_eU_design_hajek": pairwise_metrics(h_U, e_U, [0, 1], hajek_w),
             "both_human_and_judge_agreed_turns": {
@@ -724,11 +738,9 @@ def score_scope(
             },
             "design_hajek_commit_prevalence_pct": {
                 "human_L": hL_prev["pct"],
-                "human_L_se": hL_prev["se_pct"],
-                "human_L_ci95": hL_prev["ci95"],
+                "human_L_approx_wr_se": hL_prev["approx_wr_se_pct"],
                 "human_U": hU_prev["pct"],
-                "human_U_se": hU_prev["se_pct"],
-                "human_U_ci95": hU_prev["ci95"],
+                "human_U_approx_wr_se": hU_prev["approx_wr_se_pct"],
                 "llm_eL_exact_population": round(w_mean(e_L, hajek_w) * 100.0, 2),
                 "llm_eU_exact_population": round(w_mean(e_U, hajek_w) * 100.0, 2),
             },
@@ -768,12 +780,12 @@ def score_repair(raters: list[str], key: dict, design_bound: dict) -> dict:
     pos_L, pos_U = bounds_on(pos_ids)
     neg_L, neg_U = bounds_on(neg_ids)
 
-    # Primary: Monte Carlo design-calibrated adversarial 95% bound under balanced_pick (valid when neg_U == 0)
-    assert neg_U == 0, "Design-calibrated 0-observed bound requires neg_U == 0; extend simulator for neg_U > 0."
-    tot_lo_1s = (pos_L + neg_L) / N_tot
-    tot_hi_1s = (pos_U + design_bound["one_sided_95_upper_K"]) / N_tot
-    tot_lo_2s = (pos_L + neg_L) / N_tot
-    tot_hi_2s = (pos_U + design_bound["two_sided_95_upper_K"]) / N_tot
+    # Design-unbiased Horvitz-Thompson point estimate + heuristic adversarial stress-test (NOT a proven 95% bound)
+    assert neg_U == 0, "Heuristic 0-observed stress-test requires neg_U == 0."
+    ht_pt_lo = pos_L / N_tot  # since neg_L == 0 => sum(y_j / pi_j) == 0
+    ht_pt_hi = pos_U / N_tot  # since neg_U == 0 => sum(y_j / pi_j) == 0
+    heur_hi_a05 = (pos_U + design_bound["heuristic_alpha005_K"]) / N_tot
+    heur_hi_a025 = (pos_U + design_bound["heuristic_alpha025_K"]) / N_tot
 
     # Diagnostic only: naive SRSWOR hypergeometric (NOT valid under balanced_pick)
     hg_diag = hypergeom_ci_srswor_diagnostic(N_pool, len(neg_ids), neg_U, alpha=0.05)
@@ -792,8 +804,17 @@ def score_repair(raters: list[str], key: dict, design_bound: dict) -> dict:
             "single_pos_22": m_sp,
             "all_flagged_26": m_pos,
             "nonempty_controls_74": m_neg,
-            "point_rate_over_489_pct": round((m_pos + m_neg) / N_tot * 100, 2),
+            "ht_design_unbiased_point_rate_over_489_pct": round((m_pos + m_neg) / N_tot * 100, 2),
         }
+
+    design_bound_documented = {
+        "caveat": (
+            "Heuristic adversarial stress-test ONLY (greedy + 1-swap + item-cluster placement over M replays). "
+            "Does NOT certify global optimality over all C(457, K) subsets and therefore provides a heuristic "
+            "lower bound on the worst-case alpha=0.05 threshold rather than a proven 95% confidence upper bound."
+        ),
+        **design_bound,
+    }
 
     return {
         "n_audited": len(ids),
@@ -815,13 +836,14 @@ def score_repair(raters: list[str], key: dict, design_bound: dict) -> dict:
             "nonempty_controls_74": [neg_L, neg_U],
         },
         "majority_vote": maj_rep,
-        "design_calibrated_mc_adversarial_nonempty_457": design_bound,
-        "total_489_retraction_rate_pct": {
-            "design_calibrated_95_one_sided_envelope": [round(tot_lo_1s * 100, 2), round(tot_hi_1s * 100, 2)],
-            "design_calibrated_95_two_sided_envelope": [round(tot_lo_2s * 100, 2), round(tot_hi_2s * 100, 2)],
+        "horvitz_thompson_design_unbiased_point_rate_over_489_pct": [round(ht_pt_lo * 100, 2), round(ht_pt_hi * 100, 2)],
+        "heuristic_adversarial_stress_test_nonempty_457": design_bound_documented,
+        "total_489_heuristic_stress_test_pct_not_guaranteed_bound": {
+            "alpha_005_one_sided_heuristic": [round(ht_pt_lo * 100, 2), round(heur_hi_a05 * 100, 2)],
+            "alpha_0025_two_sided_heuristic": [round(ht_pt_lo * 100, 2), round(heur_hi_a025 * 100, 2)],
         },
         "srswor_reference_invalid_for_balanced_pick": {
-            "note": "Documented diagnostic only: assumes SRSWOR rather than balanced_pick; actual P_design(0 obs | K=16) is ~0.226, not 0.05.",
+            "note": "Documented diagnostic only: assumes SRSWOR rather than balanced_pick; actual P_design(0 obs | K=16) >= 0.226, not 0.05.",
             "nonempty_457_hypergeom": hg_diag,
             "total_489_one_sided_if_srswor_pct": [round(pos_L / N_tot * 100, 2), round((pos_U + hg_diag["one_sided_95_upper_K"]) / N_tot * 100, 2)],
         },
@@ -906,8 +928,8 @@ def main() -> None:
             "four_class_kappa": out["scope_120"]["inter_rater"]["four_class_design_hajek"]["fleiss_kappa"],
         },
         "scope_120_weight_sensitivity": out["scope_120"]["weight_sensitivity_comparison"],
-        "repair_100_design_bound": out["repair_100"]["design_calibrated_mc_adversarial_nonempty_457"],
-        "repair_100_total_489_pct": out["repair_100"]["total_489_retraction_rate_pct"],
+        "repair_100_ht_point_pct": out["repair_100"]["horvitz_thompson_design_unbiased_point_rate_over_489_pct"],
+        "repair_100_heuristic_stress_test": out["repair_100"]["total_489_heuristic_stress_test_pct_not_guaranteed_bound"],
     }, indent=2, ensure_ascii=False))
 
 
